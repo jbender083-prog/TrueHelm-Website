@@ -1,0 +1,151 @@
+{
+  "updatedAtUtc": "2026-11-14T23:40:00Z",
+  "activeVersion": "v1.9.1",
+  "latestReleaseTag": "v1.9.0",
+  "buildPhase": "In Active Development & Verification (v1.9.1)",
+  "refreshIntervalSeconds": 300,
+  "currentlyAdded": [
+    "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
+    "PC Left-Click hold & pull-back pool cue power mechanic (0–55 cm stop) + full physical OpenXR VR controller pool cue grab, align & forward stroke",
+    "Copy & paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync",
+    "Real-player Maritime Company custom keyboard naming, configurable delivery payout commission %, and Company-Provided vs. Player-Provided fleet ships",
+    "Live 5-minute website Dev Dashboard + persistent chronological History Log"
+  ],
+  "currentlyChanged": [
+    "Moved VHF bridge radio voice capture & playback onto a dedicated background audio thread for 0 ms trigger response",
+    "Fixed all [Create Company] hitboxes across [P] Multiplayer menu and 1st-Person Bridge Monitor 7",
+    "Simplified and mobile-optimized the TrueHelm website for phones, tablets, and desktops"
+  ],
+  "currentlyRemoved": [
+    "Removed unported cross-platform placeholder buttons & badges (focusing 100% on Windows PC & OpenXR VR)",
+    "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres",
+    "Removed synchronous Game Thread waveInOpen/waveInClose calls that caused a 1–2s freeze on VHF radio trigger",
+    "Removed cluttered HUD compass/bracket chrome that crowded mobile screens"
+  ],
+  "historyLog": [
+    {
+      "id": "sync-20261114-2340",
+      "timestampUtc": "2026-11-14T23:40:00Z",
+      "version": "v1.9.1-dev",
+      "summary": "Launched Live 5-Minute Dev Dashboard, streamlined mobile-first Windows PC & VR layout, and queued Round 13 (Smooth Pool Balls, VR Cue, YouTube TV, Custom Companies & Radio Lag Fix).",
+      "added": [
+        "Live 5-minute Dev Dashboard + persistent History Log",
+        "v1.9.1 spherical Solids/Stripes pool, VR cue grab, YouTube TV & Company %/fleet pipeline"
+      ],
+      "changed": [
+        "Streamlined mobile-first website layout across 360px–1920px viewports",
+        "Background-threaded VHF radio mic capture architecture"
+      ],
+      "removed": [
+        "Unported cross-platform placeholder download links & badges",
+        "Cubish 20-tri pool balls & Game Thread audio stalls"
+      ]
+    },
+    {
+      "id": "sync-20261114-2257",
+      "timestampUtc": "2026-11-14T22:57:00Z",
+      "version": "v1.9.0",
+      "summary": "Published official TrueHelm website on GitHub Pages with 1-click direct Windows .ZIP download from GitHub Releases.",
+      "added": [
+        "1-click direct Windows playable .ZIP download via GitHub CDN",
+        "35-ship interactive Tier 1–5 explorer & 1080p screenshot gallery"
+      ],
+      "changed": [
+        "Migrated friend downloads from Google Drive to direct GitHub Releases"
+      ],
+      "removed": [
+        "Developer .pdb/.sav/.log debug files from playable .ZIP archive"
+      ]
+    }
+  ],
+  "versionLogs": [
+    {
+      "version": "v1.9.1",
+      "badge": "In Progress · Next Release",
+      "date": "November 2026",
+      "openByDefault": true,
+      "added": [
+        "Smooth spherical Solid (1–7), 8-Ball, & Striped (9–15) 3D pool balls with rolling quaternion spin",
+        "PC Left-Click hold & drag-back cue stick power gauge + full OpenXR VR controller pool cue grabbing & forward push stroke",
+        "Copy & paste real YouTube links onto the Mega-Ship 110\" TV (Ctrl+V or URL input), synced live across crewmates",
+        "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)"
+      ],
+      "changed": [
+        "Refactored VHF bridge radio audio onto a warm background worker thread (< 0.05 ms Game Thread, zero trigger lag)",
+        "Fixed Bridge Monitor 7 & 1st-Person [P] Create Company button hitboxes"
+      ],
+      "removed": [
+        "Replaced cubish 20-triangle pool ball meshes",
+        "Removed synchronous Game Thread WinMM mic open/close stalls"
+      ]
+    },
+    {
+      "version": "v1.9.0",
+      "badge": "Current Live Download",
+      "date": "November 2026",
+      "openByDefault": true,
+      "added": [
+        "5x Ocean World Expansion (4,617 km × 4,617 km) with 74 islands & continental countries (0.28x islets to 8.5x continents)",
+        "32 full 6-zone deepwater commercial ports + 42 scenic dockless islands",
+        "Tier 5 Mega-Ship Aft Crew Lounge (#29–#35) with 9-ft Championship Pool Table & 110\" Widescreen TV",
+        "Multiplayer Maritime Company shared-ship co-op with 3D naval crew avatars & single-hull boarding"
+      ],
+      "changed": [
+        "Upgraded ECDIS world map ([M] & Bridge Monitor 4) with multi-scale zoom across all 74 landmasses",
+        "Unified low-poly captain & crew character model across 1P walk, 3P deck, and co-op"
+      ],
+      "removed": [
+        "Eliminated duplicate ghost hulls when multiple crewmates board the same company ship"
+      ]
+    },
+    {
+      "version": "v1.8.0",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
+      "added": [
+        "12 moving localized weather cells: Severe Squalls, Dense Fog Banks (~110m visibility), and Gale Fronts",
+        "3K Doppler Weather Radar rings & +20% to +35% storm hazard cargo contract bonuses"
+      ],
+      "changed": [
+        "Upgraded wave-heading cargo seamanship physics so quartering into storm swells protects deck cargo"
+      ],
+      "removed": [
+        "Replaced uniform global-only weather transitions with localized regional storm fronts"
+      ]
+    },
+    {
+      "version": "v1.7.0",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
+      "added": [
+        "3K UltraSharp (3072×3072) bridge render targets (+24% larger physical MFD screens)",
+        "Always-Multiplayer Dual-Lock UTC world clock & deterministic wave/storm synchronization"
+      ],
+      "changed": [
+        "Rebalanced nighttime bridge MFD emissive output for zero bloom/glare in VR and 1st-person"
+      ],
+      "removed": [
+        "Removed blurry low-res cockpit font scaling"
+      ]
+    },
+    {
+      "version": "v1.6.0",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
+      "added": [
+        "OpenXR VR dual 26-bone articulated hand tracking with physical wheel, throttle & anchor lever grabbing",
+        "Upper-body console lean reach across all 8 bridge monitors",
+        "Physical catenary stud-link bow anchors & seabed sand holding across all 35 vessels"
+      ],
+      "changed": [
+        "Optimized Ultra Heavy Thunderstorm bridge & ocean rendering for 95+ FPS VR performance"
+      ],
+      "removed": [
+        "Fixed foredeck chain gap & hawsepipe alignment anomalies across all 35 hulls"
+      ]
+    }
+  ]
+}

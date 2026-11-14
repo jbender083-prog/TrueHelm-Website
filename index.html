@@ -2,739 +2,581 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TrueHelm: Realistic Shipping Lanes — Free Multiplayer PC, Mac &amp; VR Maritime Simulator</title>
-  <meta name="description" content="Download TrueHelm: Realistic Shipping Lanes v1.9.0 free in 1 click. Sail 35 vessels across a 4,617 km 5x ocean with 74 islands &amp; countries, shared-ship Company Co-Op, Mega-Ship Billiards &amp; 110-inch Cinema Lounge, moving storms, and OpenXR VR." />
-  <meta name="theme-color" content="#040b14" />
-  <meta property="og:title" content="TrueHelm: Realistic Shipping Lanes — Official Free Download (v1.9.0)" />
-  <meta property="og:description" content="4,617 km 5x Ocean · 74 Islands &amp; Countries · 35 Playable Ships · Shared-Ship Multiplayer Co-Op · OpenXR VR. 1-click direct ZIP download for Windows &amp; macOS." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>TrueHelm: Realistic Shipping Lanes — Free Download (Windows PC &amp; VR)</title>
+  <meta name="description" content="Download TrueHelm: Realistic Shipping Lanes free in 1 click for Windows PC &amp; OpenXR VR. Sail 35 vessels across a 4,617 km ocean with 74 islands &amp; countries, Multiplayer Company Co-Op, Mega-Ship Pool &amp; YouTube TV Lounge, and live update logs." />
+  <meta name="theme-color" content="#06101c" />
+  <meta property="og:title" content="TrueHelm: Realistic Shipping Lanes — Free Windows PC &amp; VR Download" />
+  <meta property="og:description" content="4,617 km Ocean · 74 Islands &amp; Countries · 35 Ships · Multiplayer Company Co-Op · OpenXR VR. 1-click direct Windows ZIP download." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jbender083-prog.github.io/TrueHelm-Website/" />
   <meta property="og:image" content="https://jbender083-prog.github.io/TrueHelm-Website/assets/screenshots/hero-megaship-continent.jpg" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Animated Naval ECDIS Radar & Ocean Wave Contour Backdrop -->
-  <canvas id="ocean-radar-canvas" aria-hidden="true"></canvas>
-  <div class="vignette-overlay" aria-hidden="true"></div>
-
-  <!-- Sticky Bridge Navigation Bar -->
-  <header class="bridge-navbar" id="top">
-    <div class="nav-inner">
-      <a href="#top" class="brand-lockup" aria-label="TrueHelm Home">
-        <span class="brand-wheel" aria-hidden="true">
-          <svg viewBox="0 0 40 40" width="34" height="34">
-            <circle cx="20" cy="20" r="11.5" fill="none" stroke="currentColor" stroke-width="2.3" />
-            <circle cx="20" cy="20" r="3.4" fill="currentColor" />
-            <g stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
-              <line x1="20" y1="3" x2="20" y2="37" />
-              <line x1="3" y1="20" x2="37" y2="20" />
-              <line x1="8" y1="8" x2="32" y2="32" />
-              <line x1="32" y1="8" x2="8" y2="32" />
-            </g>
-            <polygon points="20,1.2 17.5,6.2 22.5,6.2" fill="#ffb74d" />
-          </svg>
-        </span>
-        <span class="brand-text">
-          <span class="brand-title">TRUEHELM</span>
-          <span class="brand-sub">REALISTIC SHIPPING LANES <em class="ver-tag">v1.9.0</em></span>
-        </span>
+  <!-- Clean Sticky Header (Mobile: Brand + Download + Hamburger ONLY) -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="TrueHelm Home">
+        <img src="assets/favicon.svg" alt="" width="30" height="30" class="brand-icon" />
+        <span class="brand-name">TrueHelm</span>
       </a>
 
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#features">Bridge Systems</a>
-        <a href="#gallery">In-Engine Captures</a>
-        <a href="#fleet">35-Ship Fleet</a>
-        <a href="#quickstart">Co-Op &amp; Controls</a>
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="#features">Features</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#fleet">35 Ships</a>
+        <a href="#logs">Logs</a>
+        <a href="#howtoplay">How to Play</a>
       </nav>
 
-      <div class="nav-actions">
-        <span class="server-pill" title="Synchronized Live Multiplayer Ocean Realm">
-          <span class="pulse-dot"></span>
-          <span id="utc-bridge-clock">US OCEAN · LIVE</span>
-        </span>
-        <a class="nav-btn-mac"
-           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_MacOS_Playable.zip"
-           data-direct-zip="TrueHelm_MacOS_Playable.zip (594 MB)">
-          macOS .ZIP
-        </a>
-        <a class="nav-btn-win"
+      <div class="header-cta">
+        <a class="header-dl-btn"
            href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-           data-direct-zip="TrueHelm_Windows_Playable.zip (594 MB)">
-          <svg viewBox="0 0 20 20" width="15" height="15" fill="currentColor" aria-hidden="true">
-            <path d="M2 3.6L8.8 2.6v6.6H2V3.6zm7.8-1.1L18 1.3v7.9H9.8V2.5zM2 10.2h6.8v6.6L2 15.8v-5.6zm7.8 0H18v7.9l-8.2-1.2v-6.7z"/>
-          </svg>
-          <span>Download Windows (.ZIP)</span>
+           data-direct-zip="TrueHelm_Windows_Playable.zip">
+          Download
         </a>
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle Menu">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round">
+            <line x1="4" y1="7" x2="20" y2="7" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="17" x2="20" y2="17" />
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- Clean Mobile Navigation Drawer -->
+    <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation" hidden>
+      <a href="#features" class="drawer-link">Features</a>
+      <a href="#screenshots" class="drawer-link">Screenshots</a>
+      <a href="#fleet" class="drawer-link">35-Ship Fleet</a>
+      <a href="#logs" class="drawer-link">Live Dashboard &amp; Update Logs</a>
+      <a href="#howtoplay" class="drawer-link">How to Play &amp; Controls</a>
+      <div class="drawer-downloads">
+        <a class="btn btn-primary btn-block"
+           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
+           data-direct-zip="TrueHelm_Windows_Playable.zip">
+          Download Free for Windows (.ZIP)
+        </a>
+      </div>
+    </nav>
   </header>
 
   <main>
-    <!-- HERO COMMAND BRIDGE SECTION -->
-    <section class="hero-section">
-      <!-- Authentic TrueHelm Top HUD Compass Heading Tape -->
-      <div class="hud-compass-bar" aria-label="Bridge Compass Heading">
-        <div class="compass-readout-box">
-          <span class="compass-lbl">HDG</span>
-          <span class="compass-deg" id="compass-deg-value">333°</span>
-          <span class="compass-mode">TRUE · AUTOPILOT READY</span>
-        </div>
-        <div class="compass-tape-window">
-          <div class="compass-Lubber" aria-hidden="true">▼</div>
-          <div class="compass-ticks" id="compass-ticks-track">
-            <span>285°</span><i></i><i></i>
-            <span>300°</span><i></i><i></i>
-            <span>315° · NW</span><i></i><i></i>
-            <span class="active-tick">333°</span><i></i><i></i>
-            <span>345°</span><i></i><i></i>
-            <span>000° · N</span><i></i><i></i>
-            <span>015°</span><i></i><i></i>
-            <span>030°</span>
-          </div>
-        </div>
-        <div class="compass-telemetry-right">
-          <span>DEPTH <strong>102m</strong></span>
-          <span class="sep">|</span>
-          <span>TIDE <strong class="emerald">HIGH</strong></span>
-          <span class="sep">|</span>
-          <span>ENGINE <strong class="amber">UE 5.8 DX12</strong></span>
-        </div>
-      </div>
-
-      <div class="container hero-grid">
-        <!-- Left Column: Title, Telemetry Strip & 1-Click Direct ZIP Buttons -->
-        <div class="hero-copy">
-          <div class="eyebrow-badge">
-            <span class="badge-chip">v1.9.0 FREE MULTIPLAYER EDITION</span>
-            <span class="badge-meta">PC · OPENXR VR · MACOS</span>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <div class="version-pill">
+            <span class="live-dot"></span>
+            <span>Free Multiplayer Edition · Windows PC &amp; OpenXR VR</span>
           </div>
 
-          <h1 class="hero-title">
-            TRUEHELM
-            <span class="hero-title-sub">REALISTIC SHIPPING LANES</span>
-          </h1>
+          <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
-          <p class="hero-lead">
-            Command <strong>35 photorealistic vessels</strong> across a massive <strong>4,617 km 5x ocean world</strong> with <strong>74 islands &amp; continental countries</strong>. Crew the exact same mega-ship together in <strong>Multiplayer Company Co-Op</strong>, ride out Doppler storm squalls, shoot 8-ball pool in the aft crew lounge, or take the helm with full <strong>OpenXR VR</strong> hands.
+          <p class="hero-summary">
+            Command 35 vessels across a 4,617 km ocean world spanning 74 islands and continental countries. Crew the same mega-ship with friends in Multiplayer Company Co-Op, play 3D pool and watch YouTube in the aft lounge, ride out live storms, or steer with OpenXR VR hands.
           </p>
 
-          <!-- Live ECDIS Telemetry Strip -->
-          <div class="telemetry-strip" role="list" aria-label="Game Scale Telemetry">
-            <div class="telemetry-pill" role="listitem">
-              <span class="t-val">4,617 KM</span>
-              <span class="t-lbl">5X OCEAN</span>
-            </div>
-            <div class="telemetry-pill" role="listitem">
-              <span class="t-val">74</span>
-              <span class="t-lbl">ISLANDS &amp; STATES</span>
-            </div>
-            <div class="telemetry-pill" role="listitem">
-              <span class="t-val">35</span>
-              <span class="t-lbl">PLAYABLE VESSELS</span>
-            </div>
-            <div class="telemetry-pill" role="listitem">
-              <span class="t-val">1/N CO-OP</span>
-              <span class="t-lbl">COMPANY CREWS</span>
-            </div>
-            <div class="telemetry-pill" role="listitem">
-              <span class="t-val">OPENXR VR</span>
-              <span class="t-lbl">3K TOUCH BRIDGE</span>
-            </div>
-          </div>
-
-          <!-- CRITICAL: True 1-Click Direct .ZIP Download Buttons (Same-Tab Instant Download) -->
-          <div class="hero-cta-group">
-            <a class="btn-download-primary"
+          <!-- Single Clean 1-Click Direct Windows .ZIP Download Button -->
+          <div class="cta-row">
+            <a class="btn btn-primary"
                href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-               data-direct-zip="TrueHelm_Windows_Playable.zip (594 MB)">
-              <span class="btn-icon-box" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                  <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
-                </svg>
+               data-direct-zip="TrueHelm_Windows_Playable.zip">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
+              </svg>
+              <span class="btn-copy">
+                <strong>Download Free for Windows (.ZIP)</strong>
+                <small>1-Click Direct Download · Windows 10/11 PC &amp; OpenXR VR</small>
               </span>
-              <span class="btn-text-stack">
-                <span class="btn-main-label">Download Free for Windows</span>
-                <span class="btn-sub-label">1-Click Direct <strong>.ZIP — 594 MB</strong> · PC &amp; OpenXR VR</span>
-              </span>
-              <span class="btn-dl-arrow" aria-hidden="true">⬇</span>
             </a>
 
-            <a class="btn-download-mac"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_MacOS_Playable.zip"
-               data-direct-zip="TrueHelm_MacOS_Playable.zip (594 MB)">
-              <span class="btn-icon-box-mac" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.115 1.85-1.01 2.96 1.07.08 2.16-.53 2.83-1.34z"/>
-                </svg>
-              </span>
-              <span class="btn-text-stack">
-                <span class="btn-main-label">1-Click macOS (.ZIP)</span>
-                <span class="btn-sub-label"><strong>594 MB</strong> · Apple Silicon &amp; Intel</span>
+            <a class="btn btn-secondary" href="#logs">
+              <span class="btn-copy">
+                <strong>Live Dev Dashboard &amp; Logs</strong>
+                <small>See live 5-min changes &amp; patch notes</small>
               </span>
             </a>
           </div>
 
-          <div class="hero-trust-row">
-            <span>✓ <strong>Zero Login / No Account</strong></span>
-            <span>✓ <strong>Instant Browser .ZIP Download</strong></span>
-            <span>✓ <strong>Unzip &amp; Run <code>PLAY_TRUEHELM.bat</code></strong></span>
+          <p class="hero-note">No login or installer needed · Instant browser download · Unzip &amp; run <code>PLAY_TRUEHELM.bat</code></p>
+
+          <!-- Clean 2x2 (Mobile) / 4-Col (Desktop) Stat Pills -->
+          <div class="stats-grid">
+            <div class="stat-pill">
+              <strong>4,617 km</strong>
+              <span>5x Ocean World</span>
+            </div>
+            <div class="stat-pill">
+              <strong>74 Islands</strong>
+              <span>Ports &amp; Countries</span>
+            </div>
+            <div class="stat-pill">
+              <strong>35 Ships</strong>
+              <span>5 Career Tiers</span>
+            </div>
+            <div class="stat-pill">
+              <strong>Co-Op &amp; VR</strong>
+              <span>Shared Crew &amp; OpenXR</span>
+            </div>
           </div>
         </div>
 
-        <!-- Right Column: HUD Showcase Bezel with Real In-Engine Screenshot & Mini Doppler Radar -->
-        <div class="hero-showcase-wrap">
-          <div class="hud-frame hero-hud-frame" data-lightbox-src="assets/screenshots/hero-megaship-continent.jpg" data-lightbox-caption="#32 MV Megamax 24000 Titan (280m ULCV, 22,000 TEU) approaching a massive continental 6-zone deepwater frontier port">
-            <span class="hud-corner tl"></span>
-            <span class="hud-corner tr"></span>
-            <span class="hud-corner bl"></span>
-            <span class="hud-corner br"></span>
+        <!-- Clean Rounded 16:9 Hero Screenshot -->
+        <div class="hero-media">
+          <button type="button"
+                  class="hero-shot-btn"
+                  data-lightbox-index="0"
+                  aria-label="Zoom gameplay screenshot">
+            <img src="assets/screenshots/hero-megaship-continent.jpg"
+                 alt="#32 MV Megamax 24000 Titan approaching a deepwater continental port with container gantry cranes"
+                 width="1920" height="1080" fetchpriority="high" />
+          </button>
+        </div>
+      </div>
+    </section>
 
-            <div class="hud-frame-topbar">
-              <span class="mfd-code">CAM-EXT // BOW ORBIT</span>
-              <span class="mfd-vessel">#32 MV MEGAMAX 24000 TITAN · 280M ULCV</span>
-              <span class="mfd-fps">118 FPS · DX12</span>
+    <!-- FEATURES SECTION (Clean 1 / 2 / 3 Column Grid) -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for Scale, Realism &amp; Playing with Friends</h2>
+          <p>Everything included free in the standalone Unreal Engine 5.8 Windows &amp; OpenXR VR build.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="card">
+            <div class="card-tag">World Scale</div>
+            <h3>4,617 km Ocean &amp; 74 Landmasses</h3>
+            <p>Sail from tiny coral skerries (<code>0.28x</code>) and 42 scenic islands up to 18 massive continental countries (<code>8.5x</code>) and 32 full 6-zone deepwater ports.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag emerald">Multiplayer</div>
+            <h3>Maritime Companies &amp; Shared Ships</h3>
+            <p>Press <kbd>P</kbd> to create and name your own real-player company. Crew the same hull together, provide fleet ships or bring your own, and set custom delivery payout <code>%</code> cuts or <code>1/N</code> even splits.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag amber">Mega-Ship Lounge</div>
+            <h3>3D Pool Table &amp; 110&quot; YouTube TV</h3>
+            <p>Walk aft (<kbd>F9</kbd>) on Tier 5 flagships (<code>#29–#35</code>) to shoot Solids &amp; Stripes 8-ball pool (PC pullback cue or physical VR cue) and paste YouTube links onto the 110&quot; TV.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag">35 Vessels</div>
+            <h3>Harbor Tugs to 290m Leviathans</h3>
+            <p>Progress across 5 tiers: 38-knot launches, offshore supply vessels, Ro-Ro car carriers, submersible Flo-Flo heavy transports, spherical Moss LNG ships, and 22,000-TEU ULCVs.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag amber">Dynamic Sea</div>
+            <h3>Moving Storms &amp; Sand Anchoring</h3>
+            <p>Track 12 live squalls, dense fog banks (~110m visibility), and gale fronts on Doppler radar for <strong>+20% to +35%</strong> storm hazard payouts, and drop physical stud-link bow anchors.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-tag emerald">PC &amp; OpenXR VR</div>
+            <h3>3K Touch Bridge &amp; VR Hands</h3>
+            <p>Switch seamlessly between 3rd-person orbit, 1st-person bridge walk, and OpenXR VR (95+ FPS) with dual 26-bone articulated hands and 8 interactive 3072×3072 bridge screens.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS SECTION -->
+    <section class="section section-alt" id="screenshots">
+      <div class="container">
+        <div class="section-head">
+          <h2>In-Game Screenshots</h2>
+          <p>Tap or click any capture to view full 1080p resolution.</p>
+        </div>
+
+        <div class="shots-grid" id="gallery-grid">
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/hero-megaship-continent.jpg" data-lightbox-caption="#32 MV Megamax 24000 Titan (280m ULCV) docking at a continental 6-zone container port">
+            <img src="assets/screenshots/hero-megaship-continent.jpg" alt="Mega-ship docking at continental port" loading="lazy" width="1920" height="1080" />
+            <figcaption>Continental Deepwater Port &amp; #32 Megamax Titan</figcaption>
+          </figure>
+
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/coop-pool-lounge.jpg" data-lightbox-caption="Company Co-Op crewmates playing 16-ball billiards on the 9-ft pool table aboard #34 FLNG Prelude Leviathan">
+            <img src="assets/screenshots/coop-pool-lounge.jpg" alt="Crewmates playing pool inside mega-ship lounge" loading="lazy" width="1920" height="1080" />
+            <figcaption>Company Co-Op 9-ft Pool Table Lounge</figcaption>
+          </figure>
+
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/coop-cinema-tv.jpg" data-lightbox-caption="110-inch widescreen lounge cinema TV and leather crew sofa aboard Tier 5 mega-ships">
+            <img src="assets/screenshots/coop-cinema-tv.jpg" alt="110-inch cinema TV and sofa in mega-ship lounge" loading="lazy" width="1920" height="1080" />
+            <figcaption>110&quot; Widescreen Crew Lounge TV &amp; Sofa</figcaption>
+          </figure>
+
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/storm-seamanship.jpg" data-lightbox-caption="Quartering heavy squall swells at sea for +35% storm hazard cargo payouts">
+            <img src="assets/screenshots/storm-seamanship.jpg" alt="Cargo ship riding heavy storm swells" loading="lazy" width="1920" height="1080" />
+            <figcaption>Live Squall Swells &amp; +35% Hazard Cargo</figcaption>
+          </figure>
+
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/vr-bridge-hands.jpg" data-lightbox-caption="OpenXR VR articulated hands gripping the helm wheel and engine telegraph surrounded by 3K bridge displays">
+            <img src="assets/screenshots/vr-bridge-hands.jpg" alt="OpenXR VR hands on ship wheel and throttle" loading="lazy" width="1920" height="1080" />
+            <figcaption>OpenXR VR Hands &amp; 3K Touch Bridge</figcaption>
+          </figure>
+
+          <figure class="shot-card" data-lightbox-src="assets/screenshots/world-5x-ecdis-map.jpg" data-lightbox-caption="Full-screen [M] 4,617 km 5x world ECDIS chart showing all 74 islands, ports, and 1-click Autopilot routing">
+            <img src="assets/screenshots/world-5x-ecdis-map.jpg" alt="5x world ECDIS map with 74 islands and ports" loading="lazy" width="1920" height="1080" />
+            <figcaption>4,617 km 74-Island ECDIS &amp; Autopilot Map</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 35-SHIP FLEET EXPLORER -->
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <h2>Explore All 35 Playable Ships</h2>
+          <p>Select any tier to view vessel dimensions, cargo capacity, top speed, and shipyard price.</p>
+        </div>
+
+        <div class="tier-pills" role="tablist" aria-label="Ship Tiers">
+          <button type="button" class="tier-pill" role="tab" aria-selected="false" data-tier="1">Tier 1 · Starters (#01–#07)</button>
+          <button type="button" class="tier-pill" role="tab" aria-selected="false" data-tier="2">Tier 2 · Coastal (#08–#14)</button>
+          <button type="button" class="tier-pill" role="tab" aria-selected="false" data-tier="3">Tier 3 · Regional (#15–#21)</button>
+          <button type="button" class="tier-pill" role="tab" aria-selected="false" data-tier="4">Tier 4 · Deep-Sea (#22–#28)</button>
+          <button type="button" class="tier-pill active" role="tab" aria-selected="true" data-tier="5">Tier 5 · Titans (#29–#35) ★</button>
+        </div>
+
+        <div class="fleet-banner card" id="fleet-banner">
+          <img id="fleet-img" src="assets/fleet/tier5-ulcv-leviathan.jpg" alt="Tier 5 Flagship Aerial View" width="1280" height="720" loading="lazy" />
+          <div class="fleet-banner-copy">
+            <span class="card-tag emerald" id="fleet-badge">Tier 5 · Pool &amp; 110&quot; TV Lounge Equipped</span>
+            <h3 id="fleet-title">Tier 5: Maritime Titans &amp; Flagships</h3>
+            <p id="fleet-desc">195m–290m Capesize bulkers, VLCC supertankers, 22,000-TEU Megamax container ships, submersible Flo-Flo carriers, and the 390,000-DWT #34 FLNG Prelude Leviathan.</p>
+            <div class="fleet-mini-stats" id="fleet-highlights">
+              <span><strong>195m–290m</strong> Length</span>
+              <span><strong>Up to 390k DWT</strong> Cargo</span>
+              <span><strong>Pool + 110&quot; TV</strong> Aft Lounge</span>
             </div>
+          </div>
+        </div>
 
-            <div class="hero-shot-container">
-              <img src="assets/screenshots/hero-megaship-continent.jpg"
-                   alt="#32 MV Megamax 24000 Titan docking at a massive 5x world continental deepwater port with gantry cranes and TrueHelm HUD"
-                   width="1920" height="1080" fetchpriority="high" />
-              <!-- Live Mini Sweeping Radar Overlay Badge -->
-              <div class="mini-radar-overlay" aria-hidden="true">
-                <canvas id="mini-radar-canvas" width="94" height="94"></canvas>
-                <span class="radar-rng">RNG 12 NM</span>
+        <div class="ships-card-grid" id="ships-card-grid" aria-live="polite">
+          <article class="ship-card">
+            <div class="ship-card-top"><span class="ship-id">#29</span><h4>MV Cape Good Hope</h4></div>
+            <p class="ship-cls">Capesize Ore Carrier</p>
+            <div class="ship-specs"><span>240m × 38m · 9.2m draft</span><span>162,000 t (10,800 TEU)</span><span>12.6 kts</span><strong class="ship-price">$5,040,000</strong></div>
+          </article>
+          <article class="ship-card">
+            <div class="ship-card-top"><span class="ship-id">#30</span><h4>MT Red Sea Emperor</h4></div>
+            <p class="ship-cls">Suezmax Crude Tanker</p>
+            <div class="ship-specs"><span>232m × 37m · 9.0m draft</span><span>132,000 t (8,800 TEU)</span><span>13.0 kts</span><strong class="ship-price">$6,300,000</strong></div>
+          </article>
+          <article class="ship-card">
+            <div class="ship-card-top"><span class="ship-id">#31</span><h4>MT Olympus VLCC</h4></div>
+            <p class="ship-cls">VLCC Supertanker</p>
+            <div class="ship-specs"><span>265m × 44m · 9.8m draft</span><span>216,000 t (14,400 TEU)</span><span>12.2 kts</span><strong class="ship-price">$8,120,000</strong></div>
+          </article>
+          <article class="ship-card flagship">
+            <div class="ship-card-top"><span class="ship-id">#32</span><h4>MV Megamax 24000 Titan ★</h4></div>
+            <p class="ship-cls">ULCV 24,000 TEU</p>
+            <div class="ship-specs"><span>280m × 45m · 9.6m draft</span><span>330,000 t (22,000 TEU)</span><span>11.4 kts</span><strong class="ship-price">$10,920,000</strong></div>
+          </article>
+          <article class="ship-card">
+            <div class="ship-card-top"><span class="ship-id">#33</span><h4>MV Valemax Carajas</h4></div>
+            <p class="ship-cls">VLOC 400,000 DWT</p>
+            <div class="ship-specs"><span>272m × 44m · 9.8m draft</span><span>267,000 t (17,800 TEU)</span><span>11.8 kts</span><strong class="ship-price">$9,660,000</strong></div>
+          </article>
+          <article class="ship-card flagship">
+            <div class="ship-card-top"><span class="ship-id">#34</span><h4>FLNG Prelude Leviathan ★</h4></div>
+            <p class="ship-cls">Offshore FLNG Facility</p>
+            <div class="ship-specs"><span>290m × 48m · 10.0m draft</span><span>390,000 t (26,000 TEU)</span><span>11.0 kts</span><strong class="ship-price">$11,900,000</strong></div>
+          </article>
+          <article class="ship-card">
+            <div class="ship-card-top"><span class="ship-id">#35</span><h4>VANGUARD FLO-FLO</h4></div>
+            <p class="ship-cls">Submersible Boat Carrier</p>
+            <div class="ship-specs"><span>195m × 42m · 7.2m draft</span><span>58,500 t (3,900 TEU)</span><span>14.6 kts</span><strong class="ship-price">$6,720,000</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE 5-MINUTE DEV DASHBOARD & UPDATE LOGS (#logs) -->
+    <section class="section section-alt" id="logs">
+      <div class="container">
+        <div class="section-head">
+          <h2>Live Dev Dashboard &amp; Update Logs</h2>
+          <p>Automatically synced every 5 minutes with what is currently being added, changed, and removed—plus full history &amp; patch logs.</p>
+        </div>
+
+        <!-- Compact Live Dashboard Status Bar -->
+        <div class="card dash-header-bar">
+          <div class="dash-status-left">
+            <span class="dash-live-pill">
+              <span class="pulse-dot"></span>
+              <span>LIVE DEV DASHBOARD · 5-MIN AUTO-SYNC</span>
+            </span>
+            <span class="dash-target-pill" id="dash-target-version">Target: v1.9.1</span>
+            <span class="dash-phase-text" id="dash-build-phase">In Active Development &amp; Verification</span>
+          </div>
+          <div class="dash-status-right">
+            <span class="dash-meta" id="dash-last-updated">Last synced: just now</span>
+            <span class="dash-meta" id="dash-next-refresh">Next refresh in 5:00</span>
+            <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
+          </div>
+        </div>
+
+        <!-- 3 Crisp Live Status Cards: Being Added / Being Changed / Being Removed -->
+        <div class="dash-columns">
+          <article class="card dash-col dash-added">
+            <div class="dash-col-head">
+              <span class="dash-symbol added">+</span>
+              <h3>Being Added</h3>
+            </div>
+            <ul class="dash-list" id="dash-added-list">
+              <li>Smooth spherical 3D billiard balls with Solids (1–7), 8-Ball, Stripes (9–15) &amp; rolling spin</li>
+              <li>PC Left-Click pull-back pool cue + OpenXR VR physical cue grab &amp; stroke</li>
+              <li>Copy &amp; paste real YouTube video links onto the Mega-Ship 110&quot; Lounge TV</li>
+              <li>Real-player Company custom naming, configurable % delivery cuts &amp; shared fleet ships</li>
+            </ul>
+          </article>
+
+          <article class="card dash-col dash-changed">
+            <div class="dash-col-head">
+              <span class="dash-symbol changed">~</span>
+              <h3>Being Changed</h3>
+            </div>
+            <ul class="dash-list" id="dash-changed-list">
+              <li>Moved VHF bridge radio audio onto a background thread for zero trigger lag</li>
+              <li>Fixed all [Create Company] buttons in [P] menu &amp; Bridge Monitor 7</li>
+              <li>Simplified &amp; mobile-optimized the TrueHelm website for phones and desktops</li>
+            </ul>
+          </article>
+
+          <article class="card dash-col dash-removed">
+            <div class="dash-col-head">
+              <span class="dash-symbol removed">&minus;</span>
+              <h3>Being Removed</h3>
+            </div>
+            <ul class="dash-list" id="dash-removed-list">
+              <li>Removed unported cross-platform placeholder buttons (100% Windows PC &amp; OpenXR VR focus)</li>
+              <li>Replaced cubish 20-triangle pool balls with smooth spheres</li>
+              <li>Removed synchronous Game Thread mic open/close calls causing radio trigger lag</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Persistent Chronological 5-Minute Sync History Log -->
+        <div class="card history-card">
+          <div class="history-head">
+            <div>
+              <span class="card-tag">Persistent Feed</span>
+              <h3>5-Minute Sync &amp; Activity History Log</h3>
+            </div>
+            <span class="history-count" id="history-count-badge">Preserved Chronologically</span>
+          </div>
+          <div class="history-timeline" id="dash-history-list">
+            <!-- Populated dynamically from status/live-dev-log.json historyLog[] -->
+          </div>
+        </div>
+
+        <!-- Version Changelog Cards (v1.9.1 .. v1.6.0) -->
+        <div class="version-logs-wrap">
+          <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
+          <div class="version-logs-stack" id="version-logs-stack">
+            <!-- Populated dynamically by app.js (with static fallback for instant paint) -->
+            <details class="card ver-card" open>
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.1</strong>
+                  <span class="ver-badge emerald">In Progress · Next Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> Smooth spherical Solid &amp; Striped 3D pool balls with rolling spin; PC Left-Click pull-back cue &amp; OpenXR VR physical cue grab/stroke; live YouTube link playback on the 110&quot; TV; real-player Company custom naming, % delivery cuts &amp; Company-Provided vs. Player-Provided ships.</p>
+                <p><span class="log-pill changed">~ Changed</span> Background-threaded VHF radio voice capture (&lt; 0.05 ms Game Thread) &amp; fixed Bridge Monitor 7 / [P] Create Company buttons.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Cubish 20-tri pool balls &amp; synchronous Game Thread audio stalls.</p>
               </div>
-              <button type="button" class="shot-zoom-pill" aria-label="Expand Hero Screenshot">
-                ⤢ CLICK TO INSPECT 1080P
-              </button>
-            </div>
+            </details>
 
-            <div class="hud-frame-bottombar">
-              <div class="hud-stat"><span>SPEED</span><strong>15.2 KTS</strong></div>
-              <div class="hud-stat"><span>CARGO</span><strong>18,480 / 22,000 TEU</strong></div>
-              <div class="hud-stat"><span>BERTH</span><strong class="emerald">ZONE 2 · GANTRY CRANES</strong></div>
-              <div class="hud-stat"><span>WORLD</span><strong class="cyan">4,617 × 4,617 KM</strong></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: 5 BRIDGE MFD FEATURE PILLARS -->
-    <section class="section-block" id="features">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">3K ECDIS BRIDGE ARCHITECTURE // VERIFIED IN-ENGINE</span>
-          <h2 class="section-title">Engineered for True Trans-Oceanic Scale &amp; Shared Command</h2>
-          <p class="section-desc">
-            Every system in TrueHelm runs physically in real time—from Beer-Lambert ocean optics and stud-link bow anchor chains to multi-crew single-hull co-op and 3072×3072 touch bridge displays.
-          </p>
-        </div>
-
-        <div class="features-bento">
-          <!-- Feature 1 -->
-          <article class="hud-card feature-card feature-wide">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MFD-01 // 5X WORLD ECDIS</span>
-              <span class="mfd-badge cyan">4,617 KM × 4,617 KM</span>
-            </div>
-            <h3>5x Trans-Oceanic World &amp; 74 Diverse Landmasses</h3>
-            <p>
-              Chart voyages from tiny wave-swept coral skerries (<code>0.28x</code>) and 42 scenic dockless islands up to <strong>18 massive continental countries &amp; states (<code>8.5x</code>)</strong> stretching to the ±2,262 km frontier. Dock at <strong>32 full 6-zone deepwater commercial ports</strong> featuring container gantry cranes, LNG manifolds, grain elevators, Ro-Ro ramps, and submersible Flo-Flo basins.
-            </p>
-            <div class="feature-metrics">
-              <span><strong>32</strong> 6-Zone Deepwater Ports</span>
-              <span><strong>42</strong> Scenic Dockless Islands</span>
-              <span><strong>18</strong> Continental Countries</span>
-            </div>
-          </article>
-
-          <!-- Feature 2 -->
-          <article class="hud-card feature-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MFD-02 // COMPANY CO-OP</span>
-              <span class="mfd-badge emerald">PRESS [P] · 1/N SPLIT</span>
-            </div>
-            <h3>Multiplayer Maritime Companies &amp; Shared-Ship Crew</h3>
-            <p>
-              Press <kbd>P</kbd> to launch an Open Maritime Company and invite friends aboard the <strong>exact same physical ship</strong> (zero duplicate ghost hulls!) as 3D naval officers. Share the helm wheel, engine telegraph, bow thruster, anchor, autopilot, and cargo contracts—and split every delivery payout <strong>strictly evenly (<code>1/N</code>)</strong> across all online crewmates.
-            </p>
-            <div class="feature-metrics">
-              <span><strong>Single-Hull</strong> Multi-Crew</span>
-              <span><strong>Exact 1/N</strong> Cash Payouts</span>
-            </div>
-          </article>
-
-          <!-- Feature 3 -->
-          <article class="hud-card feature-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MFD-03 // MEGA-SHIP LOUNGE</span>
-              <span class="mfd-badge amber">TIERS 5 · #29–#35</span>
-            </div>
-            <h3>Tier 5 Aft Crew Lounge: 9-ft Pool &amp; 110&quot; Cinema TV</h3>
-            <p>
-              Toggle Free-Walk (<kbd>F9</kbd>) while underway on Tier 5 flagships like the <strong>#34 FLNG Prelude Leviathan</strong> and <strong>#32 MV Megamax 24000 Titan</strong>. Walk aft from the wheelhouse to rack &amp; strike <strong>16-ball 3D physics billiards</strong> on a championship 9-ft pool table or relax on the leather crew sofa watching the <strong>4-channel 110&quot; widescreen TV</strong>.
-            </p>
-            <div class="feature-metrics">
-              <span><strong>16-Ball</strong> Physics Billiards</span>
-              <span><strong>4-Ch 110&quot;</strong> Lounge Cinema</span>
-            </div>
-          </article>
-
-          <!-- Feature 4 -->
-          <article class="hud-card feature-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MFD-04 // DOPPLER &amp; ANCHOR</span>
-              <span class="mfd-badge amber">+35% STORM HAZARD</span>
-            </div>
-            <h3>35 Vessels, Moving Storm Cells &amp; Physical Anchoring</h3>
-            <p>
-              Track <strong>12 live moving Squalls, Dense Fog Banks (~110m visibility), and Gale Fronts</strong> across your 3K Doppler Radar. Quarter into heavy storm swells to protect deck cargo for <strong>+20% to +35% hazard-bonus payouts</strong>, or drop physical catenary stud-link bow anchors (<kbd>I</kbd>) that bite into sandy shoals.
-            </p>
-            <div class="feature-metrics">
-              <span><strong>12</strong> Live Weather Cells</span>
-              <span><strong>Catenary</strong> Sand Anchoring</span>
-            </div>
-          </article>
-
-          <!-- Feature 5 -->
-          <article class="hud-card feature-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MFD-05 // OPENXR VR BRIDGE</span>
-              <span class="mfd-badge cyan">95+ FPS · 3072² MFDS</span>
-            </div>
-            <h3>Full OpenXR VR Hands &amp; 8× 3K Touch Bridge Displays</h3>
-            <p>
-              Step onto the bridge in Desktop 1st-Person or <strong>OpenXR VR</strong> (Quest / PCVR via <code>LAUNCH_TRUEHELM_IN_VR.bat</code>). Grip the physical ship wheel, throttle telegraph, and anchor lever with <strong>dual 26-bone articulated VR hands</strong>, and tap <strong>8 crisp 3072×3072 touch MFDs</strong> running at 96+ FPS even in Ultra thunderstorms.
-            </p>
-            <div class="feature-metrics">
-              <span><strong>26-Bone</strong> Dual VR Hands</span>
-              <span><strong>8 × 3K</strong> Touch Monitors</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: INTERACTIVE IN-ENGINE SCREENSHOT GALLERY -->
-    <section class="section-block section-alt" id="gallery">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">UNEDITED 1920×1080 IN-ENGINE CAPTURES // CLICK ANY DISPLAY TO ZOOM</span>
-          <h2 class="section-title">Bridge, Lounge, Storm &amp; 5x World Visual Feed</h2>
-          <p class="section-desc">
-            Captured directly inside Unreal Engine 5.8 standalone gameplay across PC, Company Co-Op, and OpenXR VR.
-          </p>
-        </div>
-
-        <div class="gallery-grid" id="screenshot-gallery">
-          <figure class="hud-frame gallery-item"
-                  data-index="0"
-                  data-lightbox-src="assets/screenshots/hero-megaship-continent.jpg"
-                  data-lightbox-caption="5x Frontier Country Port — #32 MV Megamax 24000 Titan (280m ULCV) docking at Zone 2 container gantry cranes">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/hero-megaship-continent.jpg" alt="Mega-ship approaching continental port with gantry cranes" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag cyan">5X CONTINENTAL PORT</span>
-            </div>
-            <figcaption>
-              <strong>Continental Deepwater Port (#32 Megamax Titan)</strong>
-              <span>6-zone commercial quay, gantry cranes, compass HUD &amp; live radar</span>
-            </figcaption>
-          </figure>
-
-          <figure class="hud-frame gallery-item"
-                  data-index="1"
-                  data-lightbox-src="assets/screenshots/coop-pool-lounge.jpg"
-                  data-lightbox-caption="Multiplayer Company Co-Op — Crewmates shooting 16-ball physics billiards in #34 FLNG Prelude Leviathan's aft lounge">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/coop-pool-lounge.jpg" alt="Two co-op naval crewmates playing billiards on the 9-foot pool table inside the mega-ship bridge lounge" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag emerald">SHARED-SHIP CO-OP POOL</span>
-            </div>
-            <figcaption>
-              <strong>Company Co-Op 9-ft Championship Pool Table</strong>
-              <span>Walk aft ([F9]) with crewmates to play 16-ball physics billiards underway</span>
-            </figcaption>
-          </figure>
-
-          <figure class="hud-frame gallery-item"
-                  data-index="2"
-                  data-lightbox-src="assets/screenshots/coop-cinema-tv.jpg"
-                  data-lightbox-caption="Mega-Ship Crew Lounge — 4-Channel 110-inch Widescreen Cinema TV &amp; leather crew sofa aboard #34 FLNG Prelude Leviathan">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/coop-cinema-tv.jpg" alt="110-inch widescreen cinema TV and leather crew sofa in the mega-ship aft lounge" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag amber">110&quot; LOUNGE CINEMA TV</span>
-            </div>
-            <figcaption>
-              <strong>110&quot; 4-Channel Widescreen Crew Lounge TV</strong>
-              <span>Sit on the sofa ([E]) &amp; cycle live channels together between ports</span>
-            </figcaption>
-          </figure>
-
-          <figure class="hud-frame gallery-item"
-                  data-index="3"
-                  data-lightbox-src="assets/screenshots/storm-seamanship.jpg"
-                  data-lightbox-caption="Localized Squall Seamanship — Quartering heavy swells for +35% storm hazard cargo payouts">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/storm-seamanship.jpg" alt="Cargo vessel navigating heavy storm squall swells at sea" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag amber">DYNAMIC SQUALL SEAMANSHIP</span>
-            </div>
-            <figcaption>
-              <strong>Moving Squall Cells &amp; Heavy Swell Physics</strong>
-              <span>Real-time wave pitching, wet-hull sheen &amp; +35% storm hazard contracts</span>
-            </figcaption>
-          </figure>
-
-          <figure class="hud-frame gallery-item"
-                  data-index="4"
-                  data-lightbox-src="assets/screenshots/vr-bridge-hands.jpg"
-                  data-lightbox-caption="OpenXR VR Bridge Command — Dual 26-bone articulated hands gripping the helm wheel &amp; throttle telegraph surrounded by 3K MFDs">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/vr-bridge-hands.jpg" alt="Articulated OpenXR VR hands gripping ship helm wheel and engine throttle telegraph" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag cyan">OPENXR VR HANDS &amp; 3K MFDS</span>
-            </div>
-            <figcaption>
-              <strong>OpenXR VR Helm Grip &amp; 3K Touch Consoles</strong>
-              <span>Physical wheel, telegraph &amp; index-finger touch across 8 bridge screens</span>
-            </figcaption>
-          </figure>
-
-          <figure class="hud-frame gallery-item"
-                  data-index="5"
-                  data-lightbox-src="assets/screenshots/world-5x-ecdis-map.jpg"
-                  data-lightbox-caption="Full-Screen [M] 5x ECDIS Chart — 4,617 km × 4,617 km ocean spanning 74 islands, continental countries &amp; 1-click Autopilot routing">
-            <div class="gallery-img-wrap">
-              <img src="assets/screenshots/world-5x-ecdis-map.jpg" alt="5x ECDIS world radar chart showing 74 islands, ports, and continental landmasses" loading="lazy" width="1920" height="1080" />
-              <span class="gallery-tag emerald">74-LANDMASS ECDIS CHART</span>
-            </div>
-            <figcaption>
-              <strong>4,617 km 5x World ECDIS &amp; Autopilot Chart ([M])</strong>
-              <span>Click any of 74 islands, ports, or continents to engage Great-Circle Autopilot</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: INTERACTIVE 35-SHIP FLEET TIER EXPLORER -->
-    <section class="section-block" id="fleet">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">MARITIME SHIPYARD CATALOG // ALL 35 PLAYABLE VESSELS</span>
-          <h2 class="section-title">Interactive Fleet Tier Explorer (Tiers 1–5)</h2>
-          <p class="section-desc">
-            Progress from agile 38-knot shallow-draft harbor launches to 290-meter, 390,000-DWT offshore Leviathans with full Aft Crew Lounges. Select a tier to inspect every hull in the shipyard.
-          </p>
-        </div>
-
-        <!-- Tier Selector Tabs -->
-        <div class="tier-tabs" role="tablist" aria-label="Shipyard Fleet Tiers">
-          <button type="button" class="tier-tab" role="tab" aria-selected="false" data-tier="1">
-            <span class="tab-tier-num">TIER 1</span>
-            <span class="tab-tier-name">Harbor &amp; Starters (#01–#07)</span>
-          </button>
-          <button type="button" class="tier-tab" role="tab" aria-selected="false" data-tier="2">
-            <span class="tab-tier-num">TIER 2</span>
-            <span class="tab-tier-name">Coastal &amp; OSV (#08–#14)</span>
-          </button>
-          <button type="button" class="tier-tab" role="tab" aria-selected="false" data-tier="3">
-            <span class="tab-tier-num">TIER 3</span>
-            <span class="tab-tier-name">Regional Freighters (#15–#21)</span>
-          </button>
-          <button type="button" class="tier-tab" role="tab" aria-selected="false" data-tier="4">
-            <span class="tab-tier-num">TIER 4</span>
-            <span class="tab-tier-name">Deep-Sea Giants (#22–#28)</span>
-          </button>
-          <button type="button" class="tier-tab active" role="tab" aria-selected="true" data-tier="5">
-            <span class="tab-tier-num">TIER 5 ★</span>
-            <span class="tab-tier-name">Maritime Titans (#29–#35)</span>
-          </button>
-        </div>
-
-        <!-- Dynamic Tier Showcase Panel -->
-        <div class="hud-frame fleet-explorer-panel" id="fleet-panel" aria-live="polite">
-          <div class="fleet-hero-row">
-            <div class="fleet-hero-image-box">
-              <img id="fleet-tier-img" src="assets/fleet/tier5-ulcv-leviathan.jpg" alt="Tier 5 Flagship Aerial View" width="1280" height="720" />
-              <span class="fleet-tier-badge" id="fleet-tier-badge">TIER 5 · AFT POOL &amp; 110&quot; TV LOUNGE EQUIPPED</span>
-            </div>
-            <div class="fleet-hero-summary">
-              <div class="fleet-kicker" id="fleet-tier-kicker">SHIPS #29 – #35 // ULTRA-LARGE OCEAN FLAGSHIPS</div>
-              <h3 id="fleet-tier-title">Tier 5: Maritime Titans &amp; Flagships</h3>
-              <p id="fleet-tier-desc">
-                The apex of global shipping: 232m–290m Capesize bulkers, VLCC supertankers, 22,000-TEU Megamax container liners, submersible Flo-Flo heavy transports, and the 390,000-DWT #34 FLNG Prelude Leviathan—all featuring walkable aft crew lounges with 9-ft billiards and 110&quot; cinema TVs.
-              </p>
-              <div class="fleet-highlight-stats" id="fleet-tier-highlights">
-                <div><span>LENGTH RANGE</span><strong>195m – 290m</strong></div>
-                <div><span>MAX DEADWEIGHT</span><strong>Up to 390,000 DWT</strong></div>
-                <div><span>CREW LOUNGE</span><strong>Pool + 110&quot; Cinema TV</strong></div>
+            <details class="card ver-card" open>
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.0</strong>
+                  <span class="ver-badge cyan">Current Live Download</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> 5x Ocean Expansion (4,617 km) &amp; 74 Islands/Countries (0.28x islets to 8.5x continents, 32 ports &amp; 42 scenic islands), Tier 5 Mega-Ship Aft Lounge (9-ft Pool Table &amp; 110&quot; TV), and Multiplayer Company shared-ship co-op.</p>
+                <p><span class="log-pill changed">~ Changed</span> Multi-scale 74-island ECDIS chart &amp; unified low-poly crew character.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Duplicate ghost hulls when crewing the same company ship.</p>
               </div>
-            </div>
-          </div>
+            </details>
 
-          <div class="fleet-table-wrap">
-            <table class="fleet-table">
-              <thead>
-                <tr>
-                  <th>Hull ID &amp; Vessel Name</th>
-                  <th>Classification</th>
-                  <th>Dimensions (L × B)</th>
-                  <th>Loaded Draft</th>
-                  <th>Max Cargo</th>
-                  <th>Speed</th>
-                  <th>Shipyard Price</th>
-                </tr>
-              </thead>
-              <tbody id="fleet-ships-tbody">
-                <!-- Populated immediately by app.js (with static Tier 5 fallback for instant SEO/no-JS paint) -->
-                <tr>
-                  <td><span class="hull-id">#29</span> <strong>MV Cape Good Hope</strong></td>
-                  <td>Capesize Ore Carrier</td>
-                  <td>240m × 38.0m</td>
-                  <td>9.20m</td>
-                  <td>162,000 t (10,800 TEU)</td>
-                  <td>12.6 kts</td>
-                  <td class="price-cell">$5,040,000</td>
-                </tr>
-                <tr>
-                  <td><span class="hull-id">#30</span> <strong>MT Red Sea Emperor</strong></td>
-                  <td>Suezmax Crude Tanker</td>
-                  <td>232m × 37.0m</td>
-                  <td>9.00m</td>
-                  <td>132,000 t (8,800 TEU)</td>
-                  <td>13.0 kts</td>
-                  <td class="price-cell">$6,300,000</td>
-                </tr>
-                <tr>
-                  <td><span class="hull-id">#31</span> <strong>MT Olympus VLCC</strong></td>
-                  <td>VLCC Supertanker</td>
-                  <td>265m × 44.0m</td>
-                  <td>9.80m</td>
-                  <td>216,000 t (14,400 TEU)</td>
-                  <td>12.2 kts</td>
-                  <td class="price-cell">$8,120,000</td>
-                </tr>
-                <tr class="flagship-row">
-                  <td><span class="hull-id">#32</span> <strong>MV Megamax 24000 Titan ★</strong></td>
-                  <td>ULCV 24,000 TEU</td>
-                  <td>280m × 45.0m</td>
-                  <td>9.60m</td>
-                  <td>330,000 t (22,000 TEU)</td>
-                  <td>11.4 kts</td>
-                  <td class="price-cell">$10,920,000</td>
-                </tr>
-                <tr>
-                  <td><span class="hull-id">#33</span> <strong>MV Valemax Carajas</strong></td>
-                  <td>VLOC 400,000 DWT</td>
-                  <td>272m × 44.0m</td>
-                  <td>9.80m</td>
-                  <td>267,000 t (17,800 TEU)</td>
-                  <td>11.8 kts</td>
-                  <td class="price-cell">$9,660,000</td>
-                </tr>
-                <tr class="flagship-row">
-                  <td><span class="hull-id">#34</span> <strong>FLNG Prelude Leviathan ★</strong></td>
-                  <td>Offshore FLNG Facility</td>
-                  <td>290m × 48.0m</td>
-                  <td>10.00m</td>
-                  <td>390,000 t (26,000 TEU)</td>
-                  <td>11.0 kts</td>
-                  <td class="price-cell">$11,900,000</td>
-                </tr>
-                <tr>
-                  <td><span class="hull-id">#35</span> <strong>VANGUARD FLO-FLO</strong></td>
-                  <td>Submersible Boat Carrier</td>
-                  <td>195m × 42.0m</td>
-                  <td>7.20m</td>
-                  <td>58,500 t (3,900 TEU)</td>
-                  <td>14.6 kts</td>
-                  <td class="price-cell">$6,720,000</td>
-                </tr>
-              </tbody>
-            </table>
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.8.0</strong>
+                  <span class="ver-badge">Shipped</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> 12 moving localized weather cells (Squalls, Dense Fog Banks, Gale Fronts), 3K Doppler Weather Radar &amp; +20%–35% storm hazard cargo bonuses.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.7.0</strong>
+                  <span class="ver-badge">Shipped</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> 3K UltraSharp (3072×3072) Bridge Monitors (+24% larger screens, zero night bloom) &amp; Always-Multiplayer Dual-Lock UTC world sync.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.6.0</strong>
+                  <span class="ver-badge">Shipped</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> OpenXR VR 26-bone articulated hand tracking, physical wheel/throttle/anchor grabbing, upper-body console lean across all 8 monitors, and 35-ship stud-link bow anchors.</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: 3-STEP QUICK START, MULTIPLAYER CO-OP GUIDE & KEY CONTROLS -->
-    <section class="section-block section-alt" id="quickstart">
+    <!-- HOW TO PLAY, CO-OP & COLLAPSIBLE CONTROLS -->
+    <section class="section" id="howtoplay">
       <div class="container">
-        <div class="section-header">
-          <span class="section-kicker">ZERO INSTALLER · ZERO DRM · READY IN 60 SECONDS</span>
-          <h2 class="section-title">3-Step Quick Start, Co-Op Boarding &amp; Bridge Controls</h2>
+        <div class="section-head">
+          <h2>Quick Start &amp; Multiplayer Co-Op</h2>
+          <p>Download, unzip, and sail with friends on Windows PC or OpenXR VR in under a minute.</p>
         </div>
 
-        <!-- 3-Step Quick Start Row -->
         <div class="steps-grid">
-          <div class="hud-card step-card">
-            <div class="step-num">01</div>
-            <h3>Click 1-Click Direct Download</h3>
-            <p>
-              Click <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip (594 MB)"><strong>Download Free for Windows (.ZIP)</strong></a> or <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_MacOS_Playable.zip" data-direct-zip="TrueHelm_MacOS_Playable.zip (594 MB)"><strong>macOS (.ZIP)</strong></a>. Your browser begins downloading the clean 594 MB standalone archive immediately—no account or launcher required.
-            </p>
+          <div class="card step-card">
+            <span class="step-badge">Step 1</span>
+            <h3>Download the .ZIP</h3>
+            <p>Click <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip"><strong>Download Free for Windows (.ZIP)</strong></a> to start the direct download immediately in your browser.</p>
           </div>
 
-          <div class="hud-card step-card">
-            <div class="step-num">02</div>
+          <div class="card step-card">
+            <span class="step-badge">Step 2</span>
             <h3>Right-Click &rarr; Extract All</h3>
-            <p>
-              <strong>Windows:</strong> Right-click <code>TrueHelm_Windows_Playable.zip</code> &rarr; <strong>Extract All...</strong> &rarr; <strong>Extract</strong> <em>(always extract the folder first rather than launching from inside the ZIP preview)</em>.<br />
-              <strong>macOS:</strong> Double-click <code>TrueHelm_MacOS_Playable.zip</code> in Finder to unpack <code>Maritime Cargo.app</code>.
-            </p>
+            <p>Right-click <code>TrueHelm_Windows_Playable.zip</code> &rarr; <strong>Extract All...</strong> &rarr; <strong>Extract</strong> <em>(always extract the folder first before launching)</em>.</p>
           </div>
 
-          <div class="hud-card step-card">
-            <div class="step-num">03</div>
-            <h3>Launch &amp; Set Sail!</h3>
-            <p>
-              <strong>Windows PC / VR:</strong> Open <code>TrueHelm_Windows</code> and double-click <code>PLAY_TRUEHELM.bat</code> (Desktop) or <code>LAUNCH_TRUEHELM_IN_VR.bat</code> (OpenXR VR).<br />
-              <span class="tip-inline"><strong>SmartScreen Tip:</strong> If Windows shows <em>&ldquo;Windows protected your PC&rdquo;</em>, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. (On macOS, right-click <code>Maritime Cargo.app</code> &rarr; <strong>Open</strong>.)</span>
-            </p>
+          <div class="card step-card">
+            <span class="step-badge">Step 3</span>
+            <h3>Launch &amp; Play</h3>
+            <p>Open <code>TrueHelm_Windows</code> and run <code>PLAY_TRUEHELM.bat</code> (Desktop) or <code>LAUNCH_TRUEHELM_IN_VR.bat</code> (OpenXR VR).<br /><small class="smartscreen-note">Windows SmartScreen tip: if prompted on first launch, click <strong>More info &rarr; Run anyway</strong>.</small></p>
           </div>
         </div>
 
-        <!-- Co-Op Boarding + Key Controls Split Deck -->
-        <div class="coop-controls-grid">
-          <!-- Multiplayer [P] Company Co-Op Card -->
-          <div class="hud-card coop-guide-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">MULTIPLAYER PROTOCOL // PRESS [P]</span>
-              <span class="mfd-badge emerald">US OCEAN SERVER LIVE</span>
-            </div>
-            <h3>How to Crew the Same Ship Together with Friends</h3>
-            <ol class="coop-steps-list">
-              <li>
-                <strong>Auto-Sync Ocean World:</strong> Launch TrueHelm and enter the ocean—every Captain automatically connects to the live shared server with synchronized UTC time, waves, and storms.
-              </li>
-              <li>
-                <strong>Create an Open Company:</strong> Press <kbd>P</kbd> (or tap <strong>Bridge Monitor 7</strong>) and click <code>[ CREATE OPEN COMPANY ]</code>.
-              </li>
-              <li>
-                <strong>Friends Board Your Hull:</strong> Friends press <kbd>P</kbd>, pick your company from the live roster, and click <code>[ JOIN COMPANY &amp; BOARD SHIP ]</code>.
-              </li>
-              <li>
-                <strong>Shared Command &amp; 1/N Equal Payouts:</strong> Everyone boards the <strong>same physical ship</strong>—any crewmate can steer, adjust throttle, drop anchor, set autopilot, shoot pool, or sell cargo, splitting every contract payout <strong>evenly (50%/50%, 33.3%×3, 25%×4)</strong>!
-              </li>
+        <!-- Clean Co-Op Summary Card -->
+        <div class="card coop-card">
+          <div>
+            <span class="card-tag emerald">Real-Player Maritime Companies</span>
+            <h3>How to Sail &amp; Run a Company Together with Friends</h3>
+            <ol class="clean-list">
+              <li>Everyone connects automatically to the live <strong>US Ocean Server</strong> with synced time, waves, and storms (100% real human players—zero AI workers).</li>
+              <li>Press <kbd>P</kbd> (or tap <strong>Bridge Monitor 7</strong>), type your custom <strong>Company Name</strong>, set your <strong>Member Payout %</strong> (or Even <code>1/N</code> Split), and click <strong>Create Company</strong>.</li>
+              <li>Friends press <kbd>P</kbd> to join your company—they can <strong>board your ship together</strong>, borrow a <strong>company-provided ship</strong> from your fleet, or sail their <strong>own ship</strong>!</li>
+              <li>Share helm, throttle, anchor, cargo, 3D pool &amp; YouTube TV controls while earning live delivery payouts together.</li>
             </ol>
           </div>
-
-          <!-- Key Controls Matrix Card -->
-          <div class="hud-card controls-card">
-            <div class="card-mfd-bar">
-              <span class="mfd-id">HELM &amp; BRIDGE KEYMAP</span>
-              <span class="mfd-badge cyan">KEYBOARD · MOUSE · VR</span>
-            </div>
-            <h3>Essential Helm &amp; Bridge Controls</h3>
-            <div class="keymap-grid">
-              <div class="key-row"><span class="keys"><kbd>W</kbd> <kbd>S</kbd></span><span>Engine Telegraph Ahead / Astern</span></div>
-              <div class="key-row"><span class="keys"><kbd>A</kbd> <kbd>D</kbd></span><span>Rudder Port / Starboard</span></div>
-              <div class="key-row"><span class="keys"><kbd>Q</kbd> <kbd>E</kbd></span><span>Bow Thruster / Lounge Sofa (<kbd>E</kbd>)</span></div>
-              <div class="key-row"><span class="keys"><kbd>0</kbd></span><span>All Stop / Neutral Telegraph</span></div>
-              <div class="key-row"><span class="keys"><kbd>C</kbd> / <kbd>V</kbd></span><span>1st-Person Bridge / 3rd-Person Orbit</span></div>
-              <div class="key-row"><span class="keys"><kbd>F9</kbd> / <kbd>3</kbd></span><span>Bridge &amp; Aft Lounge Free-Walk Mode</span></div>
-              <div class="key-row"><span class="keys"><kbd>M</kbd></span><span>5x World 74-Island ECDIS &amp; Autopilot</span></div>
-              <div class="key-row"><span class="keys"><kbd>P</kbd></span><span>Multiplayer &amp; Company Co-Op Menu</span></div>
-              <div class="key-row"><span class="keys"><kbd>I</kbd></span><span>Drop / Weigh Physical Bow Anchor</span></div>
-              <div class="key-row"><span class="keys"><kbd>L</kbd> / <kbd>H</kbd></span><span>Bow Spotlights / Ship Typhoon Horn</span></div>
-            </div>
-          </div>
         </div>
+
+        <!-- Collapsible Controls Accordion -->
+        <details class="card controls-accordion">
+          <summary>
+            <span>Keyboard, Mouse &amp; VR Controls Cheat Sheet</span>
+            <span class="summary-hint">Tap to expand</span>
+          </summary>
+          <div class="controls-grid">
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>W</kbd> / <kbd>S</kbd></span><span>Throttle Ahead / Astern</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>A</kbd> / <kbd>D</kbd></span><span>Rudder Port / Starboard</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>Q</kbd> / <kbd>E</kbd></span><span>Bow Thruster / Sit on Lounge Sofa (<kbd>E</kbd>)</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>0</kbd></span><span>All Stop / Neutral Telegraph</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>C</kbd></span><span>Toggle 1st-Person Bridge / 3rd-Person Orbit</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>F9</kbd> / <kbd>3</kbd></span><span>Bridge &amp; Aft Lounge Free-Walk Mode</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>M</kbd></span><span>Full-Screen 5x World Map &amp; Autopilot</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>P</kbd></span><span>Multiplayer &amp; Maritime Company Menu</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>I</kbd></span><span>Drop / Weigh Physical Bow Anchor</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>L</kbd> / <kbd>H</kbd></span><span>Bow Spotlights / Ship Horn</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>Hold LMB</kbd></span><span>Pull Back &amp; Release Pool Cue / VR Grip Cue</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>Ctrl+V</kbd></span><span>Paste Copied YouTube Link onto 110&quot; Lounge TV</span></div>
+          </div>
+        </details>
       </div>
     </section>
 
-    <!-- SECTION 6: BOTTOM COMMAND DECK DIRECT DOWNLOAD CTA -->
-    <section class="bottom-cta-section">
+    <!-- BOTTOM DOWNLOAD CTA -->
+    <section class="section bottom-cta">
       <div class="container">
-        <div class="hud-frame bottom-cta-box">
-          <span class="hud-corner tl"></span>
-          <span class="hud-corner tr"></span>
-          <span class="hud-corner bl"></span>
-          <span class="hud-corner br"></span>
-
-          <div class="bottom-cta-content">
-            <span class="section-kicker">READY FOR DEPARTURE // RELEASE v1.9.0 LATEST</span>
-            <h2>Take the Helm Free Today — Send the Link to Your Crew</h2>
-            <p>
-              One click starts the standalone <code>.ZIP</code> download straight from GitHub’s global CDN. Zero sign-in, zero launchers, full multiplayer co-op included.
-            </p>
-
-            <div class="hero-cta-group bottom-cta-buttons">
-              <a class="btn-download-primary"
-                 href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-                 data-direct-zip="TrueHelm_Windows_Playable.zip (594 MB)">
-                <span class="btn-icon-box" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                    <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
-                  </svg>
-                </span>
-                <span class="btn-text-stack">
-                  <span class="btn-main-label">Download Free for Windows (.ZIP — 594 MB)</span>
-                  <span class="btn-sub-label">Windows 10/11 64-bit · DirectX 12 PC &amp; OpenXR VR</span>
-                </span>
-                <span class="btn-dl-arrow" aria-hidden="true">⬇</span>
-              </a>
-
-              <a class="btn-download-mac"
-                 href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_MacOS_Playable.zip"
-                 data-direct-zip="TrueHelm_MacOS_Playable.zip (594 MB)">
-                <span class="btn-icon-box-mac" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.67-.81 1.12-1.94 1-3.07-.96.04-2.13.64-2.82 1.45-.61.7-.115 1.85-1.01 2.96 1.07.08 2.16-.53 2.83-1.34z"/>
-                  </svg>
-                </span>
-                <span class="btn-text-stack">
-                  <span class="btn-main-label">1-Click macOS Download (.ZIP — 594 MB)</span>
-                  <span class="btn-sub-label">macOS 11+ · Apple Silicon M1–M4 &amp; Intel</span>
-                </span>
-              </a>
-            </div>
+        <div class="card cta-panel">
+          <h2>Ready to Set Sail?</h2>
+          <p>Free 1-click direct Windows download from GitHub Releases. Share this page with your friends and crew up on the ocean.</p>
+          <div class="cta-row cta-centered">
+            <a class="btn btn-primary"
+               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
+               data-direct-zip="TrueHelm_Windows_Playable.zip">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
+              </svg>
+              <span class="btn-copy">
+                <strong>Download Free for Windows (.ZIP)</strong>
+                <small>Windows 10/11 64-bit · DirectX 12 PC &amp; OpenXR VR</small>
+              </span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bridge-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <strong>TRUEHELM: REALISTIC SHIPPING LANES</strong>
-        <span>v1.9.0 Standalone Build · Powered by Unreal Engine 5.8 · Windows DX12, OpenXR VR &amp; macOS</span>
-      </div>
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span><strong>TrueHelm: Realistic Shipping Lanes</strong> · Windows PC &amp; OpenXR VR (UE 5.8)</span>
       <div class="footer-links">
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip (594 MB)">Windows .ZIP</a>
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_MacOS_Playable.zip" data-direct-zip="TrueHelm_MacOS_Playable.zip (594 MB)">macOS .ZIP</a>
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest">Release Notes (v1.9.0)</a>
+        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip">Download Windows .ZIP</a>
+        <a href="#logs">Live Logs</a>
+        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest">GitHub Releases</a>
       </div>
     </div>
   </footer>
 
-  <!-- Non-blocking Direct Download Toast -->
-  <div class="download-toast" id="download-toast" role="status" aria-live="polite" hidden>
-    <span class="toast-dot"></span>
-    <div class="toast-body">
-      <strong id="toast-title">Downloading TrueHelm_Windows_Playable.zip...</strong>
-      <span>Check your browser downloads — Right-click &rarr; <strong>Extract All</strong> when finished!</span>
-    </div>
+  <!-- Non-Blocking Direct Download Toast -->
+  <div class="toast" id="download-toast" role="status" aria-live="polite" hidden>
+    <strong id="toast-title">Downloading TrueHelm_Windows_Playable.zip...</strong>
+    <span>Once finished, right-click the .ZIP &rarr; <strong>Extract All</strong> &rarr; run <code>PLAY_TRUEHELM.bat</code>!</span>
   </div>
 
-  <!-- Full-Resolution 1080p Lightbox Modal -->
-  <div class="lightbox-backdrop" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="In-Engine Screenshot Viewer" hidden>
-    <div class="lightbox-dialog">
-      <div class="lightbox-topbar">
-        <span class="mfd-code" id="lightbox-counter">CAPTURE 1 / 6</span>
-        <span class="lightbox-caption-text" id="lightbox-caption"></span>
-        <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Viewer">✕ ESC</button>
+  <!-- Mobile-Friendly Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot Viewer" hidden>
+    <div class="lightbox-inner">
+      <div class="lightbox-bar">
+        <span id="lightbox-caption"></span>
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
       </div>
-      <div class="lightbox-stage">
-        <button type="button" class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous Screenshot">‹</button>
-        <img id="lightbox-img" src="" alt="Expanded TrueHelm Screenshot" />
-        <button type="button" class="lightbox-nav next" id="lightbox-next" aria-label="Next Screenshot">›</button>
+      <div class="lightbox-body">
+        <button type="button" class="lightbox-arrow prev" id="lightbox-prev" aria-label="Previous">‹</button>
+        <img id="lightbox-img" src="" alt="Expanded gameplay screenshot" />
+        <button type="button" class="lightbox-arrow next" id="lightbox-next" aria-label="Next">›</button>
       </div>
     </div>
   </div>
