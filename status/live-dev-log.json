@@ -1,5 +1,5 @@
 {
-    "updatedAtUtc":  "2026-11-14T23:49:46Z",
+    "updatedAtUtc":  "2026-11-14T23:56:02Z",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.0",
     "buildPhase":  "Building \u0026 Verifying v1.9.1 (HUD + In-Engine Tests)",
@@ -29,6 +29,26 @@
                              "Removed cluttered HUD compass/bracket chrome that crowded mobile screens"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261114-235602",
+                           "timestampUtc":  "2026-11-14T23:56:02Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
+                           "added":  [
+                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
+                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
+                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
+                                     ],
+                           "changed":  [
+                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
+                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
+                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
+                                       ],
+                           "removed":  [
+                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
+                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261114-234946",
                            "timestampUtc":  "2026-11-14T23:49:46Z",
