@@ -10,17 +10,20 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const loadingText = document.getElementById('globe-loading-text');
   if (!canvas || !stageEl) return;
 
-  const ASSET_VER = '20261114d';
+  const ASSET_VER = '20261114e';
 
-  // Constants matching Public/ShipTypes.h + generate_truehelm_globe_assets.py 1-to-1
+  // Constants matching Public/ShipTypes.h + ShippingGameInstance.cpp + generate_truehelm_globe_assets.py 1-to-1
   const GLOBE_RADIUS = 100.0;
   const ATMOS_OUTER_RADIUS = GLOBE_RADIUS * 1.095;
   let globeLonHalfUU = 268000000.0;
   let globeLatHalfUU = 278000000.0;
   let firebaseLiveUrl = 'https://truehelm-global-ocean-default-rtdb.firebaseio.com/us_ocean_players.json';
 
-  const POLL_INTERVAL_MS = 2500;
-  const STALE_PLAYER_SEC = 45.0;
+  const POLL_INTERVAL_MS = 1500;
+  const LIVENESS_TICK_MS = 1000;
+  const HEARTBEAT_TIMEOUT_MS = 6000;
+  const FIRST_SIGHT_GRACE_MS = 3500;
+  const SNAP_TELEPORT_DIST_UU = 500000.0; // 5 km in Unreal cm
   const TOTAL_SHIPS = 35;
 
   // DOM Elements
@@ -39,10 +42,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const inspPhotoBtn = document.getElementById('globe-insp-photo-btn');
 
   const serverStatusText = document.getElementById('globe-server-status-text');
-  const demoBadgeEl = document.getElementById('globe-demo-badge');
   const syncMetaEl = document.getElementById('globe-sync-meta');
   const zeroNoticeEl = document.getElementById('globe-zero-notice');
-  const demoToggleBtn = document.getElementById('globe-demo-toggle-btn');
   const rosterHeadingEl = document.getElementById('globe-roster-heading');
   const rosterCountEl = document.getElementById('globe-roster-count');
   const shipsListEl = document.getElementById('globe-ships-list');
@@ -51,7 +52,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const islandSearchInput = document.getElementById('globe-island-search');
   const islandsListEl = document.getElementById('globe-islands-list');
 
-  // Sanitize any external Firebase player/company strings (strips email domains + enforces zero forbidden tokens)
+  // Sanitize external Firebase player/company strings (strips email domains + enforces zero forbidden tokens)
   function sanitizeMaritimeText(raw, fallback = 'Captain') {
     let s = String(raw == null ? '' : raw).trim();
     if (!s) return fallback;
@@ -122,7 +123,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       _tmpFwd.set(0, 1, 0).projectOnPlane(_tmpUp);
     }
     _tmpFwd.normalize();
-    // Right-handed basis: (+X = Port, +Y = Up, +Z = Bow Forward) -> det = +1 (zero mirror flip!)
+    // Right-handed basis: (+X = Port, +Y = Up, +Z = Bow Forward) -> det = +1 (zero mirror flip)
     _tmpPort.crossVectors(_tmpUp, _tmpFwd).normalize();
     _tmpMat4.makeBasis(_tmpPort, _tmpUp, _tmpFwd);
 
@@ -169,10 +170,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const scene = new THREE.Scene();
 
   const camera = new THREE.PerspectiveCamera(44, 16 / 10, 0.25, 2000);
-  // Slight northern orbital tilt (+14 deg) looking across Port Horizon Hub (#01) & surrounding continents
   const DEFAULT_CAM_DIR = new THREE.Vector3(0.84, 0.24, -0.485).normalize();
 
-  // Compute exact orbital distance so 100% of the circular 3D globe + atmosphere rim has >=15% starry space padding on ALL 4 sides!
   function getWholeGlobeDistance() {
     const w = Math.max(1, stageEl.clientWidth || 360);
     const h = Math.max(1, stageEl.clientHeight || 340);
@@ -180,7 +179,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     const halfVRad = THREE.MathUtils.degToRad(camera.fov * 0.5);
     const tanHalfV = Math.tan(halfVRad);
     const minTan = Math.min(tanHalfV, tanHalfV * Math.max(0.45, aspect));
-    // Keep solid globe disk at ~68% of smaller canvas dimension -> ~16%+ starry cosmos margin on top, bottom, left, AND right!
     const desiredSlope = 0.68 * minTan;
     const sinAlpha = desiredSlope / Math.sqrt(1.0 + desiredSlope * desiredSlope);
     const aspectDist = GLOBE_RADIUS / Math.max(0.12, sinAlpha);
@@ -206,7 +204,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   controls.minDistance = 103.0;
   controls.maxDistance = 540.0;
 
-  // Auto-Spin ON by default so the 3D planet is visibly rotating in space immediately!
   let userAutoSpinEnabled = true;
   let isUserDraggingGlobe = false;
   controls.autoRotate = true;
@@ -220,7 +217,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   }
   syncSpinButtonUI();
 
-  // Keep vertical page scroll smooth on desktop wheel unless clicked/focused inside globe (pinch + drag always active!)
   controls.enableZoom = false;
   let wheelZoomArmed = false;
 
@@ -267,7 +263,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     { passive: true }
   );
 
-  // Rich 3D Lighting for Extruded Island Meshes, Port Beacons & Scaled-Down Blender .GLB Ships
+  // Lighting for Extruded Island Meshes, Port Beacons & Scaled-Down Blender .GLB Ships
   const hemiLight = new THREE.HemisphereLight(0xe0f2fe, 0x071d3b, 1.45);
   scene.add(hemiLight);
 
@@ -282,7 +278,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   scene.add(rimCoolLight);
   scene.add(rimCoolLight.target);
 
-  // Rich 3D Deep-Space Starfield Surrounding the Planet (seeded PRNG for natural cosmic distribution)
+  // Seeded Deep-Space Starfield Surrounding the Planet
   (function buildStarfield() {
     let seed = 0x20261114;
     const rand = () => {
@@ -338,7 +334,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const texLoader = new THREE.TextureLoader();
   const maxAniso = Math.min(8, renderer.capabilities.getMaxAnisotropy() || 4);
 
-  // 1x1 fallback textures active for the few ms before 4K textures finish loading
   const defaultAlbedoData = new Uint8Array([16, 86, 168, 255]);
   const fallbackAlbedoTex = new THREE.DataTexture(defaultAlbedoData, 1, 1);
   fallbackAlbedoTex.colorSpace = THREE.SRGBColorSpace;
@@ -348,11 +343,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const fallbackBumpTex = new THREE.DataTexture(defaultBumpData, 1, 1);
   fallbackBumpTex.needsUpdate = true;
 
-  // Custom Sunlit Earth-Ocean Planet Shader:
-  // - Bright sunlit sapphire-cerulean hemisphere (#0d4a8a -> #156ec8) -> deep royal ocean (#072852) -> twilight limb (#030d1f)
-  // - Strong directional sun specular glint across curved ocean water (strictly masked off on land!)
-  // - 3D normal-perturbed mountain & bathymetry relief
-  // - Inner Rayleigh sky-blue atmospheric scattering along the curved horizon
   const planetUniforms = {
     uAlbedoMap: { value: fallbackAlbedoTex },
     uBumpMap: { value: fallbackBumpTex },
@@ -391,7 +381,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         vec4 albSample = texture2D(uAlbedoMap, vUv);
         vec3 baseCol = albSample.rgb;
 
-        // Smooth spherical tangent basis for bump-map relief
         vec3 east = vec3(-N.z, 0.0, N.x);
         float eastLen = length(east);
         east = eastLen > 1e-4 ? (east / eastLen) : vec3(1.0, 0.0, 0.0);
@@ -413,7 +402,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         float dayCurve = smoothstep(-0.46, 0.88, ndl);
         float coreSun = pow(clamp(ndl, 0.0, 1.0), 1.25);
 
-        // 1. Rich Sunlit Earth-Ocean Shading (#0d4a8a sunlit cerulean -> #072852 royal ocean -> #030d1f twilight limb)
         vec3 twilightOcean = vec3(0.004, 0.015, 0.048);
         vec3 royalOcean    = vec3(0.011, 0.068, 0.235);
         vec3 sunlitOcean   = vec3(0.032, 0.245, 0.610);
@@ -421,10 +409,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         vec3 sphereOceanGrad = mix(twilightOcean, royalOcean, smoothstep(0.0, 0.48, dayCurve));
         sphereOceanGrad = mix(sphereOceanGrad, sunlitOcean, coreSun * 0.88);
 
-        // Blend baked bathymetry & glowing turquoise coral lagoons into spherical ocean shading
         vec3 bathyTinted = mix(sphereOceanGrad, baseCol * (0.34 + 0.98 * dayCurve), 0.56 + 0.34 * isLagoon);
 
-        // Directional sun specular glint across curved ocean water (strictly zero on land!)
         vec3 H = normalize(L + V);
         float nh = max(dot(perturbedN, H), 0.0);
         float specSheen = pow(nh, 18.0) * 0.21;
@@ -432,13 +418,11 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         vec3 sunGlint = vec3(0.28, 0.74, 1.0) * specSheen + vec3(0.82, 0.95, 1.0) * specSparkle;
         vec3 oceanFinal = bathyTinted + sunGlint * (1.0 - isLand) * smoothstep(-0.1, 0.45, ndl);
 
-        // 2. Vibrant Sunlit Continent & Archipelago Relief
         float landDiffuse = 0.26 + 0.92 * clamp(ndlBump * 0.76 + 0.30, 0.0, 1.0);
         vec3 landFinal = baseCol * landDiffuse * (0.45 + 0.68 * smoothstep(-0.45, 0.35, ndl));
 
         vec3 surfaceCol = mix(oceanFinal, landFinal, isLand);
 
-        // 3. Inner Rayleigh Atmospheric Sky-Blue Scattering Near the Curved 3D Limb
         float ndv = clamp(dot(N, V), 0.0, 1.0);
         float rim = pow(1.0 - ndv, 2.75);
         float litRim = 0.40 + 0.60 * smoothstep(-0.38, 0.70, ndl);
@@ -454,7 +438,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const globeMesh = new THREE.Mesh(globeGeo, globeMat);
   globeRoot.add(globeMesh);
 
-  // Load 1-to-1 4096x2048 Baked Albedo + Bump Maps (Cache-Busted)
   texLoader.load(
     `./assets/globe/truehelm_globe_albedo.jpg?v=${ASSET_VER}`,
     (albedoTex) => {
@@ -478,7 +461,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     planetUniforms.uBumpMap.value = bumpTex;
   });
 
-  // Bright 3D Outer Atmospheric Fresnel Sky-Blue Halo Sphere Around the Rim
+  // 3D Outer Atmospheric Fresnel Sky-Blue Halo Sphere Around the Rim
   const atmosGeo = new THREE.SphereGeometry(ATMOS_OUTER_RADIUS, 72, 54);
   const atmosMat = new THREE.ShaderMaterial({
     uniforms: {
@@ -501,7 +484,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       varying vec3 vNormalView;
       varying vec3 vViewDir;
       void main() {
-        // At r = GLOBE_RADIUS on a 1.095*R BackSide sphere, viewDot = sqrt(1 - (1/1.095)^2) ~= 0.408
         float viewDot = clamp(dot(normalize(vNormalView), normalize(vViewDir)), 0.0, 1.0);
         float rimT = clamp(viewDot / 0.415, 0.0, 1.0);
         float halo = pow(rimT, 2.05) * smoothstep(0.0, 0.14, rimT);
@@ -514,8 +496,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     transparent: true,
     depthWrite: false
   });
-  const atmosMesh = new THREE.Mesh(atmosGeo, atmosMat);
-  globeRoot.add(atmosMesh);
+  globeRoot.add(new THREE.Mesh(atmosGeo, atmosMat));
 
   // Crisp 3D Latitude & Longitude Meridian Curves Wrapping Around the Sphere
   const graticuleGroup = new THREE.Group();
@@ -536,7 +517,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       depthWrite: false
     });
 
-    // Latitude parallels every 20 deg + polar circles (wrapping 360 deg around Y axis)
     const latDegs = [-75, -60, -40, -20, 0, 20, 40, 60, 75];
     const segs = 160;
     latDegs.forEach((lat) => {
@@ -553,7 +533,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       );
     });
 
-    // Longitude meridians every 20 deg (9 full pole-to-pole great circles = 18 meridian arcs)
     for (let lon = 0; lon < 180; lon += 20) {
       const lonRad = THREE.MathUtils.degToRad(lon);
       const ca = Math.cos(lonRad);
@@ -654,6 +633,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const islandPickMeshes = [];
   let activeIslandFilter = 'all';
   let islandSearchQuery = '';
+  let extrudedLandMeshRef = null;
 
   // Shared Beacon Geometries & Materials
   const portPillarGeo = new THREE.CylinderGeometry(0.14, 0.26, 1.0, 8);
@@ -726,6 +706,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       if (ch.geometry) ch.geometry.dispose();
       if (ch.material) ch.material.dispose();
     }
+    extrudedLandMeshRef = null;
 
     const landPos = [];
     const landCol = [];
@@ -752,12 +733,23 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         : isl.shorelinePolygonXY;
       if (!Array.isArray(poly) || poly.length < 6) return;
 
-      const ctrXY = Array.isArray(isl.cartographicCenterXY) && isl.cartographicCenterXY.length === 2
+      const origSc = Number(isl.scale || 1.0);
+      const visSc = Number(isl.globeCartographicScale || origSc);
+      const quayXReal = Number(isl.x || 0) - 22500.0 * origSc;
+      const berthBaseX = Number(isl.berthX != null ? isl.berthX : quayXReal);
+      // Strict eastern clamp on all 32 docked ports so moored ships at (isl.berthX, isl.berthY) sit visibly on blue harbor water!
+      const portEastClampX = berthBaseX + 3500.0;
+      const harborLatBandUU = Math.max(550000.0, 175000.0 * visSc);
+
+      const rawCtrXY = Array.isArray(isl.cartographicCenterXY) && isl.cartographicCenterXY.length === 2
         ? isl.cartographicCenterXY
         : [isl.x, isl.y];
+      const ctrXY = [
+        isl.hasPortDock ? Math.max(Number(rawCtrXY[0]), portEastClampX + 12000.0) : Number(rawCtrXY[0]),
+        Number(rawCtrXY[1])
+      ];
 
       const n = poly.length;
-      const origSc = Number(isl.scale || 1.0);
       const isPolar = (isl.clusterId === 9 || isl.clusterId === 11) && Math.abs(Number(isl.y || 0)) > 135000000;
       const maxElev = isl.isCountry && origSc >= 3.8
         ? Math.min(2.05, 0.95 + origSc * 0.13)
@@ -767,7 +759,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
             ? 0.34
             : 0.56;
 
-      // Colors (linear-friendly vibrant biome palette)
       const colLagoonOuter = [0.04, 0.52, 0.72];
       const colLagoonInner = [0.10, 0.84, 0.88];
       const colBeach       = [0.95, 0.85, 0.56];
@@ -776,7 +767,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       const colPeak        = isPolar || origSc >= 4.0 ? [0.92, 0.95, 0.98] : [0.62, 0.88, 0.52];
 
       const ctrUnit = worldXYToSphere3D(ctrXY[0], ctrXY[1], 1.0).normalize();
-      // Ensure polygon winding around ctrUnit produces outward-facing (+ctrUnit) normals!
       const p0u = worldXYToSphere3D(poly[0][0], poly[0][1], 1.0);
       const p1u = worldXYToSphere3D(poly[1][0], poly[1][1], 1.0);
       const crossTest = new THREE.Vector3().subVectors(p0u, ctrUnit).cross(new THREE.Vector3().subVectors(p1u, ctrUnit));
@@ -789,25 +779,34 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       const rForest = [];
       const rHigh = [];
 
-      const quayXReal = Number(isl.x || 0) - 22500.0 * origSc;
-
       for (let k = 0; k < n; k++) {
-        const px = orderedPoly[k][0];
-        const py = orderedPoly[k][1];
+        const py = Number(orderedPoly[k][1]);
+        const inHarborBand = isl.hasPortDock && Math.abs(py - Number(isl.berthY != null ? isl.berthY : isl.y)) <= harborLatBandUU;
+        const px = isl.hasPortDock
+          ? Math.max(Number(orderedPoly[k][0]), portEastClampX)
+          : Number(orderedPoly[k][0]);
+
         const dx = px - ctrXY[0];
         const dy = py - ctrXY[1];
 
-        let shelfMult = origSc < 1.5 ? 1.55 : 1.28;
+        const shelfMult = origSc < 1.5 ? 1.55 : 1.28;
         let sx = ctrXY[0] + dx * shelfMult;
         const sy = ctrXY[1] + dy * shelfMult;
-        if (isl.hasPortDock && sx < quayXReal - 1500) {
-          sx = Math.max(sx, px);
+        if (inHarborBand || (isl.hasPortDock && sx < portEastClampX)) {
+          sx = Math.max(sx, portEastClampX);
+        }
+
+        let fx = ctrXY[0] + dx * 0.78;
+        let hx = ctrXY[0] + dx * 0.42;
+        if (isl.hasPortDock) {
+          fx = Math.max(fx, portEastClampX + 1500.0);
+          hx = Math.max(hx, portEastClampX + 3500.0);
         }
 
         const uShelf = worldXYToSphere3D(sx, sy, 1.0).normalize();
         const uCoast = worldXYToSphere3D(px, py, 1.0).normalize();
-        const uForest = worldXYToSphere3D(ctrXY[0] + dx * 0.78, ctrXY[1] + dy * 0.78, 1.0).normalize();
-        const uHigh = worldXYToSphere3D(ctrXY[0] + dx * 0.42, ctrXY[1] + dy * 0.42, 1.0).normalize();
+        const uForest = worldXYToSphere3D(fx, ctrXY[1] + dy * 0.78, 1.0).normalize();
+        const uHigh = worldXYToSphere3D(hx, ctrXY[1] + dy * 0.42, 1.0).normalize();
 
         const ridgeWave = 1.0 + 0.18 * Math.sin(k * 0.9 + isl.id * 1.7);
         rLagoonOuter.push(uShelf.clone().multiplyScalar(GLOBE_RADIUS + 0.035));
@@ -821,10 +820,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
 
       const peakPos = ctrUnit.clone().multiplyScalar(GLOBE_RADIUS + maxElev);
 
-      // Coral lagoon shelf skirt
       pushQuadRing(lagoonPos, lagoonCol, rLagoonOuter, rLagoonInner, colLagoonOuter, colLagoonInner);
 
-      // 3D Extruded Landmass: Sea Skirt -> Sandy Beach -> Emerald Forest -> Highland -> Summit Peak
       pushQuadRing(landPos, landCol, rSeaSkirt, rBeach, colBeach, colBeach);
       pushQuadRing(landPos, landCol, rBeach, rForest, colBeach, colLowForest);
       pushQuadRing(landPos, landCol, rForest, rHigh, colLowForest, colHighland);
@@ -859,7 +856,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         metalness: 0.02,
         side: THREE.DoubleSide
       });
-      extrudedTerrainGroup.add(new THREE.Mesh(landGeo, landMat));
+      extrudedLandMeshRef = new THREE.Mesh(landGeo, landMat);
+      extrudedTerrainGroup.add(extrudedLandMeshRef);
     }
   }
 
@@ -874,7 +872,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     islandsById.clear();
     islandsByNameLower.clear();
 
-    // Widely separated global hub & continental callouts so labels stay clean and never crowd live ships
     const majorLabelIds = new Set([1, 24, 37, 46, 55, 63, 73, 74]);
 
     islandsCatalog.forEach((isl) => {
@@ -922,7 +919,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         markerGroup.add(baseRing);
       }
 
-      // Generous invisible raycast hit sphere for effortless touch/click picking
       const hitMesh = new THREE.Mesh(hitSphereGeo, hitInvisibleMat);
       hitMesh.position.set(0, 0.75, 0);
       hitMesh.userData = { pickType: 'island', islandId: isl.id };
@@ -933,7 +929,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       islandsGroup.add(markerGroup);
       isl._markerGroup = markerGroup;
 
-      // Exact 1-to-1 Shoreline Polygon Loop (visible cleanly when zoomed into harbor scale)
       if (Array.isArray(isl.shorelinePolygonXY) && isl.shorelinePolygonXY.length >= 3) {
         const pts = isl.shorelinePolygonXY.map((pt) =>
           worldXYToSphere3D(pt[0], pt[1], GLOBE_RADIUS + 0.04)
@@ -943,7 +938,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         shorelinesGroup.add(lineLoop);
       }
 
-      // Major Continental / Hub Landmark Labels
       if (majorLabelIds.has(isl.id)) {
         const tag = `#${pad2(isl.id)} ${isl.name}`;
         const spr = createTextSprite(tag, isl.hasPortDock ? '#fbbf24' : '#34d399', 0.78, false);
@@ -1087,14 +1081,14 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   }
 
   // =========================================================================
-  // 6. ACTIVE 3D SHIPS ON GLOBE (BLENDER .GLB + RADIAL SPIRE + PULSING HALO)
+  // 6. ACTIVE LIVE 3D SHIPS ON GLOBE (STRICTLY REAL ACTIVE PLAYERS ONLY)
   // =========================================================================
   const shipsGroup = new THREE.Group();
   const routesGroup = new THREE.Group();
   globeRoot.add(routesGroup);
   globeRoot.add(shipsGroup);
 
-  const shipEntities = new Map(); // key -> entity
+  const shipEntities = new Map();
   const shipPickMeshes = [];
 
   const shipBeaconRingGeo = new THREE.RingGeometry(0.56, 0.68, 36);
@@ -1103,7 +1097,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const shipPulseWaveGeo = new THREE.RingGeometry(0.62, 0.82, 36);
   shipPulseWaveGeo.rotateX(-Math.PI / 2);
 
-  // Glowing 3D Radial Beacon Spire so live players stand out unmistakably from full-globe orbital distance!
   const shipSpireBeamGeo = new THREE.CylinderGeometry(0.06, 0.24, 1.0, 10, 1, true);
   shipSpireBeamGeo.translate(0, 0.5, 0);
   const shipSpireOrbGeo = new THREE.SphereGeometry(0.32, 12, 10);
@@ -1161,18 +1154,30 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     });
   }
 
+  function applyEntityTransformImmediate(ent) {
+    const camDistToShip = camera.position.distanceTo(ent.root.position || camera.position);
+    const zoomT = Math.min(1, Math.max(0, (camDistToShip - 2.0) / 235.0));
+    const clearance = THREE.MathUtils.lerp(0.018, 0.28, zoomT);
+    const frame = computeShipFrameOnSphere(ent.curX, ent.curY, ent.curYaw, clearance);
+    ent.root.position.copy(frame.pos);
+    ent.root.quaternion.copy(frame.quat);
+    return frame;
+  }
+
   function ensureShipEntity(vesselData) {
     let ent = shipEntities.get(vesselData.key);
     const shipNum = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(vesselData.ship || 1))));
-    const accentHex = vesselData.isDemo ? '#fbbf24' : '#22d3ee';
-    const accentColor = vesselData.isDemo ? 0xfbbf24 : 0x22d3ee;
+    const accentHex = '#22d3ee';
+    const accentColor = 0x22d3ee;
+    const incomingX = Number(vesselData.x || 0);
+    const incomingY = Number(vesselData.y || 0);
+    const incomingYaw = Number(vesselData.yaw || 0);
 
     if (!ent) {
       const root = new THREE.Group();
       const modelHolder = new THREE.Group();
       root.add(modelHolder);
 
-      // Orbital 3D Radial Beacon Spire + Pulsing Halo Group (independent scale from 3D .glb hull!)
       const orbitalBeaconGroup = new THREE.Group();
       root.add(orbitalBeaconGroup);
 
@@ -1188,7 +1193,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       orbitalBeaconGroup.add(spireBeam);
 
       const spireOrbMat = new THREE.MeshBasicMaterial({
-        color: vesselData.isDemo ? 0xfef08a : 0xa5f3fc,
+        color: 0xa5f3fc,
         transparent: true,
         opacity: 0.96
       });
@@ -1254,26 +1259,35 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         labelSprite,
         routeLine: null,
         routeDstName: '',
-        curX: Number(vesselData.x || 0),
-        curY: Number(vesselData.y || 0),
-        curYaw: Number(vesselData.yaw || 0),
-        targetX: Number(vesselData.x || 0),
-        targetY: Number(vesselData.y || 0),
-        targetYaw: Number(vesselData.yaw || 0),
+        curX: incomingX,
+        curY: incomingY,
+        curYaw: incomingYaw,
+        targetX: incomingX,
+        targetY: incomingY,
+        targetYaw: incomingYaw,
         lastFacingDot: 1.0,
         data: vesselData,
         glbLoaded: false
       };
+      // Snap immediately on entity creation to exact 1-to-1 sphere coordinates!
+      applyEntityTransformImmediate(ent);
       shipEntities.set(vesselData.key, ent);
       rebuildShipPickList();
     }
 
     ent.data = vesselData;
-    ent.targetX = Number(vesselData.x || 0);
-    ent.targetY = Number(vesselData.y || 0);
-    ent.targetYaw = Number(vesselData.yaw || 0);
+    ent.targetX = incomingX;
+    ent.targetY = incomingY;
+    ent.targetYaw = incomingYaw;
 
-    // Swap or load exact scaled-down Blender .glb model if ship hull ID changed
+    // Snap immediately on port spawn / Fast-Launch teleport (> 5 km = 500,000 UU) so ships never slide across the ocean!
+    if (Math.hypot(ent.targetX - ent.curX, ent.targetY - ent.curY) > SNAP_TELEPORT_DIST_UU) {
+      ent.curX = ent.targetX;
+      ent.curY = ent.targetY;
+      ent.curYaw = ent.targetYaw;
+      applyEntityTransformImmediate(ent);
+    }
+
     if (ent.shipNum !== shipNum) {
       ent.shipNum = shipNum;
       ent.glbLoaded = false;
@@ -1293,7 +1307,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         .catch(() => {});
     }
 
-    // Refresh floating [Captain · #Ship · kn] pill when captain, ship #, or speed band changes
     const nextLabel = formatShipPillLabel(vesselData, shipNum);
     if (ent.labelKey !== nextLabel) {
       ent.labelKey = nextLabel;
@@ -1304,7 +1317,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       globeRoot.add(ent.labelSprite);
     }
 
-    // Great-Circle Course Arc toward pkt.dst (0-based island index or island name)
     const dstIsl = resolveDestinationIsland(vesselData.dstRaw != null ? vesselData.dstRaw : vesselData.dst);
     const dstKey = dstIsl ? `isl_${dstIsl.id}` : '';
     if (dstIsl) {
@@ -1368,77 +1380,56 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   }
 
   // =========================================================================
-  // 7. LIVE FIREBASE US OCEAN SERVER SYNC + DEMO 3D SHIPS PREVIEW
+  // 7. STRICT REAL-TIME FIREBASE US OCEAN SERVER LIVENESS (NO FAKE/DEMO BOATS)
   // =========================================================================
-  const seenFirebaseRecords = new Map();
+  const seenFirebaseRecords = new Map(); // key -> { firstSeenMs, lastSeq, lastTs, lastAdvancedMs }
   let rawFirebasePayload = {};
   let injectedTestPackets = null;
   let livePlayersList = [];
-  let demoMode = false;
-  let userManuallyToggledDemo = false;
   let lastSyncTimeStr = 'connecting...';
   let sseConnected = false;
-
-  const DEMO_FLEET_SPECS = [
-    { key: 'demo_titan_32', captain: 'Capt. Vance', company: 'Horizon Mega-Lines', ship: 32, spd: 11.4, teu: 19400, fromId: 1, toId: 35, phase: 0.22 },
-    { key: 'demo_prelude_34', captain: 'Capt. Elena', company: 'Solaria Cryo LNG', ship: 34, spd: 11.0, teu: 24200, fromId: 24, toId: 55, phase: 0.38 },
-    { key: 'demo_floflo_35', captain: 'Capt. Kaelen', company: 'Aegis Heavy Lift', ship: 35, spd: 14.6, teu: 3600, fromId: 23, toId: 37, phase: 0.61 },
-    { key: 'demo_lng_22', captain: 'Capt. Soren', company: 'Borealis Gas Fleet', ship: 22, spd: 19.2, teu: 4800, fromId: 46, toId: 15, phase: 0.48 },
-    { key: 'demo_roro_16', captain: 'Capt. Mira', company: 'Calypso Ro-Ro', ship: 16, spd: 20.5, teu: 2150, fromId: 63, toId: 54, phase: 0.71 },
-    { key: 'demo_coastal_08', captain: 'Capt. Rook', company: 'Coral Feeder Co.', ship: 8, spd: 22.4, teu: 420, fromId: 31, toId: 12, phase: 0.31 },
-    { key: 'demo_tug_01', captain: 'Capt. Thorne', company: 'Port Horizon Towage', ship: 1, spd: 16.8, teu: 40, fromId: 1, toId: 9, phase: 0.08 }
-  ];
-
-  function buildDemoVessels(nowSec) {
-    if (!islandsCatalog.length) return [];
-    return DEMO_FLEET_SPECS.map((d) => {
-      const a = islandsById.get(d.fromId) || islandsCatalog[0];
-      const b = islandsById.get(d.toId) || islandsCatalog[Math.min(3, islandsCatalog.length - 1)];
-      const ax = a.berthX || a.x;
-      const ay = a.berthY || a.y;
-      const bx = b.berthX || b.x;
-      const by = b.berthY || b.y;
-
-      const cycle = (nowSec * 0.0045 + d.phase) % 2.0;
-      const t = cycle <= 1.0 ? cycle : 2.0 - cycle;
-      const forwardDir = cycle <= 1.0;
-
-      const x = ax + (bx - ax) * t;
-      const y = ay + (by - ay) * t;
-      const dx = forwardDir ? (bx - ax) : (ax - bx);
-      const dy = forwardDir ? (by - ay) : (ay - by);
-      const yaw = (Math.atan2(dy, dx) * 180.0) / Math.PI;
-      const dstIsl = forwardDir ? b : a;
-
-      return {
-        key: d.key,
-        captain: d.captain,
-        company: d.company,
-        ship: d.ship,
-        x,
-        y,
-        yaw,
-        spd: d.spd,
-        teu: d.teu,
-        dst: dstIsl.name,
-        autopilot: true,
-        crewNames: [],
-        isDemo: true
-      };
-    });
-  }
 
   function parseLiveFirebasePlayers(payloadMap) {
     const merged = Object.assign({}, payloadMap || {}, injectedTestPackets || {});
     const nowMs = Date.now();
     const nowSec = nowMs / 1000.0;
 
+    // Clean tracking entries for keys no longer present in Firebase payload
+    Array.from(seenFirebaseRecords.keys()).forEach((k) => {
+      if (!Object.prototype.hasOwnProperty.call(merged, k)) {
+        seenFirebaseRecords.delete(k);
+      }
+    });
+
     const activeRecords = [];
     Object.entries(merged).forEach(([key, pkt]) => {
       if (!pkt || typeof pkt !== 'object') return;
       if (pkt.disc === true) return;
 
+      // Require valid finite 1-to-1 Unreal world coordinates (X, Y in cm)
+      if (pkt.x == null || pkt.y == null) return;
+      const rawX = Number(pkt.x);
+      const rawY = Number(pkt.y);
+      if (!Number.isFinite(rawX) || !Number.isFinite(rawY)) return;
+
+      // Reject private-room or automated verification test packets
+      const roomStr = String(pkt.room == null ? 'PUBLIC' : pkt.room).trim().toUpperCase();
+      if (roomStr !== 'PUBLIC') return;
+      const idStr = String(pkt.id || '').trim();
+      const rawNameStr = String(pkt.name || '').trim();
+      if (/^verify/i.test(key) || /^verify/i.test(idStr) || /^verify/i.test(rawNameStr)) return;
+
+      // Reject unlaunched UShippingGameInstance::Init placeholder packet before pawn possession
       const seq = Number(pkt.seq || 0);
+      if (
+        rawNameStr === 'CAPT-01' &&
+        seq <= 1 &&
+        Math.abs(rawX - 65000) < 5 &&
+        Math.abs(rawY + 600) < 5
+      ) {
+        return;
+      }
+
       const ts = Number(pkt.ts || 0);
       let st = seenFirebaseRecords.get(key);
       if (!st) {
@@ -1451,33 +1442,38 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       }
 
       const ageSec = nowSec - ts;
-      const recentlyAdvanced = st.lastAdvancedMs > 0 && (nowMs - st.lastAdvancedMs) <= 15000;
-      const frozenCrashGhost =
-        (nowMs - st.firstSeenMs) > 6500 &&
-        st.lastAdvancedMs === 0 &&
-        ageSec > STALE_PLAYER_SEC;
+      const advancedWithin6s =
+        st.lastAdvancedMs > 0 && (nowMs - st.lastAdvancedMs) <= HEARTBEAT_TIMEOUT_MS;
+      const firstSightFresh =
+        (nowMs - st.firstSeenMs) <= FIRST_SIGHT_GRACE_MS &&
+        Number.isFinite(ts) &&
+        ts > 1700000000 &&
+        ageSec >= -4.0 &&
+        ageSec <= 6.0;
+      const explicitlyStale = Number.isFinite(ts) && ts > 0 && ageSec > 6.0 && !advancedWithin6s;
 
-      const isFresh =
-        pkt._injectedTest === true ||
-        (!frozenCrashGhost && ((ts > 0 && ageSec >= -300 && ageSec <= STALE_PLAYER_SEC) || recentlyAdvanced));
+      const isLive =
+        (!explicitlyStale && pkt._injectedTest === true) ||
+        advancedWithin6s ||
+        firstSightFresh;
 
-      if (!isFresh) return;
+      if (!isLive) return;
 
-      activeRecords.push({ key, pkt });
+      activeRecords.push({ key, pkt, rawX, rawY });
     });
 
     const captainsByKey = new Map();
     const captainsByCompany = new Map();
     const aboardCrew = [];
 
-    activeRecords.forEach(({ key, pkt }) => {
+    activeRecords.forEach(({ key, pkt, rawX, rawY }) => {
       const captainName = sanitizeMaritimeText(pkt.name, 'Captain');
       const companyName = sanitizeMaritimeText(pkt.cmp_nm, '');
       const cmpId = String(pkt.cmp_id || '').trim();
       const shipNum = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(pkt.ship || 1))));
 
       if (pkt.cmp_abd === true && cmpId) {
-        aboardCrew.push({ key, pkt, captainName, companyName, cmpId, shipNum });
+        aboardCrew.push({ key, pkt, rawX, rawY, captainName, companyName, cmpId, shipNum });
         return;
       }
 
@@ -1494,16 +1490,15 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         company: companyName,
         cmpId,
         ship: shipNum,
-        x: Number(pkt.x || 0),
-        y: Number(pkt.y || 0),
+        x: rawX,
+        y: rawY,
         yaw: Number(pkt.yaw || 0),
         spd: Math.max(0, Number(pkt.spd || 0)),
         teu: Math.max(0, Math.round(Number(pkt.teu || 0))),
         dstRaw: pkt.dst,
         dst: dstDisplay === 'Captain' ? '' : dstDisplay,
         autopilot: Boolean(pkt.as),
-        crewNames: [],
-        isDemo: false
+        crewNames: []
       };
       if (vessel.company === 'Captain') vessel.company = '';
 
@@ -1526,15 +1521,14 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
           company: cm.companyName === 'Captain' ? '' : cm.companyName,
           cmpId: cm.cmpId,
           ship: cm.shipNum,
-          x: Number(cm.pkt.x || 0),
-          y: Number(cm.pkt.y || 0),
+          x: cm.rawX,
+          y: cm.rawY,
           yaw: Number(cm.pkt.yaw || 0),
           spd: Math.max(0, Number(cm.pkt.spd || 0)),
           teu: Math.max(0, Math.round(Number(cm.pkt.teu || 0))),
           dst: '',
           autopilot: Boolean(cm.pkt.as),
-          crewNames: [],
-          isDemo: false
+          crewNames: []
         });
       }
     });
@@ -1546,19 +1540,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     livePlayersList = parseLiveFirebasePlayers(rawFirebasePayload);
     const liveCount = livePlayersList.length;
 
-    if (liveCount > 0 && demoMode && !userManuallyToggledDemo) {
-      demoMode = false;
-    }
-
-    const nowSec = performance.now() * 0.001;
-    const displayedVessels = liveCount > 0 && !demoMode
-      ? livePlayersList
-      : demoMode
-        ? buildDemoVessels(nowSec)
-        : [];
-
     const activeKeys = new Set();
-    displayedVessels.forEach((v) => {
+    livePlayersList.forEach((v) => {
       activeKeys.add(v.key);
       ensureShipEntity(v);
     });
@@ -1570,44 +1553,39 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       serverStatusText.textContent = `LIVE US OCEAN SERVER · ${totalCrewOnline} ${noun} ONLINE`;
     }
     if (hudShipsPill) {
-      if (liveCount > 0 && !demoMode) {
-        hudShipsPill.innerHTML = `<span class="legend-dot cyan"></span>${liveCount} Live ${liveCount === 1 ? 'Ship' : 'Ships'}`;
-      } else if (demoMode) {
-        hudShipsPill.innerHTML = `<span class="legend-dot gold"></span>${displayedVessels.length} Demo 3D Ships`;
-      } else {
-        hudShipsPill.innerHTML = `<span class="legend-dot cyan"></span>0 Live Ships`;
-      }
+      hudShipsPill.innerHTML = `<span class="legend-dot cyan"></span>${liveCount} Live ${liveCount === 1 ? 'Ship' : 'Ships'}`;
     }
 
-    if (demoBadgeEl) demoBadgeEl.hidden = !demoMode;
     if (zeroNoticeEl) zeroNoticeEl.hidden = liveCount > 0;
-    if (demoToggleBtn) {
-      demoToggleBtn.classList.toggle('active', demoMode);
-      demoToggleBtn.setAttribute('aria-pressed', String(demoMode));
-      demoToggleBtn.textContent = demoMode
-        ? 'Hide 3D Ship Preview (Demo Active)'
-        : 'Preview 3D Ships on Globe';
-    }
+    if (shipsListEl) shipsListEl.hidden = liveCount === 0;
 
     if (syncMetaEl) {
-      const transportLabel = sseConnected ? 'SSE Stream + 2.5s Sync' : '2.5s Live Poll';
+      const transportLabel = sseConnected ? 'SSE Stream + 1.5s Sync' : '1.5s Live Poll';
       syncMetaEl.textContent = `US Ocean Server (${transportLabel}) · Synced ${lastSyncTimeStr}`;
     }
 
     if (rosterHeadingEl) {
-      rosterHeadingEl.textContent = demoMode
-        ? '3D Blender Fleet Preview (Demo Lanes)'
-        : 'Live Vessels on US Ocean Server';
+      rosterHeadingEl.textContent = 'Live Vessels on US Ocean Server';
     }
     if (rosterCountEl) {
-      rosterCountEl.textContent = `${displayedVessels.length} ${displayedVessels.length === 1 ? 'Ship' : 'Ships'}`;
+      rosterCountEl.textContent = `${liveCount} ${liveCount === 1 ? 'Ship' : 'Ships'}`;
     }
 
-    renderShipsRoster(displayedVessels);
+    renderShipsRoster(livePlayersList);
 
     if (selectedTarget && selectedTarget.type === 'ship') {
-      const match = displayedVessels.find((v) => v.key === selectedTarget.key);
-      if (match) updateInspectorForShip(match);
+      const match = livePlayersList.find((v) => v.key === selectedTarget.key);
+      if (match) {
+        updateInspectorForShip(match);
+      } else {
+        trackingShipKey = null;
+        const hub = islandsById.get(1);
+        if (hub) {
+          selectedTarget = { type: 'island', id: 1 };
+          updateInspectorForIsland(hub);
+          highlightSelectedSidebarRows();
+        }
+      }
     }
   }
 
@@ -1629,31 +1607,49 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     refreshActiveVesselsAndUI();
   }
 
+  function applySsePayloadEvent(ev, isPatch) {
+    sseConnected = true;
+    try {
+      const msg = JSON.parse(ev.data);
+      if (!msg || typeof msg.path !== 'string') return;
+      if (msg.path === '/') {
+        if (msg.data == null) {
+          rawFirebasePayload = {};
+        } else if (isPatch && typeof msg.data === 'object') {
+          Object.entries(msg.data).forEach(([k, val]) => {
+            if (val == null) delete rawFirebasePayload[k];
+            else rawFirebasePayload[k] = val;
+          });
+        } else if (typeof msg.data === 'object') {
+          rawFirebasePayload = msg.data;
+        }
+      } else {
+        const subKey = msg.path.replace(/^\//, '').split('/')[0];
+        if (subKey) {
+          if (msg.data == null) {
+            delete rawFirebasePayload[subKey];
+          } else if (isPatch && typeof msg.data === 'object' && rawFirebasePayload[subKey]) {
+            Object.assign(rawFirebasePayload[subKey], msg.data);
+          } else {
+            rawFirebasePayload[subKey] = msg.data;
+          }
+        }
+      }
+      lastSyncTimeStr = new Date().toLocaleTimeString([], {
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      refreshActiveVesselsAndUI();
+    } catch (_) {}
+  }
+
   function connectFirebaseSSE() {
     if (typeof EventSource === 'undefined') return;
     try {
       const es = new EventSource(firebaseLiveUrl);
-      es.addEventListener('put', (ev) => {
-        sseConnected = true;
-        try {
-          const msg = JSON.parse(ev.data);
-          if (msg && msg.path === '/') {
-            rawFirebasePayload = msg.data && typeof msg.data === 'object' ? msg.data : {};
-          } else if (msg && typeof msg.path === 'string') {
-            const subKey = msg.path.replace(/^\//, '').split('/')[0];
-            if (subKey) {
-              if (msg.data == null) delete rawFirebasePayload[subKey];
-              else rawFirebasePayload[subKey] = msg.data;
-            }
-          }
-          lastSyncTimeStr = new Date().toLocaleTimeString([], {
-            hour: 'numeric',
-            minute: '2-digit',
-            second: '2-digit'
-          });
-          refreshActiveVesselsAndUI();
-        } catch (_) {}
-      });
+      es.addEventListener('put', (ev) => applySsePayloadEvent(ev, false));
+      es.addEventListener('patch', (ev) => applySsePayloadEvent(ev, true));
       es.onerror = () => {
         sseConnected = false;
         es.close();
@@ -1802,10 +1798,8 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     const dstStr = v.dst ? ` -> ${v.dst}` : '';
 
     if (inspBadge) {
-      inspBadge.className = `globe-insp-tag ${v.isDemo ? 'gold' : 'cyan'}`;
-      inspBadge.textContent = v.isDemo
-        ? `DEMO 3D SHIP · ${shipMeta.id}`
-        : `LIVE CAPTAIN · ${shipMeta.id}`;
+      inspBadge.className = 'globe-insp-tag cyan';
+      inspBadge.textContent = `LIVE CAPTAIN · ${shipMeta.id}`;
     }
     if (inspRegion) {
       inspRegion.textContent = `${shipMeta.name} (${shipMeta.cls})`;
@@ -1825,8 +1819,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   function renderShipsRoster(vessels) {
     if (!shipsListEl) return;
     if (!vessels.length) {
-      shipsListEl.innerHTML =
-        '<div class="globe-roster-placeholder">Waiting for live captains on the US Ocean Server&mdash;or click <strong>Preview 3D Ships on Globe</strong> above to inspect scaled-down 3D Blender vessels sailing real shipping lanes.</div>';
+      shipsListEl.innerHTML = '';
       return;
     }
 
@@ -1970,25 +1963,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     });
   }
 
-  if (demoToggleBtn) {
-    demoToggleBtn.addEventListener('click', () => {
-      demoMode = !demoMode;
-      userManuallyToggledDemo = demoMode;
-      refreshActiveVesselsAndUI();
-      if (demoMode) {
-        const firstShip = shipEntities.get('demo_titan_32') || shipEntities.values().next().value;
-        if (firstShip) {
-          selectedTarget = { type: 'ship', key: firstShip.key };
-          updateInspectorForShip(firstShip.data);
-          highlightSelectedSidebarRows();
-        }
-      } else {
-        resetWholeGlobeView();
-        focusIsland(1, false);
-      }
-    });
-  }
-
   if (shipsListEl) {
     shipsListEl.addEventListener('click', (e) => {
       const row = e.target.closest('.globe-ship-item[data-ship-key]');
@@ -2020,7 +1994,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     });
   }
 
-  // Raycast Picking + Smooth Drag Detection + Double-Click Zoom
   const raycaster = new THREE.Raycaster();
   const pointerNDC = new THREE.Vector2();
   let pointerDownXY = null;
@@ -2040,7 +2013,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     if (!pointerDownXY) return;
     const moved = Math.hypot(e.clientX - pointerDownXY.x, e.clientY - pointerDownXY.y);
     pointerDownXY = null;
-    if (moved > 7) return; // Dragged to spin 3D globe, not a tap
+    if (moved > 7) return;
 
     const rect = canvas.getBoundingClientRect();
     if (rect.width <= 0 || rect.height <= 0) return;
@@ -2049,7 +2022,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
 
     raycaster.setFromCamera(pointerNDC, camera);
 
-    // Priority 1: Active 3D Ships
     if (shipPickMeshes.length) {
       const shipHits = raycaster.intersectObjects(shipPickMeshes, false);
       if (shipHits.length) {
@@ -2061,7 +2033,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       }
     }
 
-    // Priority 2: 74 Island & Port Beacons
     if (islandPickMeshes.length) {
       const islHits = raycaster.intersectObjects(islandPickMeshes, false);
       if (islHits.length) {
@@ -2073,7 +2044,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     }
   });
 
-  // Double-click anywhere on the 3D globe sphere to smoothly zoom toward that point
   canvas.addEventListener('dblclick', (e) => {
     const rect = canvas.getBoundingClientRect();
     if (rect.width <= 0 || rect.height <= 0) return;
@@ -2102,7 +2072,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
 
-    // Keep whole-globe view 100% unclipped across mobile <-> desktop viewport changes
     if (!trackingShipKey && !cameraTween && (!initializedWholeDist || camera.position.length() > 260)) {
       const targetWhole = getWholeGlobeDistance();
       camera.position.setLength(targetWhole);
@@ -2144,21 +2113,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     const dt = Math.min(0.06, Math.max(0.001, (nowMs - lastAnimMs) / 1000.0));
     lastAnimMs = nowMs;
 
-    // Advance Demo Preview vessels smoothly at 60fps along real shipping lanes
-    if (demoMode && (!livePlayersList.length || userManuallyToggledDemo)) {
-      const demoNow = buildDemoVessels(nowMs * 0.001);
-      demoNow.forEach((dv) => {
-        const ent = shipEntities.get(dv.key);
-        if (ent) {
-          ent.targetX = dv.x;
-          ent.targetY = dv.y;
-          ent.targetYaw = dv.yaw;
-          ent.data = dv;
-        }
-      });
-    }
-
-    // Smooth camera flight tween
     if (cameraTween) {
       const u = Math.min(1, (nowMs - cameraTween.startMs) / cameraTween.durationMs);
       const ease = 1 - Math.pow(1 - u, 3);
@@ -2167,19 +2121,23 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       if (u >= 1) cameraTween = null;
     }
 
-    // Gentle orbital auto-spin when enabled and not actively dragging/tracking a zoomed ship
     controls.autoRotate = Boolean(
       userAutoSpinEnabled && !isUserDraggingGlobe && !trackingShipKey && !cameraTween
     );
 
-    // Interpolate all active 3D Ships at 60fps, compute anti-overlap peer stagger & occlude behind planet
     const lerpAlpha = 1 - Math.exp(-dt * 6.5);
     const activeEntries = Array.from(shipEntities.values());
 
     activeEntries.forEach((ent, idxA) => {
-      ent.curX += (ent.targetX - ent.curX) * lerpAlpha;
-      ent.curY += (ent.targetY - ent.curY) * lerpAlpha;
-      ent.curYaw += shortestAngleDeltaDeg(ent.curYaw, ent.targetYaw) * lerpAlpha;
+      if (Math.hypot(ent.targetX - ent.curX, ent.targetY - ent.curY) > SNAP_TELEPORT_DIST_UU) {
+        ent.curX = ent.targetX;
+        ent.curY = ent.targetY;
+        ent.curYaw = ent.targetYaw;
+      } else {
+        ent.curX += (ent.targetX - ent.curX) * lerpAlpha;
+        ent.curY += (ent.targetY - ent.curY) * lerpAlpha;
+        ent.curYaw += shortestAngleDeltaDeg(ent.curYaw, ent.targetYaw) * lerpAlpha;
+      }
 
       const camDistToShip = camera.position.distanceTo(ent.root.position || camera.position);
       const zoomT = Math.min(1, Math.max(0, (camDistToShip - 2.0) / 235.0));
@@ -2191,7 +2149,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       ent.root.quaternion.copy(frame.quat);
       ent.modelHolder.scale.setScalar(adaptiveScale);
 
-      // Count nearby earlier ships within ~13 deg so nearby captains stagger their floating pills cleanly!
       let nearbyPeerRank = 0;
       for (let j = 0; j < idxA; j++) {
         const peer = activeEntries[j];
@@ -2201,7 +2158,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         }
       }
 
-      // Glowing 3D Radial Beacon Spire + Expanding Sonar Halo for Unmistakable Full-Globe Visibility!
       const isFocusedShip = trackingShipKey === ent.key;
       const showOrbitalSpire = !isFocusedShip && zoomT > 0.08;
       ent.orbitalBeaconGroup.visible = showOrbitalSpire;
@@ -2226,7 +2182,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       ent.beaconRing.material.opacity = THREE.MathUtils.lerp(0.18, 0.88, Math.min(1, zoomT * 3.8));
       ent.wakeMesh.visible = Number(ent.data.spd || 0) > 0.6;
 
-      // Floating [Captain · #Ship · kn] pill tracking the 3D surface & hiding behind far hemisphere (dot < 0.05)
       const spireTop = showOrbitalSpire
         ? THREE.MathUtils.lerp(1.2, 6.4 + nearbyPeerRank * 3.8, Math.pow(zoomT, 0.85)) + 1.85
         : adaptiveScale * 0.34 + 0.16;
@@ -2242,7 +2197,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       ent.labelSprite.visible =
         onFrontHemisphere && (!trackingShipKey || isFocusedShip || camDistToShip > 14.0);
 
-      // Keep camera target & local level horizon locked smoothly onto tracked live moving ship
       if (isFocusedShip && !cameraTween) {
         camera.up.lerp(frame.up, 0.18).normalize();
         const desiredTarget = _toItem.copy(frame.pos).addScaledVector(frame.up, 0.14);
@@ -2256,12 +2210,10 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
 
     controls.update();
 
-    // Prevent camera from dipping beneath the ocean surface when orbiting a zoomed-in ship
     if (camera.position.length() < GLOBE_RADIUS + 0.28) {
       camera.position.setLength(GLOBE_RADIUS + 0.28);
     }
 
-    // Update sunlit Earth-ocean key sun direction (upper-right-front relative to camera for unmistakable 3D sphere shading!)
     _camDir.copy(camera.position).sub(controls.target).normalize();
     _camRight.crossVectors(camera.up, _camDir);
     if (_camRight.lengthSq() < 1e-5) _camRight.set(1, 0, 0);
@@ -2289,13 +2241,11 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       .addScaledVector(trueCamUp, 80);
     rimCoolLight.target.position.copy(controls.target);
 
-    // Scale island beacons, 3D extruded terrain & landmark sprites cleanly with altitude
     const globeCamDist = camera.position.length();
     const orbitSpan = camera.position.distanceTo(controls.target);
     const effectiveAlt = trackingShipKey ? Math.min(globeCamDist - GLOBE_RADIUS, orbitSpan) : (globeCamDist - GLOBE_RADIUS);
     const globeZoomT = Math.min(1, Math.max(0, effectiveAlt / 220.0));
 
-    // Hide exaggerated cartographic 3D terrain mesh when zoomed right onto a 1:1 harbor ship
     extrudedTerrainGroup.visible = !(trackingShipKey && orbitSpan < 24.0);
     graticuleGroup.visible = !(trackingShipKey && orbitSpan < 18.0);
 
@@ -2312,7 +2262,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     landmarkSprites.forEach((spr) => {
       _toItem.copy(camera.position).sub(spr.position).normalize();
       const facing = spr.userData.normal.dot(_toItem);
-      // Hide static landmark label if an active live ship pill is right next to it so live players always read cleanly!
       let nearLiveShip = false;
       shipEntities.forEach((ent) => {
         const shipUp = worldXYToSphere3D(ent.curX, ent.curY, 1.0).normalize();
@@ -2366,12 +2315,10 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       }
     } catch (_) {}
 
-    loadShipGlbPrototype(32).catch(() => {});
-    loadShipGlbPrototype(1).catch(() => {});
-
     await pollFirebasePlayers();
     connectFirebaseSSE();
     setInterval(pollFirebasePlayers, POLL_INTERVAL_MS);
+    setInterval(refreshActiveVesselsAndUI, LIVENESS_TICK_MS);
 
     requestAnimationFrame(animateGlobe);
   }
@@ -2385,7 +2332,6 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       const tanHalfV = Math.tan(halfVRad);
       const tanHalfH = tanHalfV * (w / h);
 
-      // Exact screen-space silhouette bounds of solid 3D globe (R) & outer atmosphere halo (ATMOS_OUTER_RADIUS)
       const calcNDCFrac = (rad) => {
         if (camDist <= rad) return { halfFracX: 99, halfFracY: 99 };
         const sinA = rad / camDist;
@@ -2400,9 +2346,16 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
 
       const shipVisibility = [];
       shipEntities.forEach((ent) => {
+        const expectedSphere = worldXYToSphere3D(ent.targetX, ent.targetY, GLOBE_RADIUS);
+        const actualSphere = ent.root.position.clone().normalize().multiplyScalar(GLOBE_RADIUS);
+        const sphereCoordErr = actualSphere.distanceTo(expectedSphere);
         shipVisibility.push({
           key: ent.key,
           captain: ent.data.captain,
+          ship: ent.shipNum,
+          x: ent.curX,
+          y: ent.curY,
+          sphereCoordError: Number(sphereCoordErr.toFixed(6)),
           facingDot: Number((ent.lastFacingDot || 0).toFixed(4)),
           labelVisible: Boolean(ent.labelSprite && ent.labelSprite.visible),
           spireVisible: Boolean(ent.orbitalBeaconGroup && ent.orbitalBeaconGroup.visible)
@@ -2410,13 +2363,13 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       });
 
       return {
+        assetVer: ASSET_VER,
         islandCount: islandsCatalog.length,
         portCount: islandsCatalog.filter((i) => i.hasPortDock).length,
         scenicCount: islandsCatalog.filter((i) => !i.hasPortDock).length,
         extrudedMeshCount: extrudedTerrainGroup.children.length,
         livePlayerCount: livePlayersList.length,
         activeShipEntityCount: shipEntities.size,
-        demoMode,
         autoSpinEnabled: userAutoSpinEnabled,
         autoRotateActive: controls.autoRotate,
         autoRotateSpeed: controls.autoRotateSpeed,
@@ -2443,16 +2396,34 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         shipVisibility
       };
     },
+    getIslandById(id) {
+      return islandsById.get(Number(id)) || null;
+    },
+    checkPortBerthOnOpenWater(id) {
+      const isl = islandsById.get(Number(id));
+      if (!isl) return { found: false };
+      const bx = Number(isl.berthX != null ? isl.berthX : isl.x);
+      const by = Number(isl.berthY != null ? isl.berthY : isl.y);
+      const outwardDir = worldXYToSphere3D(bx, by, 1.0).normalize();
+      const rayOrigin = outwardDir.clone().multiplyScalar(GLOBE_RADIUS + 20.0);
+      const rayInward = outwardDir.clone().negate();
+      const rc = new THREE.Raycaster(rayOrigin, rayInward, 0.1, 40.0);
+      scene.updateMatrixWorld(true);
+      const landHits = extrudedLandMeshRef ? rc.intersectObject(extrudedLandMeshRef, false) : [];
+      return {
+        found: true,
+        islandId: isl.id,
+        name: isl.name,
+        berthX: bx,
+        berthY: by,
+        landHitsAboveWater: landHits.filter((h) => h.point.length() > GLOBE_RADIUS - 0.01).length,
+        onOpenHarborWater: landHits.filter((h) => h.point.length() > GLOBE_RADIUS - 0.01).length === 0
+      };
+    },
     worldXYToLatLon,
     worldXYToSphere3D(x, y) {
       const v = worldXYToSphere3D(x, y, GLOBE_RADIUS);
       return { x: Number(v.x.toFixed(4)), y: Number(v.y.toFixed(4)), z: Number(v.z.toFixed(4)) };
-    },
-    setDemoMode(on) {
-      demoMode = Boolean(on);
-      userManuallyToggledDemo = demoMode;
-      refreshActiveVesselsAndUI();
-      return demoMode;
     },
     setAutoSpin(on) {
       userAutoSpinEnabled = Boolean(on);
@@ -2461,6 +2432,9 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     },
     async injectTestPackets(packetsObj) {
       injectedTestPackets = packetsObj;
+      if (!packetsObj) {
+        seenFirebaseRecords.clear();
+      }
       refreshActiveVesselsAndUI();
       const neededIds = [];
       shipEntities.forEach((ent) => neededIds.push(ent.shipNum));

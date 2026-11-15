@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261114d" />
+  <link rel="stylesheet" href="./styles.css?v=20261114e" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -302,29 +302,25 @@
                   <span class="pulse-dot" id="globe-server-dot"></span>
                   <span id="globe-server-status-text">LIVE US OCEAN SERVER &middot; 0 CAPTAINS ONLINE</span>
                 </span>
-                <span class="globe-demo-badge" id="globe-demo-badge" hidden>DEMO PREVIEW</span>
               </div>
-              <div class="globe-sync-meta" id="globe-sync-meta">Firebase Live Telemetry &middot; 2.5s Real-Time Sync</div>
+              <div class="globe-sync-meta" id="globe-sync-meta">US Ocean Server (SSE Stream + 1.5s Sync) &middot; Connecting...</div>
             </div>
 
-            <!-- Honest 0-Player State + Optional 3D Blender Ship Demo Toggle -->
+            <!-- Live-Only 0-Player State (Strictly Real Active Players Only) -->
             <div class="globe-zero-notice" id="globe-zero-notice">
               <p class="globe-zero-text" id="globe-zero-text">
-                <strong>0 Captains Currently In-Game</strong> &mdash; Launch TrueHelm to see your ship appear live on the globe!
+                No captains are sailing on the US Ocean Server right now &mdash; launch TrueHelm to see your ship live on the globe.
               </p>
-              <button type="button" class="globe-demo-btn" id="globe-demo-toggle-btn" aria-pressed="false">
-                Preview 3D Ships on Globe
-              </button>
             </div>
 
-            <!-- Active Live Players (or Demo Preview 3D Ships) Roster -->
-            <div class="globe-roster-section">
+            <!-- Active Live Players Roster -->
+            <div class="globe-roster-section" id="globe-roster-section">
               <div class="globe-subhead-row">
-                <h3 id="globe-roster-heading">Active Vessels on Ocean</h3>
+                <h3 id="globe-roster-heading">Live Vessels on US Ocean Server</h3>
                 <span class="globe-count-chip" id="globe-roster-count">0 Ships</span>
               </div>
               <div class="globe-ships-list" id="globe-ships-list" role="list">
-                <div class="globe-roster-placeholder">Waiting for live captains on the US Ocean Server&mdash;or click <strong>Preview 3D Ships on Globe</strong> above to inspect scaled-down 3D Blender vessels sailing real shipping lanes.</div>
+                <div class="globe-roster-placeholder">Listening for active in-game captains on the US Ocean Server (1.5s real-time sync).</div>
               </div>
             </div>
 
@@ -817,7 +813,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261114d"></script>
-  <script type="module" src="./globe.js?v=20261114d"></script>
+  <script src="./app.js?v=20261114e"></script>
+  <script type="module" src="./globe.js?v=20261114e"></script>
 </body>
 </html>
