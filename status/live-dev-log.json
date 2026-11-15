@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:22:09Z",
-    "payloadHash":  "4b9afe1b848c96daff6d7abad4da01db33db778b6bd4bb3e8e2176fe449fb068",
+    "updatedAtUtc":  "2026-11-15T03:27:26Z",
+    "payloadHash":  "18bdbe2f88174928f03cf0674d951df4824a9ea0b59519e1656f4eed26d4f34c",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Release v1.9.2 Live — Polishing Website 3D Ocean Globe Orbital View",
-    "buildStatus":  "Release v1.9.2 Live — Polishing Website 3D Ocean Globe Orbital View",
+    "buildPhase":  "Release v1.9.2 Live — Monitoring Active Servers",
+    "buildStatus":  "Release v1.9.2 Live — Monitoring Active Servers",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
 
                        ],
     "currentlyChanged":  [
-                             "Upgrading Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
+
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-website-true-3d-spinning-globe",
+                           "timestampUtc":  "2026-11-15T03:26:40Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Upgraded Website 3D Ocean Globe (#live-globe) into a full, unclipped sunlit 3D Earth-ocean planet with sky-blue Fresnel atmosphere halo, ~3x extruded 3D island/continent prominence, default Auto-Spin, and immediate click-drag 360° orbital spin across phones \u0026 desktops.",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Upgraded Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x extruded 3D island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-v192-standalone-release-live",
                            "timestampUtc":  "2026-11-15T03:19:45Z",
