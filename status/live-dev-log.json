@@ -1,21 +1,38 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:13:46Z",
-    "payloadHash":  "6bcf40dd7a8f5c6eb824f05f9b9708490a00a0821dec5c3611bd8c110ce2f8e5",
+    "updatedAtUtc":  "2026-11-15T01:24:50Z",
+    "payloadHash":  "1d78ebb279abf87864c0ba1d7423f1eafeb20f560dbc130a4c4820602b0818e4",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.1",
-    "buildPhase":  "All Updates Live — v1.9.1 Released (Idle)",
-    "buildStatus":  "All Updates Live — v1.9.1 Released (Idle)",
+    "buildPhase":  "Adding Scroll-Driven Ocean Ship Animation \u0026 Motion Polish",
+    "buildStatus":  "Adding Scroll-Driven Ocean Ship Animation \u0026 Motion Polish",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-
+                           "Full-viewport 60fps HiDPI scroll-driven ocean voyage canvas with sailing flagship, Kelvin wake, rotating radar, and parallax islands/lighthouse",
+                           "Sticky navbar 2px scroll-voyage progress indicator \u0026 smooth GPU scroll-reveal transitions"
                        ],
     "currentlyChanged":  [
-
+                             "Upgrading website sections \u0026 cards to translucent frosted ocean glass so the sailing ship \u0026 horizon stay visible across all sections"
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-012450",
+                           "timestampUtc":  "2026-11-15T01:24:50Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Building 60fps scroll-driven sailing flagship ocean canvas, parallax islands/lighthouse, and sleek UI scroll-reveal animations on TrueHelm-Website.",
+                           "added":  [
+                                         "Full-viewport 60fps HiDPI scroll-driven ocean voyage canvas with sailing flagship, Kelvin wake, rotating radar, and parallax islands/lighthouse",
+                                         "Sticky navbar 2px scroll-voyage progress indicator \u0026 smooth GPU scroll-reveal transitions"
+                                     ],
+                           "changed":  [
+                                           "Upgrading website sections \u0026 cards to translucent frosted ocean glass so the sailing ship \u0026 horizon stay visible across all sections"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-v191-standalone-release-live",
                            "timestampUtc":  "2026-11-15T01:12:57Z",
