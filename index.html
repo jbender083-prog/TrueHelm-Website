@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261115b" />
+  <link rel="stylesheet" href="./styles.css?v=20261115d" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -62,7 +62,7 @@
       <a href="#screenshots" class="drawer-link">Screenshots</a>
       <a href="#live-globe" class="drawer-link">Live 3D Ocean Globe</a>
       <a href="#fleet" class="drawer-link">35-Ship Fleet</a>
-      <a href="#logs" class="drawer-link">Live Dashboard &amp; Update Logs</a>
+      <a href="#logs" class="drawer-link">Official Release &amp; Update Logs</a>
       <a href="#howtoplay" class="drawer-link">How to Play &amp; Controls</a>
       <div class="drawer-downloads">
         <a class="btn btn-primary btn-block"
@@ -86,7 +86,7 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.6 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.7 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
@@ -114,8 +114,8 @@
 
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
-                <strong>Live Dev Dashboard &amp; Logs</strong>
-                <small>See live 30-sec changes &amp; patch notes</small>
+                <strong>Official Release &amp; Update Logs</strong>
+                <small>Added, changed &amp; removed in Release v1.9.7</small>
               </span>
             </a>
           </div>
@@ -168,8 +168,8 @@
         <div class="features-grid">
           <article class="card">
             <div class="card-tag">World Scale</div>
-            <h3>4,617 km Ocean &amp; 74 Landmasses</h3>
-            <p>Sail from tiny coral skerries (<code>0.28x</code>) and 42 scenic islands up to 18 massive continental countries (<code>8.5x</code>) and 32 full 6-zone deepwater ports.</p>
+            <h3>4,617 km Ocean &amp; +38% Mega-Beam Cranes</h3>
+            <p>Sail 74 landmasses up to 8.5x continental countries and 32 deepwater ports with <strong>+38% extended gantry crane arms</strong> spanning ultra-wide megaships and realistic full-beam crane-reach docking.</p>
           </article>
 
           <article class="card">
@@ -180,8 +180,8 @@
 
           <article class="card">
             <div class="card-tag amber">Mega-Ship Lounge</div>
-            <h3>2-Handed VR Pool Cue &amp; 110&quot; TV</h3>
-            <p>Shoot Solids &amp; Stripes 8-ball pool on <code>#24</code> Sovereign Megaship &amp; Tier 5 flagships (<code>#29–#35</code>) with a free-moving two-handed OpenXR VR physics cue stick (right butt stroke + left front bridge aim, or PC mouse stroke) and paste YouTube links onto the 110&quot; TV.</p>
+            <h3>1P &amp; VR Pool Table + Spatial 3D TV</h3>
+            <p>Shoot 8-ball pool on <code>#24</code> Sovereign Megaship &amp; Tier 5 flagships (<code>#29–#35</code>) via 1st-person LMB pullback-and-release or 2-handed OpenXR VR cue stick, plus click Play/Pause &amp; drag the YouTube scrubber on the 110&quot; Cabin TV with realistic spatial 3D distance audio.</p>
           </article>
 
           <article class="card">
@@ -500,80 +500,82 @@
       </div>
     </section>
 
-    <!-- LIVE 30-SECOND DEV DASHBOARD & UPDATE LOGS (#logs) -->
+    <!-- OFFICIAL RELEASE LOG & UPDATE HISTORY (#logs) -->
     <section class="section" id="logs">
       <div class="container">
         <div class="section-head">
-          <h2>Live Dev Dashboard &amp; Update Logs</h2>
-          <p>Automatically synced every 30 seconds with what is currently being added, changed, and removed—finished items graduate immediately into the History &amp; Release Logs below.</p>
+          <h2>Official Release Log &amp; Update History</h2>
+          <p>Updated automatically whenever a completed update goes live on the TrueHelm Launcher — showing everything added, changed, and removed in each release.</p>
         </div>
 
-        <!-- Compact Live Dashboard Status Bar -->
+        <!-- Compact Release-Synced Dashboard Status Bar -->
         <div class="card dash-header-bar">
           <div class="dash-status-left">
             <span class="dash-live-pill">
               <span class="pulse-dot"></span>
-              <span>LIVE DEV DASHBOARD · 30-SEC AUTO-SYNC</span>
+              <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Target: v1.9.6</span>
-            <span class="dash-phase-text" id="dash-build-phase">Syncing live status...</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.7</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.7 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
-            <span class="dash-meta" id="dash-last-checked">Last checked: just now</span>
-            <span class="dash-meta" id="dash-last-updated">Last change: syncing...</span>
-            <span class="dash-meta" id="dash-next-refresh">Next refresh in 0:30</span>
+            <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.7</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
 
-        <!-- 3 Crisp Live Status Cards: Being Added / Being Changed / Being Removed -->
+        <!-- 3 Crisp Release Breakdown Cards: + Added / ~ Changed / - Removed -->
         <div class="dash-columns">
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3>Being Added</h3>
+              <h3 id="dash-added-heading">Added in v1.9.7</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li class="dash-empty">Checking live active additions queue...</li>
+              <li>Direct in-game 1st-person crosshair &amp; OpenXR VR laser pointer interaction on the Cabin YouTube TV &mdash; click Play/Pause and click-and-drag the bottom YouTube timeline scrubber bar right inside the cabin without leaving the game</li>
+              <li>Spatial 3D distance-attenuated &amp; directional stereo audio on the Cabin YouTube TV &mdash; crisp volume near the lounge sofa, natural left/right stereo head-turn panning in 1st-person &amp; OpenXR VR, and smooth falloff to 0% silence on the far side of the cabin, across decks, or outside the boat</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3>Being Changed</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.7</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li class="dash-empty">Checking live active modifications queue...</li>
+              <li>Fixed 1st-person desktop pool cue left-click pullback &amp; release striking the white cue ball cleanly across the table (alongside 2-handed OpenXR VR pool cue physics)</li>
+              <li>Extended port container gantry crane boom arms by +38% across all ports to span ultra-wide megaships (#24 MV Sovereign &amp; Tier 5 liners/boxships)</li>
+              <li>Locked the 3D Bridge Monitor DOCK button unless your vessel is positioned close enough alongside the berth for the extended container crane arms to reach across the entire width (full beam) of your ship</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3>Being Removed</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.7</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li class="dash-empty">Checking live active removals queue...</li>
+              <li>Removed recurring background website status auto-polling (now synced once per completed TrueHelm Launcher release) and eliminated premature out-of-reach Bridge Monitor DOCK activation</li>
             </ul>
           </article>
         </div>
 
-        <!-- Persistent Chronological Live Activity & Timestamped History Log -->
+        <!-- Persistent Chronological Release & Milestone History Log -->
         <div class="card history-card">
           <div class="history-head">
             <div>
-              <span class="card-tag">Persistent Feed</span>
-              <h3>Live Activity Feed &amp; Timestamped History Log</h3>
+              <span class="card-tag">Release History</span>
+              <h3>Completed Launcher Releases &amp; Milestone Log</h3>
             </div>
-            <span class="history-count" id="history-count-badge">Preserved Chronologically</span>
+            <span class="history-count" id="history-count-badge">Synced on Release</span>
           </div>
           <div class="history-timeline" id="dash-history-list">
             <!-- Populated dynamically from status/live-dev-log.json historyLog[] -->
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.6 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.7 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -581,8 +583,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.6</strong>
+                  <strong class="ver-num">v1.9.7</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> Direct in-game 1st-person crosshair &amp; OpenXR VR laser pointer interaction on the Cabin YouTube TV &mdash; click <strong>Play/Pause</strong> and click-and-drag the bottom YouTube timeline scrubber bar right inside the cabin without leaving the game · Spatial 3D distance-attenuated &amp; directional stereo Cabin TV audio with natural L/R head-turn panning and smooth falloff to <strong>0% silence</strong> on the far side of the cabin, across decks, or outside the boat.</p>
+                <p><span class="log-pill changed">~ Changed</span> Fixed 1st-person desktop pool cue left-click pullback &amp; release striking the white cue ball cleanly across the felt (alongside 2-handed OpenXR VR pool cue physics) · Extended port container gantry crane boom arms by <strong>+38%</strong> across all ports to span ultra-wide megaships (<code>#24 MV Sovereign</code> &amp; Tier 5 liners) · Locked the 3D Bridge Monitor <code>DOCK</code> button until your vessel is positioned close enough alongside the berth for the extended crane arms to reach across the entire width (full beam) of your ship.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Removed recurring background website status auto-polling (now synced once per completed TrueHelm Launcher release) and eliminated premature out-of-reach Bridge Monitor <code>DOCK</code> activation.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.6</strong>
+                  <span class="ver-badge cyan">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -597,7 +614,7 @@
               <summary>
                 <div class="ver-title-group">
                   <strong class="ver-num">v1.9.5</strong>
-                  <span class="ver-badge cyan">Shipped</span>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -770,9 +787,9 @@
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>P</kbd></span><span>Multiplayer &amp; Maritime Company Menu</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>I</kbd></span><span>Drop / Weigh Physical Bow Anchor</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>L</kbd> / <kbd>H</kbd></span><span>Night Bow Searchlights / Pull Overhead Horn Lanyard</span></div>
-            <div class="ctrl-item"><span class="ctrl-keys"><kbd>VR Grip</kbd> / <kbd>LMB</kbd></span><span>2-Handed Pool Cue (Right Butt Stroke + Left Bridge Aim)</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>LMB</kbd> / <kbd>VR Grip</kbd></span><span>1P Pool Pullback &amp; Release / 2-Handed VR Pool Cue</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>Scroll Wheel</kbd></span><span>Smooth Camera Zoom (Middle-Click Unbound)</span></div>
-            <div class="ctrl-item"><span class="ctrl-keys"><kbd>Ctrl+V</kbd></span><span>Paste Copied YouTube Link onto 110&quot; Lounge TV</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>Ctrl+V</kbd> + Aim</span><span>Paste YouTube TV Link + Click Play/Pause &amp; Drag Scrubber</span></div>
           </div>
         </details>
       </div>
@@ -818,7 +835,7 @@
         <a href="./downloads/TrueHelmLauncher.exe" download="TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher">Download Launcher (.exe)</a>
         <a href="#live-globe">Live 3D Globe</a>
         <a href="#fleet">35-Ship Fleet</a>
-        <a href="#logs">Live Logs</a>
+        <a href="#logs">Release Logs</a>
         <a href="#howtoplay">How to Play</a>
       </div>
     </div>
@@ -891,7 +908,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261115b"></script>
-  <script type="module" src="./globe.js?v=20261115b"></script>
+  <script src="./app.js?v=20261115d"></script>
+  <script type="module" src="./globe.js?v=20261115d"></script>
 </body>
 </html>

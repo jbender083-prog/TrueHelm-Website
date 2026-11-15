@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TrueHelm: Realistic Shipping Lanes — Streamlined Mobile, 35-Boat Photo Fleet & Live 30-Sec Dev Log JS
+   TrueHelm: Realistic Shipping Lanes — Streamlined Mobile, 35-Boat Photo Fleet & Release-Synced Update Log JS
    ========================================================================== */
 
 (() => {
@@ -307,12 +307,10 @@
     });
   }
 
-  // 3. Live 30-Second Dev Dashboard + Instant Firebase RTDB Sync + Graduated History & Version Logs
+  // 3. Official Release Log — Synced Once on Page Load (or Manual Refresh) from Completed Launcher Releases
   const FIREBASE_RELEASE_MANIFEST_URL = 'https://truehelm-global-ocean-default-rtdb.firebaseio.com/user_accounts/_sys_launcher_release.json';
   const FIREBASE_LIVE_DEV_NOTES_URL = 'https://truehelm-global-ocean-default-rtdb.firebaseio.com/user_accounts/_sys_live_dev_notes.json';
   const LOCAL_FEED_URL = './status/live-dev-log.json';
-  const REFRESH_INTERVAL_SEC = 30;
-  let secondsUntilRefresh = REFRESH_INTERVAL_SEC;
   let lastParsedData = null;
   let refreshFeedbackTimer = null;
 
@@ -322,12 +320,20 @@
   const lastUpdatedEl = document.getElementById('dash-last-updated');
   const nextRefreshEl = document.getElementById('dash-next-refresh');
   const refreshBtn = document.getElementById('dash-refresh-btn');
+  const addedHeadingEl = document.getElementById('dash-added-heading');
+  const changedHeadingEl = document.getElementById('dash-changed-heading');
+  const removedHeadingEl = document.getElementById('dash-removed-heading');
   const addedListEl = document.getElementById('dash-added-list');
   const changedListEl = document.getElementById('dash-changed-list');
   const removedListEl = document.getElementById('dash-removed-list');
   const historyListEl = document.getElementById('dash-history-list');
   const historyCountEl = document.getElementById('history-count-badge');
   const versionStackEl = document.getElementById('version-logs-stack');
+
+  if (nextRefreshEl) {
+    nextRefreshEl.hidden = true;
+    nextRefreshEl.textContent = '';
+  }
 
   function formatTimestamp(isoStr) {
     const d = new Date(isoStr);
@@ -369,6 +375,17 @@
     return escapeHtml(sanitizeLogText(str));
   }
 
+  function compareSemverTag(a, b) {
+    const pa = String(a || '').replace(/^v/i, '').split('.').map((n) => parseInt(n, 10) || 0);
+    const pb = String(b || '').replace(/^v/i, '').split('.').map((n) => parseInt(n, 10) || 0);
+    for (let i = 0; i < 4; i++) {
+      const da = pa[i] || 0;
+      const db = pb[i] || 0;
+      if (da !== db) return da - db;
+    }
+    return 0;
+  }
+
   function normalizeDevFeedPayload(rawNotes, releaseManifest) {
     const base = rawNotes && typeof rawNotes === 'object' ? rawNotes : {};
     const rel = releaseManifest && typeof releaseManifest === 'object' ? releaseManifest : null;
@@ -399,7 +416,7 @@
     let buildStatus = base.buildStatus || base.buildPhase || '';
     let updatedAtUtc = base.updatedAtUtc || (historyLog[0] && historyLog[0].timestampUtc) || '';
 
-    if (rel && rel.tagName) {
+    if (rel && rel.tagName && compareSemverTag(rel.tagName, activeVersion) >= 0) {
       activeVersion = rel.tagName;
       if (!buildStatus) {
         buildStatus = `Release ${rel.tagName} Live · Auto-Updated via TrueHelm Launcher`;
@@ -420,10 +437,59 @@
       }
     }
 
+    const hasActiveQueue =
+      currentlyAdded.length > 0 || currentlyChanged.length > 0 || currentlyRemoved.length > 0;
+    let releaseBreakdownVer = activeVersion || 'Latest Release';
+    let displayAdded = currentlyAdded;
+    let displayChanged = currentlyChanged;
+    let displayRemoved = currentlyRemoved;
+
+    if (!hasActiveQueue) {
+      const matchVerLower = String(activeVersion || '').toLowerCase();
+      const matchedHist = matchVerLower
+        ? historyLog.find((h) => String(h.version || '').toLowerCase() === matchVerLower)
+        : null;
+      const matchedVerObj = matchVerLower
+        ? versionLogs.find((v) => String(v.version || '').toLowerCase() === matchVerLower)
+        : null;
+      const latestHist = matchedHist || (matchedVerObj ? null : historyLog[0]) || null;
+      const latestVerObj = matchedVerObj || (matchedHist ? null : versionLogs[0]) || null;
+
+      releaseBreakdownVer =
+        (latestHist && latestHist.version) ||
+        (latestVerObj && latestVerObj.version) ||
+        activeVersion ||
+        'Latest Release';
+
+      displayAdded =
+        latestHist && Array.isArray(latestHist.added) && latestHist.added.length
+          ? latestHist.added
+          : latestVerObj && Array.isArray(latestVerObj.added)
+            ? latestVerObj.added
+            : [];
+      displayChanged =
+        latestHist && Array.isArray(latestHist.changed) && latestHist.changed.length
+          ? latestHist.changed
+          : latestVerObj && Array.isArray(latestVerObj.changed)
+            ? latestVerObj.changed
+            : [];
+      displayRemoved =
+        latestHist && Array.isArray(latestHist.removed) && latestHist.removed.length
+          ? latestHist.removed
+          : latestVerObj && Array.isArray(latestVerObj.removed)
+            ? latestVerObj.removed
+            : [];
+    }
+
     return {
       activeVersion,
       buildStatus,
       updatedAtUtc,
+      hasActiveQueue,
+      releaseBreakdownVer,
+      displayAdded,
+      displayChanged,
+      displayRemoved,
       currentlyAdded,
       currentlyChanged,
       currentlyRemoved,
@@ -466,35 +532,50 @@
     if (!data || typeof data !== 'object') return;
 
     if (targetVerEl && data.activeVersion) {
-      targetVerEl.textContent = `Target: ${data.activeVersion}`;
+      targetVerEl.textContent = `Release: ${data.activeVersion}`;
     }
     const phaseLabel = data.buildStatus || data.buildPhase;
     if (buildPhaseEl && phaseLabel) {
       buildPhaseEl.textContent = sanitizeLogText(phaseLabel);
     }
     if (lastUpdatedEl && data.updatedAtUtc) {
-      lastUpdatedEl.textContent = `Last change: ${formatTimestamp(data.updatedAtUtc)}`;
+      lastUpdatedEl.textContent = `Released: ${formatTimestamp(data.updatedAtUtc)}`;
     }
 
-    if (addedListEl && Array.isArray(data.currentlyAdded)) {
-      addedListEl.innerHTML = data.currentlyAdded.length
-        ? data.currentlyAdded.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
-        : '<li class="dash-empty">✓ All active additions completed — moved to Release &amp; Version Update Logs below.</li>';
+    const verLabel = sanitizeLogText(data.releaseBreakdownVer || data.activeVersion || 'Latest Release');
+    if (addedHeadingEl) {
+      addedHeadingEl.textContent = data.hasActiveQueue ? 'Added' : `Added in ${verLabel}`;
     }
-    if (changedListEl && Array.isArray(data.currentlyChanged)) {
-      changedListEl.innerHTML = data.currentlyChanged.length
-        ? data.currentlyChanged.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
-        : '<li class="dash-empty">✓ No active modifications in progress — completed changes logged below.</li>';
+    if (changedHeadingEl) {
+      changedHeadingEl.textContent = data.hasActiveQueue ? 'Changed' : `Changed in ${verLabel}`;
     }
-    if (removedListEl && Array.isArray(data.currentlyRemoved)) {
-      removedListEl.innerHTML = data.currentlyRemoved.length
-        ? data.currentlyRemoved.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
-        : '<li class="dash-empty">✓ All removals completed — archived in History &amp; Release Logs below.</li>';
+    if (removedHeadingEl) {
+      removedHeadingEl.textContent = data.hasActiveQueue ? 'Removed' : `Removed in ${verLabel}`;
+    }
+
+    const addedItems = Array.isArray(data.displayAdded) ? data.displayAdded : [];
+    const changedItems = Array.isArray(data.displayChanged) ? data.displayChanged : [];
+    const removedItems = Array.isArray(data.displayRemoved) ? data.displayRemoved : [];
+
+    if (addedListEl) {
+      addedListEl.innerHTML = addedItems.length
+        ? addedItems.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
+        : `<li class="dash-empty">No standalone feature additions listed in ${escapeHtml(verLabel)}.</li>`;
+    }
+    if (changedListEl) {
+      changedListEl.innerHTML = changedItems.length
+        ? changedItems.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
+        : `<li class="dash-empty">No gameplay or engine modifications listed in ${escapeHtml(verLabel)}.</li>`;
+    }
+    if (removedListEl) {
+      removedListEl.innerHTML = removedItems.length
+        ? removedItems.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
+        : `<li class="dash-empty">No features or controls removed in ${escapeHtml(verLabel)}.</li>`;
     }
 
     if (historyListEl && Array.isArray(data.historyLog) && data.historyLog.length > 0) {
       if (historyCountEl) {
-        historyCountEl.textContent = `${data.historyLog.length} Saved Sync Entries`;
+        historyCountEl.textContent = `${data.historyLog.length} Release Milestones`;
       }
       const recent = data.historyLog.slice(0, 3).map(renderHistoryItem).join('');
       const older = data.historyLog.slice(3);
@@ -538,13 +619,6 @@
     }
   }
 
-  function updateCountdownLabel() {
-    if (!nextRefreshEl) return;
-    const mm = Math.floor(secondsUntilRefresh / 60);
-    const ss = String(secondsUntilRefresh % 60).padStart(2, '0');
-    nextRefreshEl.textContent = `Next refresh in ${mm}:${ss}`;
-  }
-
   async function fetchLiveDevLog(isManual = false) {
     if (isManual && refreshBtn) {
       clearTimeout(refreshFeedbackTimer);
@@ -556,6 +630,7 @@
     const bust = `t=${Date.now()}`;
     let fbNotes = null;
     let fbRelease = null;
+    let parsedLocal = null;
 
     try {
       const [notesRes, relRes] = await Promise.allSettled([
@@ -574,33 +649,36 @@
       // Fall through to same-origin local JSON fallback if needed
     }
 
-    if (fbNotes) {
-      lastParsedData = normalizeDevFeedPayload(fbNotes, fbRelease);
-      applyDevDashboardData(lastParsedData);
-    } else {
-      try {
-        const localRes = await fetch(`${LOCAL_FEED_URL}?${bust}`, { cache: 'no-store' });
-        if (localRes.ok) {
-          const parsedLocal = await localRes.json();
-          lastParsedData = normalizeDevFeedPayload(parsedLocal, fbRelease);
-          applyDevDashboardData(lastParsedData);
-        } else if (fbRelease) {
-          lastParsedData = normalizeDevFeedPayload({}, fbRelease);
-          applyDevDashboardData(lastParsedData);
-        }
-      } catch {
-        if (fbRelease) {
-          lastParsedData = normalizeDevFeedPayload({}, fbRelease);
-          applyDevDashboardData(lastParsedData);
-        }
+    try {
+      const localRes = await fetch(`${LOCAL_FEED_URL}?${bust}`, { cache: 'no-store' });
+      if (localRes.ok) {
+        const lj = await localRes.json();
+        if (lj && typeof lj === 'object') parsedLocal = lj;
       }
+    } catch {
+      // Ignore local fallback fetch errors
+    }
+
+    const chosenNotes =
+      fbNotes && parsedLocal
+        ? compareSemverTag(fbNotes.activeVersion, parsedLocal.activeVersion) >= 0
+          ? fbNotes
+          : parsedLocal
+        : fbNotes || parsedLocal;
+
+    if (chosenNotes) {
+      lastParsedData = normalizeDevFeedPayload(chosenNotes, fbRelease);
+      applyDevDashboardData(lastParsedData);
+    } else if (fbRelease) {
+      lastParsedData = normalizeDevFeedPayload({}, fbRelease);
+      applyDevDashboardData(lastParsedData);
     }
 
     if (lastCheckedEl) {
-      lastCheckedEl.textContent = `Last checked: ${formatLocalClockTime()}`;
+      lastCheckedEl.textContent = isManual
+        ? `Refreshed: ${formatLocalClockTime()}`
+        : `Synced on load (${formatLocalClockTime()})`;
     }
-    secondsUntilRefresh = REFRESH_INTERVAL_SEC;
-    updateCountdownLabel();
 
     if (isManual && refreshBtn) {
       refreshBtn.disabled = false;
@@ -613,13 +691,8 @@
     }
   }
 
+  // Fetch once on page load (no recurring background polling; updates publish on Launcher release)
   fetchLiveDevLog(false);
-  setInterval(() => fetchLiveDevLog(false), REFRESH_INTERVAL_SEC * 1000);
-
-  setInterval(() => {
-    secondsUntilRefresh = Math.max(0, secondsUntilRefresh - 1);
-    updateCountdownLabel();
-  }, 1000);
 
   if (refreshBtn) {
     refreshBtn.addEventListener('click', () => {

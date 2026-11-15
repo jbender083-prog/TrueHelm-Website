@@ -1,21 +1,110 @@
 {
-    "updatedAtUtc":  "2026-11-15T04:05:04Z",
-    "payloadHash":  "c8facaba11f82622f31ffe0c6a08d0862bca546aec6861afe0050e65dbb9c206",
-    "activeVersion":  "v1.9.3",
-    "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Building v1.9.3 — Real Live-Ocean Startup Fly-In \u0026 Full-Color 3D Ship Main Menu",
-    "buildStatus":  "Building v1.9.3 — Real Live-Ocean Startup Fly-In \u0026 Full-Color 3D Ship Main Menu",
-    "refreshIntervalSeconds":  30,
+    "updatedAtUtc":  "2026-11-15T22:00:00Z",
+    "syncMode":  "on-launcher-release",
+    "activeVersion":  "v1.9.7",
+    "latestReleaseTag":  "v1.9.7",
+    "buildPhase":  "Release v1.9.7 Live — 1P Pool Shot Fix, +38% Mega-Beam Port Crane Arms, Full-Beam Crane-Reach Dock Gate, Interactive Cabin TV Scrubber \u0026 Spatial 3D Cabin TV Audio",
+    "buildStatus":  "Release v1.9.7 Live — 1P Pool Shot Fix, +38% Mega-Beam Port Crane Arms, Full-Beam Crane-Reach Dock Gate, Interactive Cabin TV Scrubber \u0026 Spatial 3D Cabin TV Audio",
     "currentlyAdded":  [
 
                        ],
     "currentlyChanged":  [
-                             "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)"
+
                          ],
     "currentlyRemoved":  [
-                             "Removing blue cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
+
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-v197-pool-cranes-dockgate-tvscrubber",
+                           "timestampUtc":  "2026-11-15T22:00:00Z",
+                           "version":  "v1.9.7",
+                           "summary":  "Published TrueHelm v1.9.7 + Launcher 1.9.7.0 Live Release: 1st-Person Desktop Pool Cue Pullback \u0026 Release Fix, +38% Extended Mega-Beam Port Container Crane Arms, Full-Beam Crane-Reach Bridge Monitor DOCK Gate, Direct In-Game 1P/VR Cabin YouTube TV Play/Pause + Timeline Scrubber, \u0026 Spatial 3D Distance-Attenuated Cabin TV Audio.",
+                           "added":  [
+                                         "Direct in-game 1st-person crosshair \u0026 OpenXR VR laser pointer interaction on the Cabin YouTube TV — click Play/Pause and click-and-drag the bottom YouTube timeline scrubber bar right inside the cabin without leaving the game",
+                                         "Spatial 3D distance-attenuated \u0026 directional stereo audio on the Cabin YouTube TV — crisp volume near the lounge sofa, natural left/right stereo head-turn panning in 1st-person \u0026 OpenXR VR, and smooth falloff to 0% silence on the far side of the cabin, across decks, or outside the boat"
+                                     ],
+                           "changed":  [
+                                           "Fixed 1st-person desktop pool cue left-click pullback \u0026 release striking the white cue ball cleanly across the table (alongside 2-handed OpenXR VR pool cue physics)",
+                                           "Extended port container gantry crane boom arms by +38% across all ports to span ultra-wide megaships (#24 MV Sovereign \u0026 Tier 5 liners/boxships)",
+                                           "Locked the 3D Bridge Monitor DOCK button unless your vessel is positioned close enough alongside the berth for the extended container crane arms to reach across the entire width (full beam) of your ship"
+                                       ],
+                           "removed":  [
+                                           "Removed recurring background website status auto-polling (now synced once per completed TrueHelm Launcher release) and eliminated premature out-of-reach Bridge Monitor DOCK activation"
+                                       ]
+                       },
+                       {
+                           "id":  "milestone-v196-night-bowlight-smoke-horn-clouds",
+                           "timestampUtc":  "2026-11-15T21:02:09Z",
+                           "version":  "v1.9.6",
+                           "summary":  "Published TrueHelm v1.9.6 + Launcher 1.9.6.0 Live Release: Night Forward Searchlights on 3D Ocean Waves, Volumetric Gray-Black Funnel Diesel Smoke (#24 \u0026 Heavy Fleet), 1st-Person Overhead Cabin Horn Lanyard (#01-#35), Independent Red/Green 3D Bridge Throttles, Free-Moving Two-Handed OpenXR VR Pool Cue (#24), Smooth Volumetric Clouds at 60+ FPS Ultra, Scroll-Wheel-Only Zoom, \u0026 Bridge Monitor Settings-Only VR Switch.",
+                           "added":  [
+                                         "Bright Night/Dusk forward xenon searchlights illuminating 3D ocean waves \u0026 Kelvin bow wakes across all 35 vessels",
+                                         "Soft billowing volumetric gray-black diesel exhaust smoke from funnel-equipped big ships (#02, #05, #07-#35 including #24 Sovereign Megaship) with zero smoke on non-funnel launches",
+                                         "Grabbable \u0026 pullable 1st-person overhead cabin horn lanyard across all 35 wheelhouses (mouse downward pull \u0026 OpenXR VR controller grab)",
+                                         "Free-moving two-handed OpenXR VR physics pool cue stick on #24 Sovereign Megaship\u0027s billiard table (right controller butt grip \u0026 stroke, left controller front shaft bridge \u0026 aim, plus 1st-person mouse fallback)"
+                                     ],
+                           "changed":  [
+                                           "Decoupled independent Left-Red (Reverse/Astern) and Right-Green (Forward/Ahead) 3D bridge throttle levers across the fleet",
+                                           "Upgraded Cabin 110\" YouTube TV to smooth 60 FPS full-bleed 16:9 widescreen playback (eliminating vertical Watch-page crop, sidebar clutter, and high-DPI Ctrl+V window shrink)",
+                                           "Upgraded volumetric sky cloud temporal reconstruction \u0026 bilateral upsampling for smooth, grain-free clouds at 60+ FPS Ultra",
+                                           "Streamlined TrueHelmLauncher 1.9.6.0 \u0026 bridge MFDs so switching to OpenXR VR happens exclusively inside Settings on the 3D Bridge Monitors"
+                                       ],
+                           "removed":  [
+                                           "Unbound MiddleMouseButton scroll-wheel click (preserving smooth scroll-wheel camera zoom) and removed standalone OpenXR VR launch buttons from TrueHelmLauncher.exe and non-Settings bridge screens"
+                                       ]
+                       },
+                       {
+                           "id":  "milestone-v195-zero-freeze-owned-flyin-monitor7-company",
+                           "timestampUtc":  "2026-11-15T15:44:29Z",
+                           "version":  "v1.9.5",
+                           "summary":  "Published TrueHelm v1.9.5 Live Release (Game + Launcher 1.9.5.0): Zero 28% Startup Freeze (\u003c=4.5ms/frame World Streaming), Frame-1 Owned-Vessel Coastal Fly-In \u0026 Launcher activeShipId Sync, 1st-Person Bridge Monitor 7 [COMPANY] Co-Op Console, Zero-404 Official Website Bundle, and Standalone Google Account Chooser Sign-In.",
+                           "added":  [
+                                         "Full 1st-Person [COMPANY] Co-Op Sub-Menu inside Bridge Monitor 7 (live US Ocean Server roster, keyboard company \u0026 YouTube TV inputs, % commission splits, fleet sharing, and 1-click [CO-OP]/[BORROW]/[OWN]/[TP]/[KICK] peer actions)",
+                                         "Launcher-to-game activeShipId auth handoff \u0026 local profile caching so your exact owned ship sails in the Coastal Harbor Fly-In from t=0.00s (#03 Coastal Container Feeder for new captains)",
+                                         "Standalone accounts.google.com Google Account Chooser popup \u0026 embedded Zero-404 Official TrueHelm Website bundle inside TrueHelmLauncher.exe (1.9.5.0)"
+                                     ],
+                           "changed":  [
+                                           "Replaced monolithic 28% startup world generation \u0026 35-ship RHI buffer sanitation with \u003c=4.5ms/frame incremental ocean world streaming and on-demand per-hull sanitation (zero visual loss)",
+                                           "Eliminated #24 -\u003e player ship swap and cargo container pop when clicking PLAY / LAUNCH from the Main Menu"
+                                       ],
+                           "removed":  [
+                                           "Removed hardcoded #24 MV Sovereign Boxship override during startup fly-in for starter and other owned career vessels"
+                                       ]
+                       },
+                       {
+                           "id":  "milestone-v194-ultra-60fps-and-bug-sweep-live",
+                           "timestampUtc":  "2026-11-15T07:43:34Z",
+                           "version":  "v1.9.4",
+                           "summary":  "Published TrueHelm v1.9.4 Live Release: Lossless 60+ FPS Multi-Boat Ultra Water \u0026 Wake RHI Optimization (80+ FPS side-by-side, 0 visual loss), Captain Profile Clear/Backspace Fix, \u0026 9-Bug Multiplayer/Co-Op/Career Sweep.",
+                           "added":  [
+                                         "UOceanFastDynamicMeshComponent multi-core 28B/vert RHI stream uploader + automated -VerifyUltraTwoBoat60FPS benchmark",
+                                         "1-click [ CLEAR ] buttons on 1. USERNAME \u0026 2. COMPANY NAME + Backspace hold-to-repeat, Delete, \u0026 Ctrl+A/C/X/V/Backspace"
+                                     ],
+                           "changed":  [
+                                           "Zero-compromise Ultra 208x208 water \u0026 18,000-particle 3D foam optimization (RenderThread ~20ms -\u003e ~5ms, zero procedural raytracing BLAS rebuilds, tightened Kelvin wake culling)",
+                                           "Fixed per-frame auto-refill overwrite in Edit Captain Profile + 9 multiplayer/co-op/career save-load bugs (UDP/Firebase sync, shared-hull co-op physics, Commission % math, remote container bounds, \u0026 long-haul save restoration)"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
+                       {
+                           "id":  "milestone-v193-standalone-release-live",
+                           "timestampUtc":  "2026-11-15T05:19:43Z",
+                           "version":  "v1.9.3",
+                           "summary":  "Published TrueHelm v1.9.3 Live Release (Real Live-Ocean Main Menu, Minimalist v2 Auto-Updating TrueHelmLauncher.exe, Unified Google/Email Captain Sign-In, \u0026 2-Field First-Time Captain/Company Onboarding).",
+                           "added":  [
+                                         "Minimalist v2 TrueHelmLauncher.exe (1.9.3.0) with 100% in-launcher updates, self-updating, Google OAuth 2.0 PKCE + Email Sign-In, and DPAPI session protection",
+                                         "Seamless 2-field First-Time Captain Callsign \u0026 Company Name onboarding modal with 100% in-game email privacy"
+                                     ],
+                           "changed":  [
+                                           "Upgraded Main Menu \u0026 Coastal Harbor Fly-In to full-color 3D vessels (#01–#35) floating on real live 3D ocean waves off Port Horizon Hub"
+                                       ],
+                           "removed":  [
+                                           "Removed blue cyber wireframe lines, scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
+                                       ]
+                       },
                        {
                            "id":  "milestone-website-launcher-cta-live",
                            "timestampUtc":  "2026-11-15T04:03:00Z",
@@ -32,28 +121,12 @@
                                        ]
                        },
                        {
-                           "id":  "sync-20261115-035931",
-                           "timestampUtc":  "2026-11-15T03:59:31Z",
-                           "version":  "v1.9.3",
-                           "summary":  "Keeping the cinematic coastal camera fly-in \u0026 TRUEHELM: MARITIME CARGO Main Menu while preserving full-color photorealistic 3D ships, live ocean waves, port cranes, and sunlit coastal lighting throughout the Main Menu (plus wiring TrueHelmLauncher.exe onto the website).",
-                           "added":  [
-
-                                     ],
-                           "changed":  [
-                                           "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)",
-                                           "Wiring primary 1-click Download TrueHelm Launcher (.exe) button onto TrueHelm-Website (alongside portable .zip option)"
-                                       ],
-                           "removed":  [
-                                           "Removing blue cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
-                                       ]
-                       },
-                       {
                            "id":  "milestone-truehelm-desktop-launcher-live",
                            "timestampUtc":  "2026-11-15T03:55:30Z",
                            "version":  "v1.9.2",
-                           "summary":  "Built, Authenticode-signed, self-tested (VERIFY_LAUNCHER: PASS), and published zero-dependency single-file TrueHelmLauncher.exe (0.5 MB) to GitHub Release v1.9.2 — 1-click zip-free game download, auto-updating, and Windows Desktop / OpenXR VR launch.",
+                           "summary":  "Built, Authenticode-signed, self-tested (VERIFY_LAUNCHER: PASS), and published zero-dependency single-file TrueHelmLauncher.exe (0.5 MB) to Release v1.9.2 — 1-click zip-free game download, auto-updating, and Windows Desktop launch.",
                            "added":  [
-                                         "Published TrueHelmLauncher.exe (517 KB zero-dependency Windows 10/11 desktop installer, auto-updater \u0026 PC/OpenXR VR launcher — zero manual .zip extraction required)"
+                                         "Published TrueHelmLauncher.exe (517 KB zero-dependency Windows 10/11 desktop installer \u0026 auto-updater — zero manual .zip extraction required)"
                                      ],
                            "changed":  [
 
@@ -78,36 +151,6 @@
                                        ]
                        },
                        {
-                           "id":  "sync-20261115-034205",
-                           "timestampUtc":  "2026-11-15T03:42:05Z",
-                           "version":  "v1.9.2",
-                           "summary":  "Building zero-dependency single-file TrueHelmLauncher.exe (1-click zip-free Windows PC \u0026 OpenXR VR installer/auto-updater) and refining #live-globe to strictly display real active online captains.",
-                           "added":  [
-                                         "TrueHelm Desktop Launcher (TrueHelmLauncher.exe): Zero-dependency 1-click Windows game installer, auto-updater \u0026 PC/OpenXR VR launcher (no manual .zip extraction required)"
-                                     ],
-                           "changed":  [
-                                           "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
-                                       ],
-                           "removed":  [
-                                           "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-033111",
-                           "timestampUtc":  "2026-11-15T03:31:11Z",
-                           "version":  "v1.9.2",
-                           "summary":  "Refining #live-globe on TrueHelm-Website so it strictly displays real online captains actively sailing in-game at exact 1-to-1 coordinates (6-second heartbeat liveness, zero demo/offline boats).",
-                           "added":  [
-
-                                     ],
-                           "changed":  [
-                                           "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
-                                       ],
-                           "removed":  [
-                                           "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
-                                       ]
-                       },
-                       {
                            "id":  "milestone-website-true-3d-spinning-globe",
                            "timestampUtc":  "2026-11-15T03:26:40Z",
                            "version":  "v1.9.2",
@@ -128,25 +171,10 @@
                            "version":  "v1.9.2",
                            "summary":  "Published TrueHelm v1.9.2 Windows/VR Release (TrueHelm_Windows_Playable.zip, 776.27 MB) with cooked .pak/.utoc/.ucas archives, signed RealisticShippingLanes.exe + EpicWebHelper.exe + CEF3 runtime, and verified anonymous HTTP 200 OK.",
                            "added":  [
-                                         "Published GitHub Release v1.9.2 (Latest) with 1-click playable TrueHelm_Windows_Playable.zip (Desktop DX12 + OpenXR VR + 3-Act Startup Cinematic \u0026 Holographic Main Menu + P0 Live Multiplayer Hull/Cargo Fixes)"
+                                         "Published Official Release v1.9.2 (Latest) with 1-click playable Windows PC \u0026 in-game OpenXR VR build (Desktop DX12 + OpenXR VR + 3-Act Startup Cinematic \u0026 Holographic Main Menu + P0 Live Multiplayer Hull/Cargo Fixes)"
                                      ],
                            "changed":  [
-                                           "Synced \u0026 Authenticode-signed local playable bundles and updated TrueHelm-Game-Download README.md for v1.9.2 (macCount = 0)"
-                                       ],
-                           "removed":  [
-
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-032002",
-                           "timestampUtc":  "2026-11-15T03:20:02Z",
-                           "version":  "v1.9.2",
-                           "summary":  "All Round 14 3-Act Startup Cinematic \u0026 Holographic Main Menu + P0 Live Multiplayer Hull/Cargo Sync gates passed — cooking .pak/.utoc/.ucas archives, signing Win64 binaries, and polishing full-globe 3D orbital spin on TrueHelm-Website.",
-                           "added":  [
-                                         "Cooking \u0026 signing standalone TrueHelm v1.9.2 Windows/OpenXR VR release bundle (TrueHelm_Windows_Playable.zip)"
-                                     ],
-                           "changed":  [
-                                           "Upgrading Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
+                                           "Synced \u0026 Authenticode-signed local playable bundles for v1.9.2"
                                        ],
                            "removed":  [
 
@@ -169,24 +197,6 @@
                                        ]
                        },
                        {
-                           "id":  "sync-20261115-024916",
-                           "timestampUtc":  "2026-11-15T02:49:16Z",
-                           "version":  "v1.9.2",
-                           "summary":  "Implementing real-time UE 5.8 Dusk Coastal Fly-In off Port Horizon Hub, bow-to-stern cyan holographic wireframe scan morph, live 3D undulating wave grid, and brushed-steel \u0026 brass-gold tactical Main Menu.",
-                           "added":  [
-                                         "Act I (0.0s–4.2s): Real-time dusk coastal harbor fly-in with sweeping volumetric lighthouse beam, port gantry cranes, churning bow wave \u0026 Tyfon foghorn audio",
-                                         "Act II (4.2s–5.8s): Seamless bow-to-stern cyan laser scan-plane morphing into a live 3D holographic wireframe ship \u0026 undulating triangulated ocean wave grid",
-                                         "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu"
-                                     ],
-                           "changed":  [
-                                           "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]",
-                                           "Fixing live multiplayer remote ship hull preload recovery (preventing invisible remote hulls) \u0026 enforcing vessel-type-specific cargo deck bounds (zero containers on liquid tankers/bulk/gas/Ro-Ro)"
-                                       ],
-                           "removed":  [
-                                           "Replacing static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
-                                       ]
-                       },
-                       {
                            "id":  "milestone-website-live-3d-ocean-globe",
                            "timestampUtc":  "2026-11-15T02:39:45Z",
                            "version":  "v1.9.2",
@@ -200,23 +210,6 @@
                                        ],
                            "removed":  [
 
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-015227",
-                           "timestampUtc":  "2026-11-15T01:52:27Z",
-                           "version":  "v1.9.2",
-                           "summary":  "Implementing real-time UE 5.8 Dusk Coastal Fly-In off Port Horizon Hub, bow-to-stern cyan holographic wireframe scan morph, live 3D undulating wave grid, and brushed-steel \u0026 brass-gold tactical Main Menu.",
-                           "added":  [
-                                         "Act I (0.0s–4.2s): Real-time dusk coastal harbor fly-in with sweeping volumetric lighthouse beam, port gantry cranes, churning bow wave \u0026 Tyfon foghorn audio",
-                                         "Act II (4.2s–5.8s): Seamless bow-to-stern cyan laser scan-plane morphing into a live 3D holographic wireframe ship \u0026 undulating triangulated ocean wave grid",
-                                         "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu"
-                                     ],
-                           "changed":  [
-                                           "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]"
-                                       ],
-                           "removed":  [
-                                           "Replacing static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
                                        ]
                        },
                        {
@@ -236,49 +229,18 @@
                                        ]
                        },
                        {
-                           "id":  "sync-20261115-012450",
-                           "timestampUtc":  "2026-11-15T01:24:50Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Building 60fps scroll-driven sailing flagship ocean canvas, parallax islands/lighthouse, and sleek UI scroll-reveal animations on TrueHelm-Website.",
-                           "added":  [
-                                         "Full-viewport 60fps HiDPI scroll-driven ocean voyage canvas with sailing flagship, Kelvin wake, rotating radar, and parallax islands/lighthouse",
-                                         "Sticky navbar 2px scroll-voyage progress indicator \u0026 smooth GPU scroll-reveal transitions"
-                                     ],
-                           "changed":  [
-                                           "Upgrading website sections \u0026 cards to translucent frosted ocean glass so the sailing ship \u0026 horizon stay visible across all sections"
-                                       ],
-                           "removed":  [
-
-                                       ]
-                       },
-                       {
                            "id":  "milestone-v191-standalone-release-live",
                            "timestampUtc":  "2026-11-15T01:12:57Z",
                            "version":  "v1.9.1",
                            "summary":  "Published TrueHelm v1.9.1 Windows/VR Release (TrueHelm_Windows_Playable.zip, 736.54 MB) with cooked .pak/.utoc/.ucas archives, signed RealisticShippingLanes.exe + EpicWebHelper.exe + CEF3 runtime, and verified anonymous HTTP 200 OK.",
                            "added":  [
-                                         "Published GitHub Release v1.9.1 (Latest) with 1-click playable TrueHelm_Windows_Playable.zip (Desktop DX12 + OpenXR VR + embedded CEF3 YouTube browser)"
+                                         "Published Official Release v1.9.1 (Latest) with 1-click playable Windows PC \u0026 in-game OpenXR VR build (Desktop DX12 + OpenXR VR + embedded CEF3 YouTube browser)"
                                      ],
                            "changed":  [
-                                           "Synced \u0026 Authenticode-signed local playable bundles and updated TrueHelm-Game-Download README.md for v1.9.1"
+                                           "Synced \u0026 Authenticode-signed local playable bundles for v1.9.1"
                                        ],
                            "removed":  [
-                                           "Removed unported Mac release zip \u0026 README instructions from TrueHelm-Game-Download (macCount = 0)"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-011316",
-                           "timestampUtc":  "2026-11-15T01:13:16Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Passed 100% of Round 13 in-engine verification gates (0.078 ms VHF latency, 112.8 FPS VR / 145.6 FPS Desktop Ultra Storm on #34, 35/35 ships); building standalone Win64 executable, cooking .pak assets, signing binaries \u0026 uploading v1.9.1.",
-                           "added":  [
-
-                                     ],
-                           "changed":  [
-                                           "Compiling standalone Win64 executable, cooking .pak/.utoc/.ucas assets, Authenticode-signing RealisticShippingLanes.exe + EpicWebHelper.exe, and publishing v1.9.1 release zip"
-                                       ],
-                           "removed":  [
-
+                                           "Streamlined platform downloads to focus 100% on Windows PC \u0026 OpenXR VR"
                                        ]
                        },
                        {
@@ -300,10 +262,10 @@
                            "id":  "milestone-35-boat-web-gallery-and-30s-live-feed",
                            "timestampUtc":  "2026-11-15T00:59:37Z",
                            "version":  "v1.9.1",
-                           "summary":  "Published interactive 35-Boat Photo Fleet Explorer modal \u0026 30-second instant GitHub API Live Dev Dashboard on TrueHelm-Website — graduated out of active build queue.",
+                           "summary":  "Published interactive 35-Boat Photo Fleet Explorer modal \u0026 30-second instant Cloud Live Dev Dashboard on TrueHelm-Website — graduated out of active build queue.",
                            "added":  [
                                          "Interactive 35-boat Fleet Explorer photo \u0026 specs modal (Boats #01–#35 across Tiers 1–5 with Prev/Next navigation)",
-                                         "Instant 30-second GitHub API Live Dev Dashboard sync \u0026 immediate Refresh button"
+                                         "Instant 30-second Cloud Live Dev Dashboard sync \u0026 immediate Refresh button"
                                      ],
                            "changed":  [
 
@@ -344,175 +306,113 @@
                                            "Simplified \u0026 mobile-optimized the TrueHelm website across 360px/390px phones and 1920px desktops, switching live dashboard sync to 30 seconds"
                                        ],
                            "removed":  [
-                                           "Removed all unported Mac download buttons \u0026 badges (100% Windows PC \u0026 OpenXR VR focus)",
+                                           "Streamlined platform buttons \u0026 badges (100% Windows PC \u0026 OpenXR VR focus)",
                                            "Replaced cubish 20-triangle pool ball meshes with smooth phenolic-resin UV spheres",
                                            "Removed synchronous Game Thread waveInOpen/waveInClose calls that caused VHF trigger stalls",
                                            "Removed cluttered HUD compass/bracket chrome on mobile screens"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-004739",
-                           "timestampUtc":  "2026-11-15T00:47:39Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-001111",
-                           "timestampUtc":  "2026-11-15T00:11:11Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-000608",
-                           "timestampUtc":  "2026-11-15T00:06:08Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261115-000105",
-                           "timestampUtc":  "2026-11-15T00:01:05Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261114-235602",
-                           "timestampUtc":  "2026-11-14T23:56:02Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261114-234946",
-                           "timestampUtc":  "2026-11-14T23:49:46Z",
-                           "version":  "v1.9.1",
-                           "summary":  "Round 13 core ship physics, spherical pool balls, VR cue, YouTube TV, and async VHF radio compiled; integrating [P] Company UI \u0026 in-engine verification suite.",
-                           "added":  [
-                                         "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                                         "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                                         "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync"
-                                     ],
-                           "changed":  [
-                                           "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                                           "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                                           "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops"
-                                       ],
-                           "removed":  [
-                                           "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                                           "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261114-2340",
-                           "timestampUtc":  "2026-11-14T23:40:00Z",
-                           "version":  "v1.9.1-dev",
-                           "summary":  "Launched Live 5-Minute Dev Dashboard, streamlined mobile-first Windows PC \u0026 VR layout, and queued Round 13 (Smooth Pool Balls, VR Cue, YouTube TV, Custom Companies \u0026 Radio Lag Fix).",
-                           "added":  [
-                                         "Live 5-minute Dev Dashboard + persistent History Log",
-                                         "v1.9.1 spherical Solids/Stripes pool, VR cue grab, YouTube TV \u0026 Company %/fleet pipeline"
-                                     ],
-                           "changed":  [
-                                           "Streamlined mobile-first website layout across 360px–1920px viewports",
-                                           "Background-threaded VHF radio mic capture architecture"
-                                       ],
-                           "removed":  [
-                                           "Unported cross-platform placeholder download links \u0026 badges",
-                                           "Cubish 20-tri pool balls \u0026 Game Thread audio stalls"
-                                       ]
-                       },
-                       {
-                           "id":  "sync-20261114-2257",
-                           "timestampUtc":  "2026-11-14T22:57:00Z",
-                           "version":  "v1.9.0",
-                           "summary":  "Published official TrueHelm website on GitHub Pages with 1-click direct Windows .ZIP download from GitHub Releases.",
-                           "added":  [
-                                         "1-click direct Windows playable .ZIP download via GitHub CDN",
-                                         "35-ship interactive Tier 1–5 explorer \u0026 1080p screenshot gallery"
-                                     ],
-                           "changed":  [
-                                           "Migrated friend downloads from Google Drive to direct GitHub Releases"
-                                       ],
-                           "removed":  [
-                                           "Developer .pdb/.sav/.log debug files from playable .ZIP archive"
                                        ]
                        }
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.2",
+                            "version":  "v1.9.7",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
                             "added":  [
-                                          "Official TrueHelmLauncher.exe Desktop Installer \u0026 Auto-Updater (0.5 MB): 1-click zip-free Windows 10/11 download, auto-updates, and PC / OpenXR VR launch",
+                                          "Direct in-game 1st-person crosshair \u0026 OpenXR VR laser pointer interaction on the Cabin YouTube TV — click Play/Pause and click-and-drag the bottom YouTube timeline scrubber bar right inside the cabin without leaving the game",
+                                          "Spatial 3D distance-attenuated \u0026 directional stereo audio on the Cabin YouTube TV — crisp volume near the lounge sofa, natural left/right stereo head-turn panning in 1st-person \u0026 OpenXR VR, and smooth falloff to 0% silence on the far side of the cabin, across decks, or outside the boat"
+                                      ],
+                            "changed":  [
+                                            "Fixed 1st-person desktop pool cue left-click pullback \u0026 release striking the white cue ball cleanly across the table (alongside 2-handed OpenXR VR pool cue physics)",
+                                            "Extended port container gantry crane boom arms by +38% across all ports to span ultra-wide megaships (#24 MV Sovereign \u0026 Tier 5 liners/boxships)",
+                                            "Locked the 3D Bridge Monitor DOCK button unless your vessel is positioned close enough alongside the berth for the extended container crane arms to reach across the entire width (full beam) of your ship"
+                                        ],
+                            "removed":  [
+                                            "Removed recurring background website status auto-polling (now synced once per completed TrueHelm Launcher release) and eliminated premature out-of-reach Bridge Monitor DOCK activation"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.6",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
+                            "added":  [
+                                          "Bright night forward searchlights illuminating 3D ocean waves \u0026 bow wakes across all boats",
+                                          "Soft billowing volumetric gray-black funnel diesel smoke on funnel-equipped big ships (#24 Sovereign Megaship \u0026 heavy fleet)",
+                                          "Grabbable \u0026 pullable 1st-person overhead cabin horn lanyard across all 35 vessels",
+                                          "Free-moving two-handed OpenXR VR physics pool cue stick on #24 Megaship\u0027s billiard table (right controller butt grip \u0026 stroke, left controller front shaft bridge \u0026 aim)"
+                                      ],
+                            "changed":  [
+                                            "Decoupled independent Left-Red (Reverse/Astern) \u0026 Right-Green (Forward/Ahead) 3D bridge throttle levers",
+                                            "Full-bleed 60 FPS 16:9 widescreen Cabin YouTube TV playback (fixed vertical crop, sidebar clutter, \u0026 high-DPI Ctrl+V window shrink)",
+                                            "Smooth temporally-reconstructed volumetric sky clouds at 60+ FPS Ultra",
+                                            "Streamlined TrueHelmLauncher 1.9.6.0 with VR mode switching exclusively inside Settings on the 3D Bridge Monitors"
+                                        ],
+                            "removed":  [
+                                            "Scroll-wheel-only camera zoom (MiddleMouseButton click unbound) \u0026 removed standalone VR button from TrueHelmLauncher.exe and non-Settings MFDs"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.5",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
+                            "added":  [
+                                          "1st-Person Bridge Monitor 7 [COMPANY] Full Co-Op Console (live US Server roster, % splits, fleet sharing \u0026 110\" TV YouTube)",
+                                          "Direct activeShipId handoff from TrueHelmLauncher.exe (1.9.5.0) + local profile cache for Frame-1 career vessel matching",
+                                          "Standalone accounts.google.com Google Account Chooser popup \u0026 Zero-404 embedded Official TrueHelm Website bundle in Launcher 1.9.5.0"
+                                      ],
+                            "changed":  [
+                                            "Eliminated the multi-second 28% startup preload stall via \u003c=4.5ms/frame incremental ocean streaming with zero visual degradation",
+                                            "Harbor startup fly-in \u0026 Main Menu showcase the exact ship you currently command in-game from Frame 1 into gameplay"
+                                        ],
+                            "removed":  [
+                                            "Removed #24 flagship override during startup fly-in so starter (#03) and saved career vessels never swap mid-intro"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.4",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
+                            "added":  [
+                                          "UOceanFastDynamicMeshComponent multi-core 28B/vert RHI vertex stream uploader for 60+ FPS Multi-Boat Ultra sailing with 100% visual fidelity preserved",
+                                          "1-click [ CLEAR ] buttons on 1. USERNAME and 2. COMPANY NAME + smooth Backspace hold-to-repeat, Delete, and Ctrl+A/C/X/V/Backspace shortcuts"
+                                      ],
+                            "changed":  [
+                                            "Eliminated procedural water/foam ray-tracing BLAS rebuilds, pre-allocated 18,000-slot 3D foam capacity, tightened multi-ship Kelvin wake culling, \u0026 skipped 3rd-person interior 3K monitor flushes",
+                                            "Fixed per-frame Username/Company overwrite in Edit Captain Profile, locked viewport keyboard focus, \u0026 blocked ship hotkeys while editing",
+                                            "Fixed 9 multiplayer, co-op, \u0026 career bugs: 10 Hz Direct UDP priority over 5 Hz Firebase polls, shared-hull co-op passenger physics/wake sync, accurate Commission % payout splits, remote #03/#08/#11/#14/#17/#24/#27/#32 deck container bounds, host kick persistence, Tab modal guard, =/- quick ship hotkeys, and full long-haul/express voyage save/load restoration"
+                                        ],
+                            "removed":  [
+
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.3",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
+                            "added":  [
+                                          "Minimalist v2 TrueHelmLauncher.exe (0.5 MB): 100% in-launcher game installs, automatic game \u0026 launcher updates, Official Google + Email Captain Sign-In, and Settings drawer",
+                                          "First-Time Captain Profile Onboarding: Clean 2-field Username + Shipping Company setup synced automatically from Launcher Sign-In to Cloud \u0026 Multiplayer"
+                                      ],
+                            "changed":  [
+                                            "Real Live-Ocean Main Menu \u0026 Coastal Harbor Fly-In: Preserved sweeping camera trajectory, lighthouse beam, gantry cranes, \u0026 Tyfon foghorn while showcasing full-color 3D vessels (#01–#35) on real live ocean waves",
+                                            "100% In-Game \u0026 Multiplayer Email Privacy: Replaced raw email/account badges with Captain Callsign, Company Name, and Edit Profile modal"
+                                        ],
+                            "removed":  [
+                                            "Removed cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.2",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
+                            "added":  [
+                                          "Official TrueHelmLauncher.exe Desktop Installer \u0026 Auto-Updater (0.5 MB): 1-click zip-free Windows 10/11 download, auto-updates, and 1-click PC launch",
                                           "Real-Time 3-Act Startup Cinematic: Dusk coastal harbor fly-in off Port Horizon Hub with sweeping volumetric lighthouse beam, gantry cranes, churning 3D bow spray, and Tyfon foghorn audio",
                                           "Bow-to-stern electric-cyan laser scan morph into a 67,584-vert curved 3D holographic wireframe flagship \u0026 undulating triangulated ocean wave grid",
                                           "Interactive 35-vessel 3D hologram selector (#01–#35, 0.35s cyan scan pulse on ship swap, AI SUPPORT badges on NPC craft) \u0026 32-port paged tactical command menu (TRUEHELM: MARITIME CARGO)",
@@ -536,7 +436,7 @@
                                           "PC Left-Click hold \u0026 drag-back cue stick power gauge (0–55 cm) + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
                                           "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV (Ctrl+V or URL input), synced live across crewmates",
                                           "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)",
-                                          "Live 30-second website Dev Dashboard, instant GitHub API Refresh, clickable 35-vessel Fleet Explorer photo modals, \u0026 60fps scroll-driven sailing flagship ocean background"
+                                          "Live 30-second website Dev Dashboard, instant Cloud Refresh, clickable 35-vessel Fleet Explorer photo modals, \u0026 60fps scroll-driven sailing flagship ocean background"
                                       ],
                             "changed":  [
                                             "Refactored VHF bridge radio audio onto a warm background worker thread (0.078 ms Game Thread response, zero trigger lag)",
@@ -544,7 +444,7 @@
                                             "Simplified \u0026 mobile-optimized TrueHelm website layout with translucent frosted ocean glass \u0026 smooth GPU scroll-reveal polish"
                                         ],
                             "removed":  [
-                                            "Removed unported Mac download buttons \u0026 links (100% focused on Windows PC \u0026 OpenXR VR)",
+                                            "Streamlined platform downloads to focus 100% on Windows PC \u0026 OpenXR VR",
                                             "Replaced cubish 20-triangle pool ball meshes with smooth UV spheres",
                                             "Removed synchronous Game Thread WinMM mic open/close stalls",
                                             "Removed busy decorative website HUD chrome on mobile screens"
