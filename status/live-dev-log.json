@@ -1,24 +1,37 @@
 {
-    "updatedAtUtc":  "2026-11-15T02:50:10Z",
-    "payloadHash":  "8430d563e6726bc3ed30c7d2d9fffbce739fe53b0029761c24120651af96e91a",
+    "updatedAtUtc":  "2026-11-15T03:07:54Z",
+    "payloadHash":  "39450f85f34d684edaea5ccad5d36d4de814033aed24c667d4ae8a4f98b3d059",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.1",
-    "buildPhase":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
-    "buildStatus":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
+    "buildPhase":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
+    "buildStatus":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Act I (0.0s–4.2s): Real-time dusk coastal harbor fly-in with sweeping volumetric lighthouse beam, port gantry cranes, churning bow wave \u0026 Tyfon foghorn audio",
-                           "Act II (4.2s–5.8s): Seamless bow-to-stern cyan laser scan-plane morphing into a live 3D holographic wireframe ship \u0026 undulating triangulated ocean wave grid",
-                           "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu"
+                           "Cooking \u0026 signing standalone TrueHelm v1.9.2 Windows/OpenXR VR release bundle (TrueHelm_Windows_Playable.zip)"
                        ],
     "currentlyChanged":  [
-                             "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]",
-                             "Fixing live multiplayer remote ship hull preload recovery (preventing invisible remote hulls) \u0026 enforcing vessel-type-specific cargo deck bounds (zero containers on liquid tankers/bulk/gas/Ro-Ro)"
+                             "Upgrading Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
                          ],
     "currentlyRemoved":  [
-                             "Replacing static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
+
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-v192-verification-passed",
+                           "timestampUtc":  "2026-11-15T03:05:30Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Passed 100% of v1.9.2 in-engine verification gates (-VerifyStartupCinematic, -VerifyMegashipCompanyCoop, -VerifyAnchorAndPerf, -VerifyShowcase) — graduated Round 14 3-Act Startup Cinematic \u0026 P0 Live Multiplayer Hull/Cargo fixes out of active build queue.",
+                           "added":  [
+                                         "Act I–III Real-Time 3D Startup Cinematic: Dusk coastal harbor fly-in with volumetric lighthouse sweep, bow-to-stern cyan scan morph, 67,584-vert curved 3D holographic wireframe ships (#01–#35) \u0026 undulating wave grid, and zero-overhead post-launch teardown",
+                                         "Brushed-gunmetal \u0026 brass-gold TRUEHELM: MARITIME CARGO tactical Main Menu with 35-ship 3D hologram preview (AI SUPPORT badges on NPC craft) \u0026 32-port paged selector"
+                                     ],
+                           "changed":  [
+                                           "Fixed live multiplayer remote ship hull preload recovery (zero invisible hulls), 1:1 hull bounds \u0026 keel-to-draft waterline seating, and strict container-only deck cargo bounds (zero floating containers on #05 tankers or unloaded ships)"
+                                       ],
+                           "removed":  [
+                                           "Replaced static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-024916",
                            "timestampUtc":  "2026-11-15T02:49:16Z",
