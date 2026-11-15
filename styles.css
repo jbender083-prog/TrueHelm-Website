@@ -1927,10 +1927,10 @@ kbd {
 .globe-stage {
   position: relative;
   width: 100%;
-  height: clamp(285px, 43vh, 360px);
-  min-height: 285px;
+  height: clamp(320px, 45vh, 385px);
+  min-height: 320px;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 50%, #0d2a4d 0%, #030914 78%);
+  background: radial-gradient(circle at 50% 50%, #06152d 0%, #020814 54%, #010308 100%);
 }
 
 @media (max-width: 639px) {
@@ -1956,7 +1956,7 @@ kbd {
 
 @media (min-width: 1024px) {
   .globe-stage {
-    height: 495px;
+    height: 525px;
     flex: 1;
   }
 }
@@ -1967,11 +1967,39 @@ kbd {
   height: 100%;
   cursor: grab;
   touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
   outline: none;
 }
 
+#globe-canvas.is-dragging,
 #globe-canvas:active {
   cursor: grabbing;
+}
+
+.globe-drag-pill {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(3, 12, 26, 0.78);
+  border: 1px solid rgba(56, 189, 248, 0.36);
+  color: #e0f2fe;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  max-width: calc(100% - 20px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.globe-drag-pill.is-hidden {
+  opacity: 0;
 }
 
 .globe-loading-overlay {

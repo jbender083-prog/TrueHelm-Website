@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css?v=20261114d" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -262,12 +262,13 @@
                 <button type="button" class="globe-ctrl-btn" id="globe-btn-hub" title="Zoom to #01 Port Horizon Hub">Hub #01</button>
                 <button type="button" class="globe-ctrl-btn icon" id="globe-btn-zoom-in" aria-label="Zoom in on 3D globe" title="Zoom in">+</button>
                 <button type="button" class="globe-ctrl-btn icon" id="globe-btn-zoom-out" aria-label="Zoom out on 3D globe" title="Zoom out">&minus;</button>
-                <button type="button" class="globe-ctrl-btn active" id="globe-btn-spin" aria-pressed="true" title="Toggle gentle globe auto-rotation">Auto-Spin</button>
+                <button type="button" class="globe-ctrl-btn active" id="globe-btn-spin" aria-pressed="true" title="Toggle gentle globe auto-rotation">Auto-Spin: ON</button>
               </div>
             </div>
 
             <div class="globe-stage" id="globe-stage">
               <canvas id="globe-canvas" aria-label="Interactive 3D TrueHelm Ocean Globe showing 74 islands and live 3D ships"></canvas>
+              <div class="globe-drag-pill" id="globe-drag-pill" aria-hidden="true">Drag 3D Globe with Mouse or Finger to Spin 360&deg;</div>
               <div class="globe-loading-overlay" id="globe-loading-overlay">
                 <span class="pulse-dot"></span>
                 <span id="globe-loading-text">Loading 1-to-1 74-Island 3D Ocean Globe...</span>
@@ -816,7 +817,7 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
-  <script type="module" src="globe.js"></script>
+  <script src="./app.js?v=20261114d"></script>
+  <script type="module" src="./globe.js?v=20261114d"></script>
 </body>
 </html>
