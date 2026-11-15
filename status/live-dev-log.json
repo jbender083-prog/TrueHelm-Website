@@ -1,8 +1,8 @@
 {
-    "updatedAtUtc":  "2026-11-15T02:49:16Z",
-    "payloadHash":  "912f46306486561fa97807b5fdddc042eb53095ebeb9ccc92f1af72494aaffea",
+    "updatedAtUtc":  "2026-11-15T02:50:10Z",
+    "payloadHash":  "8430d563e6726bc3ed30c7d2d9fffbce739fe53b0029761c24120651af96e91a",
     "activeVersion":  "v1.9.2",
-    "latestReleaseTag":  "v1.9.0",
+    "latestReleaseTag":  "v1.9.1",
     "buildPhase":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
     "buildStatus":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
     "refreshIntervalSeconds":  30,
