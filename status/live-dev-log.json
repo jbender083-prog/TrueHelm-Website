@@ -1,8 +1,8 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:03:15Z",
-    "payloadHash":  "6cabe5a97753048a6bd4dc8bb8554d8d0a62af95aa88bed449c01d771b1e98fb",
+    "updatedAtUtc":  "2026-11-15T01:13:16Z",
+    "payloadHash":  "74712b6f8959271174f9ea7e82c3adaaa7cad84e193c4a1f3940d3f42778b7ed",
     "activeVersion":  "v1.9.1",
-    "latestReleaseTag":  "v1.9.0",
+    "latestReleaseTag":  "v1.9.1",
     "buildPhase":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
     "buildStatus":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
     "refreshIntervalSeconds":  30,
@@ -16,6 +16,21 @@
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-011316",
+                           "timestampUtc":  "2026-11-15T01:13:16Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Passed 100% of Round 13 in-engine verification gates (0.078 ms VHF latency, 112.8 FPS VR / 145.6 FPS Desktop Ultra Storm on #34, 35/35 ships); building standalone Win64 executable, cooking .pak assets, signing binaries \u0026 uploading v1.9.1.",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Compiling standalone Win64 executable, cooking .pak/.utoc/.ucas assets, Authenticode-signing RealisticShippingLanes.exe + EpicWebHelper.exe, and publishing v1.9.1 release zip"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-r13-in-engine-verification-passed",
                            "timestampUtc":  "2026-11-15T01:01:36Z",
