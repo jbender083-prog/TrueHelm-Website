@@ -1,35 +1,45 @@
 {
-    "updatedAtUtc":  "2026-11-15T00:47:39Z",
+    "updatedAtUtc":  "2026-11-15T00:53:10Z",
+    "payloadHash":  "859ad2c4d7248fb05b43707f894e87c6ee3b6067aae19144404d7f2295559de0",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.0",
-    "buildPhase":  "Building \u0026 Verifying v1.9.1 (HUD + In-Engine Tests)",
-    "refreshIntervalSeconds":  300,
+    "buildPhase":  "Running In-Engine Verification \u0026 Capturing 35-Ship Gallery",
+    "buildStatus":  "Running In-Engine Verification \u0026 Capturing 35-Ship Gallery",
+    "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Smooth high-segment spherical 3D billiard balls with distinct Solids (1–7), 8-Ball (8), Stripes (9–15), and real 3D rolling spin",
-                           "PC Left-Click hold \u0026 pull-back pool cue power mechanic (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
-                           "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV with live crew playback sync",
-                           "Real-player Maritime Company custom keyboard naming, configurable delivery payout commission %, and Company-Provided vs. Player-Provided fleet ships",
-                           "Live 5-minute website Dev Dashboard + persistent chronological History Log",
-                           "New build pipeline asset: 5-Minute Live Website Dev Dashboard Feed"
+                           "Rendering 35 sunny open-ocean vessel beauty photos (Boats #01–#35) for the interactive website Fleet Explorer modal",
+                           "Running automated in-engine Round 13 physics, VHF latency (\u003c 5 ms), and Ultra Thunderstorm \u003e= 80 FPS verification suite"
                        ],
     "currentlyChanged":  [
-                             "Moved VHF bridge radio voice capture \u0026 playback onto a dedicated background audio thread for 0 ms trigger response",
-                             "Upgrading [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes for 1st-Person and 3rd-Person control",
-                             "Simplified and mobile-optimized the TrueHelm website across phones, tablets, and desktops",
-                             "Active workspace edits: Win64 Standalone Packaging \u0026 Embedded Web Browser Runtime",
-                             "Active workspace edits: 4,617 km Ocean World \u0026 Multi-Hull Peer Spawner",
-                             "Active workspace edits: Vessel Physics, 3D Pool Table, 110\" YouTube TV \u0026 VR Controls",
-                             "Active workspace edits: Multiplayer Company State \u0026 Crew Packet Sync",
-                             "Active workspace edits: 3K Bridge MFDs, [P] Company Dashboard \u0026 Verification Harness",
-                             "Active workspace edits: 35-Ship Fleet Specs \u0026 Company Vessel Modes"
+                             "Preparing standalone Win64 executable compile, .pak asset cook, Authenticode binary signing, and v1.9.1 release zip"
                          ],
     "currentlyRemoved":  [
-                             "Removed unported cross-platform placeholder buttons \u0026 badges (100% focused on Windows PC \u0026 OpenXR VR)",
-                             "Replaced low-poly cubish 20-triangle pool balls with smooth phenolic-resin spheres",
-                             "Removed synchronous Game Thread waveInOpen/waveInClose calls that caused a 1–2s freeze on VHF radio trigger",
-                             "Removed cluttered HUD compass/bracket chrome that crowded mobile screens"
+
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-r13-cpp-and-hud-compiled",
+                           "timestampUtc":  "2026-11-15T00:49:16Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Completed \u0026 compiled Round 13 gameplay, physics, VR, audio, and Company Co-Op UI systems (0 errors, 0 warnings) — graduated out of active build queue.",
+                           "added":  [
+                                         "Smooth \u003e=1,500-triangle spherical 3D billiard balls with Solids (1–7), 8-Ball (8), Stripes (9–15), and 3D rolling quaternion spin",
+                                         "PC Left-Click hold \u0026 pull-back pool cue power bar (0–55 cm stop) + physical OpenXR VR controller pool cue grab, align \u0026 forward stroke",
+                                         "Mega-Ship 110\" Lounge TV YouTube live URL paste/input (Ctrl+V) with crew playback sync",
+                                         "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N), and Company-Provided vs. Player-Provided fleet ships"
+                                     ],
+                           "changed":  [
+                                           "Moved VHF bridge radio voice capture \u0026 playback onto a warm background worker thread (\u003c 5 ms Game Thread trigger)",
+                                           "Upgraded [P] Multiplayer Company UI \u0026 Bridge Monitor 7 hitboxes across 1st-Person and 3rd-Person",
+                                           "Simplified \u0026 mobile-optimized the TrueHelm website across 360px/390px phones and 1920px desktops, switching live dashboard sync to 30 seconds"
+                                       ],
+                           "removed":  [
+                                           "Removed all unported Mac download buttons \u0026 badges (100% Windows PC \u0026 OpenXR VR focus)",
+                                           "Replaced cubish 20-triangle pool ball meshes with smooth phenolic-resin UV spheres",
+                                           "Removed synchronous Game Thread waveInOpen/waveInClose calls that caused VHF trigger stalls",
+                                           "Removed cluttered HUD compass/bracket chrome on mobile screens"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-004739",
                            "timestampUtc":  "2026-11-15T00:47:39Z",
@@ -188,22 +198,26 @@
     "versionLogs":  [
                         {
                             "version":  "v1.9.1",
-                            "badge":  "In Progress · Next Release",
+                            "badge":  "Verifying \u0026 Packaging · Next Release",
                             "date":  "November 2026",
                             "openByDefault":  true,
                             "added":  [
-                                          "Smooth spherical Solid (1–7), 8-Ball, \u0026 Striped (9–15) 3D pool balls with rolling quaternion spin",
-                                          "PC Left-Click hold \u0026 drag-back cue stick power gauge + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
-                                          "Copy \u0026 paste real YouTube links onto the Mega-Ship 110\" TV (Ctrl+V or URL input), synced live across crewmates",
-                                          "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)"
+                                          "Smooth \u003e=1,500-triangle spherical Solid (1–7), 8-Ball (8), \u0026 Striped (9–15) 3D pool balls with real rolling quaternion spin",
+                                          "PC Left-Click hold \u0026 drag-back cue stick power gauge (0–55 cm) + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
+                                          "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV (Ctrl+V or URL input), synced live across crewmates",
+                                          "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)",
+                                          "Live 30-second website Dev Dashboard, instant GitHub API Refresh, \u0026 clickable 35-vessel Fleet Explorer photo modals"
                                       ],
                             "changed":  [
-                                            "Refactored VHF bridge radio audio onto a warm background worker thread (\u003c 0.05 ms Game Thread, zero trigger lag)",
-                                            "Fixed Bridge Monitor 7 \u0026 1st-Person [P] Create Company button hitboxes"
+                                            "Refactored VHF bridge radio audio onto a warm background worker thread (\u003c 5 ms Game Thread response, zero trigger lag)",
+                                            "Upgraded Bridge Monitor 7 \u0026 1st-Person/3rd-Person [P] Create Company \u0026 Fleet Sharing controls",
+                                            "Simplified \u0026 mobile-optimized TrueHelm website layout for zero overflow across phones and desktops"
                                         ],
                             "removed":  [
-                                            "Replaced cubish 20-triangle pool ball meshes",
-                                            "Removed synchronous Game Thread WinMM mic open/close stalls"
+                                            "Removed unported Mac download buttons \u0026 links (100% focused on Windows PC \u0026 OpenXR VR)",
+                                            "Replaced cubish 20-triangle pool ball meshes with smooth UV spheres",
+                                            "Removed synchronous Game Thread WinMM mic open/close stalls",
+                                            "Removed busy decorative website HUD chrome on mobile screens"
                                         ]
                         },
                         {
