@@ -1,13 +1,13 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:31:11Z",
-    "payloadHash":  "87fcd355469ee272849cbe4960d3c5904e3cc0c92905bff33f6e2834de826dec",
+    "updatedAtUtc":  "2026-11-15T03:42:05Z",
+    "payloadHash":  "cc71083570a5e5120b9db0e86120184c51b09d13e9ca3a98e4969dcece1221da",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Updating Live Website 3D Ocean Globe — Strict Real-Player Liveness",
-    "buildStatus":  "Updating Live Website 3D Ocean Globe — Strict Real-Player Liveness",
+    "buildPhase":  "Building TrueHelm Desktop Launcher (.exe) \u0026 Live-Only 3D Globe Polish",
+    "buildStatus":  "Building TrueHelm Desktop Launcher (.exe) \u0026 Live-Only 3D Globe Polish",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-
+                           "TrueHelm Desktop Launcher (TrueHelmLauncher.exe): Zero-dependency 1-click Windows game installer, auto-updater \u0026 PC/OpenXR VR launcher (no manual .zip extraction required)"
                        ],
     "currentlyChanged":  [
                              "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
@@ -16,6 +16,21 @@
                              "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-034205",
+                           "timestampUtc":  "2026-11-15T03:42:05Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Building zero-dependency single-file TrueHelmLauncher.exe (1-click zip-free Windows PC \u0026 OpenXR VR installer/auto-updater) and refining #live-globe to strictly display real active online captains.",
+                           "added":  [
+                                         "TrueHelm Desktop Launcher (TrueHelmLauncher.exe): Zero-dependency 1-click Windows game installer, auto-updater \u0026 PC/OpenXR VR launcher (no manual .zip extraction required)"
+                                     ],
+                           "changed":  [
+                                           "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
+                                       ],
+                           "removed":  [
+                                           "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-033111",
                            "timestampUtc":  "2026-11-15T03:31:11Z",
