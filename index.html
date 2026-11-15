@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261114h" />
+  <link rel="stylesheet" href="./styles.css?v=20261115a" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -679,17 +679,48 @@
           </div>
         </div>
 
-        <!-- Clean Co-Op Summary Card -->
-        <div class="card coop-card">
-          <div>
-            <span class="card-tag emerald">Real-Player Maritime Companies</span>
-            <h3>How to Sail &amp; Run a Company Together with Friends</h3>
-            <ol class="clean-list">
-              <li>Everyone connects automatically to the live <strong>US Ocean Server</strong> with synced time, waves, and storms (100% real human players—zero AI workers).</li>
-              <li>Press <kbd>P</kbd> (or tap <strong>Bridge Monitor 7</strong>), type your custom <strong>Company Name</strong>, set your <strong>Member Payout %</strong> (or Even <code>1/N</code> Split), and click <strong>Create Company</strong>.</li>
-              <li>Friends press <kbd>P</kbd> to join your company—they can <strong>board your ship together</strong>, borrow a <strong>company-provided ship</strong> from your fleet, or sail their <strong>own ship</strong>!</li>
-              <li>Share helm, throttle, anchor, cargo, 3D pool &amp; YouTube TV controls while earning live delivery payouts together.</li>
-            </ol>
+        <!-- Step-by-Step Company & Ship Boarding Guide -->
+        <div class="card coop-card" id="join-company-guide">
+          <div class="coop-header">
+            <span class="card-tag emerald">Real-Player Maritime Companies &middot; US Ocean Server</span>
+            <h3>How Another Player Joins Your Company &amp; Gets Onto Your Ship</h3>
+            <p class="coop-lead">Both players connect automatically to the live <strong>US Ocean Server</strong> as soon as you enter the game &mdash; no port forwarding or room codes needed.</p>
+          </div>
+
+          <div class="coop-split-grid">
+            <div class="coop-subcard">
+              <span class="step-badge">Step 1 &middot; You (Company Owner)</span>
+              <h4>Create &amp; Open Your Company</h4>
+              <ol class="clean-list">
+                <li>Press <kbd>P</kbd> to open <strong>Multiplayer &amp; Maritime Company Co-Op</strong> <em>(or click <strong>[COMPANY]</strong> on your rightmost 1st-person bridge monitor)</em>.</li>
+                <li><em>(Optional)</em> Click the <strong>Company Name</strong> box to type a custom name, set your payout split (<strong>MODE: % CUT</strong> or <strong>EVEN 1/N SPLIT</strong>), and keep <strong>[ PROVIDE MY OWNED SHIP(S) TO MEMBERS: ON ]</strong> enabled so crewmates can also borrow ships from your fleet.</li>
+                <li>Click <strong>[ + CREATE COMPANY ]</strong> and make sure the access button next to it shows <strong>[ ACCESS: OPEN JOIN ]</strong> (enabled by default).</li>
+              </ol>
+            </div>
+
+            <div class="coop-subcard">
+              <span class="step-badge amber">Step 2 &middot; Other Player (Crewmate)</span>
+              <h4>Join Your Company &amp; Board Your Ship</h4>
+              <ol class="clean-list">
+                <li>Have the other player press <kbd>P</kbd> <em>(or click <strong>[COMPANY]</strong> on their rightmost 1st-person bridge monitor)</em>.</li>
+                <li>Look at the live <strong>US Ocean Server</strong> player list at the bottom of that menu &mdash; your callsign, active ship, and <code>[COMPANY NAME]</code> appear automatically within 1&ndash;2 seconds.</li>
+                <li>Click the gold <strong>[ JOIN COMPANY &amp; BOARD ]</strong> button on your row to join your company and teleport <strong>straight onto your ship&rsquo;s bridge</strong>!</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="coop-modes-box">
+            <h4>What Happens Once They Click <code>[ JOIN COMPANY &amp; BOARD ]</code></h4>
+            <ul class="clean-list">
+              <li><strong>Shared Bridge, Lounge &amp; Controls:</strong> Walk around the wheelhouse &amp; aft lounge together (<kbd>C</kbd> / <kbd>F9</kbd>), sit on the sofa (<kbd>E</kbd>), watch the same <strong>110&quot; YouTube TV</strong>, and see each other&rsquo;s crew avatars live. Helm/throttle, anchor/mooring, and navigation/autopilot sync across the hull, and every cargo contract payout splits automatically.</li>
+              <li><strong>Switch Between 3 Crew Ship Modes Anytime (<kbd>P</kbd>):</strong>
+                <div class="coop-mode-pills">
+                  <span class="coop-mode-item"><strong>[ 1. BOARD OWNER SHIP (CO-OP) ]</strong> &mdash; stay aboard your ship&rsquo;s bridge together.</span>
+                  <span class="coop-mode-item"><strong>[ 2. SAIL COMPANY SHIP #XX ]</strong> + <strong>[ PICK SHIP ]</strong> &mdash; borrow any ship you own and sail alongside you (reverts automatically if they leave).</span>
+                  <span class="coop-mode-item"><strong>[ 3. SAIL MY OWN SHIP ]</strong> &mdash; sail their personal vessel while still earning company split payouts.</span>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -830,7 +861,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261114h"></script>
-  <script type="module" src="./globe.js?v=20261114h"></script>
+  <script src="./app.js?v=20261115a"></script>
+  <script type="module" src="./globe.js?v=20261115a"></script>
 </body>
 </html>
