@@ -9,13 +9,13 @@
   <meta property="og:title" content="TrueHelm: Realistic Shipping Lanes — Free Windows PC &amp; VR Download" />
   <meta property="og:description" content="4,617 km Ocean · 74 Islands &amp; Countries · 35 Ships · Multiplayer Company Co-Op · OpenXR VR. 1-click TrueHelmLauncher.exe auto-installer &amp; updater." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jbender083-prog.github.io/TrueHelm-Website/" />
-  <meta property="og:image" content="https://jbender083-prog.github.io/TrueHelm-Website/assets/screenshots/hero-megaship-continent.jpg" />
+  <meta property="og:url" content="https://truehelm-global-ocean.web.app/" />
+  <meta property="og:image" content="https://truehelm-global-ocean.web.app/assets/screenshots/hero-megaship-continent.jpg" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261114f" />
+  <link rel="stylesheet" href="./styles.css?v=20261114g" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -40,7 +40,8 @@
 
       <div class="header-cta">
         <a class="header-dl-btn"
-           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+           href="./downloads/TrueHelmLauncher.exe"
+           download="TrueHelmLauncher.exe"
            data-direct-dl="TrueHelmLauncher.exe"
            data-dl-kind="launcher">
           Download
@@ -65,16 +66,11 @@
       <a href="#howtoplay" class="drawer-link">How to Play &amp; Controls</a>
       <div class="drawer-downloads">
         <a class="btn btn-primary btn-block"
-           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+           href="./downloads/TrueHelmLauncher.exe"
+           download="TrueHelmLauncher.exe"
            data-direct-dl="TrueHelmLauncher.exe"
            data-dl-kind="launcher">
           Download TrueHelm Launcher (.exe)
-        </a>
-        <a class="drawer-alt-dl"
-           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-           data-direct-dl="TrueHelm_Windows_Playable.zip"
-           data-dl-kind="zip">
-          Or download Portable .ZIP (776 MB)
         </a>
       </div>
     </nav>
@@ -103,7 +99,8 @@
           <div class="cta-row">
             <a class="btn btn-primary"
                id="hero-launcher-btn"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+               href="./downloads/TrueHelmLauncher.exe"
+               download="TrueHelmLauncher.exe"
                data-direct-dl="TrueHelmLauncher.exe"
                data-dl-kind="launcher">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -111,7 +108,7 @@
               </svg>
               <span class="btn-copy">
                 <strong>Download TrueHelm Launcher (.exe)</strong>
-                <small>0.5 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
+                <small>0.2 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
               </span>
             </a>
 
@@ -123,7 +120,7 @@
             </a>
           </div>
 
-          <p class="hero-note">No .zip extraction needed &middot; Open <code>TrueHelmLauncher.exe</code> &amp; click <strong>Download &amp; Install</strong> &middot; <a class="inline-alt-dl" href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP (776 MB)</a></p>
+          <p class="hero-note">Download <code>TrueHelmLauncher.exe</code> once &middot; All game installs &amp; automatic updates happen 100% inside the launcher (no <code>.zip</code> files needed)</p>
 
           <!-- Clean 2x2 (Mobile) / 4-Col (Desktop) Stat Pills -->
           <div class="stats-grid">
@@ -518,7 +515,7 @@
               <span class="pulse-dot"></span>
               <span>LIVE DEV DASHBOARD · 30-SEC AUTO-SYNC</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Target: v1.9.1</span>
+            <span class="dash-target-pill" id="dash-target-version">Target: v1.9.3</span>
             <span class="dash-phase-text" id="dash-build-phase">Syncing live status...</span>
           </div>
           <div class="dash-status-right">
@@ -576,23 +573,23 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.1 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.3 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
-            <!-- Populated dynamically by app.js (with static fallback for instant paint) -->
+            <!-- Populated dynamically by app.js from Firebase RTDB (with static fallback for instant paint) -->
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.1</strong>
-                  <span class="ver-badge emerald">In Progress · Next Release</span>
+                  <strong class="ver-num">v1.9.3</strong>
+                  <span class="ver-badge emerald">Current Live Release</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
               <div class="ver-body">
-                <p><span class="log-pill added">+ Added</span> Smooth spherical Solid &amp; Striped 3D pool balls with rolling spin; PC Left-Click pull-back cue &amp; OpenXR VR physical cue grab/stroke; live YouTube link playback on the 110&quot; TV; real-player Company custom naming, % delivery cuts &amp; Company-Provided vs. Player-Provided ships.</p>
-                <p><span class="log-pill changed">~ Changed</span> Background-threaded VHF radio voice capture (&lt; 0.05 ms Game Thread) &amp; fixed Bridge Monitor 7 / [P] Create Company buttons.</p>
-                <p><span class="log-pill removed">&minus; Removed</span> Cubish 20-tri pool balls &amp; synchronous Game Thread audio stalls.</p>
+                <p><span class="log-pill added">+ Added</span> Sleek Desktop Launcher v2 (<code>TrueHelmLauncher.exe</code>) with 100% in-launcher installs &amp; automatic updates, Google &amp; Email Captain Account sign-in, and real sunlit ocean waves &amp; full-color 3D ship showcase on the Main Menu.</p>
+                <p><span class="log-pill changed">~ Changed</span> Live 1-to-1 3D Ocean Globe strictly renders active US Ocean Server captains with open-water berth accuracy across all 32 ports.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Removed cyber wireframe lines &amp; grid from the Main Menu and eliminated manual <code>.zip</code> downloads.</p>
               </div>
             </details>
 
@@ -659,26 +656,26 @@
       <div class="container">
         <div class="section-head">
           <h2>Quick Start &amp; Multiplayer Co-Op</h2>
-          <p>Download the 0.5 MB Windows Launcher, auto-install with zero .zip extraction, and sail with friends on Windows PC or OpenXR VR.</p>
+          <p>Download the 0.2 MB Windows Launcher, auto-install with zero .zip extraction, and sail with friends on Windows PC or OpenXR VR.</p>
         </div>
 
         <div class="steps-grid">
           <div class="card step-card">
             <span class="step-badge">Step 1</span>
             <h3>Download Launcher (.exe)</h3>
-            <p>Click <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher"><strong>Download TrueHelm Launcher (.exe)</strong></a> (<code>0.5 MB</code> single-file app &mdash; zero runtime required, or use the <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP</a>).</p>
+            <p>Click <a href="./downloads/TrueHelmLauncher.exe" download="TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher"><strong>Download TrueHelm Launcher (.exe)</strong></a> (<code>0.2 MB</code> single-file app &mdash; zero runtime or external download pages).</p>
           </div>
 
           <div class="card step-card">
             <span class="step-badge">Step 2</span>
-            <h3>Click Download &amp; Install</h3>
-            <p>Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong>. It streams, installs, and auto-updates TrueHelm automatically with zero <code>.zip</code> extraction.<br /><small class="smartscreen-note">Windows SmartScreen tip: if prompted on first open, click <strong>More info &rarr; Run anyway</strong>.</small></p>
+            <h3>Auto-Install &amp; Update Inside Launcher</h3>
+            <p>Open <code>TrueHelmLauncher.exe</code> and click <strong>Install</strong>. Every game install and future update happens 100% inside the launcher automatically with zero <code>.zip</code> files.<br /><small class="smartscreen-note">Windows SmartScreen tip: if prompted on first open, click <strong>More info &rarr; Run anyway</strong>.</small></p>
           </div>
 
           <div class="card step-card">
             <span class="step-badge">Step 3</span>
-            <h3>Play Desktop or OpenXR VR</h3>
-            <p>Choose <strong>Windows Desktop</strong> or <strong>OpenXR VR Mode</strong> inside the launcher and click <strong>Play TrueHelm</strong> &mdash; your career cash &amp; ships persist across every update!</p>
+            <h3>Sign In &amp; Play Desktop or VR</h3>
+            <p>Sign in with Google or Email to sync your Captain Account, choose <strong>Desktop</strong> or <strong>VR</strong>, and click <strong>Play</strong> &mdash; your career cash &amp; ships stay saved across every update!</p>
           </div>
         </div>
 
@@ -725,10 +722,11 @@
       <div class="container">
         <div class="card cta-panel">
           <h2>Ready to Set Sail?</h2>
-          <p>Download the 0.5 MB single-file TrueHelm Desktop Launcher &amp; Auto-Updater for Windows 10/11 (PC &amp; OpenXR VR) &mdash; no .zip extraction required.</p>
+          <p>Download <code>TrueHelmLauncher.exe</code> once &mdash; all game installs and automatic updates happen 100% inside the launcher for Windows 10/11 (PC &amp; OpenXR VR).</p>
           <div class="cta-row cta-centered">
             <a class="btn btn-primary"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+               href="./downloads/TrueHelmLauncher.exe"
+               download="TrueHelmLauncher.exe"
                data-direct-dl="TrueHelmLauncher.exe"
                data-dl-kind="launcher">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -736,17 +734,14 @@
               </svg>
               <span class="btn-copy">
                 <strong>Download TrueHelm Launcher (.exe)</strong>
-                <small>0.5 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
+                <small>0.2 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
               </span>
             </a>
 
-            <a class="btn btn-secondary"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-               data-direct-dl="TrueHelm_Windows_Playable.zip"
-               data-dl-kind="zip">
+            <a class="btn btn-secondary" href="#live-globe">
               <span class="btn-copy">
-                <strong>Portable Archive (.ZIP)</strong>
-                <small>776 MB Direct Manual Download · Unzip &amp; Run</small>
+                <strong>Explore Live 3D Ocean Globe</strong>
+                <small>74 Islands &amp; Real-Time US Ocean Server Captains</small>
               </span>
             </a>
           </div>
@@ -759,11 +754,11 @@
     <div class="container footer-row">
       <span><strong>TrueHelm: Realistic Shipping Lanes</strong> · Windows PC &amp; OpenXR VR (UE 5.8)</span>
       <div class="footer-links">
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher">Download Launcher (.exe)</a>
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP</a>
+        <a href="./downloads/TrueHelmLauncher.exe" download="TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher">Download Launcher (.exe)</a>
         <a href="#live-globe">Live 3D Globe</a>
+        <a href="#fleet">35-Ship Fleet</a>
         <a href="#logs">Live Logs</a>
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest">GitHub Releases</a>
+        <a href="#howtoplay">How to Play</a>
       </div>
     </div>
   </footer>
@@ -771,7 +766,7 @@
   <!-- Non-Blocking Direct Download Toast -->
   <div class="toast" id="download-toast" role="status" aria-live="polite" hidden>
     <strong id="toast-title">Downloading TrueHelmLauncher.exe...</strong>
-    <span id="toast-hint">Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong> &mdash; no .zip extraction needed!</span>
+    <span id="toast-hint">Open <code>TrueHelmLauncher.exe</code> once &mdash; all game installs &amp; automatic updates happen right inside the launcher!</span>
   </div>
 
   <!-- Mobile-Friendly Lightbox -->
@@ -835,7 +830,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261114f"></script>
-  <script type="module" src="./globe.js?v=20261114f"></script>
+  <script src="./app.js?v=20261114g"></script>
+  <script type="module" src="./globe.js?v=20261114g"></script>
 </body>
 </html>

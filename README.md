@@ -1,8 +1,7 @@
 # TrueHelm: Realistic Shipping Lanes — Official Website
 
-Live Website (GitHub Pages): **https://jbender083-prog.github.io/TrueHelm-Website/**
+Official Website: **https://truehelm-global-ocean.web.app/**
 
-## Direct 1-Click Playable Game Download (Windows PC & OpenXR VR)
+## 1-Click Desktop Launcher & Auto-Updater (Windows 10/11 PC & OpenXR VR)
 
-- **Windows 10/11 64-bit PC & OpenXR VR (`594 MB` `.ZIP`)**: [Download `TrueHelm_Windows_Playable.zip`](https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip)
-- **Releases & Patch Notes**: [TrueHelm-Game-Download Releases](https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest)
+- **Windows 10/11 64-bit PC & OpenXR VR (`TrueHelmLauncher.exe`)**: Download `TrueHelmLauncher.exe` directly from the official website — all game installs and automatic updates happen 100% inside the launcher.

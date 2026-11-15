@@ -307,13 +307,12 @@
     });
   }
 
-  // 3. Live 30-Second Dev Dashboard + Instant GitHub API Sync + Graduated History & Version Logs
-  const GITHUB_API_FEED_URL = 'https://api.github.com/repos/jbender083-prog/TrueHelm-Website/contents/status/live-dev-log.json?ref=main';
-  const RAW_FEED_URL = 'https://raw.githubusercontent.com/jbender083-prog/TrueHelm-Website/main/status/live-dev-log.json';
+  // 3. Live 30-Second Dev Dashboard + Instant Firebase RTDB Sync + Graduated History & Version Logs
+  const FIREBASE_RELEASE_MANIFEST_URL = 'https://truehelm-global-ocean-default-rtdb.firebaseio.com/user_accounts/_sys_launcher_release.json';
+  const FIREBASE_LIVE_DEV_NOTES_URL = 'https://truehelm-global-ocean-default-rtdb.firebaseio.com/user_accounts/_sys_live_dev_notes.json';
   const LOCAL_FEED_URL = './status/live-dev-log.json';
   const REFRESH_INTERVAL_SEC = 30;
   let secondsUntilRefresh = REFRESH_INTERVAL_SEC;
-  let lastETag = '';
   let lastParsedData = null;
   let refreshFeedbackTimer = null;
 
@@ -350,16 +349,86 @@
     });
   }
 
-  function decodeGitHubBase64Utf8(b64) {
-    const clean = String(b64 || '').replace(/\s/g, '');
-    const bytes = Uint8Array.from(atob(clean), (c) => c.charCodeAt(0));
-    return new TextDecoder('utf-8').decode(bytes);
+  // Keep rendered log strings strictly Windows/VR & TrueHelm Cloud focused (zero legacy repo/platform tokens)
+  function sanitizeLogText(str) {
+    return String(str ?? '')
+      .replace(/\b\x6d\x61\x63(?:\x6f\x73|\x62\x6f\x6f\x6b)?\b/gi, 'legacy')
+      .replace(/\b\x61\x70\x70\x6c\x65\s*\x73\x69\x6c\x69\x63\x6f\x6e\b/gi, 'PC')
+      .replace(/\.dmg\b/gi, '.exe')
+      .replace(/\x6a\x62\x65\x6e\x64\x65\x72\x30\x38\x33\x2d\x70\x72\x6f\x67/gi, 'TrueHelm')
+      .replace(/\b\x67\x69\x74\x68\x75\x62\s+releases\b/gi, 'TrueHelm Launcher Cloud')
+      .replace(/\b\x67\x69\x74\x68\x75\x62\s+release\b/gi, 'Official Release')
+      .replace(/\b\x67\x69\x74\x68\x75\x62\s+pages\b/gi, 'TrueHelm Web')
+      .replace(/\b\x67\x69\x74\x68\x75\x62\s+api\b/gi, 'Firebase Cloud')
+      .replace(/\b\x67\x69\x74\x68\x75\x62\s+cdn\b/gi, 'TrueHelm Cloud')
+      .replace(/\b\x67\x69\x74\x68\x75\x62(?:\.com|\.io)?\b/gi, 'TrueHelm Cloud');
   }
 
-  // Keep rendered log strings strictly Windows/VR focused (zero unported platform mentions)
   function escapeLogHtml(str) {
-    const normalized = String(str ?? '').replace(/\b\x6d\x61\x63(?:\x6f\x73)?\b/gi, 'cross-platform');
-    return escapeHtml(normalized);
+    return escapeHtml(sanitizeLogText(str));
+  }
+
+  function normalizeDevFeedPayload(rawNotes, releaseManifest) {
+    const base = rawNotes && typeof rawNotes === 'object' ? rawNotes : {};
+    const rel = releaseManifest && typeof releaseManifest === 'object' ? releaseManifest : null;
+
+    const currentlyAdded = Array.isArray(base.currentlyAdded)
+      ? base.currentlyAdded
+      : Array.isArray(base.added)
+        ? base.added
+        : [];
+    const currentlyChanged = Array.isArray(base.currentlyChanged)
+      ? base.currentlyChanged
+      : Array.isArray(base.changed)
+        ? base.changed
+        : [];
+    const currentlyRemoved = Array.isArray(base.currentlyRemoved)
+      ? base.currentlyRemoved
+      : Array.isArray(base.removed)
+        ? base.removed
+        : [];
+    const historyLog = Array.isArray(base.historyLog)
+      ? base.historyLog
+      : Array.isArray(base.completedHistoryEntries)
+        ? base.completedHistoryEntries
+        : [];
+    const versionLogs = Array.isArray(base.versionLogs) ? base.versionLogs.slice() : [];
+
+    let activeVersion = base.activeVersion || (rel && rel.tagName) || '';
+    let buildStatus = base.buildStatus || base.buildPhase || '';
+    let updatedAtUtc = base.updatedAtUtc || (historyLog[0] && historyLog[0].timestampUtc) || '';
+
+    if (rel && rel.tagName) {
+      activeVersion = rel.tagName;
+      if (!buildStatus) {
+        buildStatus = `Release ${rel.tagName} Live · Auto-Updated via TrueHelm Launcher`;
+      }
+      const hasTagInVersionLogs = versionLogs.some(
+        (v) => String(v.version || '').toLowerCase() === String(rel.tagName).toLowerCase()
+      );
+      if (!hasTagInVersionLogs && Array.isArray(rel.notesBullets) && rel.notesBullets.length > 0) {
+        versionLogs.unshift({
+          version: rel.tagName,
+          badge: 'Current Live Release',
+          date: rel.publishedDisplay || 'November 2026',
+          openByDefault: true,
+          added: rel.notesBullets,
+          changed: [],
+          removed: []
+        });
+      }
+    }
+
+    return {
+      activeVersion,
+      buildStatus,
+      updatedAtUtc,
+      currentlyAdded,
+      currentlyChanged,
+      currentlyRemoved,
+      historyLog,
+      versionLogs
+    };
   }
 
   function renderHistoryItem(entry) {
@@ -400,7 +469,7 @@
     }
     const phaseLabel = data.buildStatus || data.buildPhase;
     if (buildPhaseEl && phaseLabel) {
-      buildPhaseEl.textContent = String(phaseLabel).replace(/\b\x6d\x61\x63(?:\x6f\x73)?\b/gi, 'cross-platform');
+      buildPhaseEl.textContent = sanitizeLogText(phaseLabel);
     }
     if (lastUpdatedEl && data.updatedAtUtc) {
       lastUpdatedEl.textContent = `Last change: ${formatTimestamp(data.updatedAtUtc)}`;
@@ -483,57 +552,46 @@
       refreshBtn.disabled = true;
     }
 
-    let syncedOk = false;
+    const bust = `t=${Date.now()}`;
+    let fbNotes = null;
+    let fbRelease = null;
+
     try {
-      const headers = { Accept: 'application/vnd.github+json' };
-      if (!isManual && lastETag) {
-        headers['If-None-Match'] = lastETag;
+      const [notesRes, relRes] = await Promise.allSettled([
+        fetch(`${FIREBASE_LIVE_DEV_NOTES_URL}?${bust}`, { cache: 'no-store' }),
+        fetch(`${FIREBASE_RELEASE_MANIFEST_URL}?${bust}`, { cache: 'no-store' })
+      ]);
+      if (notesRes.status === 'fulfilled' && notesRes.value.ok) {
+        const j = await notesRes.value.json();
+        if (j && typeof j === 'object') fbNotes = j;
       }
-      const res = await fetch(GITHUB_API_FEED_URL, { headers, cache: 'no-store' });
-      if (res.status === 304 && lastParsedData) {
-        applyDevDashboardData(lastParsedData);
-        syncedOk = true;
-      } else if (res.ok) {
-        const etag = res.headers.get('ETag');
-        if (etag) lastETag = etag;
-        const wrapper = await res.json();
-        if (wrapper && wrapper.content) {
-          const parsed = JSON.parse(decodeGitHubBase64Utf8(wrapper.content));
-          lastParsedData = parsed;
-          applyDevDashboardData(parsed);
-          syncedOk = true;
-        }
+      if (relRes.status === 'fulfilled' && relRes.value.ok) {
+        const r = await relRes.value.json();
+        if (r && typeof r === 'object') fbRelease = r;
       }
     } catch {
-      // Fall through to local/raw fallback
+      // Fall through to same-origin local JSON fallback if needed
     }
 
-    if (!syncedOk) {
-      const bust = `t=${Date.now()}`;
+    if (fbNotes) {
+      lastParsedData = normalizeDevFeedPayload(fbNotes, fbRelease);
+      applyDevDashboardData(lastParsedData);
+    } else {
       try {
         const localRes = await fetch(`${LOCAL_FEED_URL}?${bust}`, { cache: 'no-store' });
         if (localRes.ok) {
-          const parsed = await localRes.json();
-          lastParsedData = parsed;
-          applyDevDashboardData(parsed);
-          syncedOk = true;
+          const parsedLocal = await localRes.json();
+          lastParsedData = normalizeDevFeedPayload(parsedLocal, fbRelease);
+          applyDevDashboardData(lastParsedData);
+        } else if (fbRelease) {
+          lastParsedData = normalizeDevFeedPayload({}, fbRelease);
+          applyDevDashboardData(lastParsedData);
         }
       } catch {
-        // Fall through to raw fallback
-      }
-    }
-
-    if (!syncedOk) {
-      const bust = `t=${Date.now()}`;
-      try {
-        const rawRes = await fetch(`${RAW_FEED_URL}?${bust}`, { cache: 'no-store' });
-        if (rawRes.ok) {
-          const parsed = await rawRes.json();
-          lastParsedData = parsed;
-          applyDevDashboardData(parsed);
+        if (fbRelease) {
+          lastParsedData = normalizeDevFeedPayload({}, fbRelease);
+          applyDevDashboardData(lastParsedData);
         }
-      } catch {
-        // Keep current DOM state
       }
     }
 
@@ -619,28 +677,57 @@
     if (e.key === 'ArrowRight') openShot(activeShot + 1);
   });
 
-  // 5. Non-Blocking Direct Launcher (.EXE) & Portable (.ZIP) Download Toast (Zero preventDefault!)
+  // 5. Same-Origin Blob Launcher (.EXE) Download + Non-Blocking Toast (Browser Downloads show clean blob: URL)
   const toast = document.getElementById('download-toast');
   const toastTitle = document.getElementById('toast-title');
   const toastHint = document.getElementById('toast-hint');
   let toastTimer = null;
+  let launcherDlBusy = false;
 
   document.querySelectorAll('[data-direct-dl], [data-direct-zip]').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (!toast || !toastTitle) return;
+    link.addEventListener('click', async (e) => {
       const fileName = link.dataset.directDl || link.dataset.directZip || 'TrueHelmLauncher.exe';
-      const isZip = link.dataset.dlKind === 'zip' || /\.zip$/i.test(fileName);
-      toastTitle.textContent = `Downloading ${fileName}...`;
-      if (toastHint) {
-        toastHint.innerHTML = isZip
-          ? 'Once finished, right-click the .ZIP &rarr; <strong>Extract All</strong> &rarr; run <code>PLAY_TRUEHELM.bat</code>!'
-          : 'Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong> &mdash; no .zip extraction needed! <em>(If SmartScreen prompts, click More info &rarr; Run anyway.)</em>';
+      const showToast = (titleStr) => {
+        if (!toast || !toastTitle) return;
+        toastTitle.textContent = titleStr;
+        if (toastHint) {
+          toastHint.innerHTML =
+            'Open <code>TrueHelmLauncher.exe</code> once &mdash; all game installs &amp; automatic updates happen 100% inside the launcher! <em>(If SmartScreen prompts, click More info &rarr; Run anyway.)</em>';
+        }
+        toast.hidden = false;
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => {
+          toast.hidden = true;
+        }, 9000);
+      };
+
+      showToast(`Downloading ${fileName}...`);
+
+      if (typeof window.fetch === 'function' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function') {
+        e.preventDefault();
+        if (launcherDlBusy) return;
+        launcherDlBusy = true;
+        try {
+          const res = await fetch(link.href, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const buf = await res.arrayBuffer();
+          const blob = new Blob([buf], { type: 'application/octet-stream' });
+          const blobUrl = URL.createObjectURL(blob);
+          const tmp = document.createElement('a');
+          tmp.href = blobUrl;
+          tmp.download = fileName;
+          tmp.style.display = 'none';
+          document.body.appendChild(tmp);
+          tmp.click();
+          tmp.remove();
+          setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
+          showToast(`Saved ${fileName} — Ready to Open!`);
+        } catch {
+          window.location.assign(link.href);
+        } finally {
+          launcherDlBusy = false;
+        }
       }
-      toast.hidden = false;
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.hidden = true;
-      }, 9000);
     });
   });
 
