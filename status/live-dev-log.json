@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:00:36Z",
-    "payloadHash":  "2c82dc883b4e2ed0d78f812afbc60611277d8ad7e288ea9939a83e02fbbb4291",
+    "updatedAtUtc":  "2026-11-15T01:03:15Z",
+    "payloadHash":  "6cabe5a97753048a6bd4dc8bb8554d8d0a62af95aa88bed449c01d771b1e98fb",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.0",
-    "buildPhase":  "Finalizing In-Engine Verification \u0026 Packaging v1.9.1",
-    "buildStatus":  "Finalizing In-Engine Verification \u0026 Packaging v1.9.1",
+    "buildPhase":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
+    "buildStatus":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Running final Round 13 in-engine verification pass (16 smooth pool spheres, PC/VR cue strike, \u003c 5 ms VHF latency, YouTube TV, 70%/30% company split, \u003e= 80 FPS Ultra Storm)"
+
                        ],
     "currentlyChanged":  [
-                             "Building standalone Win64 executable, cooking .pak assets, signing binaries, and preparing v1.9.1 release zip"
+                             "Compiling standalone Win64 executable, cooking .pak/.utoc/.ucas assets, Authenticode-signing RealisticShippingLanes.exe + EpicWebHelper.exe, and publishing v1.9.1 release zip"
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-r13-in-engine-verification-passed",
+                           "timestampUtc":  "2026-11-15T01:01:36Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Passed 100% of Round 13 in-engine verification \u0026 Ultra Thunderstorm \u003e= 80 FPS gates (VR-1P 112.8 FPS, Desktop-1P 145.6 FPS, 3P 111.8 FPS on #34; VHF trigger 0.078 ms) — graduated out of active build queue.",
+                           "added":  [
+                                         "Verified 16 smooth 2,592-triangle billiard spheres, PC 0–55 cm drag-back cue + OpenXR VR physical cue stroke, YouTube 110\" TV stream, and 70%/30% company commission conservation"
+                                     ],
+                           "changed":  [
+                                           "Verified 0.078 ms Game Thread VHF radio latency and 97–145 FPS Ultra Heavy Thunderstorm performance across all 35 ships"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-35-boat-web-gallery-and-30s-live-feed",
                            "timestampUtc":  "2026-11-15T00:59:37Z",
@@ -228,7 +243,7 @@
     "versionLogs":  [
                         {
                             "version":  "v1.9.1",
-                            "badge":  "Verifying \u0026 Packaging · Next Release",
+                            "badge":  "Packaging · Next Release",
                             "date":  "November 2026",
                             "openByDefault":  true,
                             "added":  [
@@ -239,7 +254,7 @@
                                           "Live 30-second website Dev Dashboard, instant GitHub API Refresh, \u0026 clickable 35-vessel Fleet Explorer photo modals"
                                       ],
                             "changed":  [
-                                            "Refactored VHF bridge radio audio onto a warm background worker thread (\u003c 5 ms Game Thread response, zero trigger lag)",
+                                            "Refactored VHF bridge radio audio onto a warm background worker thread (0.078 ms Game Thread response, zero trigger lag)",
                                             "Upgraded Bridge Monitor 7 \u0026 1st-Person/3rd-Person [P] Create Company \u0026 Fleet Sharing controls",
                                             "Simplified \u0026 mobile-optimized TrueHelm website layout for zero overflow across phones and desktops"
                                         ],
