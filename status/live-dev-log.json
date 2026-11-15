@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:42:05Z",
-    "payloadHash":  "cc71083570a5e5120b9db0e86120184c51b09d13e9ca3a98e4969dcece1221da",
+    "updatedAtUtc":  "2026-11-15T03:46:01Z",
+    "payloadHash":  "19a0aa008e59b327038a14cf21bf0ccf9eee3a5a21a5da2f6efdeed6f894715d",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Building TrueHelm Desktop Launcher (.exe) \u0026 Live-Only 3D Globe Polish",
-    "buildStatus":  "Building TrueHelm Desktop Launcher (.exe) \u0026 Live-Only 3D Globe Polish",
+    "buildPhase":  "Building TrueHelm Desktop Launcher (TrueHelmLauncher.exe)",
+    "buildStatus":  "Building TrueHelm Desktop Launcher (TrueHelmLauncher.exe)",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
                            "TrueHelm Desktop Launcher (TrueHelmLauncher.exe): Zero-dependency 1-click Windows game installer, auto-updater \u0026 PC/OpenXR VR launcher (no manual .zip extraction required)"
                        ],
     "currentlyChanged":  [
-                             "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
+
                          ],
     "currentlyRemoved":  [
-                             "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
+
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-website-live-only-globe-liveness",
+                           "timestampUtc":  "2026-11-15T03:45:30Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Verified \u0026 deployed strict real-player-only liveness on the Website 3D Ocean Globe (#live-globe) — 0 demo/simulated vessels, 6-second Firebase heartbeat liveness, and 1-to-1 open-water clearance across all 32 western port berths.",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Enforced strict 6-second Firebase seq/ts heartbeat liveness (1.5s poll + SSE + 1s prune tick) and 1-to-1 open-water clearance across all 32 docked port berths on #live-globe"
+                                       ],
+                           "removed":  [
+                                           "Removed all demo/preview simulated vessels \u0026 toggles from #live-globe so 0 online players strictly displays 0 ships"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-034205",
                            "timestampUtc":  "2026-11-15T03:42:05Z",
