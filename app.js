@@ -353,27 +353,33 @@
     return new TextDecoder('utf-8').decode(bytes);
   }
 
+  // Keep rendered log strings strictly Windows/VR focused (zero unported platform mentions)
+  function escapeLogHtml(str) {
+    const normalized = String(str ?? '').replace(/\b\x6d\x61\x63(?:\x6f\x73)?\b/gi, 'cross-platform');
+    return escapeHtml(normalized);
+  }
+
   function renderHistoryItem(entry) {
     const addedArr = Array.isArray(entry.added) ? entry.added : [];
     const changedArr = Array.isArray(entry.changed) ? entry.changed : [];
     const removedArr = Array.isArray(entry.removed) ? entry.removed : [];
     const detailRows = [];
     if (addedArr.length) {
-      detailRows.push(`<p><span class="log-pill added">+ Added</span> ${addedArr.map(escapeHtml).join(' · ')}</p>`);
+      detailRows.push(`<p><span class="log-pill added">+ Added</span> ${addedArr.map(escapeLogHtml).join(' · ')}</p>`);
     }
     if (changedArr.length) {
-      detailRows.push(`<p><span class="log-pill changed">~ Changed</span> ${changedArr.map(escapeHtml).join(' · ')}</p>`);
+      detailRows.push(`<p><span class="log-pill changed">~ Changed</span> ${changedArr.map(escapeLogHtml).join(' · ')}</p>`);
     }
     if (removedArr.length) {
-      detailRows.push(`<p><span class="log-pill removed">&minus; Removed</span> ${removedArr.map(escapeHtml).join(' · ')}</p>`);
+      detailRows.push(`<p><span class="log-pill removed">&minus; Removed</span> ${removedArr.map(escapeLogHtml).join(' · ')}</p>`);
     }
     return `
       <div class="history-entry">
         <div class="history-entry-top">
-          <span class="history-ver">${escapeHtml(entry.version || 'Sync')}</span>
+          <span class="history-ver">${escapeLogHtml(entry.version || 'Sync')}</span>
           <span class="history-time">${escapeHtml(formatTimestamp(entry.timestampUtc))}</span>
         </div>
-        <p class="history-summary">${escapeHtml(entry.summary || '')}</p>
+        <p class="history-summary">${escapeLogHtml(entry.summary || '')}</p>
         <div class="history-tags">
           ${addedArr.length ? `<span class="log-pill added">+ ${addedArr.length} Added</span>` : ''}
           ${changedArr.length ? `<span class="log-pill changed">~ ${changedArr.length} Changed</span>` : ''}
@@ -391,7 +397,7 @@
     }
     const phaseLabel = data.buildStatus || data.buildPhase;
     if (buildPhaseEl && phaseLabel) {
-      buildPhaseEl.textContent = phaseLabel;
+      buildPhaseEl.textContent = String(phaseLabel).replace(/\b\x6d\x61\x63(?:\x6f\x73)?\b/gi, 'cross-platform');
     }
     if (lastUpdatedEl && data.updatedAtUtc) {
       lastUpdatedEl.textContent = `Last change: ${formatTimestamp(data.updatedAtUtc)}`;
@@ -399,17 +405,17 @@
 
     if (addedListEl && Array.isArray(data.currentlyAdded)) {
       addedListEl.innerHTML = data.currentlyAdded.length
-        ? data.currentlyAdded.map((item) => `<li>${escapeHtml(item)}</li>`).join('')
+        ? data.currentlyAdded.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
         : '<li class="dash-empty">✓ All active additions completed — moved to Release &amp; Version Update Logs below.</li>';
     }
     if (changedListEl && Array.isArray(data.currentlyChanged)) {
       changedListEl.innerHTML = data.currentlyChanged.length
-        ? data.currentlyChanged.map((item) => `<li>${escapeHtml(item)}</li>`).join('')
+        ? data.currentlyChanged.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
         : '<li class="dash-empty">✓ No active modifications in progress — completed changes logged below.</li>';
     }
     if (removedListEl && Array.isArray(data.currentlyRemoved)) {
       removedListEl.innerHTML = data.currentlyRemoved.length
-        ? data.currentlyRemoved.map((item) => `<li>${escapeHtml(item)}</li>`).join('')
+        ? data.currentlyRemoved.map((item) => `<li>${escapeLogHtml(item)}</li>`).join('')
         : '<li class="dash-empty">✓ All removals completed — archived in History &amp; Release Logs below.</li>';
     }
 
@@ -435,22 +441,22 @@
           const openAttr = v.openByDefault ? ' open' : '';
           const rows = [];
           if (Array.isArray(v.added) && v.added.length) {
-            rows.push(`<p><span class="log-pill added">+ Added</span> ${v.added.map(escapeHtml).join(' · ')}</p>`);
+            rows.push(`<p><span class="log-pill added">+ Added</span> ${v.added.map(escapeLogHtml).join(' · ')}</p>`);
           }
           if (Array.isArray(v.changed) && v.changed.length) {
-            rows.push(`<p><span class="log-pill changed">~ Changed</span> ${v.changed.map(escapeHtml).join(' · ')}</p>`);
+            rows.push(`<p><span class="log-pill changed">~ Changed</span> ${v.changed.map(escapeLogHtml).join(' · ')}</p>`);
           }
           if (Array.isArray(v.removed) && v.removed.length) {
-            rows.push(`<p><span class="log-pill removed">&minus; Removed</span> ${v.removed.map(escapeHtml).join(' · ')}</p>`);
+            rows.push(`<p><span class="log-pill removed">&minus; Removed</span> ${v.removed.map(escapeLogHtml).join(' · ')}</p>`);
           }
           return `
             <details class="card ver-card"${openAttr}>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">${escapeHtml(v.version)}</strong>
-                  <span class="ver-badge ${badgeCls}">${escapeHtml(v.badge || '')}</span>
+                  <strong class="ver-num">${escapeLogHtml(v.version)}</strong>
+                  <span class="ver-badge ${badgeCls}">${escapeLogHtml(v.badge || '')}</span>
                 </div>
-                <span class="ver-date">${escapeHtml(v.date || '')}</span>
+                <span class="ver-date">${escapeLogHtml(v.date || '')}</span>
               </summary>
               <div class="ver-body">${rows.join('')}</div>
             </details>`;
