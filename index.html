@@ -100,7 +100,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Live Dev Dashboard &amp; Logs</strong>
-                <small>See live 5-min changes &amp; patch notes</small>
+                <small>See live 30-sec changes &amp; patch notes</small>
               </span>
             </a>
           </div>
@@ -237,7 +237,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Explore All 35 Playable Ships</h2>
-          <p>Select any tier to view vessel dimensions, cargo capacity, top speed, and shipyard price.</p>
+          <p>Select any tier and click or tap any individual boat (#01–#35) to view its in-game photo, cost, size, cargo capacity, and speed in knots.</p>
         </div>
 
         <div class="tier-pills" role="tablist" aria-label="Ship Tiers">
@@ -263,51 +263,128 @@
         </div>
 
         <div class="ships-card-grid" id="ships-card-grid" aria-live="polite">
-          <article class="ship-card">
-            <div class="ship-card-top"><span class="ship-id">#29</span><h4>MV Cape Good Hope</h4></div>
-            <p class="ship-cls">Capesize Ore Carrier</p>
-            <div class="ship-specs"><span>240m × 38m · 9.2m draft</span><span>162,000 t (10,800 TEU)</span><span>12.6 kts</span><strong class="ship-price">$5,040,000</strong></div>
+          <article class="ship-card" role="button" tabindex="0" data-ship-num="29" aria-label="View photo and specs for #29 MV Cape Good Hope">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_29.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#29 MV Cape Good Hope in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#29</span><h4>MV Cape Good Hope</h4></div>
+              <p class="ship-cls">Capesize Ore Carrier</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$5,040,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">12.6 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">240m × 38m · 9.2m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">162,000 t (10,800 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card">
-            <div class="ship-card-top"><span class="ship-id">#30</span><h4>MT Red Sea Emperor</h4></div>
-            <p class="ship-cls">Suezmax Crude Tanker</p>
-            <div class="ship-specs"><span>232m × 37m · 9.0m draft</span><span>132,000 t (8,800 TEU)</span><span>13.0 kts</span><strong class="ship-price">$6,300,000</strong></div>
+          <article class="ship-card" role="button" tabindex="0" data-ship-num="30" aria-label="View photo and specs for #30 MT Red Sea Emperor">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_30.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#30 MT Red Sea Emperor in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#30</span><h4>MT Red Sea Emperor</h4></div>
+              <p class="ship-cls">Suezmax Crude Tanker</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$6,300,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">13.0 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">232m × 37m · 9.0m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">132,000 t (8,800 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card">
-            <div class="ship-card-top"><span class="ship-id">#31</span><h4>MT Olympus VLCC</h4></div>
-            <p class="ship-cls">VLCC Supertanker</p>
-            <div class="ship-specs"><span>265m × 44m · 9.8m draft</span><span>216,000 t (14,400 TEU)</span><span>12.2 kts</span><strong class="ship-price">$8,120,000</strong></div>
+          <article class="ship-card" role="button" tabindex="0" data-ship-num="31" aria-label="View photo and specs for #31 MT Olympus VLCC">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_31.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#31 MT Olympus VLCC in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#31</span><h4>MT Olympus VLCC</h4></div>
+              <p class="ship-cls">VLCC Supertanker</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$8,120,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">12.2 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">265m × 44m · 9.8m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">216,000 t (14,400 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card flagship">
-            <div class="ship-card-top"><span class="ship-id">#32</span><h4>MV Megamax 24000 Titan ★</h4></div>
-            <p class="ship-cls">ULCV 24,000 TEU</p>
-            <div class="ship-specs"><span>280m × 45m · 9.6m draft</span><span>330,000 t (22,000 TEU)</span><span>11.4 kts</span><strong class="ship-price">$10,920,000</strong></div>
+          <article class="ship-card flagship" role="button" tabindex="0" data-ship-num="32" aria-label="View photo and specs for #32 MV Megamax 24000 Titan">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_32.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#32 MV Megamax 24000 Titan in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#32</span><h4>MV Megamax 24000 Titan ★</h4></div>
+              <p class="ship-cls">ULCV 24,000 TEU</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$10,920,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">11.4 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">280m × 45m · 9.6m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">330,000 t (22,000 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card">
-            <div class="ship-card-top"><span class="ship-id">#33</span><h4>MV Valemax Carajas</h4></div>
-            <p class="ship-cls">VLOC 400,000 DWT</p>
-            <div class="ship-specs"><span>272m × 44m · 9.8m draft</span><span>267,000 t (17,800 TEU)</span><span>11.8 kts</span><strong class="ship-price">$9,660,000</strong></div>
+          <article class="ship-card" role="button" tabindex="0" data-ship-num="33" aria-label="View photo and specs for #33 MV Valemax Carajas">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_33.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#33 MV Valemax Carajas in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#33</span><h4>MV Valemax Carajas</h4></div>
+              <p class="ship-cls">VLOC 400,000 DWT</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$9,660,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">11.8 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">272m × 44m · 9.8m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">267,000 t (17,800 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card flagship">
-            <div class="ship-card-top"><span class="ship-id">#34</span><h4>FLNG Prelude Leviathan ★</h4></div>
-            <p class="ship-cls">Offshore FLNG Facility</p>
-            <div class="ship-specs"><span>290m × 48m · 10.0m draft</span><span>390,000 t (26,000 TEU)</span><span>11.0 kts</span><strong class="ship-price">$11,900,000</strong></div>
+          <article class="ship-card flagship" role="button" tabindex="0" data-ship-num="34" aria-label="View photo and specs for #34 FLNG Prelude Leviathan">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_34.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#34 FLNG Prelude Leviathan in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#34</span><h4>FLNG Prelude Leviathan ★</h4></div>
+              <p class="ship-cls">Offshore FLNG Facility</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$11,900,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">11.0 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">290m × 48m · 10.0m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">390,000 t (26,000 TEU)</span></div>
+              </div>
+            </div>
           </article>
-          <article class="ship-card">
-            <div class="ship-card-top"><span class="ship-id">#35</span><h4>VANGUARD FLO-FLO</h4></div>
-            <p class="ship-cls">Submersible Boat Carrier</p>
-            <div class="ship-specs"><span>195m × 42m · 7.2m draft</span><span>58,500 t (3,900 TEU)</span><span>14.6 kts</span><strong class="ship-price">$6,720,000</strong></div>
+          <article class="ship-card" role="button" tabindex="0" data-ship-num="35" aria-label="View photo and specs for #35 VANGUARD FLO-FLO">
+            <div class="ship-thumb-wrap">
+              <img class="ship-thumb" src="assets/ships/ship_35.jpg" data-fallback="assets/fleet/tier5-ulcv-leviathan.jpg" onerror="if(this.dataset.fallback&&this.src!==this.dataset.fallback){this.src=this.dataset.fallback;this.dataset.fallback='';}" alt="#35 VANGUARD FLO-FLO in-game boat photo" width="1280" height="720" loading="lazy" decoding="async" />
+              <span class="ship-photo-pill">View Photo</span>
+            </div>
+            <div class="ship-card-body">
+              <div class="ship-card-top"><span class="ship-id">#35</span><h4>VANGUARD FLO-FLO</h4></div>
+              <p class="ship-cls">Submersible Boat Carrier</p>
+              <div class="ship-specs">
+                <div class="ship-spec-item"><span class="spec-lbl">Cost</span><strong class="ship-price">$6,720,000</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Speed</span><strong class="spec-val">14.6 knots</strong></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Size</span><span class="spec-val">195m × 42m · 7.2m draft</span></div>
+                <div class="ship-spec-item"><span class="spec-lbl">Cargo</span><span class="spec-val">58,500 t (3,900 TEU)</span></div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- LIVE 5-MINUTE DEV DASHBOARD & UPDATE LOGS (#logs) -->
+    <!-- LIVE 30-SECOND DEV DASHBOARD & UPDATE LOGS (#logs) -->
     <section class="section section-alt" id="logs">
       <div class="container">
         <div class="section-head">
           <h2>Live Dev Dashboard &amp; Update Logs</h2>
-          <p>Automatically synced every 5 minutes with what is currently being added, changed, and removed—plus full history &amp; patch logs.</p>
+          <p>Automatically synced every 30 seconds with what is currently being added, changed, and removed—finished items graduate immediately into the History &amp; Release Logs below.</p>
         </div>
 
         <!-- Compact Live Dashboard Status Bar -->
@@ -315,14 +392,15 @@
           <div class="dash-status-left">
             <span class="dash-live-pill">
               <span class="pulse-dot"></span>
-              <span>LIVE DEV DASHBOARD · 5-MIN AUTO-SYNC</span>
+              <span>LIVE DEV DASHBOARD · 30-SEC AUTO-SYNC</span>
             </span>
             <span class="dash-target-pill" id="dash-target-version">Target: v1.9.1</span>
-            <span class="dash-phase-text" id="dash-build-phase">In Active Development &amp; Verification</span>
+            <span class="dash-phase-text" id="dash-build-phase">Syncing live status...</span>
           </div>
           <div class="dash-status-right">
-            <span class="dash-meta" id="dash-last-updated">Last synced: just now</span>
-            <span class="dash-meta" id="dash-next-refresh">Next refresh in 5:00</span>
+            <span class="dash-meta" id="dash-last-checked">Last checked: just now</span>
+            <span class="dash-meta" id="dash-last-updated">Last change: syncing...</span>
+            <span class="dash-meta" id="dash-next-refresh">Next refresh in 0:30</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -335,10 +413,7 @@
               <h3>Being Added</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Smooth spherical 3D billiard balls with Solids (1–7), 8-Ball, Stripes (9–15) &amp; rolling spin</li>
-              <li>PC Left-Click pull-back pool cue + OpenXR VR physical cue grab &amp; stroke</li>
-              <li>Copy &amp; paste real YouTube video links onto the Mega-Ship 110&quot; Lounge TV</li>
-              <li>Real-player Company custom naming, configurable % delivery cuts &amp; shared fleet ships</li>
+              <li class="dash-empty">Checking live active additions queue...</li>
             </ul>
           </article>
 
@@ -348,9 +423,7 @@
               <h3>Being Changed</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Moved VHF bridge radio audio onto a background thread for zero trigger lag</li>
-              <li>Fixed all [Create Company] buttons in [P] menu &amp; Bridge Monitor 7</li>
-              <li>Simplified &amp; mobile-optimized the TrueHelm website for phones and desktops</li>
+              <li class="dash-empty">Checking live active modifications queue...</li>
             </ul>
           </article>
 
@@ -360,19 +433,17 @@
               <h3>Being Removed</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Removed unported cross-platform placeholder buttons (100% Windows PC &amp; OpenXR VR focus)</li>
-              <li>Replaced cubish 20-triangle pool balls with smooth spheres</li>
-              <li>Removed synchronous Game Thread mic open/close calls causing radio trigger lag</li>
+              <li class="dash-empty">Checking live active removals queue...</li>
             </ul>
           </article>
         </div>
 
-        <!-- Persistent Chronological 5-Minute Sync History Log -->
+        <!-- Persistent Chronological Live Activity & Timestamped History Log -->
         <div class="card history-card">
           <div class="history-head">
             <div>
               <span class="card-tag">Persistent Feed</span>
-              <h3>5-Minute Sync &amp; Activity History Log</h3>
+              <h3>Live Activity Feed &amp; Timestamped History Log</h3>
             </div>
             <span class="history-count" id="history-count-badge">Preserved Chronologically</span>
           </div>
@@ -577,6 +648,52 @@
         <button type="button" class="lightbox-arrow prev" id="lightbox-prev" aria-label="Previous">‹</button>
         <img id="lightbox-img" src="" alt="Expanded gameplay screenshot" />
         <button type="button" class="lightbox-arrow next" id="lightbox-next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive 35-Boat Photo & Specs Modal -->
+  <div class="ship-modal" id="ship-modal" role="dialog" aria-modal="true" aria-labelledby="ship-modal-name" hidden>
+    <div class="ship-modal-dialog">
+      <div class="ship-modal-header">
+        <div class="ship-modal-heading">
+          <div class="ship-modal-badges">
+            <span class="ship-id" id="ship-modal-id">#32</span>
+            <span class="ship-modal-tier" id="ship-modal-tier">Tier 5</span>
+          </div>
+          <h3 id="ship-modal-name">MV Megamax 24000 Titan ★</h3>
+          <p class="ship-modal-role" id="ship-modal-cls">ULCV 24,000 TEU</p>
+        </div>
+        <button type="button" class="ship-modal-close" id="ship-modal-close" aria-label="Close boat photo modal">✕</button>
+      </div>
+
+      <div class="ship-modal-photo-wrap">
+        <img id="ship-modal-img" src="./assets/ships/ship_32.jpg" alt="In-game photo of #32 MV Megamax 24000 Titan" width="1280" height="720" />
+      </div>
+
+      <div class="ship-modal-stats">
+        <div class="ship-modal-stat">
+          <span class="modal-stat-label">Price</span>
+          <strong class="modal-stat-val price" id="ship-modal-price">$10,920,000</strong>
+        </div>
+        <div class="ship-modal-stat">
+          <span class="modal-stat-label">Size / Length</span>
+          <strong class="modal-stat-val" id="ship-modal-dim">280m × 45m · 9.6m draft</strong>
+        </div>
+        <div class="ship-modal-stat">
+          <span class="modal-stat-label">Cargo Capacity</span>
+          <strong class="modal-stat-val" id="ship-modal-cargo">330,000 t (22,000 TEU)</strong>
+        </div>
+        <div class="ship-modal-stat">
+          <span class="modal-stat-label">Top Speed</span>
+          <strong class="modal-stat-val cyan" id="ship-modal-speed">11.4 knots</strong>
+        </div>
+      </div>
+
+      <div class="ship-modal-footer">
+        <button type="button" class="ship-nav-btn" id="ship-modal-prev" aria-label="Previous boat">&larr; Prev Boat</button>
+        <span class="ship-modal-counter" id="ship-modal-counter">Boat 32 of 35</span>
+        <button type="button" class="ship-nav-btn" id="ship-modal-next" aria-label="Next boat">Next Boat &rarr;</button>
       </div>
     </div>
   </div>
