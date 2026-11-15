@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:13:16Z",
-    "payloadHash":  "74712b6f8959271174f9ea7e82c3adaaa7cad84e193c4a1f3940d3f42778b7ed",
+    "updatedAtUtc":  "2026-11-15T01:13:46Z",
+    "payloadHash":  "6bcf40dd7a8f5c6eb824f05f9b9708490a00a0821dec5c3611bd8c110ce2f8e5",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.1",
-    "buildPhase":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
-    "buildStatus":  "Packaging Standalone Win64 Build, .pak Assets \u0026 v1.9.1 Release",
+    "buildPhase":  "All Updates Live — v1.9.1 Released (Idle)",
+    "buildStatus":  "All Updates Live — v1.9.1 Released (Idle)",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
 
                        ],
     "currentlyChanged":  [
-                             "Compiling standalone Win64 executable, cooking .pak/.utoc/.ucas assets, Authenticode-signing RealisticShippingLanes.exe + EpicWebHelper.exe, and publishing v1.9.1 release zip"
+
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-v191-standalone-release-live",
+                           "timestampUtc":  "2026-11-15T01:12:57Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Published TrueHelm v1.9.1 Windows/VR Release (TrueHelm_Windows_Playable.zip, 736.54 MB) with cooked .pak/.utoc/.ucas archives, signed RealisticShippingLanes.exe + EpicWebHelper.exe + CEF3 runtime, and verified anonymous HTTP 200 OK.",
+                           "added":  [
+                                         "Published GitHub Release v1.9.1 (Latest) with 1-click playable TrueHelm_Windows_Playable.zip (Desktop DX12 + OpenXR VR + embedded CEF3 YouTube browser)"
+                                     ],
+                           "changed":  [
+                                           "Synced \u0026 Authenticode-signed local playable bundles and updated TrueHelm-Game-Download README.md for v1.9.1"
+                                       ],
+                           "removed":  [
+                                           "Removed unported Mac release zip \u0026 README instructions from TrueHelm-Game-Download (macCount = 0)"
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-011316",
                            "timestampUtc":  "2026-11-15T01:13:16Z",
@@ -258,11 +273,11 @@
     "versionLogs":  [
                         {
                             "version":  "v1.9.1",
-                            "badge":  "Packaging · Next Release",
+                            "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
                             "added":  [
-                                          "Smooth \u003e=1,500-triangle spherical Solid (1–7), 8-Ball (8), \u0026 Striped (9–15) 3D pool balls with real rolling quaternion spin",
+                                          "Smooth 2,592-triangle spherical Solid (1–7), 8-Ball (8), \u0026 Striped (9–15) 3D pool balls with real rolling quaternion spin",
                                           "PC Left-Click hold \u0026 drag-back cue stick power gauge (0–55 cm) + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
                                           "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV (Ctrl+V or URL input), synced live across crewmates",
                                           "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)",
@@ -282,9 +297,9 @@
                         },
                         {
                             "version":  "v1.9.0",
-                            "badge":  "Current Live Download",
+                            "badge":  "Shipped",
                             "date":  "November 2026",
-                            "openByDefault":  true,
+                            "openByDefault":  false,
                             "added":  [
                                           "5x Ocean World Expansion (4,617 km × 4,617 km) with 74 islands \u0026 continental countries (0.28x islets to 8.5x continents)",
                                           "32 full 6-zone deepwater commercial ports + 42 scenic dockless islands",
