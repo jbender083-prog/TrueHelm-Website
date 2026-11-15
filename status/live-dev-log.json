@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:27:26Z",
-    "payloadHash":  "18bdbe2f88174928f03cf0674d951df4824a9ea0b59519e1656f4eed26d4f34c",
+    "updatedAtUtc":  "2026-11-15T03:31:11Z",
+    "payloadHash":  "87fcd355469ee272849cbe4960d3c5904e3cc0c92905bff33f6e2834de826dec",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Release v1.9.2 Live — Monitoring Active Servers",
-    "buildStatus":  "Release v1.9.2 Live — Monitoring Active Servers",
+    "buildPhase":  "Updating Live Website 3D Ocean Globe — Strict Real-Player Liveness",
+    "buildStatus":  "Updating Live Website 3D Ocean Globe — Strict Real-Player Liveness",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
 
                        ],
     "currentlyChanged":  [
-
+                             "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
                          ],
     "currentlyRemoved":  [
-
+                             "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-033111",
+                           "timestampUtc":  "2026-11-15T03:31:11Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Refining #live-globe on TrueHelm-Website so it strictly displays real online captains actively sailing in-game at exact 1-to-1 coordinates (6-second heartbeat liveness, zero demo/offline boats).",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Enforcing strict 6-second Firebase heartbeat liveness \u0026 1-to-1 western harbor berth clearance on the Website 3D Ocean Globe (#live-globe)"
+                                       ],
+                           "removed":  [
+                                           "Removing all demo/preview simulated vessels from the Website 3D Ocean Globe so 0 players online displays 0 ships"
+                                       ]
+                       },
                        {
                            "id":  "milestone-website-true-3d-spinning-globe",
                            "timestampUtc":  "2026-11-15T03:26:40Z",
