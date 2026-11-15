@@ -269,6 +269,9 @@
     document.body.style.overflow = '';
   }
 
+  window.openTrueHelmShipModal = openShipModal;
+  window.TRUEHELM_SHIPS_BY_NUM = SHIPS_BY_NUM;
+
   if (shipsGrid) {
     shipsGrid.addEventListener('click', (e) => {
       const card = e.target.closest('.ship-card[data-ship-num]');

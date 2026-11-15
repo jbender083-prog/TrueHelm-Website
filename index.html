@@ -32,6 +32,7 @@
       <nav class="desktop-nav" aria-label="Primary Navigation">
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
+        <a href="#live-globe">Live Globe</a>
         <a href="#fleet">35 Ships</a>
         <a href="#logs">Logs</a>
         <a href="#howtoplay">How to Play</a>
@@ -57,6 +58,7 @@
     <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation" hidden>
       <a href="#features" class="drawer-link">Features</a>
       <a href="#screenshots" class="drawer-link">Screenshots</a>
+      <a href="#live-globe" class="drawer-link">Live 3D Ocean Globe</a>
       <a href="#fleet" class="drawer-link">35-Ship Fleet</a>
       <a href="#logs" class="drawer-link">Live Dashboard &amp; Update Logs</a>
       <a href="#howtoplay" class="drawer-link">How to Play &amp; Controls</a>
@@ -238,8 +240,117 @@
       </div>
     </section>
 
+    <!-- LIVE 1-TO-1 3D OCEAN GLOBE & REAL-TIME US OCEAN SERVER PLAYERS (#live-globe) -->
+    <section class="section" id="live-globe">
+      <div class="container">
+        <div class="section-head">
+          <h2>Live 3D Ocean Globe &amp; Real-Time Captains</h2>
+          <p>Spin 360&deg; and zoom across the exact 1-to-1 4,617 km TrueHelm ocean map&mdash;all 74 islands &amp; continental countries, 32 gold port beacons, and real-time US Ocean Server captains rendered with scaled-down 3D Blender ship models.</p>
+        </div>
+
+        <div class="globe-command-grid">
+          <!-- Left: Interactive WebGL 3D Ocean Sphere -->
+          <div class="card globe-viewport-card" id="globe-canvas-wrap">
+            <div class="globe-hud-top">
+              <div class="globe-legend-row">
+                <span class="globe-legend-pill gold"><span class="legend-dot gold"></span>32 Ports</span>
+                <span class="globe-legend-pill emerald"><span class="legend-dot emerald"></span>42 Scenic Islands</span>
+                <span class="globe-legend-pill cyan" id="globe-hud-ships-pill"><span class="legend-dot cyan"></span>0 Live Ships</span>
+              </div>
+              <div class="globe-cam-controls" role="toolbar" aria-label="3D Globe Camera Controls">
+                <button type="button" class="globe-ctrl-btn" id="globe-btn-whole" title="Reset to full 3D ocean globe view">Whole Globe</button>
+                <button type="button" class="globe-ctrl-btn" id="globe-btn-hub" title="Zoom to #01 Port Horizon Hub">Hub #01</button>
+                <button type="button" class="globe-ctrl-btn icon" id="globe-btn-zoom-in" aria-label="Zoom in on 3D globe" title="Zoom in">+</button>
+                <button type="button" class="globe-ctrl-btn icon" id="globe-btn-zoom-out" aria-label="Zoom out on 3D globe" title="Zoom out">&minus;</button>
+                <button type="button" class="globe-ctrl-btn active" id="globe-btn-spin" aria-pressed="true" title="Toggle gentle globe auto-rotation">Auto-Spin</button>
+              </div>
+            </div>
+
+            <div class="globe-stage" id="globe-stage">
+              <canvas id="globe-canvas" aria-label="Interactive 3D TrueHelm Ocean Globe showing 74 islands and live 3D ships"></canvas>
+              <div class="globe-loading-overlay" id="globe-loading-overlay">
+                <span class="pulse-dot"></span>
+                <span id="globe-loading-text">Loading 1-to-1 74-Island 3D Ocean Globe...</span>
+              </div>
+            </div>
+
+            <div class="globe-hud-bottom">
+              <div class="globe-inspector" id="globe-inspector" aria-live="polite">
+                <div class="globe-insp-head">
+                  <div class="globe-insp-badges">
+                    <span class="globe-insp-tag gold" id="globe-insp-badge">DOCKED PORT #01</span>
+                    <span class="globe-insp-subtag" id="globe-insp-region">Horizon Hub Archipelago</span>
+                  </div>
+                  <div class="globe-insp-actions">
+                    <button type="button" class="globe-mini-btn" id="globe-insp-focus-btn">Zoom Here</button>
+                    <button type="button" class="globe-mini-btn cyan" id="globe-insp-photo-btn" hidden>Boat Photo</button>
+                  </div>
+                </div>
+                <h3 class="globe-insp-title" id="globe-insp-title">Port Horizon Hub</h3>
+                <p class="globe-insp-desc" id="globe-insp-desc">Scale 1.15x · Deepwater Berth (18.0m) · Containerized Electronics · X +1.4 km, Y 0.0 km</p>
+              </div>
+              <p class="globe-gesture-hint" id="globe-gesture-hint">Drag to spin 360&deg; &middot; Click globe + wheel or pinch to zoom &middot; Tap any gold/emerald beacon or 3D ship</p>
+            </div>
+          </div>
+
+          <!-- Right: Live US Ocean Server Telemetry & 74-Island Quick Jump -->
+          <aside class="card globe-sidebar-card" aria-label="Live US Ocean Server Players and Island Directory">
+            <div class="globe-server-head">
+              <div class="globe-server-pill-row">
+                <span class="globe-server-live-pill" id="globe-server-pill">
+                  <span class="pulse-dot" id="globe-server-dot"></span>
+                  <span id="globe-server-status-text">LIVE US OCEAN SERVER &middot; 0 CAPTAINS ONLINE</span>
+                </span>
+                <span class="globe-demo-badge" id="globe-demo-badge" hidden>DEMO PREVIEW</span>
+              </div>
+              <div class="globe-sync-meta" id="globe-sync-meta">Firebase Live Telemetry &middot; 2.5s Real-Time Sync</div>
+            </div>
+
+            <!-- Honest 0-Player State + Optional 3D Blender Ship Demo Toggle -->
+            <div class="globe-zero-notice" id="globe-zero-notice">
+              <p class="globe-zero-text" id="globe-zero-text">
+                <strong>0 Captains Currently In-Game</strong> &mdash; Launch TrueHelm to see your ship appear live on the globe!
+              </p>
+              <button type="button" class="globe-demo-btn" id="globe-demo-toggle-btn" aria-pressed="false">
+                Preview 3D Ships on Globe
+              </button>
+            </div>
+
+            <!-- Active Live Players (or Demo Preview 3D Ships) Roster -->
+            <div class="globe-roster-section">
+              <div class="globe-subhead-row">
+                <h3 id="globe-roster-heading">Active Vessels on Ocean</h3>
+                <span class="globe-count-chip" id="globe-roster-count">0 Ships</span>
+              </div>
+              <div class="globe-ships-list" id="globe-ships-list" role="list">
+                <div class="globe-roster-placeholder">Waiting for live captains on the US Ocean Server&mdash;or click <strong>Preview 3D Ships on Globe</strong> above to inspect scaled-down 3D Blender vessels sailing real shipping lanes.</div>
+              </div>
+            </div>
+
+            <!-- 74-Island & 32-Port 1-to-1 Quick Finder -->
+            <div class="globe-islands-section">
+              <div class="globe-subhead-row">
+                <h3>74 Islands &amp; Countries (1:1)</h3>
+                <div class="globe-filter-pills" role="tablist" aria-label="Filter landmasses">
+                  <button type="button" class="globe-filter-pill active" data-isl-filter="all">All 74</button>
+                  <button type="button" class="globe-filter-pill" data-isl-filter="ports">32 Ports</button>
+                  <button type="button" class="globe-filter-pill" data-isl-filter="countries">Countries</button>
+                </div>
+              </div>
+              <div class="globe-search-wrap">
+                <input type="search" id="globe-island-search" class="globe-search-input" placeholder="Search #01–#74 island, port, or cargo..." aria-label="Search 74 islands and ports" autocomplete="off" />
+              </div>
+              <div class="globe-islands-list" id="globe-islands-list" role="list">
+                <!-- Populated from assets/data/world-map-74.json -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <!-- 35-SHIP FLEET EXPLORER -->
-    <section class="section" id="fleet">
+    <section class="section section-alt" id="fleet">
       <div class="container">
         <div class="section-head">
           <h2>Explore All 35 Playable Ships</h2>
@@ -386,7 +497,7 @@
     </section>
 
     <!-- LIVE 30-SECOND DEV DASHBOARD & UPDATE LOGS (#logs) -->
-    <section class="section section-alt" id="logs">
+    <section class="section" id="logs">
       <div class="container">
         <div class="section-head">
           <h2>Live Dev Dashboard &amp; Update Logs</h2>
@@ -537,7 +648,7 @@
     </section>
 
     <!-- HOW TO PLAY, CO-OP & COLLAPSIBLE CONTROLS -->
-    <section class="section" id="howtoplay">
+    <section class="section section-alt" id="howtoplay">
       <div class="container">
         <div class="section-head">
           <h2>Quick Start &amp; Multiplayer Co-Op</h2>
@@ -631,6 +742,7 @@
       <span><strong>TrueHelm: Realistic Shipping Lanes</strong> · Windows PC &amp; OpenXR VR (UE 5.8)</span>
       <div class="footer-links">
         <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip">Download Windows .ZIP</a>
+        <a href="#live-globe">Live 3D Globe</a>
         <a href="#logs">Live Logs</a>
         <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest">GitHub Releases</a>
       </div>
@@ -705,5 +817,6 @@
   </div>
 
   <script src="app.js"></script>
+  <script type="module" src="globe.js"></script>
 </body>
 </html>
