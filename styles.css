@@ -244,6 +244,29 @@ kbd {
 
 .drawer-downloads {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drawer-alt-dl {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cyan);
+  padding: 6px 8px;
+}
+
+.inline-alt-dl {
+  color: var(--cyan);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inline-alt-dl:hover,
+.drawer-alt-dl:hover {
+  color: #7dd3fc;
 }
 
 @media (min-width: 900px) {

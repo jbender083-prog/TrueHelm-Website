@@ -619,20 +619,28 @@
     if (e.key === 'ArrowRight') openShot(activeShot + 1);
   });
 
-  // 5. Non-Blocking Direct .ZIP Download Toast (Zero preventDefault!)
+  // 5. Non-Blocking Direct Launcher (.EXE) & Portable (.ZIP) Download Toast (Zero preventDefault!)
   const toast = document.getElementById('download-toast');
   const toastTitle = document.getElementById('toast-title');
+  const toastHint = document.getElementById('toast-hint');
   let toastTimer = null;
 
-  document.querySelectorAll('[data-direct-zip]').forEach((link) => {
+  document.querySelectorAll('[data-direct-dl], [data-direct-zip]').forEach((link) => {
     link.addEventListener('click', () => {
       if (!toast || !toastTitle) return;
-      toastTitle.textContent = `Downloading ${link.dataset.directZip}...`;
+      const fileName = link.dataset.directDl || link.dataset.directZip || 'TrueHelmLauncher.exe';
+      const isZip = link.dataset.dlKind === 'zip' || /\.zip$/i.test(fileName);
+      toastTitle.textContent = `Downloading ${fileName}...`;
+      if (toastHint) {
+        toastHint.innerHTML = isZip
+          ? 'Once finished, right-click the .ZIP &rarr; <strong>Extract All</strong> &rarr; run <code>PLAY_TRUEHELM.bat</code>!'
+          : 'Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong> &mdash; no .zip extraction needed! <em>(If SmartScreen prompts, click More info &rarr; Run anyway.)</em>';
+      }
       toast.hidden = false;
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => {
         toast.hidden = true;
-      }, 8000);
+      }, 9000);
     });
   });
 

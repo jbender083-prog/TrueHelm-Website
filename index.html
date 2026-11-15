@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>TrueHelm: Realistic Shipping Lanes — Free Download (Windows PC &amp; VR)</title>
-  <meta name="description" content="Download TrueHelm: Realistic Shipping Lanes free in 1 click for Windows PC &amp; OpenXR VR. Sail 35 vessels across a 4,617 km ocean with 74 islands &amp; countries, Multiplayer Company Co-Op, Mega-Ship Pool &amp; YouTube TV Lounge, and live update logs." />
+  <meta name="description" content="Download TrueHelm: Realistic Shipping Lanes free in 1 click with TrueHelmLauncher.exe for Windows 10/11 PC &amp; OpenXR VR (no .zip extraction needed). Sail 35 vessels across a 4,617 km ocean with 74 islands &amp; countries, Multiplayer Company Co-Op, and Mega-Ship Pool &amp; YouTube TV Lounge." />
   <meta name="theme-color" content="#06101c" />
   <meta property="og:title" content="TrueHelm: Realistic Shipping Lanes — Free Windows PC &amp; VR Download" />
-  <meta property="og:description" content="4,617 km Ocean · 74 Islands &amp; Countries · 35 Ships · Multiplayer Company Co-Op · OpenXR VR. 1-click direct Windows ZIP download." />
+  <meta property="og:description" content="4,617 km Ocean · 74 Islands &amp; Countries · 35 Ships · Multiplayer Company Co-Op · OpenXR VR. 1-click TrueHelmLauncher.exe auto-installer &amp; updater." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jbender083-prog.github.io/TrueHelm-Website/" />
   <meta property="og:image" content="https://jbender083-prog.github.io/TrueHelm-Website/assets/screenshots/hero-megaship-continent.jpg" />
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261114e" />
+  <link rel="stylesheet" href="./styles.css?v=20261114f" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -40,8 +40,9 @@
 
       <div class="header-cta">
         <a class="header-dl-btn"
-           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-           data-direct-zip="TrueHelm_Windows_Playable.zip">
+           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+           data-direct-dl="TrueHelmLauncher.exe"
+           data-dl-kind="launcher">
           Download
         </a>
         <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle Menu">
@@ -64,9 +65,16 @@
       <a href="#howtoplay" class="drawer-link">How to Play &amp; Controls</a>
       <div class="drawer-downloads">
         <a class="btn btn-primary btn-block"
+           href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+           data-direct-dl="TrueHelmLauncher.exe"
+           data-dl-kind="launcher">
+          Download TrueHelm Launcher (.exe)
+        </a>
+        <a class="drawer-alt-dl"
            href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-           data-direct-zip="TrueHelm_Windows_Playable.zip">
-          Download Free for Windows (.ZIP)
+           data-direct-dl="TrueHelm_Windows_Playable.zip"
+           data-dl-kind="zip">
+          Or download Portable .ZIP (776 MB)
         </a>
       </div>
     </nav>
@@ -91,17 +99,19 @@
             Command 35 vessels across a 4,617 km ocean world spanning 74 islands and continental countries. Crew the same mega-ship with friends in Multiplayer Company Co-Op, play 3D pool and watch YouTube in the aft lounge, ride out live storms, or steer with OpenXR VR hands.
           </p>
 
-          <!-- Single Clean 1-Click Direct Windows .ZIP Download Button -->
+          <!-- Primary 1-Click Windows Desktop Launcher (.exe) Download Button -->
           <div class="cta-row">
             <a class="btn btn-primary"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-               data-direct-zip="TrueHelm_Windows_Playable.zip">
+               id="hero-launcher-btn"
+               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+               data-direct-dl="TrueHelmLauncher.exe"
+               data-dl-kind="launcher">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                 <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
               </svg>
               <span class="btn-copy">
-                <strong>Download Free for Windows (.ZIP)</strong>
-                <small>1-Click Direct Download · Windows 10/11 PC &amp; OpenXR VR</small>
+                <strong>Download TrueHelm Launcher (.exe)</strong>
+                <small>0.5 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
               </span>
             </a>
 
@@ -113,7 +123,7 @@
             </a>
           </div>
 
-          <p class="hero-note">No login or installer needed · Instant browser download · Unzip &amp; run <code>PLAY_TRUEHELM.bat</code></p>
+          <p class="hero-note">No .zip extraction needed &middot; Open <code>TrueHelmLauncher.exe</code> &amp; click <strong>Download &amp; Install</strong> &middot; <a class="inline-alt-dl" href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP (776 MB)</a></p>
 
           <!-- Clean 2x2 (Mobile) / 4-Col (Desktop) Stat Pills -->
           <div class="stats-grid">
@@ -649,26 +659,26 @@
       <div class="container">
         <div class="section-head">
           <h2>Quick Start &amp; Multiplayer Co-Op</h2>
-          <p>Download, unzip, and sail with friends on Windows PC or OpenXR VR in under a minute.</p>
+          <p>Download the 0.5 MB Windows Launcher, auto-install with zero .zip extraction, and sail with friends on Windows PC or OpenXR VR.</p>
         </div>
 
         <div class="steps-grid">
           <div class="card step-card">
             <span class="step-badge">Step 1</span>
-            <h3>Download the .ZIP</h3>
-            <p>Click <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip"><strong>Download Free for Windows (.ZIP)</strong></a> to start the direct download immediately in your browser.</p>
+            <h3>Download Launcher (.exe)</h3>
+            <p>Click <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher"><strong>Download TrueHelm Launcher (.exe)</strong></a> (<code>0.5 MB</code> single-file app &mdash; zero runtime required, or use the <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP</a>).</p>
           </div>
 
           <div class="card step-card">
             <span class="step-badge">Step 2</span>
-            <h3>Right-Click &rarr; Extract All</h3>
-            <p>Right-click <code>TrueHelm_Windows_Playable.zip</code> &rarr; <strong>Extract All...</strong> &rarr; <strong>Extract</strong> <em>(always extract the folder first before launching)</em>.</p>
+            <h3>Click Download &amp; Install</h3>
+            <p>Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong>. It streams, installs, and auto-updates TrueHelm automatically with zero <code>.zip</code> extraction.<br /><small class="smartscreen-note">Windows SmartScreen tip: if prompted on first open, click <strong>More info &rarr; Run anyway</strong>.</small></p>
           </div>
 
           <div class="card step-card">
             <span class="step-badge">Step 3</span>
-            <h3>Launch &amp; Play</h3>
-            <p>Open <code>TrueHelm_Windows</code> and run <code>PLAY_TRUEHELM.bat</code> (Desktop) or <code>LAUNCH_TRUEHELM_IN_VR.bat</code> (OpenXR VR).<br /><small class="smartscreen-note">Windows SmartScreen tip: if prompted on first launch, click <strong>More info &rarr; Run anyway</strong>.</small></p>
+            <h3>Play Desktop or OpenXR VR</h3>
+            <p>Choose <strong>Windows Desktop</strong> or <strong>OpenXR VR Mode</strong> inside the launcher and click <strong>Play TrueHelm</strong> &mdash; your career cash &amp; ships persist across every update!</p>
           </div>
         </div>
 
@@ -715,17 +725,28 @@
       <div class="container">
         <div class="card cta-panel">
           <h2>Ready to Set Sail?</h2>
-          <p>Free 1-click direct Windows download from GitHub Releases. Share this page with your friends and crew up on the ocean.</p>
+          <p>Download the 0.5 MB single-file TrueHelm Desktop Launcher &amp; Auto-Updater for Windows 10/11 (PC &amp; OpenXR VR) &mdash; no .zip extraction required.</p>
           <div class="cta-row cta-centered">
             <a class="btn btn-primary"
-               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
-               data-direct-zip="TrueHelm_Windows_Playable.zip">
+               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe"
+               data-direct-dl="TrueHelmLauncher.exe"
+               data-dl-kind="launcher">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
                 <path d="M2 3.8L10.9 2.5v8.6H2V3.8zm9.9-1.4L22 1v10.1H11.9V2.4zM2 12.1h8.9v8.6L2 19.4v-7.3zm9.9 0H22V22l-10.1-1.4v-8.5z"/>
               </svg>
               <span class="btn-copy">
-                <strong>Download Free for Windows (.ZIP)</strong>
-                <small>Windows 10/11 64-bit · DirectX 12 PC &amp; OpenXR VR</small>
+                <strong>Download TrueHelm Launcher (.exe)</strong>
+                <small>0.5 MB Auto-Installer &amp; Updater · Windows 10/11 PC &amp; OpenXR VR</small>
+              </span>
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip"
+               data-direct-dl="TrueHelm_Windows_Playable.zip"
+               data-dl-kind="zip">
+              <span class="btn-copy">
+                <strong>Portable Archive (.ZIP)</strong>
+                <small>776 MB Direct Manual Download · Unzip &amp; Run</small>
               </span>
             </a>
           </div>
@@ -738,7 +759,8 @@
     <div class="container footer-row">
       <span><strong>TrueHelm: Realistic Shipping Lanes</strong> · Windows PC &amp; OpenXR VR (UE 5.8)</span>
       <div class="footer-links">
-        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-zip="TrueHelm_Windows_Playable.zip">Download Windows .ZIP</a>
+        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelmLauncher.exe" data-direct-dl="TrueHelmLauncher.exe" data-dl-kind="launcher">Download Launcher (.exe)</a>
+        <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest/download/TrueHelm_Windows_Playable.zip" data-direct-dl="TrueHelm_Windows_Playable.zip" data-dl-kind="zip">Portable .ZIP</a>
         <a href="#live-globe">Live 3D Globe</a>
         <a href="#logs">Live Logs</a>
         <a href="https://github.com/jbender083-prog/TrueHelm-Game-Download/releases/latest">GitHub Releases</a>
@@ -748,8 +770,8 @@
 
   <!-- Non-Blocking Direct Download Toast -->
   <div class="toast" id="download-toast" role="status" aria-live="polite" hidden>
-    <strong id="toast-title">Downloading TrueHelm_Windows_Playable.zip...</strong>
-    <span>Once finished, right-click the .ZIP &rarr; <strong>Extract All</strong> &rarr; run <code>PLAY_TRUEHELM.bat</code>!</span>
+    <strong id="toast-title">Downloading TrueHelmLauncher.exe...</strong>
+    <span id="toast-hint">Open <code>TrueHelmLauncher.exe</code> and click <strong>Download &amp; Install</strong> &mdash; no .zip extraction needed!</span>
   </div>
 
   <!-- Mobile-Friendly Lightbox -->
@@ -813,7 +835,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261114e"></script>
-  <script type="module" src="./globe.js?v=20261114e"></script>
+  <script src="./app.js?v=20261114f"></script>
+  <script type="module" src="./globe.js?v=20261114f"></script>
 </body>
 </html>
