@@ -1,6 +1,6 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:52:27Z",
-    "payloadHash":  "0a1e24b9446863c7c13e867415f647a25f888f0db2338185b9526b1cd1f49922",
+    "updatedAtUtc":  "2026-11-15T01:57:47Z",
+    "payloadHash":  "6bf244134276620d7129fd52748c79b37c037e3eb814e6c83a9e5d31424355b6",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.1",
     "buildPhase":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
@@ -9,7 +9,8 @@
     "currentlyAdded":  [
                            "Act I (0.0s–4.2s): Real-time dusk coastal harbor fly-in with sweeping volumetric lighthouse beam, port gantry cranes, churning bow wave \u0026 Tyfon foghorn audio",
                            "Act II (4.2s–5.8s): Seamless bow-to-stern cyan laser scan-plane morphing into a live 3D holographic wireframe ship \u0026 undulating triangulated ocean wave grid",
-                           "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu"
+                           "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu",
+                           "Website Live 3D Ocean Globe: 1-to-1 74-island WebGL Earth sphere with scaled-down Blender 3D ship models (.glb) \u0026 real-time Firebase live player tracking"
                        ],
     "currentlyChanged":  [
                              "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]"
