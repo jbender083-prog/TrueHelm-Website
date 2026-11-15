@@ -1,13 +1,13 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:20:02Z",
-    "payloadHash":  "bb8736ef662ab668c907370c2eee87b07bafb7758f13a044b711a94108c34f2f",
+    "updatedAtUtc":  "2026-11-15T03:22:09Z",
+    "payloadHash":  "4b9afe1b848c96daff6d7abad4da01db33db778b6bd4bb3e8e2176fe449fb068",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
-    "buildStatus":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
+    "buildPhase":  "Release v1.9.2 Live — Polishing Website 3D Ocean Globe Orbital View",
+    "buildStatus":  "Release v1.9.2 Live — Polishing Website 3D Ocean Globe Orbital View",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Cooking \u0026 signing standalone TrueHelm v1.9.2 Windows/OpenXR VR release bundle (TrueHelm_Windows_Playable.zip)"
+
                        ],
     "currentlyChanged":  [
                              "Upgrading Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
@@ -16,6 +16,21 @@
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-v192-standalone-release-live",
+                           "timestampUtc":  "2026-11-15T03:19:45Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Published TrueHelm v1.9.2 Windows/VR Release (TrueHelm_Windows_Playable.zip, 776.27 MB) with cooked .pak/.utoc/.ucas archives, signed RealisticShippingLanes.exe + EpicWebHelper.exe + CEF3 runtime, and verified anonymous HTTP 200 OK.",
+                           "added":  [
+                                         "Published GitHub Release v1.9.2 (Latest) with 1-click playable TrueHelm_Windows_Playable.zip (Desktop DX12 + OpenXR VR + 3-Act Startup Cinematic \u0026 Holographic Main Menu + P0 Live Multiplayer Hull/Cargo Fixes)"
+                                     ],
+                           "changed":  [
+                                           "Synced \u0026 Authenticode-signed local playable bundles and updated TrueHelm-Game-Download README.md for v1.9.2 (macCount = 0)"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-032002",
                            "timestampUtc":  "2026-11-15T03:20:02Z",
@@ -386,10 +401,29 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.1",
+                            "version":  "v1.9.2",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "Real-Time 3-Act Startup Cinematic: Dusk coastal harbor fly-in off Port Horizon Hub with sweeping volumetric lighthouse beam, gantry cranes, churning 3D bow spray, and Tyfon foghorn audio",
+                                          "Bow-to-stern electric-cyan laser scan morph into a 67,584-vert curved 3D holographic wireframe flagship \u0026 undulating triangulated ocean wave grid",
+                                          "Interactive 35-vessel 3D hologram selector (#01–#35, 0.35s cyan scan pulse on ship swap, AI SUPPORT badges on NPC craft) \u0026 32-port paged tactical command menu (TRUEHELM: MARITIME CARGO)",
+                                          "Live 1-to-1 Spinnable 3D Ocean Globe (#live-globe) on TrueHelm-Website with all 74 islands, 35 scaled Blender 3D ship .glb models, \u0026 real-time Firebase player tracking"
+                                      ],
+                            "changed":  [
+                                            "Fixed live multiplayer remote ship hull preload recovery (zero invisible hulls), exact 1:1 hull scaling, and keel-to-draft waterline seating across all 35 vessels",
+                                            "Enforced strict container-only deck cargo bounds on remote ships (zero floating containers on #05 Coastal Product Tanker or unloaded hulls, zero pre-launch showcase leakage)"
+                                        ],
+                            "removed":  [
+                                            "Replaced static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.1",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "Smooth 2,592-triangle spherical Solid (1–7), 8-Ball (8), \u0026 Striped (9–15) 3D pool balls with real rolling quaternion spin",
                                           "PC Left-Click hold \u0026 drag-back cue stick power gauge (0–55 cm) + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
