@@ -1,21 +1,38 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:57:03Z",
-    "payloadHash":  "fbbf20eeb554772055973568addd590641a92c7b9f0432329a351c3697e8bf7d",
-    "activeVersion":  "v1.9.2",
+    "updatedAtUtc":  "2026-11-15T03:59:31Z",
+    "payloadHash":  "7e03b47cd4d546b34037769053763be91ce8df5ebe9b9e5817ab9a5905525d7b",
+    "activeVersion":  "v1.9.3",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Wiring TrueHelmLauncher.exe 1-Click Download onto Official Website",
-    "buildStatus":  "Wiring TrueHelmLauncher.exe 1-Click Download onto Official Website",
+    "buildPhase":  "Building v1.9.3 — Real Live-Ocean Startup Fly-In \u0026 Full-Color 3D Ship Main Menu",
+    "buildStatus":  "Building v1.9.3 — Real Live-Ocean Startup Fly-In \u0026 Full-Color 3D Ship Main Menu",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
 
                        ],
     "currentlyChanged":  [
+                             "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)",
                              "Wiring primary 1-click Download TrueHelm Launcher (.exe) button onto TrueHelm-Website (alongside portable .zip option)"
                          ],
     "currentlyRemoved":  [
-
+                             "Removing blue cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-035931",
+                           "timestampUtc":  "2026-11-15T03:59:31Z",
+                           "version":  "v1.9.3",
+                           "summary":  "Keeping the cinematic coastal camera fly-in \u0026 TRUEHELM: MARITIME CARGO Main Menu while preserving full-color photorealistic 3D ships, live ocean waves, port cranes, and sunlit coastal lighting throughout the Main Menu (plus wiring TrueHelmLauncher.exe onto the website).",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)",
+                                           "Wiring primary 1-click Download TrueHelm Launcher (.exe) button onto TrueHelm-Website (alongside portable .zip option)"
+                                       ],
+                           "removed":  [
+                                           "Removing blue cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
+                                       ]
+                       },
                        {
                            "id":  "milestone-truehelm-desktop-launcher-live",
                            "timestampUtc":  "2026-11-15T03:55:30Z",
