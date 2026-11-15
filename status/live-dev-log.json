@@ -1,8 +1,8 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:07:54Z",
-    "payloadHash":  "39450f85f34d684edaea5ccad5d36d4de814033aed24c667d4ae8a4f98b3d059",
+    "updatedAtUtc":  "2026-11-15T03:20:02Z",
+    "payloadHash":  "bb8736ef662ab668c907370c2eee87b07bafb7758f13a044b711a94108c34f2f",
     "activeVersion":  "v1.9.2",
-    "latestReleaseTag":  "v1.9.1",
+    "latestReleaseTag":  "v1.9.2",
     "buildPhase":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
     "buildStatus":  "Packaging \u0026 Signing v1.9.2 Windows/VR Release",
     "refreshIntervalSeconds":  30,
@@ -16,6 +16,21 @@
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "sync-20261115-032002",
+                           "timestampUtc":  "2026-11-15T03:20:02Z",
+                           "version":  "v1.9.2",
+                           "summary":  "All Round 14 3-Act Startup Cinematic \u0026 Holographic Main Menu + P0 Live Multiplayer Hull/Cargo Sync gates passed — cooking .pak/.utoc/.ucas archives, signing Win64 binaries, and polishing full-globe 3D orbital spin on TrueHelm-Website.",
+                           "added":  [
+                                         "Cooking \u0026 signing standalone TrueHelm v1.9.2 Windows/OpenXR VR release bundle (TrueHelm_Windows_Playable.zip)"
+                                     ],
+                           "changed":  [
+                                           "Upgrading Website 3D Ocean Globe (#live-globe) camera distance, sunlit sapphire ocean sphere + atmospheric Fresnel rim, 3x island landmass prominence, and default 360° auto-spin / click-drag orbital rotation"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-v192-verification-passed",
                            "timestampUtc":  "2026-11-15T03:05:30Z",
