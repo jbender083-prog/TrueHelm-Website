@@ -1,22 +1,37 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:24:50Z",
-    "payloadHash":  "1d78ebb279abf87864c0ba1d7423f1eafeb20f560dbc130a4c4820602b0818e4",
+    "updatedAtUtc":  "2026-11-15T01:33:18Z",
+    "payloadHash":  "ae8792f929dca654b1c33f6360ce4064e0ac1514dff904ddb60b6372d2b54474",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.1",
-    "buildPhase":  "Adding Scroll-Driven Ocean Ship Animation \u0026 Motion Polish",
-    "buildStatus":  "Adding Scroll-Driven Ocean Ship Animation \u0026 Motion Polish",
+    "buildPhase":  "All Updates Live — v1.9.1 \u0026 Scroll Ocean Animation Live (Idle)",
+    "buildStatus":  "All Updates Live — v1.9.1 \u0026 Scroll Ocean Animation Live (Idle)",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Full-viewport 60fps HiDPI scroll-driven ocean voyage canvas with sailing flagship, Kelvin wake, rotating radar, and parallax islands/lighthouse",
-                           "Sticky navbar 2px scroll-voyage progress indicator \u0026 smooth GPU scroll-reveal transitions"
+
                        ],
     "currentlyChanged":  [
-                             "Upgrading website sections \u0026 cards to translucent frosted ocean glass so the sailing ship \u0026 horizon stay visible across all sections"
+
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-scroll-ocean-ship-animation-live",
+                           "timestampUtc":  "2026-11-15T01:33:00Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Deployed 60fps HiDPI scroll-driven ocean voyage canvas (sailing flagship with inertial Kelvin V-wake, rotating radar, water reflections, and parallax islands/lighthouse/cranes) + sticky voyage progress bar \u0026 GPU scroll-reveal polish on TrueHelm-Website.",
+                           "added":  [
+                                         "Full-viewport 60fps HiDPI scroll-driven ocean voyage canvas with architectural flagship, Kelvin V-wake, rotating radar, water reflections, and parallax islands/lighthouse/port cranes",
+                                         "Sticky navbar 2px scroll-voyage progress indicator \u0026 smooth GPU-accelerated scroll-reveal transitions"
+                                     ],
+                           "changed":  [
+                                           "Upgraded website sections \u0026 cards to translucent frosted ocean glass so the sailing flagship \u0026 twilight horizon stay visible across all sections on phones and desktops"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-012450",
                            "timestampUtc":  "2026-11-15T01:24:50Z",
@@ -298,12 +313,12 @@
                                           "PC Left-Click hold \u0026 drag-back cue stick power gauge (0–55 cm) + full OpenXR VR controller pool cue grabbing \u0026 forward push stroke",
                                           "Copy \u0026 paste real YouTube video links onto the Mega-Ship 110\" Lounge TV (Ctrl+V or URL input), synced live across crewmates",
                                           "Custom keyboard Company Naming, configurable % delivery payout cuts (plus Even 1/N option), and Company-Provided vs. Player-Provided fleet ships (real players only)",
-                                          "Live 30-second website Dev Dashboard, instant GitHub API Refresh, \u0026 clickable 35-vessel Fleet Explorer photo modals"
+                                          "Live 30-second website Dev Dashboard, instant GitHub API Refresh, clickable 35-vessel Fleet Explorer photo modals, \u0026 60fps scroll-driven sailing flagship ocean background"
                                       ],
                             "changed":  [
                                             "Refactored VHF bridge radio audio onto a warm background worker thread (0.078 ms Game Thread response, zero trigger lag)",
                                             "Upgraded Bridge Monitor 7 \u0026 1st-Person/3rd-Person [P] Create Company \u0026 Fleet Sharing controls",
-                                            "Simplified \u0026 mobile-optimized TrueHelm website layout for zero overflow across phones and desktops"
+                                            "Simplified \u0026 mobile-optimized TrueHelm website layout with translucent frosted ocean glass \u0026 smooth GPU scroll-reveal polish"
                                         ],
                             "removed":  [
                                             "Removed unported Mac download buttons \u0026 links (100% focused on Windows PC \u0026 OpenXR VR)",
