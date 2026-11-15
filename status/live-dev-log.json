@@ -1,6 +1,6 @@
 {
-    "updatedAtUtc":  "2026-11-15T02:27:32Z",
-    "payloadHash":  "fa0bb7496f76806bdf949933aa7dbc2272744273772b73ccf9ca93eb55abf56e",
+    "updatedAtUtc":  "2026-11-15T02:40:47Z",
+    "payloadHash":  "8430d563e6726bc3ed30c7d2d9fffbce739fe53b0029761c24120651af96e91a",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.1",
     "buildPhase":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
@@ -9,8 +9,7 @@
     "currentlyAdded":  [
                            "Act I (0.0s–4.2s): Real-time dusk coastal harbor fly-in with sweeping volumetric lighthouse beam, port gantry cranes, churning bow wave \u0026 Tyfon foghorn audio",
                            "Act II (4.2s–5.8s): Seamless bow-to-stern cyan laser scan-plane morphing into a live 3D holographic wireframe ship \u0026 undulating triangulated ocean wave grid",
-                           "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu",
-                           "Website Live 3D Ocean Globe: 1-to-1 74-island WebGL Earth sphere with scaled-down Blender 3D ship models (.glb) \u0026 real-time Firebase live player tracking"
+                           "Act III (5.8s+): Interactive 35-vessel 3D hologram selector (0.35s cyan scan pulse on ship swap) \u0026 32-port paged tactical command menu"
                        ],
     "currentlyChanged":  [
                              "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]",
@@ -20,6 +19,22 @@
                              "Replacing static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-website-live-3d-ocean-globe",
+                           "timestampUtc":  "2026-11-15T02:39:45Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Deployed interactive 1-to-1 Spinnable 3D Ocean Globe (#live-globe) on TrueHelm-Website with all 74 archipelago islands (32 ports + 42 scenic islands), all 35 real Blender 3D ship .glb models, and live Firebase /us_ocean_players.json real-time player \u0026 route tracking.",
+                           "added":  [
+                                         "Interactive 360° spinnable \u0026 zoomable Three.js WebGL 3D Ocean Globe mapping the 4,617 km TrueHelm ocean \u0026 all 74 islands 1-to-1",
+                                         "All 35 real Blender ship hulls converted to glTF 2.0 (.glb) with live Firebase real-time player positions, headings, route arcs, Company Co-Op shared crew badges, and 1-click Boat Photo modal handoff"
+                                     ],
+                           "changed":  [
+
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-015227",
                            "timestampUtc":  "2026-11-15T01:52:27Z",
