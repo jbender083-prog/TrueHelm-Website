@@ -1,21 +1,36 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:46:01Z",
-    "payloadHash":  "19a0aa008e59b327038a14cf21bf0ccf9eee3a5a21a5da2f6efdeed6f894715d",
+    "updatedAtUtc":  "2026-11-15T03:57:03Z",
+    "payloadHash":  "fbbf20eeb554772055973568addd590641a92c7b9f0432329a351c3697e8bf7d",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.2",
-    "buildPhase":  "Building TrueHelm Desktop Launcher (TrueHelmLauncher.exe)",
-    "buildStatus":  "Building TrueHelm Desktop Launcher (TrueHelmLauncher.exe)",
+    "buildPhase":  "Wiring TrueHelmLauncher.exe 1-Click Download onto Official Website",
+    "buildStatus":  "Wiring TrueHelmLauncher.exe 1-Click Download onto Official Website",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "TrueHelm Desktop Launcher (TrueHelmLauncher.exe): Zero-dependency 1-click Windows game installer, auto-updater \u0026 PC/OpenXR VR launcher (no manual .zip extraction required)"
+
                        ],
     "currentlyChanged":  [
-
+                             "Wiring primary 1-click Download TrueHelm Launcher (.exe) button onto TrueHelm-Website (alongside portable .zip option)"
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-truehelm-desktop-launcher-live",
+                           "timestampUtc":  "2026-11-15T03:55:30Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Built, Authenticode-signed, self-tested (VERIFY_LAUNCHER: PASS), and published zero-dependency single-file TrueHelmLauncher.exe (0.5 MB) to GitHub Release v1.9.2 — 1-click zip-free game download, auto-updating, and Windows Desktop / OpenXR VR launch.",
+                           "added":  [
+                                         "Published TrueHelmLauncher.exe (517 KB zero-dependency Windows 10/11 desktop installer, auto-updater \u0026 PC/OpenXR VR launcher — zero manual .zip extraction required)"
+                                     ],
+                           "changed":  [
+
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-website-live-only-globe-liveness",
                            "timestampUtc":  "2026-11-15T03:45:30Z",
@@ -466,6 +481,7 @@
                             "date":  "November 2026",
                             "openByDefault":  true,
                             "added":  [
+                                          "Official TrueHelmLauncher.exe Desktop Installer \u0026 Auto-Updater (0.5 MB): 1-click zip-free Windows 10/11 download, auto-updates, and PC / OpenXR VR launch",
                                           "Real-Time 3-Act Startup Cinematic: Dusk coastal harbor fly-in off Port Horizon Hub with sweeping volumetric lighthouse beam, gantry cranes, churning 3D bow spray, and Tyfon foghorn audio",
                                           "Bow-to-stern electric-cyan laser scan morph into a 67,584-vert curved 3D holographic wireframe flagship \u0026 undulating triangulated ocean wave grid",
                                           "Interactive 35-vessel 3D hologram selector (#01–#35, 0.35s cyan scan pulse on ship swap, AI SUPPORT badges on NPC craft) \u0026 32-port paged tactical command menu (TRUEHELM: MARITIME CARGO)",
