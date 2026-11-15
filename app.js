@@ -632,4 +632,744 @@
       }, 8000);
     });
   });
+
+  // 6. GPU-Accelerated UI Scroll-Reveal Polish (with guaranteed visibility fallback)
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealSelector = '.section-head, .features-grid .card, .shots-grid .shot-card, .fleet-banner, #ships-card-grid .ship-card, .dash-header-bar, .dash-col, .history-card, .ver-card, .step-card, .coop-card, .controls-accordion, .cta-panel';
+
+  function initScrollReveal() {
+    const targets = Array.from(document.querySelectorAll(revealSelector));
+    if (!targets.length || reducedMotionQuery.matches || !('IntersectionObserver' in window)) {
+      return;
+    }
+
+    document.documentElement.classList.add('motion-ready');
+    const vh = window.innerHeight || 800;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    targets.forEach((el, idx) => {
+      el.classList.add('reveal-on-scroll');
+      el.style.transitionDelay = `${(idx % 3) * 45}ms`;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < vh * 0.96) {
+        el.classList.add('is-visible');
+      } else {
+        io.observe(el);
+      }
+    });
+
+    // Guarantee nothing ever stays hidden if layout shifts or user jumps via anchor link
+    window.addEventListener(
+      'scroll',
+      () => {
+        const curVh = window.innerHeight || 800;
+        document.querySelectorAll('.reveal-on-scroll:not(.is-visible)').forEach((el) => {
+          if (el.getBoundingClientRect().top < curVh * 1.05) {
+            el.classList.add('is-visible');
+          }
+        });
+      },
+      { passive: true }
+    );
+  }
+
+  initScrollReveal();
+
+  // 7. 60fps HiDPI Scroll-Driven Sailing Flagship & Multi-Layer Parallax Ocean Canvas
+  const oceanCanvas = document.getElementById('ocean-voyage-canvas');
+  const scrollFillEl = document.getElementById('scroll-voyage-fill');
+
+  if (oceanCanvas && oceanCanvas.getContext) {
+    const ctx = oceanCanvas.getContext('2d');
+    let vw = window.innerWidth || 1280;
+    let vh = window.innerHeight || 800;
+    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    const STARS = Array.from({ length: 44 }, (_, i) => ({
+      u: ((i * 73 + 19) % 100) / 100,
+      v: ((i * 41 + 7) % 100) / 100 * 0.52,
+      r: 0.65 + (i % 3) * 0.42,
+      phase: i * 1.37
+    }));
+
+    function getScrollProgress() {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      return Math.min(1, Math.max(0, (window.scrollY || window.pageYOffset || 0) / maxScroll));
+    }
+
+    let targetP = getScrollProgress();
+    let smoothP = targetP;
+    let rafId = 0;
+    let lastFrameMs = performance.now();
+
+    function syncProgressBar(p) {
+      if (scrollFillEl) {
+        scrollFillEl.style.transform = `scaleX(${p.toFixed(4)})`;
+      }
+    }
+
+    function resizeOceanCanvas() {
+      vw = window.innerWidth || 1280;
+      vh = window.innerHeight || 800;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      oceanCanvas.width = Math.max(1, Math.round(vw * dpr));
+      oceanCanvas.height = Math.max(1, Math.round(vh * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      targetP = getScrollProgress();
+      syncProgressBar(targetP);
+      if (reducedMotionQuery.matches) {
+        smoothP = targetP;
+        renderOceanScene(0);
+      }
+    }
+
+    function midWaveOffset(x, tSec, parallaxShift) {
+      const wx = x + parallaxShift;
+      return (
+        Math.sin(wx * 0.011 - tSec * 1.35) * 4.2 +
+        Math.sin(wx * 0.024 + tSec * 0.85) * 2.1 +
+        Math.cos(wx * 0.0055 - tSec * 0.6) * 2.8
+      );
+    }
+
+    function drawWaveLayer(baseY, ampScale, freq, speed, phaseShift, topStroke, fillTop, fillBot, tSec) {
+      const step = vw < 600 ? 18 : 26;
+      ctx.beginPath();
+      ctx.moveTo(0, vh + 10);
+      for (let x = 0; x <= vw + step; x += step) {
+        const y =
+          baseY +
+          Math.sin((x + phaseShift) * freq - tSec * speed) * (4.5 * ampScale) +
+          Math.cos((x + phaseShift * 0.6) * (freq * 1.85) + tSec * (speed * 0.72)) * (2.2 * ampScale);
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(vw + step, vh + 10);
+      ctx.closePath();
+
+      const grad = ctx.createLinearGradient(0, baseY - 12, 0, vh);
+      grad.addColorStop(0, fillTop);
+      grad.addColorStop(1, fillBot);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      if (topStroke) {
+        ctx.beginPath();
+        for (let x = 0; x <= vw + step; x += step) {
+          const y =
+            baseY +
+            Math.sin((x + phaseShift) * freq - tSec * speed) * (4.5 * ampScale) +
+            Math.cos((x + phaseShift * 0.6) * (freq * 1.85) + tSec * (speed * 0.72)) * (2.2 * ampScale);
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = topStroke;
+        ctx.lineWidth = 1.15;
+        ctx.stroke();
+      }
+    }
+
+    function drawDistantIslandsAndPort(horizonY, p, tSec) {
+      // 1. Far Continental Ridge (0.22x scroll parallax)
+      const ridgeShift = -p * vw * 0.22;
+      ctx.fillStyle = '#081b31';
+      ctx.beginPath();
+      const rBaseX = vw * 0.16 + ridgeShift;
+      ctx.moveTo(rBaseX - 220, horizonY + 2);
+      ctx.lineTo(rBaseX - 140, horizonY - 18);
+      ctx.lineTo(rBaseX - 65, horizonY - 34);
+      ctx.lineTo(rBaseX + 10, horizonY - 22);
+      ctx.lineTo(rBaseX + 85, horizonY - 41);
+      ctx.lineTo(rBaseX + 165, horizonY - 19);
+      ctx.lineTo(rBaseX + 250, horizonY + 2);
+      ctx.closePath();
+      ctx.fill();
+
+      // 2. Mid-Distance Headland Island + Sweeping Lighthouse Beacon (0.34x parallax)
+      const islX = vw * 0.56 - p * vw * 0.34;
+      ctx.fillStyle = '#0a213a';
+      ctx.beginPath();
+      ctx.moveTo(islX - 130, horizonY + 2);
+      ctx.lineTo(islX - 78, horizonY - 15);
+      ctx.lineTo(islX - 24, horizonY - 28);
+      ctx.lineTo(islX + 28, horizonY - 24);
+      ctx.lineTo(islX + 74, horizonY - 9);
+      ctx.lineTo(islX + 112, horizonY + 2);
+      ctx.closePath();
+      ctx.fill();
+
+      // Slender coastal lighthouse tower on headland peak
+      const lhX = islX + 24;
+      const lhBaseY = horizonY - 23;
+      const lhTopY = lhBaseY - 22;
+      ctx.fillStyle = '#cbd5e1';
+      ctx.beginPath();
+      ctx.moveTo(lhX - 3.2, lhBaseY);
+      ctx.lineTo(lhX - 1.8, lhTopY);
+      ctx.lineTo(lhX + 1.8, lhTopY);
+      ctx.lineTo(lhX + 3.2, lhBaseY);
+      ctx.closePath();
+      ctx.fill();
+
+      // Sweeping lighthouse beam across the twilight horizon
+      const sweep = Math.sin(tSec * 0.72);
+      const beamLen = Math.min(420, vw * 0.36);
+      const beamDir = sweep >= 0 ? 1 : -1;
+      const beamAlpha = 0.06 + Math.abs(sweep) * 0.16;
+      const beamGrad = ctx.createLinearGradient(lhX, lhTopY, lhX + beamDir * beamLen, lhTopY - 26);
+      beamGrad.addColorStop(0, `rgba(186, 230, 253, ${beamAlpha.toFixed(3)})`);
+      beamGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = beamGrad;
+      ctx.beginPath();
+      ctx.moveTo(lhX, lhTopY + 1);
+      ctx.lineTo(lhX + beamDir * beamLen, lhTopY - 44);
+      ctx.lineTo(lhX + beamDir * beamLen, lhTopY + 10);
+      ctx.closePath();
+      ctx.fill();
+
+      // Lantern point glow
+      const lanternGlow = ctx.createRadialGradient(lhX, lhTopY, 0, lhX, lhTopY, 13);
+      lanternGlow.addColorStop(0, 'rgba(254, 243, 199, 0.95)');
+      lanternGlow.addColorStop(0.35, 'rgba(56, 189, 248, 0.45)');
+      lanternGlow.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = lanternGlow;
+      ctx.beginPath();
+      ctx.arc(lhX, lhTopY, 13, 0, Math.PI * 2);
+      ctx.fill();
+
+      // 3. Distant Deepwater Port & Container Gantry Cranes on Starboard Horizon (0.42x parallax)
+      const portX = vw * 1.04 - p * vw * 0.32;
+      ctx.fillStyle = '#091e36';
+      ctx.beginPath();
+      ctx.moveTo(portX - 140, horizonY + 2);
+      ctx.lineTo(portX - 115, horizonY - 10);
+      ctx.lineTo(portX + 95, horizonY - 12);
+      ctx.lineTo(portX + 135, horizonY + 2);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.strokeStyle = 'rgba(125, 211, 252, 0.34)';
+      ctx.lineWidth = 1.2;
+      for (let c = 0; c < 3; c++) {
+        const cx = portX - 72 + c * 46;
+        const cy = horizonY - 10;
+        ctx.beginPath();
+        // Gantry portal legs + waterside boom
+        ctx.moveTo(cx - 5, cy);
+        ctx.lineTo(cx - 3, cy - 28);
+        ctx.moveTo(cx + 5, cy);
+        ctx.lineTo(cx + 3, cy - 28);
+        ctx.moveTo(cx - 24, cy - 22);
+        ctx.lineTo(cx + 15, cy - 22);
+        ctx.moveTo(cx, cy - 28);
+        ctx.lineTo(cx - 18, cy - 22);
+        ctx.stroke();
+
+        // Warm terminal apron light
+        ctx.fillStyle = c === 1 ? 'rgba(52, 211, 153, 0.7)' : 'rgba(251, 191, 36, 0.72)';
+        ctx.fillRect(cx - 1.5, cy - 4, 3, 2.5);
+      }
+    }
+
+    function drawFlagshipAndWake(shipX, shipY, shipLen, pitchRad, wakeBoost, tSec) {
+      const halfL = shipLen * 0.5;
+      const sternX = shipX - halfL * 0.94;
+      const bowX = shipX + halfL * 0.98;
+
+      // 1. Shimmering Light Reflections on Water Below the Hull
+      ctx.save();
+      for (let band = 0; band < 7; band++) {
+        const ry = shipY + 5 + band * 4.2;
+        const ripple = Math.sin(tSec * 2.8 + band * 1.4) * 5;
+        const alpha = (0.22 - band * 0.026) * 0.95;
+        if (alpha <= 0) continue;
+
+        // Bridge warm window reflection
+        ctx.fillStyle = `rgba(251, 191, 36, ${alpha.toFixed(3)})`;
+        ctx.fillRect(shipX + shipLen * 0.08 + ripple * 0.5, ry, shipLen * (0.13 - band * 0.01), 1.8);
+
+        // Starboard emerald nav-light reflection
+        ctx.fillStyle = `rgba(52, 211, 153, ${(alpha * 1.1).toFixed(3)})`;
+        ctx.fillRect(shipX + shipLen * 0.16 - ripple * 0.4, ry + 1, shipLen * 0.055, 1.6);
+
+        // Cyan moonlight hull rim reflection
+        ctx.fillStyle = `rgba(56, 189, 248, ${(alpha * 0.85).toFixed(3)})`;
+        ctx.fillRect(shipX - shipLen * 0.34 + ripple, ry, shipLen * 0.76, 1.3);
+      }
+      ctx.restore();
+
+      // 2. Trailing Kelvin V-Wake & Turbulent Stern Foam Ribbon
+      const wakeLen = shipLen * (0.72 + wakeBoost * 1.05);
+      const wakeStartX = sternX + 4;
+      const wakeEndX = wakeStartX - wakeLen;
+
+      // Turbulent centerline stern wash
+      const washGrad = ctx.createLinearGradient(wakeStartX, shipY + 2, wakeEndX, shipY + 5);
+      washGrad.addColorStop(0, `rgba(224, 242, 254, ${(0.42 + wakeBoost * 0.34).toFixed(3)})`);
+      washGrad.addColorStop(0.35, `rgba(56, 189, 248, ${(0.22 + wakeBoost * 0.2).toFixed(3)})`);
+      washGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = washGrad;
+      ctx.beginPath();
+      ctx.moveTo(wakeStartX, shipY - 1);
+      ctx.lineTo(wakeEndX, shipY - (6 + wakeBoost * 10));
+      ctx.lineTo(wakeEndX, shipY + (11 + wakeBoost * 16));
+      ctx.lineTo(wakeStartX, shipY + 4);
+      ctx.closePath();
+      ctx.fill();
+
+      // Upper & lower diverging Kelvin wake arms
+      ctx.lineWidth = 1.6;
+      const armGrad = ctx.createLinearGradient(wakeStartX, shipY, wakeEndX, shipY);
+      armGrad.addColorStop(0, `rgba(186, 230, 253, ${(0.55 + wakeBoost * 0.3).toFixed(3)})`);
+      armGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.strokeStyle = armGrad;
+
+      ctx.beginPath();
+      ctx.moveTo(wakeStartX, shipY + 1);
+      ctx.quadraticCurveTo(wakeStartX - wakeLen * 0.45, shipY - 4, wakeEndX, shipY - (8 + wakeBoost * 11));
+      ctx.moveTo(wakeStartX, shipY + 3);
+      ctx.quadraticCurveTo(wakeStartX - wakeLen * 0.45, shipY + 9, wakeEndX, shipY + (14 + wakeBoost * 18));
+      ctx.stroke();
+
+      // 3. Architectural Flagship Hull, Cargo Bays, Bridge & Funnel (in ship local frame)
+      ctx.save();
+      ctx.translate(shipX, shipY);
+      ctx.rotate(pitchRad);
+
+      const s = shipLen / 300; // Normalized 300px naval blueprint coordinates (-150..+150)
+
+      // 3a. Translucent Exhaust Plume Drifting Astern from Aft Funnel
+      const funnelTopX = -76 * s;
+      const funnelTopY = -48 * s;
+      for (let i = 0; i < 8; i++) {
+        const age = ((tSec * 0.65 + i * 0.125) % 1);
+        const px = funnelTopX - age * (54 + wakeBoost * 58) * s;
+        const py = funnelTopY - (4 + age * 18) * s + Math.sin(age * 5 + tSec) * 1.8 * s;
+        const pr = (3.2 + age * 9.5) * s;
+        const pa = (1 - age) * (0.14 + wakeBoost * 0.1);
+        ctx.fillStyle = `rgba(186, 230, 253, ${pa.toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(px, py, pr, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 3b. Multi-Bay Intermodal Container Stacks Along Deck
+      const bays = [
+        { x: -128, w: 22, h: 15, c: '#134e6f' },
+        { x: -103, w: 22, h: 19, c: '#1b6b8f' },
+        { x: -56,  w: 24, h: 21, c: '#0f5e59' },
+        { x: -29,  w: 24, h: 23, c: '#19587a' },
+        { x: -2,   w: 24, h: 22, c: '#7c4329' },
+        { x: 58,   w: 23, h: 20, c: '#145374' },
+        { x: 84,   w: 21, h: 15, c: '#0f6657' }
+      ];
+      const deckY = -16 * s;
+      bays.forEach((b) => {
+        const bx = b.x * s;
+        const bw = b.w * s;
+        const bh = b.h * s;
+        const by = deckY - bh;
+        ctx.fillStyle = b.c;
+        ctx.fillRect(bx, by, bw, bh);
+
+        // Horizontal container tier lines
+        ctx.fillStyle = 'rgba(4, 12, 24, 0.34)';
+        for (let ty = by + 4.5 * s; ty < deckY - 1; ty += 4.5 * s) {
+          ctx.fillRect(bx, ty, bw, 0.9 * s);
+        }
+
+        // Moonlight cyan top & forward rim highlight on each container stack
+        ctx.fillStyle = 'rgba(125, 211, 252, 0.58)';
+        ctx.fillRect(bx, by, bw, 1.2 * s);
+        ctx.fillRect(bx + bw - 1.2 * s, by, 1.2 * s, bh);
+      });
+
+      // 3c. Aft Engine Casing & Raked TrueHelm Funnel
+      ctx.fillStyle = '#182c44';
+      ctx.fillRect(-79 * s, deckY - 18 * s, 18 * s, 18 * s);
+      ctx.fillStyle = '#243e5c';
+      ctx.beginPath();
+      ctx.moveTo(-77 * s, deckY - 18 * s);
+      ctx.lineTo(-80 * s, funnelTopY);
+      ctx.lineTo(-68 * s, funnelTopY);
+      ctx.lineTo(-64 * s, deckY - 18 * s);
+      ctx.closePath();
+      ctx.fill();
+      // Cyan-emerald TrueHelm livery band on funnel
+      ctx.fillStyle = '#38bdf8';
+      ctx.fillRect(-79 * s, funnelTopY + 4 * s, 12 * s, 3 * s);
+      ctx.fillStyle = '#34d399';
+      ctx.fillRect(-79 * s, funnelTopY + 7 * s, 12.5 * s, 2 * s);
+
+      // 3d. Forward Twin-Island Bridge Superstructure & Wheelhouse
+      const brX = 26 * s;
+      ctx.fillStyle = '#1b314b';
+      ctx.fillRect(brX, deckY - 26 * s, 26 * s, 26 * s);
+      // Forward sunlit/moonlit accommodation bulkhead
+      ctx.fillStyle = '#93c5fd';
+      ctx.fillRect(brX + 24.2 * s, deckY - 26 * s, 1.8 * s, 26 * s);
+
+      // Tiered deckhouse levels
+      ctx.fillStyle = 'rgba(7, 18, 32, 0.45)';
+      for (let lv = 1; lv <= 4; lv++) {
+        ctx.fillRect(brX + 2 * s, deckY - lv * 5.2 * s, 22 * s, 1.1 * s);
+      }
+
+      // Extended navigation bridge wing & raked forward windshield
+      const whY = deckY - 33 * s;
+      ctx.fillStyle = '#274363';
+      ctx.beginPath();
+      ctx.moveTo(brX - 3 * s, deckY - 26 * s);
+      ctx.lineTo(brX - 2 * s, whY);
+      ctx.lineTo(brX + 30 * s, whY);
+      ctx.lineTo(brX + 27.5 * s, deckY - 26 * s);
+      ctx.closePath();
+      ctx.fill();
+
+      // Crisp bridge roof visor with moonlight rim
+      ctx.fillStyle = '#bae6fd';
+      ctx.fillRect(brX - 2 * s, whY - 1.5 * s, 33 * s, 1.5 * s);
+
+      // Warm glowing wheelhouse windows
+      ctx.save();
+      ctx.shadowColor = 'rgba(251, 191, 36, 0.85)';
+      ctx.shadowBlur = 7 * s;
+      ctx.fillStyle = '#fde68a';
+      for (let wIdx = 0; wIdx < 5; wIdx++) {
+        ctx.fillRect(brX + (2 + wIdx * 5.2) * s, whY + 2.2 * s, 3.8 * s, 2.5 * s);
+      }
+      ctx.restore();
+
+      // Main Radar Mast + Rotating Radar Scanner Bar
+      const mastX = brX + 13 * s;
+      const mastTopY = whY - 18 * s;
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = Math.max(1.1, 1.5 * s);
+      ctx.beginPath();
+      ctx.moveTo(mastX, whY - 1.5 * s);
+      ctx.lineTo(mastX - 1.5 * s, mastTopY);
+      ctx.moveTo(mastX - 5 * s, whY - 9 * s);
+      ctx.lineTo(mastX + 5 * s, whY - 9 * s);
+      ctx.stroke();
+
+      // Rotating X-band radar bar
+      const radarHalfSpan = Math.max(1.5, Math.abs(Math.cos(tSec * 2.8)) * 7.5 * s);
+      ctx.strokeStyle = '#e0f2fe';
+      ctx.lineWidth = Math.max(1.3, 1.8 * s);
+      ctx.beginPath();
+      ctx.moveTo(mastX - radarHalfSpan, whY - 11.5 * s);
+      ctx.lineTo(mastX + radarHalfSpan, whY - 11.5 * s);
+      ctx.stroke();
+
+      // Masthead white steaming light + Starboard green navigation light
+      const navLights = [
+        { lx: mastX - 1.5 * s, ly: mastTopY, r: 7 * s, col: '224, 242, 254' },
+        { lx: brX + 26 * s, ly: whY + 4 * s, r: 8 * s, col: '52, 211, 153' }
+      ];
+      navLights.forEach((nl) => {
+        const g = ctx.createRadialGradient(nl.lx, nl.ly, 0, nl.lx, nl.ly, nl.r);
+        g.addColorStop(0, `rgba(${nl.col}, 0.98)`);
+        g.addColorStop(0.4, `rgba(${nl.col}, 0.42)`);
+        g.addColorStop(1, `rgba(${nl.col}, 0)`);
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(nl.lx, nl.ly, nl.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3e. Deep Navy Steel Hull + Raked Clipper/Bulbous Bow + Plimsoll Boot-Topping
+      const hullGrad = ctx.createLinearGradient(0, -22 * s, 0, 4 * s);
+      hullGrad.addColorStop(0, '#102a46');
+      hullGrad.addColorStop(0.7, '#09192c');
+      hullGrad.addColorStop(1, '#06111f');
+
+      ctx.beginPath();
+      ctx.moveTo(-142 * s, -2 * s);          // Stern waterline
+      ctx.lineTo(-146 * s, -12 * s);         // Transom stern
+      ctx.lineTo(-140 * s, deckY);           // Poop deck
+      ctx.lineTo(108 * s, deckY);            // Main sheer deck
+      ctx.lineTo(124 * s, -21 * s);          // Forecastle rise
+      ctx.lineTo(148 * s, -22 * s);          // Raked bow stem tip
+      ctx.quadraticCurveTo(138 * s, -9 * s, 134 * s, -3 * s); // Clipper stem curve
+      ctx.quadraticCurveTo(143 * s, -1.5 * s, 138 * s, 2.2 * s); // Subtle bulbous forefoot
+      ctx.lineTo(-138 * s, 2.2 * s);         // Keel/waterline run
+      ctx.closePath();
+      ctx.fillStyle = hullGrad;
+      ctx.fill();
+
+      // Crimson Plimsoll Waterline Stripe
+      ctx.fillStyle = '#be123c';
+      ctx.beginPath();
+      ctx.moveTo(-141 * s, -1.2 * s);
+      ctx.lineTo(138 * s, -1.2 * s);
+      ctx.lineTo(136 * s, 2.4 * s);
+      ctx.lineTo(-138 * s, 2.4 * s);
+      ctx.closePath();
+      ctx.fill();
+
+      // Crisp Cyan/Moonlight Rim-Lighting Along Sheer Strake & Raked Bow
+      ctx.strokeStyle = 'rgba(125, 211, 252, 0.88)';
+      ctx.lineWidth = Math.max(1.2, 1.55 * s);
+      ctx.beginPath();
+      ctx.moveTo(-145 * s, -12 * s);
+      ctx.lineTo(-140 * s, deckY);
+      ctx.lineTo(108 * s, deckY);
+      ctx.lineTo(124 * s, -21 * s);
+      ctx.lineTo(148 * s, -22 * s);
+      ctx.quadraticCurveTo(139 * s, -10 * s, 136 * s, -2 * s);
+      ctx.stroke();
+
+      // Bow anchor hawsepipe detail & hull name stripe
+      ctx.fillStyle = 'rgba(186, 230, 253, 0.72)';
+      ctx.fillRect(127 * s, -14 * s, 4.2 * s, 2.2 * s);
+      ctx.fillStyle = 'rgba(56, 189, 248, 0.42)';
+      ctx.fillRect(-45 * s, -9 * s, 72 * s, 1.4 * s);
+
+      ctx.restore();
+
+      // 4. Dynamic Bow-Wave Spray & Waterline Foam Lacing
+      const bowWaterX = bowX - 6 * s;
+      const sprayAlpha = Math.min(0.95, 0.52 + wakeBoost * 0.42);
+      const bowGrad = ctx.createLinearGradient(bowWaterX + 10 * s, shipY, bowWaterX - 38 * s, shipY + 4 * s);
+      bowGrad.addColorStop(0, `rgba(224, 242, 254, ${sprayAlpha.toFixed(3)})`);
+      bowGrad.addColorStop(0.5, `rgba(125, 211, 252, ${(sprayAlpha * 0.55).toFixed(3)})`);
+      bowGrad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = bowGrad;
+      ctx.beginPath();
+      ctx.moveTo(bowWaterX + 8 * s, shipY + 1);
+      ctx.quadraticCurveTo(bowWaterX - 6 * s, shipY - (4 + wakeBoost * 5) * s, bowWaterX - 36 * s, shipY + 3 * s);
+      ctx.lineTo(bowWaterX + 6 * s, shipY + 4.5 * s);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function renderOceanScene(tSec) {
+      ctx.clearRect(0, 0, vw, vh);
+
+      // Horizon around ~62% viewport height with subtle 65% -> 56% vertical scroll parallax
+      const horizonY = vh * (0.65 - 0.09 * smoothP);
+
+      // 1. Nautical Twilight Sky Gradient
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, horizonY);
+      skyGrad.addColorStop(0, '#030913');
+      skyGrad.addColorStop(0.52, '#061427');
+      skyGrad.addColorStop(0.86, '#0b233f');
+      skyGrad.addColorStop(1, '#113559');
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, vw, horizonY + 2);
+
+      // Stars in upper sky (subtle parallax)
+      const starShift = -smoothP * 36;
+      STARS.forEach((st) => {
+        const sx = ((st.u * vw + starShift) % vw + vw) % vw;
+        const sy = st.v * horizonY;
+        const tw = 0.35 + 0.45 * Math.sin(tSec * 1.4 + st.phase);
+        ctx.fillStyle = `rgba(226, 232, 240, ${tw.toFixed(3)})`;
+        ctx.beginPath();
+        ctx.arc(sx, sy, st.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Soft Moonlight Halo in Upper Starboard Sky
+      const moonX = vw * (0.8 - 0.14 * smoothP);
+      const moonY = vh * 0.16;
+      const moonGlow = ctx.createRadialGradient(moonX, moonY, 2, moonX, moonY, Math.min(260, vw * 0.28));
+      moonGlow.addColorStop(0, 'rgba(224, 242, 254, 0.32)');
+      moonGlow.addColorStop(0.22, 'rgba(56, 189, 248, 0.12)');
+      moonGlow.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = moonGlow;
+      ctx.fillRect(0, 0, vw, horizonY);
+
+      // Crisp crescent/disc moon
+      ctx.fillStyle = 'rgba(240, 249, 255, 0.82)';
+      ctx.beginPath();
+      ctx.arc(moonX, moonY, 9, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Atmospheric Twilight-Cyan Horizon Glow Band
+      const hGlow = ctx.createLinearGradient(0, horizonY - 48, 0, horizonY + 28);
+      hGlow.addColorStop(0, 'rgba(56, 189, 248, 0)');
+      hGlow.addColorStop(0.62, 'rgba(56, 189, 248, 0.22)');
+      hGlow.addColorStop(1, 'rgba(52, 211, 153, 0.05)');
+      ctx.fillStyle = hGlow;
+      ctx.fillRect(0, horizonY - 48, vw, 76);
+
+      // 2. Distant Parallax Islands, Sweeping Lighthouse & Port Cranes
+      drawDistantIslandsAndPort(horizonY, smoothP, tSec);
+
+      // 3. Far Ocean Base & Wave Layer 1
+      drawWaveLayer(
+        horizonY,
+        0.55,
+        0.012,
+        0.8,
+        smoothP * 160,
+        'rgba(125, 211, 252, 0.28)',
+        '#08233d',
+        '#040e1b',
+        tSec
+      );
+
+      // Subtle moonlight sheen on far water
+      const waterMoon = ctx.createRadialGradient(moonX, horizonY + 18, 4, moonX, horizonY + 90, 210);
+      waterMoon.addColorStop(0, 'rgba(186, 230, 253, 0.16)');
+      waterMoon.addColorStop(1, 'rgba(56, 189, 248, 0)');
+      ctx.fillStyle = waterMoon;
+      ctx.fillRect(0, horizonY, vw, vh - horizonY);
+
+      // 4. Mid-Ocean Swell Layer 2 (Sailing Plane)
+      const shipPlaneY = horizonY + Math.max(36, vh * 0.078);
+      const midParallax = smoothP * 280;
+      drawWaveLayer(
+        shipPlaneY - 3,
+        0.95,
+        0.011,
+        1.35,
+        midParallax,
+        'rgba(56, 189, 248, 0.24)',
+        'rgba(7, 28, 49, 0.88)',
+        '#040c18',
+        tSec
+      );
+
+      // 5. Scroll-Driven Flagship Position, Wave Heave & Pitch
+      const shipLen = Math.round(Math.min(344, Math.max(178, vw * (vw < 600 ? 0.48 : 0.18))));
+      const shipX = vw * (0.1 + 0.8 * smoothP);
+      const sampleSpan = shipLen * 0.28;
+      const yStern = midWaveOffset(shipX - sampleSpan, tSec, midParallax);
+      const yBow = midWaveOffset(shipX + sampleSpan, tSec, midParallax);
+      const shipY = shipPlaneY + (yStern + yBow) * 0.42;
+
+      const scrollDelta = Math.abs(targetP - smoothP);
+      const wakeBoost = Math.min(1, 0.34 + scrollDelta * 15);
+      const rawPitch = Math.atan2(yBow - yStern, sampleSpan * 2) * 0.55 - scrollDelta * 0.06;
+      const maxPitchRad = (1.25 * Math.PI) / 180;
+      const pitchRad = Math.max(-maxPitchRad, Math.min(maxPitchRad, rawPitch));
+
+      drawFlagshipAndWake(shipX, shipY, shipLen, pitchRad, wakeBoost, tSec);
+
+      // 6. Foreground Wave Layer 3 + Specular Water Glints
+      const fgBaseY = shipPlaneY + Math.max(26, vh * 0.072);
+      drawWaveLayer(
+        fgBaseY,
+        1.25,
+        0.009,
+        1.75,
+        smoothP * 420,
+        'rgba(56, 189, 248, 0.22)',
+        'rgba(5, 20, 36, 0.78)',
+        'rgba(3, 10, 20, 0.94)',
+        tSec
+      );
+
+      // Subtle cyan specular water glints across mid/foreground ocean
+      for (let g = 0; g < 16; g++) {
+        const gx = ((g * 137 + smoothP * -260 + tSec * 14) % vw + vw) % vw;
+        const gy = horizonY + 14 + ((g * 53) % Math.max(40, Math.round(vh - horizonY - 24)));
+        const glintAlpha = 0.08 + 0.12 * Math.max(0, Math.sin(tSec * 2.1 + g * 1.7));
+        ctx.fillStyle = `rgba(186, 230, 253, ${glintAlpha.toFixed(3)})`;
+        ctx.fillRect(gx, gy, 8 + (g % 4) * 4, 1.3);
+      }
+
+      window.__trueHelmOceanState = {
+        targetP: Number(targetP.toFixed(4)),
+        smoothP: Number(smoothP.toFixed(4)),
+        shipX: Math.round(shipX),
+        shipY: Math.round(shipY),
+        shipLen,
+        horizonY: Math.round(horizonY),
+        pitchDeg: Number(((pitchRad * 180) / Math.PI).toFixed(2)),
+        wakeBoost: Number(wakeBoost.toFixed(3))
+      };
+    }
+
+    function tickOcean(nowMs) {
+      if (document.hidden || reducedMotionQuery.matches) {
+        rafId = 0;
+        return;
+      }
+      const dt = Math.min(0.05, Math.max(0.004, (nowMs - lastFrameMs) / 1000));
+      lastFrameMs = nowMs;
+      const dtScale = dt * 60;
+
+      targetP = getScrollProgress();
+      syncProgressBar(targetP);
+
+      const diff = targetP - smoothP;
+      if (Math.abs(diff) < 0.00025) {
+        smoothP = targetP;
+      } else {
+        smoothP += diff * Math.min(1, 0.075 * dtScale);
+      }
+
+      renderOceanScene(nowMs * 0.001);
+      rafId = window.requestAnimationFrame(tickOcean);
+    }
+
+    function ensureLoopRunning() {
+      if (!rafId && !document.hidden && !reducedMotionQuery.matches) {
+        lastFrameMs = performance.now();
+        rafId = window.requestAnimationFrame(tickOcean);
+      }
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        targetP = getScrollProgress();
+        syncProgressBar(targetP);
+        if (reducedMotionQuery.matches) {
+          smoothP = targetP;
+          renderOceanScene(0);
+        } else {
+          ensureLoopRunning();
+        }
+      },
+      { passive: true }
+    );
+
+    window.addEventListener('resize', resizeOceanCanvas, { passive: true });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (rafId) {
+          window.cancelAnimationFrame(rafId);
+          rafId = 0;
+        }
+      } else {
+        ensureLoopRunning();
+      }
+    });
+
+    if (reducedMotionQuery.addEventListener) {
+      reducedMotionQuery.addEventListener('change', () => {
+        if (reducedMotionQuery.matches) {
+          if (rafId) {
+            window.cancelAnimationFrame(rafId);
+            rafId = 0;
+          }
+          smoothP = getScrollProgress();
+          renderOceanScene(0);
+        } else {
+          ensureLoopRunning();
+        }
+      });
+    }
+
+    resizeOceanCanvas();
+    if (!reducedMotionQuery.matches) {
+      renderOceanScene(performance.now() * 0.001);
+      ensureLoopRunning();
+    }
+  }
 })();

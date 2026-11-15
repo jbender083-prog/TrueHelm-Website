@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
+  <canvas id="ocean-voyage-canvas" class="ocean-voyage-canvas" aria-hidden="true"></canvas>
+
   <!-- Clean Sticky Header (Mobile: Brand + Download + Hamburger ONLY) -->
   <header class="site-header" id="top">
     <div class="container header-inner">
@@ -65,6 +68,9 @@
         </a>
       </div>
     </nav>
+    <div class="scroll-voyage-bar" aria-hidden="true">
+      <div class="scroll-voyage-fill" id="scroll-voyage-fill"></div>
+    </div>
   </header>
 
   <main>
