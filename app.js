@@ -361,7 +361,8 @@
       .replace(/\b\x67\x69\x74\x68\x75\x62\s+pages\b/gi, 'TrueHelm Web')
       .replace(/\b\x67\x69\x74\x68\x75\x62\s+api\b/gi, 'Firebase Cloud')
       .replace(/\b\x67\x69\x74\x68\x75\x62\s+cdn\b/gi, 'TrueHelm Cloud')
-      .replace(/\b\x67\x69\x74\x68\x75\x62(?:\.com|\.io)?\b/gi, 'TrueHelm Cloud');
+      .replace(/\b\x67\x69\x74\x68\x75\x62(?:\.com|\.io)?\b/gi, 'TrueHelm Cloud')
+      .replace(/(?:Windows Desktop|PC)\s*\/\s*OpenXR VR\s+(launch(?:er)?)/gi, 'Windows PC $1');
   }
 
   function escapeLogHtml(str) {
