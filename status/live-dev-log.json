@@ -1,22 +1,37 @@
 {
-    "updatedAtUtc":  "2026-11-15T00:53:10Z",
-    "payloadHash":  "859ad2c4d7248fb05b43707f894e87c6ee3b6067aae19144404d7f2295559de0",
+    "updatedAtUtc":  "2026-11-15T00:55:50Z",
+    "payloadHash":  "aae5769abca26aa296a1961409b55c764f64f27e2e549b08971c217c8492f8f1",
     "activeVersion":  "v1.9.1",
     "latestReleaseTag":  "v1.9.0",
-    "buildPhase":  "Running In-Engine Verification \u0026 Capturing 35-Ship Gallery",
-    "buildStatus":  "Running In-Engine Verification \u0026 Capturing 35-Ship Gallery",
+    "buildPhase":  "Running Round 13 In-Engine Physics, VHF \u0026 \u003e=80 FPS Storm Suite",
+    "buildStatus":  "Running Round 13 In-Engine Physics, VHF \u0026 \u003e=80 FPS Storm Suite",
     "refreshIntervalSeconds":  30,
     "currentlyAdded":  [
-                           "Rendering 35 sunny open-ocean vessel beauty photos (Boats #01–#35) for the interactive website Fleet Explorer modal",
-                           "Running automated in-engine Round 13 physics, VHF latency (\u003c 5 ms), and Ultra Thunderstorm \u003e= 80 FPS verification suite"
+                           "Executing automated Round 13 in-engine verification suite (16 smooth pool spheres, PC/VR cue strike, \u003c 5 ms VHF latency, YouTube TV, 70%/30% company split, \u003e= 80 FPS Ultra Storm)"
                        ],
     "currentlyChanged":  [
+                             "Converting \u0026 deploying 35 high-res boat gallery JPEGs to the live Fleet Explorer modal",
                              "Preparing standalone Win64 executable compile, .pak asset cook, Authenticode binary signing, and v1.9.1 release zip"
                          ],
     "currentlyRemoved":  [
 
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-35-ship-gallery-captured",
+                           "timestampUtc":  "2026-11-15T00:54:28Z",
+                           "version":  "v1.9.1",
+                           "summary":  "Captured all 35 sunny open-ocean 1920x1080 vessel gallery photos (Boats #01–#35) with zero HUD chrome — graduated out of active build queue.",
+                           "added":  [
+                                         "35 sunny open-ocean 3/4 starboard-bow vessel beauty photos (ship_01.png through ship_35.png) scaled cleanly to each hull\u0027s length"
+                                     ],
+                           "changed":  [
+
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "milestone-r13-cpp-and-hud-compiled",
                            "timestampUtc":  "2026-11-15T00:49:16Z",
