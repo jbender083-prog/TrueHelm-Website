@@ -1,6 +1,6 @@
 {
-    "updatedAtUtc":  "2026-11-15T01:57:47Z",
-    "payloadHash":  "6bf244134276620d7129fd52748c79b37c037e3eb814e6c83a9e5d31424355b6",
+    "updatedAtUtc":  "2026-11-15T02:27:32Z",
+    "payloadHash":  "fa0bb7496f76806bdf949933aa7dbc2272744273772b73ccf9ca93eb55abf56e",
     "activeVersion":  "v1.9.2",
     "latestReleaseTag":  "v1.9.1",
     "buildPhase":  "Building v1.9.2 — Real-Time 3-Act Startup Cinematic \u0026 Holographic Main Menu",
@@ -13,7 +13,8 @@
                            "Website Live 3D Ocean Globe: 1-to-1 74-island WebGL Earth sphere with scaled-down Blender 3D ship models (.glb) \u0026 real-time Firebase live player tracking"
                        ],
     "currentlyChanged":  [
-                             "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]"
+                             "Upgrading Main Menu typography \u0026 layout with brushed-gunmetal \u0026 burnished brass-gold TRUEHELM: MARITIME CARGO header plaque, staggered entrance transitions, and [SPACE / ENTER / CLICK TO SKIP INTRO]",
+                             "Fixing live multiplayer remote ship hull preload recovery (preventing invisible remote hulls) \u0026 enforcing vessel-type-specific cargo deck bounds (zero containers on liquid tankers/bulk/gas/Ro-Ro)"
                          ],
     "currentlyRemoved":  [
                              "Replacing static frozen pre-launch camera snapshot with live 3D coastal voyage \u0026 zero-overhead post-launch hologram teardown"
