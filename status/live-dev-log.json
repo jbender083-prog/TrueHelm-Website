@@ -1,6 +1,6 @@
 {
-    "updatedAtUtc":  "2026-11-15T03:59:31Z",
-    "payloadHash":  "7e03b47cd4d546b34037769053763be91ce8df5ebe9b9e5817ab9a5905525d7b",
+    "updatedAtUtc":  "2026-11-15T04:05:04Z",
+    "payloadHash":  "c8facaba11f82622f31ffe0c6a08d0862bca546aec6861afe0050e65dbb9c206",
     "activeVersion":  "v1.9.3",
     "latestReleaseTag":  "v1.9.2",
     "buildPhase":  "Building v1.9.3 — Real Live-Ocean Startup Fly-In \u0026 Full-Color 3D Ship Main Menu",
@@ -10,13 +10,27 @@
 
                        ],
     "currentlyChanged":  [
-                             "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)",
-                             "Wiring primary 1-click Download TrueHelm Launcher (.exe) button onto TrueHelm-Website (alongside portable .zip option)"
+                             "Preserving full-color photorealistic 3D ships, real live ocean waves, port gantry cranes, and warm coastal daylight on the Main Menu (including live full-color 3D ship swapping across #01–#35)"
                          ],
     "currentlyRemoved":  [
                              "Removing blue cyber wireframe lines, laser scan curtain, triangulated cyber grid, and black void transition from the Startup Intro \u0026 Main Menu"
                          ],
     "historyLog":  [
+                       {
+                           "id":  "milestone-website-launcher-cta-live",
+                           "timestampUtc":  "2026-11-15T04:03:00Z",
+                           "version":  "v1.9.2",
+                           "summary":  "Wired primary 1-click Download TrueHelm Launcher (.exe) (0.5 MB auto-installer \u0026 updater) across all 6 TrueHelm-Website CTAs (Desktop \u0026 Mobile verified, macCount = 0), with Portable .ZIP kept as secondary option.",
+                           "added":  [
+
+                                     ],
+                           "changed":  [
+                                           "Wired primary 1-click Download TrueHelm Launcher (.exe) button across Sticky Nav, Hero CTA, Mobile Drawer, Quick Start, Bottom CTA, and Footer on TrueHelm-Website"
+                                       ],
+                           "removed":  [
+
+                                       ]
+                       },
                        {
                            "id":  "sync-20261115-035931",
                            "timestampUtc":  "2026-11-15T03:59:31Z",
