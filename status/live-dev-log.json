@@ -1,10 +1,10 @@
 {
-    "updatedAtUtc":  "2026-11-15T22:00:00Z",
+    "updatedAtUtc":  "2026-11-15T23:00:00Z",
     "syncMode":  "on-launcher-release",
-    "activeVersion":  "v1.9.7",
-    "latestReleaseTag":  "v1.9.7",
-    "buildPhase":  "Release v1.9.7 Live — 1P Pool Shot Fix, +38% Mega-Beam Port Crane Arms, Full-Beam Crane-Reach Dock Gate, Interactive Cabin TV Scrubber \u0026 Spatial 3D Cabin TV Audio",
-    "buildStatus":  "Release v1.9.7 Live — 1P Pool Shot Fix, +38% Mega-Beam Port Crane Arms, Full-Beam Crane-Reach Dock Gate, Interactive Cabin TV Scrubber \u0026 Spatial 3D Cabin TV Audio",
+    "activeVersion":  "v1.9.8",
+    "latestReleaseTag":  "v1.9.8",
+    "buildPhase":  "Release v1.9.8 Live — Exact Exit Save \u0026 Cargo/Money Spawn Restore, Nearby Multi-Player Spawn De-Overlap, 9-Point Island/Shoal Guard, Even Big-Boat Cabin Lighting \u0026 Real Recorded Ship Horns (#01-#35)",
+    "buildStatus":  "Release v1.9.8 Live — Exact Exit Save \u0026 Cargo/Money Spawn Restore, Nearby Multi-Player Spawn De-Overlap, 9-Point Island/Shoal Guard, Even Big-Boat Cabin Lighting \u0026 Real Recorded Ship Horns (#01-#35)",
     "currentlyAdded":  [
 
                        ],
@@ -16,8 +16,27 @@
                          ],
     "historyLog":  [
                        {
+                           "id":  "milestone-v198-persistent-spawn-safety-cabin-lighting",
+                           "timestampUtc":  "2026-11-15T23:00:00Z",
+                           "version":  "v1.9.8",
+                           "summary":  "Published TrueHelm v1.9.8 + Launcher 1.9.8.0 Live Release: Exact Exit Save \u0026 PLAY Restoration (Position, Heading, Bank $, Fuel, Active Contract \u0026 3D Deck Cargo Containers), Nearby Multi-Player Spawn De-Overlap, Strict 9-Point Anti-Island/Shallow-Water Guard, Evenly Distributed Big-Boat Cabin Lighting, \u0026 Authentic Real-World Recorded Boat/Megaship Horns Across All 35 Vessels.",
+                           "added":  [
+                                         "Authentic real-world recorded maritime air horns \u0026 deep megaship Tyfon whistles across all 35 vessels (#01–#35) per IMO vessel length class — from crisp twin-trumpet harbor craft \u0026 brass tug whistles to chest-shaking 65–85 Hz megaship Tyfon blasts with real sustain \u0026 harbor acoustic echo decay across [H], HUD, and 1P/VR cabin horn lanyards",
+                                         "Multi-player same-location spawn de-overlap (\u003e= 40 m hull-aware water clearance + simultaneous click-PLAY race tie-breaker) so captains spawning at identical coordinates appear nearby side-by-side and never inside each other",
+                                         "Strict 9-point hull anti-island \u0026 anti-shallow-water grounding guard at low tide across all 74 islands, harbor piers, and shallow shoals (Depth \u003e= max(1.65x Draft + 5 m, 12.5 m)), automatically relocating unsafe coordinates to nearby deep water",
+                                         "Evenly distributed multi-bay recessed ceiling strip fixtures across wide-beam large ship bridges \u0026 aft lounges (#24 MV Sovereign \u0026 Tier 3–5 vessels) eliminating dark interior corners with zero FPS impact"
+                                     ],
+                           "changed":  [
+                                           "Upgraded exit \u0026 autosave persistence (dual synchronous local disk + Cloud sync on Save \u0026 Exit, Exit Game, Alt+F4, and instant cargo/contract/dock/bank events) so clicking PLAY restores exact ocean (X, Y, Heading), bank balance ($), fuel, mooring/anchor state, active contract, and full 3D visual deck cargo containers",
+                                           "Tuned big-boat interior bridge, walkway, pool table, and lounge lighting slightly brighter (+25%–35% balanced intensity with soft wide falloff and zero harsh glare)"
+                                       ],
+                           "removed":  [
+                                           "Replaced synthetic procedural horn oscillators across all 35 vessels with real recorded 48 kHz maritime air horns, eliminated Startup Main Menu save-state clobbering before clicking PLAY, and removed dark wheelhouse/lounge corner shadows on wide-beam ships"
+                                       ]
+                       },
+                       {
                            "id":  "milestone-v197-pool-cranes-dockgate-tvscrubber",
-                           "timestampUtc":  "2026-11-15T22:00:00Z",
+                           "timestampUtc":  "2026-11-15T22:49:17Z",
                            "version":  "v1.9.7",
                            "summary":  "Published TrueHelm v1.9.7 + Launcher 1.9.7.0 Live Release: 1st-Person Desktop Pool Cue Pullback \u0026 Release Fix, +38% Extended Mega-Beam Port Container Crane Arms, Full-Beam Crane-Reach Bridge Monitor DOCK Gate, Direct In-Game 1P/VR Cabin YouTube TV Play/Pause + Timeline Scrubber, \u0026 Spatial 3D Distance-Attenuated Cabin TV Audio.",
                            "added":  [
@@ -315,10 +334,29 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.7",
+                            "version":  "v1.9.8",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "Authentic real-world recorded maritime air horns \u0026 deep megaship Tyfon whistles across all 35 vessels (#01–#35) per IMO vessel length class — from crisp twin-trumpet harbor craft \u0026 brass tug whistles to chest-shaking 65–85 Hz megaship Tyfon blasts with real sustain \u0026 harbor acoustic echo decay across [H], HUD, and 1P/VR cabin horn lanyards",
+                                          "Multi-player same-location spawn de-overlap (\u003e= 40 m hull-aware water clearance + simultaneous click-PLAY race tie-breaker) so captains spawning at identical coordinates appear nearby side-by-side and never inside each other",
+                                          "Strict 9-point hull anti-island \u0026 anti-shallow-water grounding guard at low tide across all 74 islands, harbor piers, and shallow shoals (Depth \u003e= max(1.65x Draft + 5 m, 12.5 m)), automatically relocating unsafe coordinates to nearby deep water",
+                                          "Evenly distributed multi-bay recessed ceiling strip fixtures across wide-beam large ship bridges \u0026 aft lounges (#24 MV Sovereign \u0026 Tier 3–5 vessels) eliminating dark interior corners with zero FPS impact"
+                                      ],
+                            "changed":  [
+                                            "Upgraded exit \u0026 autosave persistence (dual synchronous local disk + Cloud sync on Save \u0026 Exit, Exit Game, Alt+F4, and instant cargo/contract/dock/bank events) so clicking PLAY restores exact ocean (X, Y, Heading), bank balance ($), fuel, mooring/anchor state, active contract, and full 3D visual deck cargo containers",
+                                            "Tuned big-boat interior bridge, walkway, pool table, and lounge lighting slightly brighter (+25%–35% balanced intensity with soft wide falloff and zero harsh glare)"
+                                        ],
+                            "removed":  [
+                                            "Replaced synthetic procedural horn oscillators across all 35 vessels with real recorded 48 kHz maritime air horns, eliminated Startup Main Menu save-state clobbering before clicking PLAY, and removed dark wheelhouse/lounge corner shadows on wide-beam ships"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.7",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "Direct in-game 1st-person crosshair \u0026 OpenXR VR laser pointer interaction on the Cabin YouTube TV — click Play/Pause and click-and-drag the bottom YouTube timeline scrubber bar right inside the cabin without leaving the game",
                                           "Spatial 3D distance-attenuated \u0026 directional stereo audio on the Cabin YouTube TV — crisp volume near the lounge sofa, natural left/right stereo head-turn panning in 1st-person \u0026 OpenXR VR, and smooth falloff to 0% silence on the far side of the cabin, across decks, or outside the boat"
