@@ -1,10 +1,10 @@
 {
-    "updatedAtUtc":  "2026-11-15T23:00:00Z",
+    "updatedAtUtc":  "2026-11-16T02:00:00Z",
     "syncMode":  "on-launcher-release",
-    "activeVersion":  "v1.9.8",
-    "latestReleaseTag":  "v1.9.8",
-    "buildPhase":  "Release v1.9.8 Live — Exact Exit Save \u0026 Cargo/Money Spawn Restore, Nearby Multi-Player Spawn De-Overlap, 9-Point Island/Shoal Guard, Even Big-Boat Cabin Lighting \u0026 Real Recorded Ship Horns (#01-#35)",
-    "buildStatus":  "Release v1.9.8 Live — Exact Exit Save \u0026 Cargo/Money Spawn Restore, Nearby Multi-Player Spawn De-Overlap, 9-Point Island/Shoal Guard, Even Big-Boat Cabin Lighting \u0026 Real Recorded Ship Horns (#01-#35)",
+    "activeVersion":  "v1.9.9",
+    "latestReleaseTag":  "v1.9.9",
+    "buildPhase":  "Release v1.9.9 Live — Stuck-Horn Fix, Dedicated 48 kHz Studio Maritime Air Horns (#01-#35), Full Cargo-Type Visual Restore \u0026 Input State Hardening",
+    "buildStatus":  "Release v1.9.9 Live — Stuck-Horn Fix, Dedicated 48 kHz Studio Maritime Air Horns (#01-#35), Full Cargo-Type Visual Restore \u0026 Input State Hardening",
     "currentlyAdded":  [
 
                        ],
@@ -16,8 +16,26 @@
                          ],
     "historyLog":  [
                        {
+                           "id":  "milestone-v199-studio-48khz-horns-unstick-bugsweep",
+                           "timestampUtc":  "2026-11-16T02:00:00Z",
+                           "version":  "v1.9.9",
+                           "summary":  "Published TrueHelm v1.9.9 + Launcher 1.9.9.0 Live Release: Stuck-Horn Lanyard/HUD Fix, Dedicated 48,000 Hz Studio Maritime Horn Pipeline \u0026 5 Acoustic Air/Diaphragm Horn Classes Across All 35 Ships (#01–#35), Full Non-Container Visual Cargo Restoration on PLAY, \u0026 Cabin/TV/Menu Input Hardening.",
+                           "added":  [
+                                         "Dedicated 48,000 Hz studio-clean maritime air horn audio pipeline (HornAudioComp + soft-knee saturation limiter, separated from 22,050 Hz engine/surf mix) with interior wheelhouse warmth filtering and 3D exterior distance spatialization across all 35 ships (#01–#35)",
+                                         "5 studio-mastered 48 kHz 16-bit acoustic marine air \u0026 diaphragm horn classes — Kahlenberg D-0A dual-trumpet small craft, T-2 three-chime brass harbor tug whistle, Kockums Tyfon ferry/Ro-Ro horn, Ocean Liner/Panamax multi-chime Supertyfon, and 73.4 Hz Zöllner Zetfon / Supertyfon megaship bass diaphragm horn with zero-click sustain \u0026 2.2s open-harbor echo decay",
+                                         "Full non-container visual deck \u0026 hold cargo restoration on PLAY (Ro-Ro vehicles, liquid tanker manifolds/ullage, dry-bulk grain/ore mounds, cryogenic LNG spheres, and heavy-lift deck cargo alongside 3D containers)"
+                                     ],
+                           "changed":  [
+                                           "Fixed stuck-forever ship horn bug when pulling the 1st-person cabin horn lanyard or clicking HUD [ HORN (H) ] — separated [H] hold, 1P/VR lanyard pull-and-release, and 0.85s HUD one-shot blasts with per-tick key/mouse/focus failsafe auto-release",
+                                           "Hardened gameplay \u0026 UI input state cleanup across cabin controls, pool cue strokes, Cabin YouTube TV off-bezel mouse-up scrubber drags, and [Esc]/[M]/[P]/[G]/[Tab]/[F9] mode transitions so held drags or movement inputs never latch"
+                                       ],
+                           "removed":  [
+                                           "Removed noisy/clipping 22 kHz horn downsampling, vintage archive hiss/pitch-droop/double-toot horn artifacts, and permanent bHornKeyHeldDown latching in SoundShipHorn()"
+                                       ]
+                       },
+                       {
                            "id":  "milestone-v198-persistent-spawn-safety-cabin-lighting",
-                           "timestampUtc":  "2026-11-15T23:00:00Z",
+                           "timestampUtc":  "2026-11-16T01:26:28Z",
                            "version":  "v1.9.8",
                            "summary":  "Published TrueHelm v1.9.8 + Launcher 1.9.8.0 Live Release: Exact Exit Save \u0026 PLAY Restoration (Position, Heading, Bank $, Fuel, Active Contract \u0026 3D Deck Cargo Containers), Nearby Multi-Player Spawn De-Overlap, Strict 9-Point Anti-Island/Shallow-Water Guard, Evenly Distributed Big-Boat Cabin Lighting, \u0026 Authentic Real-World Recorded Boat/Megaship Horns Across All 35 Vessels.",
                            "added":  [
@@ -334,10 +352,28 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.8",
+                            "version":  "v1.9.9",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "Dedicated 48,000 Hz studio-clean maritime air horn audio pipeline (HornAudioComp + soft-knee saturation limiter, separated from 22,050 Hz engine/surf mix) with interior wheelhouse warmth filtering and 3D exterior distance spatialization across all 35 ships (#01–#35)",
+                                          "5 studio-mastered 48 kHz 16-bit acoustic marine air \u0026 diaphragm horn classes — Kahlenberg D-0A dual-trumpet small craft, T-2 three-chime brass harbor tug whistle, Kockums Tyfon ferry/Ro-Ro horn, Ocean Liner/Panamax multi-chime Supertyfon, and 73.4 Hz Zöllner Zetfon / Supertyfon megaship bass diaphragm horn with zero-click sustain \u0026 2.2s open-harbor echo decay",
+                                          "Full non-container visual deck \u0026 hold cargo restoration on PLAY (Ro-Ro vehicles, liquid tanker manifolds/ullage, dry-bulk grain/ore mounds, cryogenic LNG spheres, and heavy-lift deck cargo alongside 3D containers)"
+                                      ],
+                            "changed":  [
+                                            "Fixed stuck-forever ship horn bug when pulling the 1st-person cabin horn lanyard or clicking HUD [ HORN (H) ] — separated [H] hold, 1P/VR lanyard pull-and-release, and 0.85s HUD one-shot blasts with per-tick key/mouse/focus failsafe auto-release",
+                                            "Hardened gameplay \u0026 UI input state cleanup across cabin controls, pool cue strokes, Cabin YouTube TV off-bezel mouse-up scrubber drags, and [Esc]/[M]/[P]/[G]/[Tab]/[F9] mode transitions so held drags or movement inputs never latch"
+                                        ],
+                            "removed":  [
+                                            "Removed noisy/clipping 22 kHz horn downsampling, vintage archive hiss/pitch-droop/double-toot horn artifacts, and permanent bHornKeyHeldDown latching in SoundShipHorn()"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.8",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "Authentic real-world recorded maritime air horns \u0026 deep megaship Tyfon whistles across all 35 vessels (#01–#35) per IMO vessel length class — from crisp twin-trumpet harbor craft \u0026 brass tug whistles to chest-shaking 65–85 Hz megaship Tyfon blasts with real sustain \u0026 harbor acoustic echo decay across [H], HUD, and 1P/VR cabin horn lanyards",
                                           "Multi-player same-location spawn de-overlap (\u003e= 40 m hull-aware water clearance + simultaneous click-PLAY race tie-breaker) so captains spawning at identical coordinates appear nearby side-by-side and never inside each other",

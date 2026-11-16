@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261115e" />
+  <link rel="stylesheet" href="./styles.css?v=20261115f" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -86,7 +86,7 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.8 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.9 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
@@ -115,7 +115,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.8</small>
+                <small>Added, changed &amp; removed in Release v1.9.9</small>
               </span>
             </a>
           </div>
@@ -186,8 +186,8 @@
 
           <article class="card">
             <div class="card-tag">35 Vessels</div>
-            <h3>Real Recorded Horns &amp; 290m Leviathans</h3>
-            <p>Command 35 vessels with <strong>authentic recorded maritime air horns &amp; deep megaship Tyfon whistles</strong>, pullable 1st-person/VR overhead horn lanyards, bright night bow searchlights, and billowing diesel funnel smoke.</p>
+            <h3>48 kHz Studio Horns &amp; 290m Leviathans</h3>
+            <p>Command 35 vessels with <strong>dedicated 48 kHz studio Kahlenberg, Tyfon &amp; Zetfon air horns</strong>, crisp pull-and-release 1st-person/VR overhead horn lanyards, bright night bow searchlights, and diesel funnel smoke.</p>
           </article>
 
           <article class="card">
@@ -515,12 +515,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.8</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.8 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.9</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.9 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.8</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.9</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -530,34 +530,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.8</h3>
+              <h3 id="dash-added-heading">Added in v1.9.9</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Authentic real-world recorded maritime air horns &amp; deep megaship Tyfon whistles across all 35 vessels (#01–#35) per IMO vessel length class &mdash; from crisp twin-trumpet harbor craft &amp; brass tug whistles to chest-shaking 65–85 Hz megaship Tyfon blasts with real sustain &amp; harbor acoustic echo decay</li>
-              <li>Multi-player same-location spawn de-overlap (&ge; 40 m hull-aware water clearance + simultaneous click-PLAY race tie-breaker) so captains spawning at identical coordinates appear nearby side-by-side and never inside each other</li>
-              <li>Strict 9-point hull anti-island &amp; anti-shallow-water grounding guard at low tide across all 74 islands, harbor piers, and shallow shoals (Depth &ge; max(1.65&times; Draft + 5 m, 12.5 m)), automatically relocating unsafe coordinates to nearby deep water</li>
-              <li>Evenly distributed multi-bay recessed ceiling strip fixtures across wide-beam large ship bridges &amp; aft lounges (#24 MV Sovereign &amp; Tier 3–5 vessels) eliminating dark interior corners with zero FPS impact</li>
+              <li>Dedicated 48,000 Hz studio-clean maritime air horn audio pipeline (HornAudioComp + soft-knee saturation limiter, separated from 22,050 Hz engine/surf mix) with interior wheelhouse warmth filtering and 3D exterior distance spatialization across all 35 ships (#01–#35)</li>
+              <li>5 studio-mastered 48 kHz 16-bit acoustic marine air &amp; diaphragm horn classes &mdash; Kahlenberg D-0A dual-trumpet small craft, T-2 three-chime brass harbor tug whistle, Kockums Tyfon ferry/Ro-Ro horn, Ocean Liner/Panamax multi-chime Supertyfon, and 73.4 Hz Z&ouml;llner Zetfon / Supertyfon megaship bass diaphragm horn with zero-click sustain &amp; 2.2s open-harbor echo decay</li>
+              <li>Full non-container visual deck &amp; hold cargo restoration on PLAY (Ro-Ro vehicles, liquid tanker manifolds/ullage, dry-bulk grain/ore mounds, cryogenic LNG spheres, and heavy-lift deck cargo alongside 3D containers)</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.8</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.9</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Upgraded exit &amp; autosave persistence (dual synchronous local disk + Cloud sync on Save &amp; Exit, Exit Game, Alt+F4, and instant cargo/contract/dock/bank events) so clicking PLAY restores exact ocean (X, Y, Heading), bank balance ($), fuel, mooring/anchor state, active contract, and full 3D visual deck cargo containers</li>
-              <li>Tuned big-boat interior bridge, walkway, pool table, and lounge lighting slightly brighter (+25%–35% balanced intensity with soft wide falloff and zero harsh glare)</li>
+              <li>Fixed stuck-forever ship horn bug when pulling the 1st-person cabin horn lanyard or clicking HUD [ HORN (H) ] &mdash; separated [H] hold, 1P/VR lanyard pull-and-release, and 0.85s HUD one-shot blasts with per-tick key/mouse/focus failsafe auto-release</li>
+              <li>Hardened gameplay &amp; UI input state cleanup across cabin controls, pool cue strokes, Cabin YouTube TV off-bezel mouse-up scrubber drags, and [Esc]/[M]/[P]/[G]/[Tab]/[F9] mode transitions so held drags or movement inputs never latch</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.8</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.9</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Replaced synthetic procedural horn oscillators across all 35 vessels with real recorded 48 kHz maritime air horns, eliminated Startup Main Menu save-state clobbering before clicking PLAY, and removed dark wheelhouse/lounge corner shadows on wide-beam ships</li>
+              <li>Removed noisy/clipping 22 kHz horn downsampling, vintage archive hiss/pitch-droop/double-toot horn artifacts, and permanent bHornKeyHeldDown latching in SoundShipHorn()</li>
             </ul>
           </article>
         </div>
@@ -576,7 +575,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.8 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.9 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -584,8 +583,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.8</strong>
+                  <strong class="ver-num">v1.9.9</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> Dedicated <strong>48,000 Hz studio maritime horn pipeline</strong> (<code>HornAudioComp</code> + soft-knee saturation limiter) across all 35 vessels (<code>#01–#35</code>) · 5 studio-mastered 48 kHz 16-bit acoustic marine air &amp; diaphragm horn classes (Kahlenberg D-0A dual-trumpet, T-2 three-chime tug whistle, Kockums Tyfon ferry horn, Ocean Liner/Panamax Supertyfon, and 73.4 Hz Z&ouml;llner Zetfon / Supertyfon megaship bass horn with 2.2s open-harbor echo decay) · Full non-container visual cargo restoration on <code>PLAY</code> (Ro-Ro vehicles, tanker manifolds, dry-bulk mounds, LNG spheres, &amp; heavy-lift cargo).</p>
+                <p><span class="log-pill changed">~ Changed</span> Fixed stuck-forever horn bug on 1st-person cabin lanyard pull &amp; HUD <code>[ HORN (H) ]</code> with separated <code>[H]</code> hold, lanyard pull-and-release, 0.85s HUD one-shot blast, and per-tick failsafe auto-release · Hardened cabin, pool cue, Cabin YouTube TV off-bezel mouse-up, and menu/mode transition input cleanup.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Removed 22 kHz horn downsampling/clipping, vintage archive tape hiss &amp; double-toot artifacts, and permanent <code>bHornKeyHeldDown</code> latching.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.8</strong>
+                  <span class="ver-badge cyan">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -600,7 +614,7 @@
               <summary>
                 <div class="ver-title-group">
                   <strong class="ver-num">v1.9.7</strong>
-                  <span class="ver-badge cyan">Shipped</span>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -924,7 +938,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261115e"></script>
-  <script type="module" src="./globe.js?v=20261115e"></script>
+  <script src="./app.js?v=20261115f"></script>
+  <script type="module" src="./globe.js?v=20261115f"></script>
 </body>
 </html>
