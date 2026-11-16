@@ -1,10 +1,10 @@
 {
-    "updatedAtUtc":  "2026-11-16T02:00:00Z",
+    "updatedAtUtc":  "2026-11-16T03:50:00Z",
     "syncMode":  "on-launcher-release",
-    "activeVersion":  "v1.9.9",
-    "latestReleaseTag":  "v1.9.9",
-    "buildPhase":  "Release v1.9.9 Live — Stuck-Horn Fix, Dedicated 48 kHz Studio Maritime Air Horns (#01-#35), Full Cargo-Type Visual Restore \u0026 Input State Hardening",
-    "buildStatus":  "Release v1.9.9 Live — Stuck-Horn Fix, Dedicated 48 kHz Studio Maritime Air Horns (#01-#35), Full Cargo-Type Visual Restore \u0026 Input State Hardening",
+    "activeVersion":  "v1.9.10",
+    "latestReleaseTag":  "v1.9.10",
+    "buildPhase":  "Release v1.9.10 Live — Company-Wide Cabin YouTube TV Watch-Party Sync \u0026 Warp-Free Flat 2D World Map With Smooth Zoom",
+    "buildStatus":  "Release v1.9.10 Live — Company-Wide Cabin YouTube TV Watch-Party Sync \u0026 Warp-Free Flat 2D World Map With Smooth Zoom",
     "currentlyAdded":  [
 
                        ],
@@ -16,8 +16,26 @@
                          ],
     "historyLog":  [
                        {
+                           "id":  "milestone-v1910-company-youtube-tv-watchparty-sync",
+                           "timestampUtc":  "2026-11-16T03:50:00Z",
+                           "version":  "v1.9.10",
+                           "summary":  "Published TrueHelm v1.9.10 Live Release (1-Click In-Launcher Update): Company-Wide Cabin YouTube TV Watch-Party Sync (Pause, Play, Scrubber Seek \u0026 Late-Join Lockstep Across Internet \u0026 LAN), Warp-Free Stationary Flat 2D Full World Map ([M]) With Smooth Zoom, \u0026 Edge-Friendly 1.4 MB Website Installer Package.",
+                           "added":  [
+                                         "Company-wide Cabin YouTube TV Watch-Party Sync across both Internet (Firebase US Ocean Server) and LAN/UDP — clicking Pause, Play, or dragging the timeline scrubber syncs every crewmate in your company in \u003c 0.5s with zero page reload",
+                                         "Late-join \u0026 2.5s buffering drift lockstep on the 110\" Cabin YouTube TV — crewmates boarding mid-video or joining a company land on the exact frame \u0026 Play/Pause state automatically, while other companies stay 100% isolated",
+                                         "Edge-friendly 1.4 MB TrueHelm_Launcher_Windows.zip installer package + instant 5-second visual Edge/SmartScreen Open Guide modal on the official website (keeping TrueHelmLauncher.exe 1.9.9.0 SmartScreen hash frozen while delivering 1-click v1.9.10 updates inside the launcher)"
+                                     ],
+                           "changed":  [
+                                           "Rebuilt Full World Map ([M] / HUD Map icon) with a 100% rigid, warp-free flat 2D linear chart projection, stationary 74-island full-world framing, Sutherland-Hodgman border clipping, smooth cursor-centered Scroll-Wheel / [+]/[-] zoom in \u0026 out, and full 3rd-person mouse/scroll input lock while open",
+                                           "Expanded authoritative multiplayer TV state (bLoungeTVYouTubePaused, LoungeTVAnchorMediaSec, LoungeTVAnchorUtcSec, LoungeTVEventUtcSec) across UDP packets and Firebase us_ocean_players telemetry with out-of-band instant flush \u0026 950ms echo-loop suppression"
+                                       ],
+                           "removed":  [
+                                           "Removed nonlinear Tanh fisheye map warping \u0026 border-squashing island vertex clamping on the Full Map ([M]), plus eliminated unsynced Cabin TV Play/Pause/Scrub desync and full-page iframe reloads during peer seeks"
+                                       ]
+                       },
+                       {
                            "id":  "milestone-v199-studio-48khz-horns-unstick-bugsweep",
-                           "timestampUtc":  "2026-11-16T02:00:00Z",
+                           "timestampUtc":  "2026-11-16T03:13:50Z",
                            "version":  "v1.9.9",
                            "summary":  "Published TrueHelm v1.9.9 + Launcher 1.9.9.0 Live Release: Stuck-Horn Lanyard/HUD Fix, Dedicated 48,000 Hz Studio Maritime Horn Pipeline \u0026 5 Acoustic Air/Diaphragm Horn Classes Across All 35 Ships (#01–#35), Full Non-Container Visual Cargo Restoration on PLAY, \u0026 Cabin/TV/Menu Input Hardening.",
                            "added":  [
@@ -352,10 +370,28 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.9",
+                            "version":  "v1.9.10",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "Company-wide Cabin YouTube TV Watch-Party Sync across both Internet (Firebase US Ocean Server) and LAN/UDP — clicking Pause, Play, or dragging the timeline scrubber syncs every crewmate in your company in \u003c 0.5s with zero page reload",
+                                          "Late-join \u0026 2.5s buffering drift lockstep on the 110\" Cabin YouTube TV — crewmates boarding mid-video or joining a company land on the exact frame \u0026 Play/Pause state automatically, while other companies stay 100% isolated",
+                                          "Edge-friendly 1.4 MB TrueHelm_Launcher_Windows.zip installer package + instant 5-second visual Edge/SmartScreen Open Guide modal on the official website (keeping TrueHelmLauncher.exe 1.9.9.0 SmartScreen hash frozen while delivering 1-click v1.9.10 updates inside the launcher)"
+                                      ],
+                            "changed":  [
+                                            "Rebuilt Full World Map ([M] / HUD Map icon) with a 100% rigid, warp-free flat 2D linear chart projection, stationary 74-island full-world framing, Sutherland-Hodgman border clipping, smooth cursor-centered Scroll-Wheel / [+]/[-] zoom in \u0026 out, and full 3rd-person mouse/scroll input lock while open",
+                                            "Expanded authoritative multiplayer TV state (bLoungeTVYouTubePaused, LoungeTVAnchorMediaSec, LoungeTVAnchorUtcSec, LoungeTVEventUtcSec) across UDP packets and Firebase us_ocean_players telemetry with out-of-band instant flush \u0026 950ms echo-loop suppression"
+                                        ],
+                            "removed":  [
+                                            "Removed nonlinear Tanh fisheye map warping \u0026 border-squashing island vertex clamping on the Full Map ([M]), plus eliminated unsynced Cabin TV Play/Pause/Scrub desync and full-page iframe reloads during peer seeks"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.9",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "Dedicated 48,000 Hz studio-clean maritime air horn audio pipeline (HornAudioComp + soft-knee saturation limiter, separated from 22,050 Hz engine/surf mix) with interior wheelhouse warmth filtering and 3D exterior distance spatialization across all 35 ships (#01–#35)",
                                           "5 studio-mastered 48 kHz 16-bit acoustic marine air \u0026 diaphragm horn classes — Kahlenberg D-0A dual-trumpet small craft, T-2 three-chime brass harbor tug whistle, Kockums Tyfon ferry/Ro-Ro horn, Ocean Liner/Panamax multi-chime Supertyfon, and 73.4 Hz Zöllner Zetfon / Supertyfon megaship bass diaphragm horn with zero-click sustain \u0026 2.2s open-harbor echo decay",

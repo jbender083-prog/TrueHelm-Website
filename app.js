@@ -412,21 +412,24 @@
         : [];
     const versionLogs = Array.isArray(base.versionLogs) ? base.versionLogs.slice() : [];
 
-    let activeVersion = base.activeVersion || (rel && rel.tagName) || '';
+    const relTag = rel
+      ? rel.tagName || (rel.version ? `v${String(rel.version).replace(/^v/i, '')}` : '')
+      : '';
+    let activeVersion = base.activeVersion || relTag || '';
     let buildStatus = base.buildStatus || base.buildPhase || '';
     let updatedAtUtc = base.updatedAtUtc || (historyLog[0] && historyLog[0].timestampUtc) || '';
 
-    if (rel && rel.tagName && compareSemverTag(rel.tagName, activeVersion) >= 0) {
-      activeVersion = rel.tagName;
+    if (relTag && compareSemverTag(relTag, activeVersion) >= 0) {
+      activeVersion = relTag;
       if (!buildStatus) {
-        buildStatus = `Release ${rel.tagName} Live · Auto-Updated via TrueHelm Launcher`;
+        buildStatus = `Release ${relTag} Live · Auto-Updated via TrueHelm Launcher`;
       }
       const hasTagInVersionLogs = versionLogs.some(
-        (v) => String(v.version || '').toLowerCase() === String(rel.tagName).toLowerCase()
+        (v) => String(v.version || '').toLowerCase() === String(relTag).toLowerCase()
       );
       if (!hasTagInVersionLogs && Array.isArray(rel.notesBullets) && rel.notesBullets.length > 0) {
         versionLogs.unshift({
-          version: rel.tagName,
+          version: relTag,
           badge: 'Current Live Release',
           date: rel.publishedDisplay || 'November 2026',
           openByDefault: true,

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261115g" />
+  <link rel="stylesheet" href="./styles.css?v=20261115h" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,7 +93,7 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.9 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.10 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.9</small>
+                <small>Added, changed &amp; removed in Release v1.9.10</small>
               </span>
             </a>
           </div>
@@ -192,8 +192,8 @@
 
           <article class="card">
             <div class="card-tag amber">Mega-Ship Lounge</div>
-            <h3>Bright Even Cabins, Pool &amp; Spatial 3D TV</h3>
-            <p>Explore evenly lit wide-beam bridges &amp; lounges with zero dark corners, shoot 1P or 2-handed VR 8-ball pool on <code>#24</code> &amp; Tier 5 flagships (<code>#29–#35</code>), and scrub YouTube on the 110&quot; Cabin TV with spatial 3D distance audio.</p>
+            <h3>Company Watch-Party TV &amp; 1P/VR Pool</h3>
+            <p>Watch YouTube together in <strong>company-wide Watch-Party sync</strong> (Pause, Play &amp; timeline scrub synced live across crewmates with spatial 3D distance audio), plus shoot 1P or 2-handed VR 8-ball pool in evenly lit cabins.</p>
           </article>
 
           <article class="card">
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.9</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.9 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.10</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.10 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.9</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.10</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,33 +542,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.9</h3>
+              <h3 id="dash-added-heading">Added in v1.9.10</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Dedicated 48,000 Hz studio-clean maritime air horn audio pipeline (HornAudioComp + soft-knee saturation limiter, separated from 22,050 Hz engine/surf mix) with interior wheelhouse warmth filtering and 3D exterior distance spatialization across all 35 ships (#01–#35)</li>
-              <li>5 studio-mastered 48 kHz 16-bit acoustic marine air &amp; diaphragm horn classes &mdash; Kahlenberg D-0A dual-trumpet small craft, T-2 three-chime brass harbor tug whistle, Kockums Tyfon ferry/Ro-Ro horn, Ocean Liner/Panamax multi-chime Supertyfon, and 73.4 Hz Z&ouml;llner Zetfon / Supertyfon megaship bass diaphragm horn with zero-click sustain &amp; 2.2s open-harbor echo decay</li>
-              <li>Full non-container visual deck &amp; hold cargo restoration on PLAY (Ro-Ro vehicles, liquid tanker manifolds/ullage, dry-bulk grain/ore mounds, cryogenic LNG spheres, and heavy-lift deck cargo alongside 3D containers)</li>
+              <li>Company-wide Cabin YouTube TV Watch-Party Sync across both Internet (Firebase US Ocean Server) and LAN/UDP &mdash; clicking Pause, Play, or dragging the timeline scrubber syncs every crewmate in your company in &lt; 0.5s with zero page reload</li>
+              <li>Late-join &amp; 2.5s buffering drift lockstep on the 110&quot; Cabin YouTube TV &mdash; crewmates boarding mid-video or joining a company land on the exact frame &amp; Play/Pause state automatically, while other companies stay 100% isolated</li>
+              <li>Edge-friendly 1.4 MB TrueHelm_Launcher_Windows.zip installer package + instant 5-second visual Edge/SmartScreen Open Guide modal on the official website (delivering 1-click v1.9.10 updates inside TrueHelm Launcher)</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.9</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.10</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Fixed stuck-forever ship horn bug when pulling the 1st-person cabin horn lanyard or clicking HUD [ HORN (H) ] &mdash; separated [H] hold, 1P/VR lanyard pull-and-release, and 0.85s HUD one-shot blasts with per-tick key/mouse/focus failsafe auto-release</li>
-              <li>Hardened gameplay &amp; UI input state cleanup across cabin controls, pool cue strokes, Cabin YouTube TV off-bezel mouse-up scrubber drags, and [Esc]/[M]/[P]/[G]/[Tab]/[F9] mode transitions so held drags or movement inputs never latch</li>
+              <li>Rebuilt Full World Map ([M] / HUD Map icon) with a 100% rigid, warp-free flat 2D linear chart projection, stationary 74-island full-world framing, Sutherland-Hodgman border clipping, smooth cursor-centered Scroll-Wheel / [+]/[&minus;] zoom in &amp; out, and full 3rd-person mouse/scroll input lock while open</li>
+              <li>Expanded authoritative multiplayer TV state (bLoungeTVYouTubePaused, LoungeTVAnchorMediaSec, LoungeTVAnchorUtcSec, LoungeTVEventUtcSec) across UDP packets and Firebase us_ocean_players telemetry with out-of-band instant flush &amp; 950ms echo-loop suppression</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.9</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.10</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Removed noisy/clipping 22 kHz horn downsampling, vintage archive hiss/pitch-droop/double-toot horn artifacts, and permanent bHornKeyHeldDown latching in SoundShipHorn()</li>
+              <li>Removed nonlinear Tanh fisheye map warping &amp; border-squashing island vertex clamping on the Full Map ([M]), plus eliminated unsynced Cabin TV Play/Pause/Scrub desync and full-page iframe reloads during peer seeks</li>
             </ul>
           </article>
         </div>
@@ -587,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.9 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.10 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -595,8 +595,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.9</strong>
+                  <strong class="ver-num">v1.9.10</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Company-wide Cabin YouTube TV Watch-Party Sync</strong> across Internet (Firebase US Ocean Server) &amp; LAN/UDP &mdash; Pause, Play, and timeline scrubber drags sync across all company crewmates in &lt; 0.5s without reloading · Automatic late-join frame/pause handoff &amp; 2.5s buffering drift lockstep (with strict cross-company isolation) · Edge-friendly 1.4 MB <code>TrueHelm_Launcher_Windows.zip</code> installer package &amp; 5-second visual Open Guide modal.</p>
+                <p><span class="log-pill changed">~ Changed</span> Rebuilt the Full World Map (<code>[M]</code> / HUD Map button) with a <strong>100% warp-free stationary flat 2D linear chart projection</strong>, Sutherland-Hodgman border clipping, and smooth cursor-centered zoom in/out · Expanded authoritative TV Watch-Party fields across UDP &amp; Firebase <code>us_ocean_players</code> heartbeats with out-of-band instant flush and 950ms echo-loop suppression.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Removed nonlinear <code>Tanh</code> fisheye map warping &amp; border-squashing island vertex clamping on the Full Map (<code>[M]</code>), plus eliminated unsynced Cabin TV Play/Pause/Scrub drift and full-page iframe reloads during peer seeks.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.9</strong>
+                  <span class="ver-badge cyan">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -611,7 +626,7 @@
               <summary>
                 <div class="ver-title-group">
                   <strong class="ver-num">v1.9.8</strong>
-                  <span class="ver-badge cyan">Shipped</span>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -800,7 +815,7 @@
           <div class="coop-modes-box">
             <h4>What Happens Once They Click <code>[ JOIN COMPANY &amp; BOARD ]</code></h4>
             <ul class="clean-list">
-              <li><strong>Shared Bridge, Lounge &amp; Controls:</strong> Walk around the wheelhouse &amp; aft lounge together (<kbd>C</kbd> / <kbd>F9</kbd>), sit on the sofa (<kbd>E</kbd>), watch the same <strong>110&quot; YouTube TV</strong>, and see each other&rsquo;s crew avatars live. Helm/throttle, anchor/mooring, and navigation/autopilot sync across the hull, and every cargo contract payout splits automatically.</li>
+              <li><strong>Shared Bridge, Lounge &amp; Controls:</strong> Walk around the wheelhouse &amp; aft lounge together (<kbd>C</kbd> / <kbd>F9</kbd>), sit on the sofa (<kbd>E</kbd>), watch the same <strong>110&quot; YouTube TV in live Watch-Party sync</strong> (Pause, Play &amp; timeline scrub synced across your company), and see each other&rsquo;s crew avatars live. Helm/throttle, anchor/mooring, and navigation/autopilot sync across the hull, and every cargo contract payout splits automatically.</li>
               <li><strong>Switch Between 3 Crew Ship Modes Anytime (<kbd>P</kbd>):</strong>
                 <div class="coop-mode-pills">
                   <span class="coop-mode-item"><strong>[ 1. BOARD OWNER SHIP (CO-OP) ]</strong> &mdash; stay aboard your ship&rsquo;s bridge together.</span>
@@ -825,7 +840,7 @@
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>0</kbd></span><span>All Stop / Neutral Telegraph</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>C</kbd></span><span>Toggle 1st-Person Bridge / 3rd-Person Orbit</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>F9</kbd> / <kbd>3</kbd></span><span>Bridge &amp; Aft Lounge Free-Walk Mode</span></div>
-            <div class="ctrl-item"><span class="ctrl-keys"><kbd>M</kbd></span><span>Full-Screen 5x World Map &amp; Autopilot</span></div>
+            <div class="ctrl-item"><span class="ctrl-keys"><kbd>M</kbd></span><span>Warp-Free Flat 2D World Map, Smooth Zoom &amp; Autopilot</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>P</kbd></span><span>Multiplayer &amp; Maritime Company Menu</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>I</kbd></span><span>Drop / Weigh Physical Bow Anchor</span></div>
             <div class="ctrl-item"><span class="ctrl-keys"><kbd>L</kbd> / <kbd>H</kbd></span><span>Night Bow Searchlights / Real Recorded Air Horn &amp; Cabin Lanyard</span></div>
@@ -1053,7 +1068,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261115g"></script>
-  <script type="module" src="./globe.js?v=20261115g"></script>
+  <script src="./app.js?v=20261115h"></script>
+  <script type="module" src="./globe.js?v=20261115h"></script>
 </body>
 </html>
