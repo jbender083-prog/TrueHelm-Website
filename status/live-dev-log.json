@@ -1,10 +1,10 @@
 {
-    "updatedAtUtc":  "2026-11-16T06:50:00Z",
+    "updatedAtUtc":  "2026-11-16T08:40:00Z",
     "syncMode":  "on-launcher-release",
-    "activeVersion":  "v1.9.11",
-    "latestReleaseTag":  "v1.9.11",
-    "buildPhase":  "Release v1.9.11 Live — High-Speed Ocean World Streaming, HUD Telemetry Formatting \u0026 Stability Refinements",
-    "buildStatus":  "Release v1.9.11 Live — High-Speed Ocean World Streaming, HUD Telemetry Formatting \u0026 Stability Refinements",
+    "activeVersion":  "v1.9.12",
+    "latestReleaseTag":  "v1.9.12",
+    "buildPhase":  "Release v1.9.12 Live — 30 Living Coral Reef Ecosystems, Marine Wildlife Director \u0026 100% Open-Water Reef Chart Overhaul Across 4,617 km",
+    "buildStatus":  "Release v1.9.12 Live — 30 Living Coral Reef Ecosystems, Marine Wildlife Director \u0026 100% Open-Water Reef Chart Overhaul Across 4,617 km",
     "currentlyAdded":  [
 
                        ],
@@ -16,8 +16,25 @@
                          ],
     "historyLog":  [
                        {
+                           "id":  "milestone-v1912-30-living-coral-reefs-wildlife-openwater",
+                           "timestampUtc":  "2026-11-16T08:40:00Z",
+                           "version":  "v1.9.12",
+                           "summary":  "Published TrueHelm v1.9.12 Live Release (1-Click In-Launcher Update): 30 Distinct Living Coral Reef Biome Types (420+ Reefs Across All 74 Islands \u0026 Atolls), GPU-Instanced Marine Wildlife Ecosystems, \u0026 100% Open-Water Island/Dock/Buoy-Channel Reef Chart Overhaul.",
+                           "added":  [
+                                         "30 distinct 3D coral \u0026 reef-structure biome types across 420+ reefs spanning the entire 4,617 km ocean (5 depth tiers from 1.2 m sunlit crests to 48 m bioluminescent mesophotic seamounts, including branching elkhorn, table acropora, giant barrel \u0026 azure vase sponges, sea fans, Tridacna clam beds, limestone swim-through arches, kelp forests, and encrusted anchor relics)",
+                                         "Proximity-activated GPU-instanced Living Reef Ecosystem Director — schooling Golden Anthias, Neon-Cyan Chromis, Yellow Tangs, and Angelfish plus gliding Sea Turtles, Spotted Eagle \u0026 Manta Rays, Reef Sharks, and Dolphins with \u003c= 4.5 km 3D reef mesh streaming at 95+ FPS Ultra",
+                                         "Local \u0026 regional reef ecosystem contour rings alongside shallow-water navigation hazard markers on the 2D Minimap and Flat 2D World Map ([M])"
+                                     ],
+                           "changed":  [
+                                           "Audited and relocated 100% of reefs across all 74 islands and 32+ ports using a 25-point open-water footprint validator — guaranteeing zero reefs under island landmasses/beaches, zero reefs in front of port quay maneuvering basins, and zero reefs inside green-buoy entrance channels"
+                                       ],
+                           "removed":  [
+                                           "Eliminated land-overlapping shoal placements and port entrance channel reef obstructions across all islands and continental harbors"
+                                       ]
+                       },
+                       {
                            "id":  "milestone-v1911-world-streaming-telemetry-stability",
-                           "timestampUtc":  "2026-11-16T06:50:00Z",
+                           "timestampUtc":  "2026-11-16T08:19:59Z",
                            "version":  "v1.9.11",
                            "summary":  "Published TrueHelm v1.9.11 Live Release (1-Click In-Launcher Update): High-speed ocean world streaming, HUD telemetry formatting, and stability refinements.",
                            "added":  [
@@ -387,10 +404,27 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.11",
+                            "version":  "v1.9.12",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "30 distinct 3D coral \u0026 reef-structure biome types across 420+ reefs spanning the entire 4,617 km ocean (5 depth tiers from 1.2 m sunlit crests to 48 m bioluminescent mesophotic seamounts, including branching elkhorn, table acropora, giant barrel \u0026 azure vase sponges, sea fans, Tridacna clam beds, limestone swim-through arches, kelp forests, and encrusted anchor relics)",
+                                          "Proximity-activated GPU-instanced Living Reef Ecosystem Director — schooling Golden Anthias, Neon-Cyan Chromis, Yellow Tangs, and Angelfish plus gliding Sea Turtles, Spotted Eagle \u0026 Manta Rays, Reef Sharks, and Dolphins with \u003c= 4.5 km 3D reef mesh streaming at 95+ FPS Ultra",
+                                          "Local \u0026 regional reef ecosystem contour rings alongside shallow-water navigation hazard markers on the 2D Minimap and Flat 2D World Map ([M])"
+                                      ],
+                            "changed":  [
+                                            "Audited and relocated 100% of reefs across all 74 islands and 32+ ports using a 25-point open-water footprint validator — guaranteeing zero reefs under island landmasses/beaches, zero reefs in front of port quay maneuvering basins, and zero reefs inside green-buoy entrance channels"
+                                        ],
+                            "removed":  [
+                                            "Eliminated land-overlapping shoal placements and port entrance channel reef obstructions across all islands and continental harbors"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.11",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "High-speed continuous ocean world streaming \u0026 swept shoreline collision sub-stepping across long-range trans-oceanic transits",
                                           "Expanded wide-range HUD speedometer \u0026 3D Bridge Monitor 1 (PORT MFD-1) numeric telemetry formatting for crisp zero-clipping readout clarity"
