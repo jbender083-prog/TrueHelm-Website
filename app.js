@@ -819,37 +819,12 @@
       showToast(`Downloading ${fileName}...`);
       openDownloadHelperModal(fileName);
 
-      // Direct .exe link uses native browser navigation/download (supports 302 CDN redirect cleanly)
-      if (dlKind === 'launcher-exe') {
-        return;
-      }
-
-      if (typeof window.fetch === 'function' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function') {
-        e.preventDefault();
-        if (launcherDlBusy) return;
-        launcherDlBusy = true;
-        try {
-          const res = await fetch(link.href, { cache: 'no-store' });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const buf = await res.arrayBuffer();
-          const mime = fileName.toLowerCase().endsWith('.zip') ? 'application/zip' : 'application/octet-stream';
-          const blob = new Blob([buf], { type: mime });
-          const blobUrl = URL.createObjectURL(blob);
-          const tmp = document.createElement('a');
-          tmp.href = blobUrl;
-          tmp.download = fileName;
-          tmp.style.display = 'none';
-          document.body.appendChild(tmp);
-          tmp.click();
-          tmp.remove();
-          setTimeout(() => URL.revokeObjectURL(blobUrl), 60000);
-          showToast(`Saved ${fileName} — Ready to Open!`);
-        } catch {
-          window.location.assign(link.href);
-        } finally {
-          launcherDlBusy = false;
-        }
-      }
+      // Native direct HTTPS <a download> for both .zip and .exe (zero blob: URL synthesis for clean Chrome Safe Browsing & Edge downloads)
+      void dlKind;
+      void launcherDlBusy;
+      setTimeout(() => {
+        showToast(`Download started: ${fileName} — Ready to Open!`);
+      }, 1200);
     });
   });
 
