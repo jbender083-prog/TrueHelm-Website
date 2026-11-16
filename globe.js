@@ -10,7 +10,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const loadingText = document.getElementById('globe-loading-text');
   if (!canvas || !stageEl) return;
 
-  const ASSET_VER = '20261115h';
+  const ASSET_VER = '20261116a';
 
   // Constants matching Public/ShipTypes.h + ShippingGameInstance.cpp + generate_truehelm_globe_assets.py 1-to-1
   const GLOBE_RADIUS = 100.0;
@@ -998,8 +998,14 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const loadedGlbIds = new Set();
   const shipManifestById = new Map();
 
+  function clampCatalogShipId(shipNum) {
+    const raw = Math.round(Number(shipNum) || 1);
+    if (raw > TOTAL_SHIPS) return 1;
+    return Math.max(1, raw);
+  }
+
   function getShipCatalogMeta(shipNum) {
-    const clamped = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(shipNum) || 1)));
+    const clamped = clampCatalogShipId(shipNum);
     const fromApp = window.TRUEHELM_SHIPS_BY_NUM && window.TRUEHELM_SHIPS_BY_NUM[clamped];
     const fromManifest = shipManifestById.get(clamped);
     return {
@@ -1037,7 +1043,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   }
 
   function loadShipGlbPrototype(shipNum) {
-    const clamped = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(shipNum) || 1)));
+    const clamped = clampCatalogShipId(shipNum);
     if (glbPrototypeCache.has(clamped)) {
       return Promise.resolve(glbPrototypeCache.get(clamped));
     }
@@ -1166,7 +1172,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
 
   function ensureShipEntity(vesselData) {
     let ent = shipEntities.get(vesselData.key);
-    const shipNum = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(vesselData.ship || 1))));
+    const shipNum = clampCatalogShipId(vesselData.ship || 1);
     const accentHex = '#22d3ee';
     const accentColor = 0x22d3ee;
     const incomingX = Number(vesselData.x || 0);
@@ -1470,7 +1476,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
       const captainName = sanitizeMaritimeText(pkt.name, 'Captain');
       const companyName = sanitizeMaritimeText(pkt.cmp_nm, '');
       const cmpId = String(pkt.cmp_id || '').trim();
-      const shipNum = Math.min(TOTAL_SHIPS, Math.max(1, Math.round(Number(pkt.ship || 1))));
+      const shipNum = clampCatalogShipId(pkt.ship || 1);
 
       if (pkt.cmp_abd === true && cmpId) {
         aboardCrew.push({ key, pkt, rawX, rawY, captainName, companyName, cmpId, shipNum });

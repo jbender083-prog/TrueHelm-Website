@@ -1,10 +1,10 @@
 {
-    "updatedAtUtc":  "2026-11-16T03:50:00Z",
+    "updatedAtUtc":  "2026-11-16T06:50:00Z",
     "syncMode":  "on-launcher-release",
-    "activeVersion":  "v1.9.10",
-    "latestReleaseTag":  "v1.9.10",
-    "buildPhase":  "Release v1.9.10 Live — Company-Wide Cabin YouTube TV Watch-Party Sync \u0026 Warp-Free Flat 2D World Map With Smooth Zoom",
-    "buildStatus":  "Release v1.9.10 Live — Company-Wide Cabin YouTube TV Watch-Party Sync \u0026 Warp-Free Flat 2D World Map With Smooth Zoom",
+    "activeVersion":  "v1.9.11",
+    "latestReleaseTag":  "v1.9.11",
+    "buildPhase":  "Release v1.9.11 Live — High-Speed Ocean World Streaming, HUD Telemetry Formatting \u0026 Stability Refinements",
+    "buildStatus":  "Release v1.9.11 Live — High-Speed Ocean World Streaming, HUD Telemetry Formatting \u0026 Stability Refinements",
     "currentlyAdded":  [
 
                        ],
@@ -16,8 +16,25 @@
                          ],
     "historyLog":  [
                        {
+                           "id":  "milestone-v1911-world-streaming-telemetry-stability",
+                           "timestampUtc":  "2026-11-16T06:50:00Z",
+                           "version":  "v1.9.11",
+                           "summary":  "Published TrueHelm v1.9.11 Live Release (1-Click In-Launcher Update): High-speed ocean world streaming, HUD telemetry formatting, and stability refinements.",
+                           "added":  [
+                                         "High-speed continuous ocean world streaming \u0026 swept shoreline collision sub-stepping across long-range trans-oceanic transits",
+                                         "Expanded wide-range HUD speedometer \u0026 3D Bridge Monitor 1 (PORT MFD-1) numeric telemetry formatting for crisp zero-clipping readout clarity"
+                                     ],
+                           "changed":  [
+                                           "Hardened multiplayer remote-vessel catalog index clamping and fleet state validation across live US Ocean Server sessions",
+                                           "Refined wave-surface buoyancy \u0026 attitude stabilization during rapid open-water transits while preserving 95+ FPS on 1080p Ultra"
+                                       ],
+                           "removed":  [
+                                           "Eliminated narrow-width MFD speed readout truncation and legacy single-step shoreline sweep edge cases"
+                                       ]
+                       },
+                       {
                            "id":  "milestone-v1910-company-youtube-tv-watchparty-sync",
-                           "timestampUtc":  "2026-11-16T03:50:00Z",
+                           "timestampUtc":  "2026-11-16T04:51:00Z",
                            "version":  "v1.9.10",
                            "summary":  "Published TrueHelm v1.9.10 Live Release (1-Click In-Launcher Update): Company-Wide Cabin YouTube TV Watch-Party Sync (Pause, Play, Scrubber Seek \u0026 Late-Join Lockstep Across Internet \u0026 LAN), Warp-Free Stationary Flat 2D Full World Map ([M]) With Smooth Zoom, \u0026 Edge-Friendly 1.4 MB Website Installer Package.",
                            "added":  [
@@ -370,10 +387,27 @@
                    ],
     "versionLogs":  [
                         {
-                            "version":  "v1.9.10",
+                            "version":  "v1.9.11",
                             "badge":  "Current Live Download",
                             "date":  "November 2026",
                             "openByDefault":  true,
+                            "added":  [
+                                          "High-speed continuous ocean world streaming \u0026 swept shoreline collision sub-stepping across long-range trans-oceanic transits",
+                                          "Expanded wide-range HUD speedometer \u0026 3D Bridge Monitor 1 (PORT MFD-1) numeric telemetry formatting for crisp zero-clipping readout clarity"
+                                      ],
+                            "changed":  [
+                                            "Hardened multiplayer remote-vessel catalog index clamping and fleet state validation across live US Ocean Server sessions",
+                                            "Refined wave-surface buoyancy \u0026 attitude stabilization during rapid open-water transits while preserving 95+ FPS on 1080p Ultra"
+                                        ],
+                            "removed":  [
+                                            "Eliminated narrow-width MFD speed readout truncation and legacy single-step shoreline sweep edge cases"
+                                        ]
+                        },
+                        {
+                            "version":  "v1.9.10",
+                            "badge":  "Shipped",
+                            "date":  "November 2026",
+                            "openByDefault":  false,
                             "added":  [
                                           "Company-wide Cabin YouTube TV Watch-Party Sync across both Internet (Firebase US Ocean Server) and LAN/UDP — clicking Pause, Play, or dragging the timeline scrubber syncs every crewmate in your company in \u003c 0.5s with zero page reload",
                                           "Late-join \u0026 2.5s buffering drift lockstep on the 110\" Cabin YouTube TV — crewmates boarding mid-video or joining a company land on the exact frame \u0026 Play/Pause state automatically, while other companies stay 100% isolated",
