@@ -11,6 +11,19 @@
     ],
     "headers": [
       {
+        "source": "/downloads/TrueHelm_Launcher_Windows.zip",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"TrueHelm_Launcher_Windows.zip\""
+          }
+        ]
+      },
+      {
         "source": "/downloads/TrueHelmLauncher.exe",
         "headers": [
           {
@@ -24,7 +37,7 @@
         ]
       },
       {
-        "source": "**/*.@(html|js|css)",
+        "source": "**/*.@(html|js|css|json)",
         "headers": [
           {
             "key": "Cache-Control",

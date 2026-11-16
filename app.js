@@ -751,16 +751,54 @@
     if (e.key === 'ArrowRight') openShot(activeShot + 1);
   });
 
-  // 5. Same-Origin Blob Launcher (.EXE) Download + Non-Blocking Toast (Browser Downloads show clean blob: URL)
+  // 5. Edge-Friendly Launcher (.zip / .exe) Download + Instant "Open in 5 Seconds" Helper Modal
   const toast = document.getElementById('download-toast');
   const toastTitle = document.getElementById('toast-title');
   const toastHint = document.getElementById('toast-hint');
+  const dlHelperModal = document.getElementById('download-helper-modal');
+  const dlHelperStatusPill = document.getElementById('dl-helper-status-pill');
+  const dlHelperCloseBtn = document.getElementById('dl-helper-close');
+  const dlHelperGotItBtn = document.getElementById('dl-helper-got-it');
+  const heroOpenGuideBtn = document.getElementById('hero-open-guide-btn');
   let toastTimer = null;
   let launcherDlBusy = false;
 
+  function openDownloadHelperModal(fileName) {
+    if (!dlHelperModal) return;
+    if (dlHelperStatusPill) {
+      const upperName = String(fileName || 'TrueHelm_Launcher_Windows.zip').toUpperCase();
+      dlHelperStatusPill.textContent = fileName
+        ? `DOWNLOAD STARTED · ${upperName}`
+        : 'QUICK OPEN GUIDE · EDGE & WINDOWS 10/11';
+    }
+    dlHelperModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDownloadHelperModal() {
+    if (!dlHelperModal || dlHelperModal.hidden) return;
+    dlHelperModal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  if (dlHelperCloseBtn) dlHelperCloseBtn.addEventListener('click', closeDownloadHelperModal);
+  if (dlHelperGotItBtn) dlHelperGotItBtn.addEventListener('click', closeDownloadHelperModal);
+  if (heroOpenGuideBtn) heroOpenGuideBtn.addEventListener('click', () => openDownloadHelperModal(''));
+  if (dlHelperModal) {
+    dlHelperModal.addEventListener('click', (e) => {
+      if (e.target === dlHelperModal) closeDownloadHelperModal();
+    });
+  }
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && dlHelperModal && !dlHelperModal.hidden) {
+      closeDownloadHelperModal();
+    }
+  });
+
   document.querySelectorAll('[data-direct-dl], [data-direct-zip]').forEach((link) => {
     link.addEventListener('click', async (e) => {
-      const fileName = link.dataset.directDl || link.dataset.directZip || 'TrueHelmLauncher.exe';
+      const fileName = link.dataset.directDl || link.dataset.directZip || 'TrueHelm_Launcher_Windows.zip';
+      const dlKind = link.dataset.dlKind || '';
       const showToast = (titleStr) => {
         if (!toast || !toastTitle) return;
         toastTitle.textContent = titleStr;
@@ -776,6 +814,12 @@
       };
 
       showToast(`Downloading ${fileName}...`);
+      openDownloadHelperModal(fileName);
+
+      // Direct .exe link uses native browser navigation/download (supports 302 CDN redirect cleanly)
+      if (dlKind === 'launcher-exe') {
+        return;
+      }
 
       if (typeof window.fetch === 'function' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function') {
         e.preventDefault();
@@ -785,7 +829,8 @@
           const res = await fetch(link.href, { cache: 'no-store' });
           if (!res.ok) throw new Error(`HTTP ${res.status}`);
           const buf = await res.arrayBuffer();
-          const blob = new Blob([buf], { type: 'application/octet-stream' });
+          const mime = fileName.toLowerCase().endsWith('.zip') ? 'application/zip' : 'application/octet-stream';
+          const blob = new Blob([buf], { type: mime });
           const blobUrl = URL.createObjectURL(blob);
           const tmp = document.createElement('a');
           tmp.href = blobUrl;
