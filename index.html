@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261116d" />
+  <link rel="stylesheet" href="./styles.css?v=20261117a" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,7 +93,7 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.14 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.15 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.14</small>
+                <small>Added, changed &amp; removed in Release v1.9.15</small>
               </span>
             </a>
           </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.14</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.14 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.15</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.15 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.14</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.15</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,32 +542,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.14</h3>
+              <h3 id="dash-added-heading">Added in v1.9.15</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Cabin YouTube TV &amp; couch in every vessel across all 35 ships (<code>#01&ndash;#35</code>) &mdash; proportionally scaled per bridge from flush wall-mounted compact 22&quot;&ndash;36&quot; cabin flatscreens &amp; small couches in harbor launches/tugs up to 110&quot; cinema lounges in megaships, complete with 1P/VR Play/Pause/Scrub, Company Watch-Party Sync, and cabin-scaled 3D spatial audio</li>
-              <li>Interactive 3D marine pedestal Captain&rsquo;s Chair in front of every ship&rsquo;s helm wheel &mdash; press <kbd>3</kbd> on keyboard from anywhere in the cabin or 3rd-person to teleport into the chair and <kbd>3</kbd> again to step off and walk freely, or click the chair in OpenXR VR to lock into the helm until pressing the illuminated 3D armrest release button</li>
+              <li>Dynamic full-pier multi-megaship berth &amp; outer parallel rafting solver plus safe seaward Company Co-Op disembark &mdash; 4+ megaships spawning at the same terminal or crewmates leaving a moored company ship resolve clean open-water berths (&ge; 9.5 m fender clearance, zero pier or hull overlap)</li>
+              <li>End-to-end finite-number multiplayer &amp; Live 3D Ocean Globe (<code>#live-globe</code>) telemetry sanitizer plus automatic exponential-backoff Firebase SSE stream reconnection for uninterrupted multi-hour live captain tracking</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.14</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.15</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Upgraded near-dock &amp; moored career respawn safety with 25-point hull OBB-vs-quay Separating Axis checks and an automatic waterside outside-dock pose solver &mdash; captains who logged out docked or near any port terminal always spawn cleanly outside the concrete pier with &ge; 6.5 m hull-to-quay fender clearance</li>
-              <li>Streamlined key <kbd>3</kbd> helm/walk toggling across every wheelhouse by removing the legacy proximity gate so captains can jump straight to the helm from the cabin couch, wall TV, or pool table in one press</li>
+              <li>Upgraded docked &amp; near-pier ship purchases/swaps to resolve hull-aware outside-dock waterside poses across standardized Zones 1&ndash;6 pier spans before saving career coordinates, preventing wide-beam megaships from spawning inside piers after upgrading from harbor craft</li>
+              <li>Enforced strict zero-leak multi-account state isolation across Sign Out, New Account Registration, Quick-Switch, and Cloud profile sync &mdash; resetting cash, fleet, upgrades, cargo, ocean coordinates, mooring/anchor state, and Company/TV session cleanly between accounts</li>
+              <li>Widened compact small-boat cabin aisles (<code>#01&ndash;#09</code>) with 4-candidate Captain&rsquo;s Chair &amp; couch stand-up positions, re-anchored seated 1P/OpenXR VR camera heights across ship swaps &amp; <code>ExitVRMode</code>, synced Cabin TV YouTube mute across channel switches, and auto-cleared <kbd>P</kbd> Multiplayer text focus on menu close</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.14</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.15</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Eliminated mega-ship-only gating on Cabin YouTube TVs &amp; couches (while keeping 9-ft billiard tables exclusive to mega-ship lounges) and fixed half-inside-dock hull overlaps when rejoining moored or angled near port terminals</li>
+              <li>Eliminated pre-reposition dock ship-swap coordinate saves, starboard-into-pier Company disembark offsets, cross-account sign-out career carryover, stale <code>UOceanFastDynamicMeshComponent</code> proxy render enqueues, and permanent SSE stream disconnects on the Live 3D Globe</li>
             </ul>
           </article>
         </div>
@@ -586,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.14 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.15 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -594,8 +595,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.14</strong>
+                  <strong class="ver-num">v1.9.15</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Dynamic Full-Pier Multi-Megaship Berth &amp; Rafting Solver + Seaward Company Disembark</strong> &mdash; 4+ megaships spawning at the same terminal or crewmates leaving a moored company ship resolve clean open-water berths (&ge; 9.5 m fender clearance) · <strong>Multiplayer &amp; Live 3D Globe Telemetry Sanitizer + SSE Auto-Reconnect</strong> across UDP, Cloud RTDB, and <code>#live-globe</code>.</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>Safe Outside-Dock Megaship Swaps</strong> resolving hull-aware waterside poses across Zones 1&ndash;6 before saving coordinates · <strong>Strict Zero-Leak Multi-Account Isolation</strong> across Sign Out, New Account Registration, Quick-Switch &amp; Cloud sync · <strong>Small-Boat Cabin Aisle &amp; Chair/VR Refinements</strong> (<code>#01&ndash;#09</code> widened walkways, 4-candidate chair/couch stand-up, VR seated eye height &amp; <code>ExitVRMode</code> restore, Cabin TV channel mute sync, and <kbd>P</kbd> text-focus cleanup).</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Eliminated pre-reposition dock swap saves, starboard-into-pier Company disembark teleports, cross-account sign-out state carryover, stale dynamic-mesh proxy enqueues, and permanent Live Globe SSE disconnects.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.14</strong>
+                  <span class="ver-badge cyan">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -610,7 +626,7 @@
               <summary>
                 <div class="ver-title-group">
                   <strong class="ver-num">v1.9.13</strong>
-                  <span class="ver-badge cyan">Shipped</span>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1128,7 +1144,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261116d"></script>
-  <script type="module" src="./globe.js?v=20261116d"></script>
+  <script src="./app.js?v=20261117a"></script>
+  <script type="module" src="./globe.js?v=20261117a"></script>
 </body>
 </html>

@@ -1,17 +1,35 @@
 {
-  "updatedAtUtc": "2026-11-16T23:55:00Z",
+  "updatedAtUtc": "2026-11-17T06:22:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.14",
-  "latestReleaseTag": "v1.9.14",
-  "buildPhase": "Release v1.9.14 Live — Cabin YouTube TV & Couch in All 35 Ships, Interactive 3D Captain's Chair (1P [3] & VR Armrest Lock), & Precision Outside-Dock Respawn Clearance",
-  "buildStatus": "Release v1.9.14 Live — Cabin YouTube TV & Couch in All 35 Ships, Interactive 3D Captain's Chair (1P [3] & VR Armrest Lock), & Precision Outside-Dock Respawn Clearance",
+  "activeVersion": "v1.9.15",
+  "latestReleaseTag": "v1.9.15",
+  "buildPhase": "Release v1.9.15 Live — Full-Codebase Bug-Hunt & Stability Update (Dock Ship-Swap & Multi-Berth Solver, Multi-Account Isolation, Small-Boat Cabin Clearance & Network Sanitizer)",
+  "buildStatus": "Release v1.9.15 Live — Full-Codebase Bug-Hunt & Stability Update (Dock Ship-Swap & Multi-Berth Solver, Multi-Account Isolation, Small-Boat Cabin Clearance & Network Sanitizer)",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
     {
+      "id": "milestone-v1915-full-codebase-bughunt-stability-sweep",
+      "timestampUtc": "2026-11-17T06:22:00Z",
+      "version": "v1.9.15",
+      "summary": "Published TrueHelm v1.9.15 Live Release (1-Click In-Launcher Update): Full-Codebase Bug-Hunt & Stability Sweep — Safe Outside-Dock Ship Swaps & Multi-Megaship Berth Solver, Seaward Company Disembark, Strict Multi-Account Zero-Leak Isolation, Small-Boat Cabin Aisle & Chair/VR Fixes, & Network/Globe Telemetry Hardening.",
+      "added": [
+        "Dynamic full-pier multi-megaship berth & outer parallel rafting solver plus safe seaward Company Co-Op disembark — 4+ megaships spawning at the same terminal or crewmates leaving a moored company ship resolve clean open-water berths (>= 9.5 m fender clearance, zero pier or hull overlap)",
+        "End-to-end finite-number multiplayer & Live 3D Ocean Globe (#live-globe) telemetry sanitizer plus automatic exponential-backoff Firebase SSE stream reconnection for uninterrupted multi-hour live captain tracking"
+      ],
+      "changed": [
+        "Upgraded docked & near-pier ship purchases/swaps to resolve hull-aware outside-dock waterside poses across standardized Zones 1–6 pier spans before saving career coordinates, preventing wide-beam megaships from spawning inside piers after upgrading from harbor craft",
+        "Enforced strict zero-leak multi-account state isolation across Sign Out, New Account Registration, Quick-Switch, and Cloud profile sync — resetting cash, fleet, upgrades, cargo, ocean coordinates, mooring/anchor state, and Company/TV session cleanly between accounts",
+        "Widened compact small-boat cabin aisles (#01–#09) with 4-candidate Captain's Chair & couch stand-up positions, re-anchored seated 1P/OpenXR VR camera heights across ship swaps & ExitVRMode, synced Cabin TV YouTube mute across channel switches, and auto-cleared [P] Multiplayer text focus on menu close"
+      ],
+      "removed": [
+        "Eliminated pre-reposition dock ship-swap coordinate saves, starboard-into-pier Company disembark offsets, cross-account sign-out career carryover, stale UOceanFastDynamicMeshComponent proxy render enqueues, and permanent SSE stream disconnects on the Live 3D Globe"
+      ]
+    },
+    {
       "id": "milestone-v1914-all-boat-tv-captains-chair-outside-dock",
-      "timestampUtc": "2026-11-16T23:55:00Z",
+      "timestampUtc": "2026-11-17T02:07:11Z",
       "version": "v1.9.14",
       "summary": "Published TrueHelm v1.9.14 Live Release (1-Click In-Launcher Update): Proportional Cabin YouTube TV & Couch Across All 35 Ships (Wall-Mounted Small-Boat Flatscreens to 110\" Megaship Lounges), Interactive 3D Pedestal Captain's Chair ([3] Toggle & OpenXR VR Armrest Release Button), & Precision Waterside Outside-Dock Respawn Clearance.",
       "added": [
@@ -398,10 +416,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.14",
+      "version": "v1.9.15",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Dynamic full-pier multi-megaship berth & outer parallel rafting solver plus safe seaward Company Co-Op disembark — 4+ megaships spawning at the same terminal or crewmates leaving a moored company ship resolve clean open-water berths (>= 9.5 m fender clearance, zero pier or hull overlap)",
+        "End-to-end finite-number multiplayer & Live 3D Ocean Globe (#live-globe) telemetry sanitizer plus automatic exponential-backoff Firebase SSE stream reconnection for uninterrupted multi-hour live captain tracking"
+      ],
+      "changed": [
+        "Upgraded docked & near-pier ship purchases/swaps to resolve hull-aware outside-dock waterside poses across standardized Zones 1–6 pier spans before saving career coordinates, preventing wide-beam megaships from spawning inside piers after upgrading from harbor craft",
+        "Enforced strict zero-leak multi-account state isolation across Sign Out, New Account Registration, Quick-Switch, and Cloud profile sync — resetting cash, fleet, upgrades, cargo, ocean coordinates, mooring/anchor state, and Company/TV session cleanly between accounts",
+        "Widened compact small-boat cabin aisles (#01–#09) with 4-candidate Captain's Chair & couch stand-up positions, re-anchored seated 1P/OpenXR VR camera heights across ship swaps & ExitVRMode, synced Cabin TV YouTube mute across channel switches, and auto-cleared [P] Multiplayer text focus on menu close"
+      ],
+      "removed": [
+        "Eliminated pre-reposition dock ship-swap coordinate saves, starboard-into-pier Company disembark offsets, cross-account sign-out career carryover, stale UOceanFastDynamicMeshComponent proxy render enqueues, and permanent SSE stream disconnects on the Live 3D Globe"
+      ]
+    },
+    {
+      "version": "v1.9.14",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Cabin YouTube TV & couch in every vessel across all 35 ships (#01–#35) — proportionally scaled per bridge from flush wall-mounted compact 22\"–36\" cabin flatscreens & small couches in harbor launches/tugs up to 110\" cinema lounges in megaships, complete with 1P/VR Play/Pause/Scrub, Company Watch-Party Sync, and cabin-scaled 3D spatial audio",
         "Interactive 3D marine pedestal Captain's Chair in front of every ship's helm wheel — press [3] on keyboard from anywhere in the cabin or 3rd-person to teleport into the chair and [3] again to step off and walk freely, or click the chair in OpenXR VR to lock into the helm until pressing the illuminated 3D armrest release button"

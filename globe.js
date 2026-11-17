@@ -10,7 +10,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const loadingText = document.getElementById('globe-loading-text');
   if (!canvas || !stageEl) return;
 
-  const ASSET_VER = '20261116d';
+  const ASSET_VER = '20261117a';
 
   // Constants matching Public/ShipTypes.h + ShippingGameInstance.cpp + generate_truehelm_globe_assets.py 1-to-1
   const GLOBE_RADIUS = 100.0;
@@ -1472,14 +1472,32 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     const captainsByCompany = new Map();
     const aboardCrew = [];
 
+    // Sanitize remote telemetry: finite-only yaw/spd/teu (no NaN quaternion/DOM poisoning), and
+    // out-of-catalog hulls (> TOTAL_SHIPS) display the #01 catalog top speed so public stats stay in-catalog.
+    const finiteOr = (v, fallback) => {
+      const n = Number(v);
+      return Number.isFinite(n) ? n : fallback;
+    };
+    const sanitizeTelemetry = (pkt) => {
+      const rawShip = finiteOr(pkt.ship, 1);
+      const outOfCatalog = rawShip > TOTAL_SHIPS || rawShip < 1;
+      let spd = Math.max(0, finiteOr(pkt.spd, 0));
+      spd = Math.min(spd, outOfCatalog ? 36.0 : 60.0);
+      const yawRaw = finiteOr(pkt.yaw, 0);
+      const yaw = ((yawRaw % 360) + 360) % 360;
+      const teu = Math.max(0, Math.min(30000, Math.round(finiteOr(pkt.teu, 0))));
+      return { yaw, spd, teu };
+    };
+
     activeRecords.forEach(({ key, pkt, rawX, rawY }) => {
       const captainName = sanitizeMaritimeText(pkt.name, 'Captain');
       const companyName = sanitizeMaritimeText(pkt.cmp_nm, '');
       const cmpId = String(pkt.cmp_id || '').trim();
       const shipNum = clampCatalogShipId(pkt.ship || 1);
+      const tel = sanitizeTelemetry(pkt);
 
       if (pkt.cmp_abd === true && cmpId) {
-        aboardCrew.push({ key, pkt, rawX, rawY, captainName, companyName, cmpId, shipNum });
+        aboardCrew.push({ key, pkt, rawX, rawY, captainName, companyName, cmpId, shipNum, tel });
         return;
       }
 
@@ -1498,9 +1516,9 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
         ship: shipNum,
         x: rawX,
         y: rawY,
-        yaw: Number(pkt.yaw || 0),
-        spd: Math.max(0, Number(pkt.spd || 0)),
-        teu: Math.max(0, Math.round(Number(pkt.teu || 0))),
+        yaw: tel.yaw,
+        spd: tel.spd,
+        teu: tel.teu,
         dstRaw: pkt.dst,
         dst: dstDisplay === 'Captain' ? '' : dstDisplay,
         autopilot: Boolean(pkt.as),
@@ -1529,9 +1547,9 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
           ship: cm.shipNum,
           x: cm.rawX,
           y: cm.rawY,
-          yaw: Number(cm.pkt.yaw || 0),
-          spd: Math.max(0, Number(cm.pkt.spd || 0)),
-          teu: Math.max(0, Math.round(Number(cm.pkt.teu || 0))),
+          yaw: cm.tel.yaw,
+          spd: cm.tel.spd,
+          teu: cm.tel.teu,
           dst: '',
           autopilot: Boolean(cm.pkt.as),
           crewNames: []
@@ -1650,18 +1668,65 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
     } catch (_) {}
   }
 
+  // Firebase RTDB closes SSE streams periodically (token/idle rotation, mobile network handoff):
+  // reconnect with capped exponential backoff instead of dying permanently on the first onerror.
+  let activeEventSource = null;
+  let sseReconnectTimer = null;
+  let sseBackoffMs = 8000;
+  let ssePageHidden = false;
+
+  function scheduleSseReconnect() {
+    if (sseReconnectTimer || ssePageHidden) return;
+    const delay = sseBackoffMs;
+    sseBackoffMs = Math.min(sseBackoffMs * 2, 120000);
+    sseReconnectTimer = setTimeout(() => {
+      sseReconnectTimer = null;
+      connectFirebaseSSE();
+    }, delay);
+  }
+
+  function closeFirebaseSSE() {
+    if (activeEventSource) {
+      try { activeEventSource.close(); } catch (_) {}
+      activeEventSource = null;
+    }
+    sseConnected = false;
+  }
+
   function connectFirebaseSSE() {
-    if (typeof EventSource === 'undefined') return;
+    if (typeof EventSource === 'undefined' || ssePageHidden) return;
+    closeFirebaseSSE();
     try {
       const es = new EventSource(firebaseLiveUrl);
+      activeEventSource = es;
+      es.onopen = () => {
+        sseBackoffMs = 8000;
+      };
       es.addEventListener('put', (ev) => applySsePayloadEvent(ev, false));
       es.addEventListener('patch', (ev) => applySsePayloadEvent(ev, true));
       es.onerror = () => {
-        sseConnected = false;
-        es.close();
+        if (activeEventSource !== es) return;
+        closeFirebaseSSE();
+        scheduleSseReconnect();
       };
-    } catch (_) {}
+    } catch (_) {
+      scheduleSseReconnect();
+    }
   }
+
+  window.addEventListener('pagehide', () => {
+    ssePageHidden = true;
+    if (sseReconnectTimer) {
+      clearTimeout(sseReconnectTimer);
+      sseReconnectTimer = null;
+    }
+    closeFirebaseSSE();
+  });
+  window.addEventListener('pageshow', (ev) => {
+    if (!ssePageHidden) return;
+    ssePageHidden = false;
+    if (ev.persisted) connectFirebaseSSE();
+  });
 
   // =========================================================================
   // 8. CAMERA FLIGHT, INSPECTOR TELEMETRY CARD & SIDEBAR DIRECTORY UI
