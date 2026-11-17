@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-17T12:53:00Z",
+  "updatedAtUtc": "2026-11-17T20:42:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.17",
-  "latestReleaseTag": "v1.9.17",
-  "buildPhase": "Release v1.9.17 Live — Full Multi-Story Exterior Stairs & Cargo Deck Walking, Flo-Flo Watertight Door Lockdown, Smooth 60 Hz Hull-Edge CCTV & Newtonian Horn Rope Physics",
-  "buildStatus": "Release v1.9.17 Live — Full Multi-Story Exterior Stairs & Cargo Deck Walking, Flo-Flo Watertight Door Lockdown, Smooth 60 Hz Hull-Edge CCTV & Newtonian Horn Rope Physics",
+  "activeVersion": "v1.9.18",
+  "latestReleaseTag": "v1.9.18",
+  "buildPhase": "Release v1.9.18 Live — Working Multi-Story Ship Elevators, Enterable Rooms on Every Superstructure Level & Round-Trip 3D Staircase Overhaul Across All 35 Vessels",
+  "buildStatus": "Release v1.9.18 Live — Working Multi-Story Ship Elevators, Enterable Rooms on Every Superstructure Level & Round-Trip 3D Staircase Overhaul Across All 35 Vessels",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1918-working-ship-elevators-every-level-rooms-stairs",
+      "timestampUtc": "2026-11-17T20:42:00Z",
+      "version": "v1.9.18",
+      "summary": "Published TrueHelm v1.9.18 Live Release (1-Click In-Launcher Update): Working Multi-Story Panoramic Ship Elevators (27 Vessels > 3 Stories), Enterable Furnished Interior Rooms on Every Superstructure Level, & Seamless Round-Trip Up/Down 3D Staircase & Guardrail Overhaul Across All 35 Ships.",
+      "added": [
+        "Working multi-story steel & panoramic-glass ship elevators on all 27 fleet vessels taller than 3 stories (4–7+ levels) — exterior [▲ UP] / [▼ DOWN] call buttons on every deck, bi-parting cab & landing doors, live digital floor indicators, and interior [▲ UP] / [▼ DOWN] + numbered Floor 1..N buttons carrying both 1st-person and OpenXR VR passengers smoothly between the Cargo Deck, intermediate floors, and the Bridge",
+        "Enterable furnished 3D interior rooms on every intermediate superstructure level (Floor 1 .. N-1) across multi-level ships — each deck features a walkable balcony, working hinged 3D watertight cabin door ([E] / click / OpenXR VR), warm overhead interior lighting, mahogany wardroom/mess tables, and cushioned crew benches"
+      ],
+      "changed": [
+        "Upgraded ship walk zone priority and solid under-stair collision across all 35 vessels so stepping onto the foot of the bottom staircase from the Cargo Deck climbs smoothly all the way back up to the Bridge (0 bottom-stair walk-throughs, full 360° bow-to-stern perimeter loops)",
+        "Rebuilt all 250 exterior stair flights and 865 3-bar safety guardrail segments across the fleet — exact forward-sloping stringers & handrails, vertical steel baluster posts + risers on every flight, and topological drop-off edge railing with zero blocked stair, doorway, or elevator entrances"
+      ],
+      "removed": [
+        "Fixed bottom-stair upward DeckZone stickiness, corrected inverted Y-ramp stringer/handrail roll angles, removed stray landing rails across stair mouths, and stripped baked non-functional hull stair clutter blocking cabin doorways"
+      ]
+    },
     {
       "id": "milestone-v1917-full-ship-walk-cctv-hulledge-horn-physics",
       "timestampUtc": "2026-11-17T12:53:00Z",
@@ -450,10 +467,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.17",
+      "version": "v1.9.18",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Working multi-story steel & panoramic-glass ship elevators on all 27 fleet vessels taller than 3 stories (4–7+ levels) — exterior [▲ UP] / [▼ DOWN] call buttons on every deck, bi-parting cab & landing doors, live digital floor indicators, and interior [▲ UP] / [▼ DOWN] + numbered Floor 1..N buttons carrying both 1st-person and OpenXR VR passengers smoothly between the Cargo Deck, intermediate floors, and the Bridge",
+        "Enterable furnished 3D interior rooms on every intermediate superstructure level (Floor 1 .. N-1) across multi-level ships — each deck features a walkable balcony, working hinged 3D watertight cabin door ([E] / click / OpenXR VR), warm overhead interior lighting, mahogany wardroom/mess tables, and cushioned crew benches"
+      ],
+      "changed": [
+        "Upgraded ship walk zone priority and solid under-stair collision across all 35 vessels so stepping onto the foot of the bottom staircase from the Cargo Deck climbs smoothly all the way back up to the Bridge (0 bottom-stair walk-throughs, full 360° bow-to-stern perimeter loops)",
+        "Rebuilt all 250 exterior stair flights and 865 3-bar safety guardrail segments across the fleet — exact forward-sloping stringers & handrails, vertical steel baluster posts + risers on every flight, and topological drop-off edge railing with zero blocked stair, doorway, or elevator entrances"
+      ],
+      "removed": [
+        "Fixed bottom-stair upward DeckZone stickiness, corrected inverted Y-ramp stringer/handrail roll angles, removed stray landing rails across stair mouths, and stripped baked non-functional hull stair clutter blocking cabin doorways"
+      ]
+    },
+    {
+      "version": "v1.9.17",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Full multi-story exterior ship & Cargo Deck walking across all 35 vessels — open Bridge Wing Doors ([E] / click / OpenXR VR), step out onto bridge wings, descend up to 8 floors (16 flights) of exterior companionway staircases & handrails down to the Cargo Deck, and walk freely from bow forecastle to stern transom beside loaded 3D containers, Ro-Ro vehicles, and manifolds ([3] teleports straight back to the Captain's Chair)",
         "Automatic Flo-Flo semi-submersible watertight bridge door lockdown & exterior crew recall — whenever a heavy-lift Flo-Flo vessel ballasts or submerges its deck for Zone 6 float-on/float-off deliveries, exterior crew are recalled safely inside the wheelhouse and watertight bridge doors seal & lock until 100% surfaced"
