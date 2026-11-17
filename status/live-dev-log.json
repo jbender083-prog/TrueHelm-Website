@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-17T06:22:00Z",
+  "updatedAtUtc": "2026-11-17T07:57:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.15",
-  "latestReleaseTag": "v1.9.15",
-  "buildPhase": "Release v1.9.15 Live — Full-Codebase Bug-Hunt & Stability Update (Dock Ship-Swap & Multi-Berth Solver, Multi-Account Isolation, Small-Boat Cabin Clearance & Network Sanitizer)",
-  "buildStatus": "Release v1.9.15 Live — Full-Codebase Bug-Hunt & Stability Update (Dock Ship-Swap & Multi-Berth Solver, Multi-Account Isolation, Small-Boat Cabin Clearance & Network Sanitizer)",
+  "activeVersion": "v1.9.16",
+  "latestReleaseTag": "v1.9.16",
+  "buildPhase": "Release v1.9.16 Live — 16-Segment Physics-Simulated Overhead Horn Rope & Precision 3D Bridge Hardware Mounting Across All 35 Vessels",
+  "buildStatus": "Release v1.9.16 Live — 16-Segment Physics-Simulated Overhead Horn Rope & Precision 3D Bridge Hardware Mounting Across All 35 Vessels",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1916-cockpit-connections-physics-horn-rope",
+      "timestampUtc": "2026-11-17T07:57:00Z",
+      "version": "v1.9.16",
+      "summary": "Published TrueHelm v1.9.16 Live Release (1-Click In-Launcher Update): 16-Segment Physics-Simulated Overhead Horn Rope & Precision 3D Bridge Hardware Mounting (Deep-Seated Lever Boots, Coaxial Steering Wheel Column Tube & Articulated VESA Overhead Camera Mounts Across All 35 Vessels).",
+      "added": [
+        "16-segment Position-Based Dynamics (PBD) physics-simulated overhead horn rope across all 35 vessels — curves and sways naturally with ocean wave pitch/roll, vessel surge, and rudder-turn centrifugal inertia, stretches taut when pulled via [H], 1st-person drag, or OpenXR VR hand grab, and recoils smoothly from a solid brushed-steel overhead equipment beam",
+        "Heavy-duty articulated VESA bulkhead arms, 4-bolt wall flanges, horizontal gantry rail, and twin vertical steel ceiling stanchions physically anchoring all 4 overhead hull camera monitors (BOW CAM 01 – STERN CAM 04) solidly into the wheelhouse wall and ceiling"
+      ],
+      "changed": [
+        "Re-engineered Dual Throttle, Anchor Windlass, and Bow Thruster 3D cockpit housings with centered accordion rubber bellows boots, deep internal rotation pivots, and extended chrome/brass shafts + CNC ball-joint collars that stay seated deep inside their boots across full ±100% tilt sweeps",
+        "Aligned the brushed-steel steering pedestal column tube and CNC mating flange coaxially into the rear center hub boss of the ship's wheel across all 35 vessels (zero gap between steering column and wheel)"
+      ],
+      "removed": [
+        "Eliminated stiff rigid-rod horn lanyard geometry, floating mid-air overhead CCTV monitor bezels, detached tilted anchor/throttle lever shaft bottoms, and steering column-to-wheel air gaps"
+      ]
+    },
     {
       "id": "milestone-v1915-full-codebase-bughunt-stability-sweep",
       "timestampUtc": "2026-11-17T06:22:00Z",
@@ -416,10 +433,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.15",
+      "version": "v1.9.16",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "16-segment Position-Based Dynamics (PBD) physics-simulated overhead horn rope across all 35 vessels — curves and sways naturally with ocean wave pitch/roll, vessel surge, and rudder-turn centrifugal inertia, stretches taut when pulled via [H], 1st-person drag, or OpenXR VR hand grab, and recoils smoothly from a solid brushed-steel overhead equipment beam",
+        "Heavy-duty articulated VESA bulkhead arms, 4-bolt wall flanges, horizontal gantry rail, and twin vertical steel ceiling stanchions physically anchoring all 4 overhead hull camera monitors (BOW CAM 01 – STERN CAM 04) solidly into the wheelhouse wall and ceiling"
+      ],
+      "changed": [
+        "Re-engineered Dual Throttle, Anchor Windlass, and Bow Thruster 3D cockpit housings with centered accordion rubber bellows boots, deep internal rotation pivots, and extended chrome/brass shafts + CNC ball-joint collars that stay seated deep inside their boots across full ±100% tilt sweeps",
+        "Aligned the brushed-steel steering pedestal column tube and CNC mating flange coaxially into the rear center hub boss of the ship's wheel across all 35 vessels (zero gap between steering column and wheel)"
+      ],
+      "removed": [
+        "Eliminated stiff rigid-rod horn lanyard geometry, floating mid-air overhead CCTV monitor bezels, detached tilted anchor/throttle lever shaft bottoms, and steering column-to-wheel air gaps"
+      ]
+    },
+    {
+      "version": "v1.9.15",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Dynamic full-pier multi-megaship berth & outer parallel rafting solver plus safe seaward Company Co-Op disembark — 4+ megaships spawning at the same terminal or crewmates leaving a moored company ship resolve clean open-water berths (>= 9.5 m fender clearance, zero pier or hull overlap)",
         "End-to-end finite-number multiplayer & Live 3D Ocean Globe (#live-globe) telemetry sanitizer plus automatic exponential-backoff Firebase SSE stream reconnection for uninterrupted multi-hour live captain tracking"
