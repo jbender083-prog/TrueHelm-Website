@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-17T07:57:00Z",
+  "updatedAtUtc": "2026-11-17T12:53:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.16",
-  "latestReleaseTag": "v1.9.16",
-  "buildPhase": "Release v1.9.16 Live — 16-Segment Physics-Simulated Overhead Horn Rope & Precision 3D Bridge Hardware Mounting Across All 35 Vessels",
-  "buildStatus": "Release v1.9.16 Live — 16-Segment Physics-Simulated Overhead Horn Rope & Precision 3D Bridge Hardware Mounting Across All 35 Vessels",
+  "activeVersion": "v1.9.17",
+  "latestReleaseTag": "v1.9.17",
+  "buildPhase": "Release v1.9.17 Live — Full Multi-Story Exterior Stairs & Cargo Deck Walking, Flo-Flo Watertight Door Lockdown, Smooth 60 Hz Hull-Edge CCTV & Newtonian Horn Rope Physics",
+  "buildStatus": "Release v1.9.17 Live — Full Multi-Story Exterior Stairs & Cargo Deck Walking, Flo-Flo Watertight Door Lockdown, Smooth 60 Hz Hull-Edge CCTV & Newtonian Horn Rope Physics",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1917-full-ship-walk-cctv-hulledge-horn-physics",
+      "timestampUtc": "2026-11-17T12:53:00Z",
+      "version": "v1.9.17",
+      "summary": "Published TrueHelm v1.9.17 Live Release (1-Click In-Launcher Update): Full Multi-Story Exterior Stairs & Cargo Deck Walking Across All 35 Ships, Flo-Flo Submergence Watertight Door Lockdown, Smooth 60 Hz Own-Hull-Edge Overhead CCTV Monitors, & Pure Newtonian Horn Rope Physics.",
+      "added": [
+        "Full multi-story exterior ship & Cargo Deck walking across all 35 vessels — open Bridge Wing Doors ([E] / click / OpenXR VR), step out onto bridge wings, descend up to 8 floors (16 flights) of exterior companionway staircases & handrails down to the Cargo Deck, and walk freely from bow forecastle to stern transom beside loaded 3D containers, Ro-Ro vehicles, and manifolds ([3] teleports straight back to the Captain's Chair)",
+        "Automatic Flo-Flo semi-submersible watertight bridge door lockdown & exterior crew recall — whenever a heavy-lift Flo-Flo vessel ballasts or submerges its deck for Zone 6 float-on/float-off deliveries, exterior crew are recalled safely inside the wheelhouse and watertight bridge doors seal & lock until 100% surfaced"
+      ],
+      "changed": [
+        "Upgraded all 4 overhead hull camera monitors (BOW CAM 01, PORT CAM 02, STBD CAM 03, STERN CAM 04) to smooth ~60 Hz live video when in view and framed each exterior lens so your ship's own bow stem, port/starboard gunwale rails, and stern transom appear across the bottom ~20% of every screen for exact pier & vessel clearance",
+        "Refactored the 16-segment overhead horn rope & VHF radio cord to a pure Newtonian world-space inertial solver driven strictly by real hull pitch/roll, turn centripetal force, and mount acceleration — guaranteeing 0.00 cm idle motion when stationary and smooth viscous settling after maneuvers"
+      ],
+      "removed": [
+        "Removed synthetic WaveAnimPhase idle cord oscillation when moored/parked, eliminated choppy low-rate overhead CCTV redraws when facing the bridge monitors, and removed bridge-only interior walking walls in favor of full safety-railed ship deck exploration"
+      ]
+    },
     {
       "id": "milestone-v1916-cockpit-connections-physics-horn-rope",
       "timestampUtc": "2026-11-17T07:57:00Z",
@@ -433,10 +450,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.16",
+      "version": "v1.9.17",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Full multi-story exterior ship & Cargo Deck walking across all 35 vessels — open Bridge Wing Doors ([E] / click / OpenXR VR), step out onto bridge wings, descend up to 8 floors (16 flights) of exterior companionway staircases & handrails down to the Cargo Deck, and walk freely from bow forecastle to stern transom beside loaded 3D containers, Ro-Ro vehicles, and manifolds ([3] teleports straight back to the Captain's Chair)",
+        "Automatic Flo-Flo semi-submersible watertight bridge door lockdown & exterior crew recall — whenever a heavy-lift Flo-Flo vessel ballasts or submerges its deck for Zone 6 float-on/float-off deliveries, exterior crew are recalled safely inside the wheelhouse and watertight bridge doors seal & lock until 100% surfaced"
+      ],
+      "changed": [
+        "Upgraded all 4 overhead hull camera monitors (BOW CAM 01, PORT CAM 02, STBD CAM 03, STERN CAM 04) to smooth ~60 Hz live video when in view and framed each exterior lens so your ship's own bow stem, port/starboard gunwale rails, and stern transom appear across the bottom ~20% of every screen for exact pier & vessel clearance",
+        "Refactored the 16-segment overhead horn rope & VHF radio cord to a pure Newtonian world-space inertial solver driven strictly by real hull pitch/roll, turn centripetal force, and mount acceleration — guaranteeing 0.00 cm idle motion when stationary and smooth viscous settling after maneuvers"
+      ],
+      "removed": [
+        "Removed synthetic WaveAnimPhase idle cord oscillation when moored/parked, eliminated choppy low-rate overhead CCTV redraws when facing the bridge monitors, and removed bridge-only interior walking walls in favor of full safety-railed ship deck exploration"
+      ]
+    },
+    {
+      "version": "v1.9.16",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "16-segment Position-Based Dynamics (PBD) physics-simulated overhead horn rope across all 35 vessels — curves and sways naturally with ocean wave pitch/roll, vessel surge, and rudder-turn centrifugal inertia, stretches taut when pulled via [H], 1st-person drag, or OpenXR VR hand grab, and recoils smoothly from a solid brushed-steel overhead equipment beam",
         "Heavy-duty articulated VESA bulkhead arms, 4-bolt wall flanges, horizontal gantry rail, and twin vertical steel ceiling stanchions physically anchoring all 4 overhead hull camera monitors (BOW CAM 01 – STERN CAM 04) solidly into the wheelhouse wall and ceiling"
