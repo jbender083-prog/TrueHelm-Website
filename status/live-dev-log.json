@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-17T20:42:00Z",
+  "updatedAtUtc": "2026-11-17T22:15:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.18",
-  "latestReleaseTag": "v1.9.18",
-  "buildPhase": "Release v1.9.18 Live — Working Multi-Story Ship Elevators, Enterable Rooms on Every Superstructure Level & Round-Trip 3D Staircase Overhaul Across All 35 Vessels",
-  "buildStatus": "Release v1.9.18 Live — Working Multi-Story Ship Elevators, Enterable Rooms on Every Superstructure Level & Round-Trip 3D Staircase Overhaul Across All 35 Vessels",
+  "activeVersion": "v1.9.19",
+  "latestReleaseTag": "v1.9.19",
+  "buildPhase": "Release v1.9.19 Live — Unobstructed 3D Doorway, Cabin & Elevator Threshold Clearance Across All 35 Vessels & Every Deck Level",
+  "buildStatus": "Release v1.9.19 Live — Unobstructed 3D Doorway, Cabin & Elevator Threshold Clearance Across All 35 Vessels & Every Deck Level",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1919-all-ship-doorway-aperture-clearance",
+      "timestampUtc": "2026-11-17T22:15:00Z",
+      "version": "v1.9.19",
+      "summary": "Published TrueHelm v1.9.19 Live Release (1-Click In-Launcher Update): 100% Unobstructed 3D Bridge, Deck-Level Room & Elevator Doorway Openings Across All 35 Vessels.",
+      "added": [
+        "All-material 3D Separating Axis Theorem (SAT) doorway aperture carving & GPU/CPU vertex-buffer verification across every Bridge Door, intermediate Deck Room Door, and Elevator threshold across all 35 vessels",
+        "Proportional tween-deck doorway/room/elevator portal scaling and starboard-jamb hinge geometry on aft-switchback deck doors so open cabin doors swing cleanly clear of adjacent elevator entrances"
+      ],
+      "changed": [
+        "Reordered compact feeder (#03) forward wheelhouse vertex alignment ahead of aft-wall doorway carving and refined compact-cabin wall TV, Ro-Ro drive-deck threshold (#07 & #14), and tanker deck sight-glass (#05) offsets to keep every walkthrough jamb 100% unobstructed",
+        "Restricted exterior stair-tower H-columns and structural girts strictly to stair flight spans so intermediate balcony doorways and ocean sightlines stay completely open"
+      ],
+      "removed": [
+        "Eliminated residual baked cabin wall slabs, secondary material-slot bulkhead panels, and overhanging aft-wall fixtures inside open bridge and multi-level doorways across all 35 vessels"
+      ]
+    },
     {
       "id": "milestone-v1918-working-ship-elevators-every-level-rooms-stairs",
       "timestampUtc": "2026-11-17T20:42:00Z",
@@ -467,10 +484,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.18",
+      "version": "v1.9.19",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "All-material 3D Separating Axis Theorem (SAT) doorway aperture carving & GPU/CPU vertex-buffer verification across every Bridge Door, intermediate Deck Room Door, and Elevator threshold across all 35 vessels",
+        "Proportional tween-deck doorway/room/elevator portal scaling and starboard-jamb hinge geometry on aft-switchback deck doors so open cabin doors swing cleanly clear of adjacent elevator entrances"
+      ],
+      "changed": [
+        "Reordered compact feeder (#03) forward wheelhouse vertex alignment ahead of aft-wall doorway carving and refined compact-cabin wall TV, Ro-Ro drive-deck threshold (#07 & #14), and tanker deck sight-glass (#05) offsets to keep every walkthrough jamb 100% unobstructed",
+        "Restricted exterior stair-tower H-columns and structural girts strictly to stair flight spans so intermediate balcony doorways and ocean sightlines stay completely open"
+      ],
+      "removed": [
+        "Eliminated residual baked cabin wall slabs, secondary material-slot bulkhead panels, and overhanging aft-wall fixtures inside open bridge and multi-level doorways across all 35 vessels"
+      ]
+    },
+    {
+      "version": "v1.9.18",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Working multi-story steel & panoramic-glass ship elevators on all 27 fleet vessels taller than 3 stories (4–7+ levels) — exterior [▲ UP] / [▼ DOWN] call buttons on every deck, bi-parting cab & landing doors, live digital floor indicators, and interior [▲ UP] / [▼ DOWN] + numbered Floor 1..N buttons carrying both 1st-person and OpenXR VR passengers smoothly between the Cargo Deck, intermediate floors, and the Bridge",
         "Enterable furnished 3D interior rooms on every intermediate superstructure level (Floor 1 .. N-1) across multi-level ships — each deck features a walkable balcony, working hinged 3D watertight cabin door ([E] / click / OpenXR VR), warm overhead interior lighting, mahogany wardroom/mess tables, and cushioned crew benches"

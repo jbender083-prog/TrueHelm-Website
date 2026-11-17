@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261117d" />
+  <link rel="stylesheet" href="./styles.css?v=20261117e" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,7 +93,7 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.18 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.19 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.18</small>
+                <small>Added, changed &amp; removed in Release v1.9.19</small>
               </span>
             </a>
           </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.18</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.18 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.19</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.19 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.18</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.19</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,32 +542,32 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.18</h3>
+              <h3 id="dash-added-heading">Added in v1.9.19</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Working multi-story steel &amp; panoramic-glass ship elevators on all 27 fleet vessels taller than 3 stories (4&ndash;7+ levels) &mdash; exterior <code>[&#9650; UP]</code> / <code>[&#9660; DOWN]</code> call buttons on every deck, bi-parting cab &amp; landing doors, live digital floor indicators, and interior <code>[&#9650; UP]</code> / <code>[&#9660; DOWN]</code> + numbered <code>Floor 1..N</code> buttons carrying both 1st-person and OpenXR VR passengers smoothly between the Cargo Deck, intermediate floors, and the Bridge</li>
-              <li>Enterable furnished 3D interior rooms on every intermediate superstructure level (<code>Floor 1 .. N-1</code>) across multi-level ships &mdash; each deck features a walkable balcony, working hinged 3D watertight cabin door (<kbd>E</kbd> / click / OpenXR VR), warm overhead interior lighting, mahogany wardroom/mess tables, and cushioned crew benches</li>
+              <li>All-material 3D Separating Axis Theorem (SAT) doorway aperture carving &amp; GPU/CPU vertex-buffer verification across every Bridge Door, intermediate Deck Room Door, and Elevator threshold across all 35 vessels</li>
+              <li>Proportional tween-deck doorway/room/elevator portal scaling and starboard-jamb hinge geometry on aft-switchback deck doors so open cabin doors swing cleanly clear of adjacent elevator entrances</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.18</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.19</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Upgraded ship walk zone priority and solid under-stair collision across all 35 vessels so stepping onto the foot of the bottom staircase from the Cargo Deck climbs smoothly all the way back up to the Bridge (0 bottom-stair walk-throughs, full 360&deg; bow-to-stern perimeter loops)</li>
-              <li>Rebuilt all 250 exterior stair flights and 865 3-bar safety guardrail segments across the fleet &mdash; exact forward-sloping stringers &amp; handrails, vertical steel baluster posts + risers on every flight, and topological drop-off edge railing with zero blocked stair, doorway, or elevator entrances</li>
+              <li>Reordered compact feeder (<code>#03</code>) forward wheelhouse vertex alignment ahead of aft-wall doorway carving and refined compact-cabin wall TV, Ro-Ro drive-deck threshold (<code>#07 &amp; #14</code>), and tanker deck sight-glass (<code>#05</code>) offsets to keep every walkthrough jamb 100% unobstructed</li>
+              <li>Restricted exterior stair-tower H-columns and structural girts strictly to stair flight spans so intermediate balcony doorways and ocean sightlines stay completely open</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.18</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.19</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Fixed bottom-stair upward <code>DeckZone</code> stickiness, corrected inverted Y-ramp stringer/handrail roll angles, removed stray landing rails across stair mouths, and stripped baked non-functional hull stair clutter blocking cabin doorways</li>
+              <li>Eliminated residual baked cabin wall slabs, secondary material-slot bulkhead panels, and overhanging aft-wall fixtures inside open bridge and multi-level doorways across all 35 vessels</li>
             </ul>
           </article>
         </div>
@@ -586,7 +586,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.18 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.19 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -594,8 +594,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.18</strong>
+                  <strong class="ver-num">v1.9.19</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>All-Material 3D SAT Doorway Aperture Carving</strong> across every Bridge Door, intermediate Deck Room Door, and Elevator threshold on all 35 vessels · <strong>Proportional Tween-Deck Portal Scaling &amp; Starboard-Hinged Switchback Doors</strong> swinging cleanly clear of adjacent elevator shafts.</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>Pre-Shift Wheelhouse Vertex Ordering &amp; Jamb Clearance</strong> across compact cabins (<code>#03</code> forward cabin alignment, wall-TV jamb margin, <code>#07 &amp; #14</code> Ro-Ro drive-deck thresholds, and <code>#05</code> deck sight-glass offsets) · Restricted stair-tower H-columns/girts strictly to stair flights.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Eliminated residual baked cabin wall slabs and secondary material-slot bulkhead panels inside open bridge and multi-story doorways.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.18</strong>
+                  <span class="ver-badge cyan">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -610,7 +625,7 @@
               <summary>
                 <div class="ver-title-group">
                   <strong class="ver-num">v1.9.17</strong>
-                  <span class="ver-badge cyan">Shipped</span>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1188,7 +1203,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261117d"></script>
-  <script type="module" src="./globe.js?v=20261117d"></script>
+  <script src="./app.js?v=20261117e"></script>
+  <script type="module" src="./globe.js?v=20261117e"></script>
 </body>
 </html>
