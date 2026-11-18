@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-18T12:12:25Z",
+  "updatedAtUtc": "2026-11-18T13:28:22Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.24",
-  "latestReleaseTag": "v1.9.24",
-  "buildPhase": "Release v1.9.24 Live — Planted Big-Ship Waterline, Zero Normal-Wave Bobbing, Green-Water Spray & Sea Realism",
-  "buildStatus": "Release v1.9.24 Live — Planted Big-Ship Waterline, Zero Normal-Wave Bobbing, Green-Water Spray & Sea Realism",
+  "activeVersion": "v1.9.25",
+  "latestReleaseTag": "v1.9.25",
+  "buildPhase": "Release v1.9.25 Live — Interactive Overhead CCTV PTZ Controls, 1.62x Open-Ocean Fetch Swells, 50% Cabin Wave Insulation & Steady 1P Cameras",
+  "buildStatus": "Release v1.9.25 Live — Interactive Overhead CCTV PTZ Controls, 1.62x Open-Ocean Fetch Swells, 50% Cabin Wave Insulation & Steady 1P Cameras",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1925-cctv-ptz-open-ocean-fetch-cabin-audio-steady-1p",
+      "timestampUtc": "2026-11-18T13:28:22Z",
+      "version": "v1.9.25",
+      "summary": "Published TrueHelm v1.9.25 Live Release (1-Click In-Launcher Update): Interactive Overhead CCTV PTZ Camera Controls (All 4 Monitors), 1.62x Open-Ocean Deep-Water Fetch Swells, 50% Enclosed-Cabin Wave Acoustic Insulation & Big-Wave Slam Gating, & Steady Small-Boat 1st-Person Cameras Across All 35 Vessels.",
+      "added": [
+        "Interactive UP / DOWN / LEFT / RIGHT (+ center RST) PTZ camera D-pads on all 4 overhead bridge CCTV monitors (BOW CAM 01, PORT CAM 02, STBD CAM 03, STERN CAM 04) — click to step 5° or hold to pan/tilt smoothly at 40°/sec in Desktop 1st-person & OpenXR VR",
+        "Live on-screen PTZ pan/tilt angle telemetry, zero-lag AmberGold crosshair & OpenXR VR fingertip cursor feedback, and persistent per-camera custom viewing angles saved across ship swaps and sessions",
+        "Deterministic 1.62x open-ocean deep-water fetch wave boost (>= 3.5 km offshore, 100% synced in multiplayer) — building larger rolling ocean swells out at sea while keeping port approaches and harbor basins (<= 1.15 km) calm and sheltered"
+      ],
+      "changed": [
+        "Added 50% enclosed-cabin acoustic insulation across all 35 vessels — wave-splashing, surf-slap, spray-hiss, and heavy bow-slam audio play 50% quieter inside enclosed bridges/rooms in Desktop 1P & OpenXR VR and return smoothly to 100% volume in 3rd-person or when walking outside onto open decks",
+        "Gated hard sub-bass bow-slam impact thuds strictly to genuine big waves and steep external ship wakes so smooth cruising in calm or moderate seas stays free of false slam impacts"
+      ],
+      "removed": [
+        "Eliminated rapid 1st-person camera vertical heave-lag wiggling on small coastal boats (#01–#07) so 1st-person helm views ride as smoothly and steadily as 3rd-person"
+      ]
+    },
     {
       "id": "milestone-v1924-planted-big-ship-waterline-zero-wave-bobbing",
       "timestampUtc": "2026-11-18T12:12:25Z",
@@ -571,10 +589,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.24",
+      "version": "v1.9.25",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Interactive UP / DOWN / LEFT / RIGHT (+ center RST) PTZ camera D-pads on all 4 overhead bridge CCTV monitors (BOW CAM 01, PORT CAM 02, STBD CAM 03, STERN CAM 04) — click to step 5° or hold to pan/tilt smoothly at 40°/sec in Desktop 1st-person & OpenXR VR",
+        "Live on-screen PTZ pan/tilt angle telemetry, zero-lag AmberGold crosshair & OpenXR VR fingertip cursor feedback, and persistent per-camera custom viewing angles saved across ship swaps and sessions",
+        "Deterministic 1.62x open-ocean deep-water fetch wave boost (>= 3.5 km offshore, 100% synced in multiplayer) — building larger rolling ocean swells out at sea while keeping port approaches and harbor basins (<= 1.15 km) calm and sheltered"
+      ],
+      "changed": [
+        "Added 50% enclosed-cabin acoustic insulation across all 35 vessels — wave-splashing, surf-slap, spray-hiss, and heavy bow-slam audio play 50% quieter inside enclosed bridges/rooms in Desktop 1P & OpenXR VR and return smoothly to 100% volume in 3rd-person or when walking outside onto open decks",
+        "Gated hard sub-bass bow-slam impact thuds strictly to genuine big waves and steep external ship wakes so smooth cruising in calm or moderate seas stays free of false slam impacts"
+      ],
+      "removed": [
+        "Eliminated rapid 1st-person camera vertical heave-lag wiggling on small coastal boats (#01–#07) so 1st-person helm views ride as smoothly and steadily as 3rd-person"
+      ]
+    },
+    {
+      "version": "v1.9.24",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Long-ship wavelength hydrostatics filter across medium and large ships (#08–#35, 74m–400m) — heavy displacement hulls slice rock-steady straight through normal ocean chop (< 1.5 cm vertical bob, zero wave-hit pitch bounce) while preserving heavy slow pitch/roll in severe storms",
         "Deeply planted lower-hull forefoot waterline tracking across all displacement freighters, tankers, liners, and megaships (#08 MV Ocean Adventure through 400m ULCVs) at full cruising speed",
