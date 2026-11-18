@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-18T06:26:38Z",
+  "updatedAtUtc": "2026-11-18T07:57:39Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.22",
-  "latestReleaseTag": "v1.9.22",
-  "buildPhase": "Release v1.9.22 Live — Stem-to-Stern Whole-Ship Walkability, Multiplayer 3D Mooring & 60 FPS STS Crane Sync, & Proportional Big-Ship Cabin Lounges",
-  "buildStatus": "Release v1.9.22 Live — Stem-to-Stern Whole-Ship Walkability, Multiplayer 3D Mooring & 60 FPS STS Crane Sync, & Proportional Big-Ship Cabin Lounges",
+  "activeVersion": "v1.9.23",
+  "latestReleaseTag": "v1.9.23",
+  "buildPhase": "Release v1.9.23 Live — Naval Hydrodynamics Overhaul, Green-Water Surge & Scuppers, Windshield Sea-Spray, Quay Wave Reflection & Shallow Sediment Plumes",
+  "buildStatus": "Release v1.9.23 Live — Naval Hydrodynamics Overhaul, Green-Water Surge & Scuppers, Windshield Sea-Spray, Quay Wave Reflection & Shallow Sediment Plumes",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1923-naval-hydrodynamics-green-water-spray-acoustics",
+      "timestampUtc": "2026-11-18T07:57:39Z",
+      "version": "v1.9.23",
+      "summary": "Published TrueHelm v1.9.23 Live Release (1-Click In-Launcher Update): Naval Hydrodynamics Overhaul (#08–#35 Multi-Station Buoyancy, Whipping, Prop Walk/Cavitation, Tidal & Bernoulli), Green-Water Deck Surge & Scuppers, 1–3m Wet-Hull Band, Windshield Sea-Spray, Shallow Sediment Plumes, Quay Wave Reflection, Sub-Bass Bow-Slam Acoustics, & Instant Classic v1.9.22 Toggle Across All 35 Vessels.",
+      "added": [
+        "Green-water forecastle deck surge & 8 port/starboard scupper runoff streams, 1–3m conformal glossy waterline wet-hull band (~4s drying hysteresis), and bow-slam 3D salt-spray droplets on bridge windshields even on sunny windy days — all synced across multiplayer",
+        "Dynamic 0–1.5 kt wave-slap foam & moored pier-to-hull fender slosh, analytical concrete quay standing-wave clapotis reflection, sheltered harbor & >= 180m hull leeward wave shadowing, and churned turquoise-tan shallow-water sediment plumes (UKC < 2.0m)",
+        "Deterministic shared-clock tidal/channel currents, concrete quay & ship-to-ship passing Bernoulli suction/bow-cushion, 48 kHz sub-bass metallic bow-slam thuds + cavitation rumble, and an instant [SEA REALISM: V1.9.23 ENHANCED / CLASSIC V1.9.22] toggle in Settings & Bridge Monitor 7"
+      ],
+      "changed": [
+        "Extended 24-station coupled pitch-heave-roll Wagner buoyancy, 1.62–2.85 Hz structural flexural hull whipping on heavy head-sea slams, transverse propeller walk, and wave-trough surface ventilation/cavitation across medium and large ships (#08–#35)",
+        "Upgraded hull-volume water masking from an inner 1P rectangle to a true tapered hull waterline contour across all 1st-person, stem-to-stern walk, OpenXR VR, and 3rd-person cameras (plus nearby remote multiplayer hulls, while keeping submerged Flo-Flo well decks naturally flooded)"
+      ],
+      "removed": [
+        "Eliminated dead waterline seams at 0.0–1.5 kts, storm wave crests clipping inside dry cargo holds in 1P deck-walk or 3rd-person views, uniform topside hull wetness gloss, and silent/un-sprayed sunny head-sea bow slams"
+      ]
+    },
     {
       "id": "milestone-v1922-whole-ship-walk-mp-mooring-crane-cabin-lounge",
       "timestampUtc": "2026-11-18T06:26:38Z",
@@ -535,10 +553,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.22",
+      "version": "v1.9.23",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Green-water forecastle deck surge & 8 port/starboard scupper runoff streams, 1–3m conformal glossy waterline wet-hull band (~4s drying hysteresis), and bow-slam 3D salt-spray droplets on bridge windshields even on sunny windy days — all synced across multiplayer",
+        "Dynamic 0–1.5 kt wave-slap foam & moored pier-to-hull fender slosh, analytical concrete quay standing-wave clapotis reflection, sheltered harbor & >= 180m hull leeward wave shadowing, and churned turquoise-tan shallow-water sediment plumes (UKC < 2.0m)",
+        "Deterministic shared-clock tidal/channel currents, concrete quay & ship-to-ship passing Bernoulli suction/bow-cushion, 48 kHz sub-bass metallic bow-slam thuds + cavitation rumble, and an instant [SEA REALISM: V1.9.23 ENHANCED / CLASSIC V1.9.22] toggle in Settings & Bridge Monitor 7"
+      ],
+      "changed": [
+        "Extended 24-station coupled pitch-heave-roll Wagner buoyancy, 1.62–2.85 Hz structural flexural hull whipping on heavy head-sea slams, transverse propeller walk, and wave-trough surface ventilation/cavitation across medium and large ships (#08–#35)",
+        "Upgraded hull-volume water masking from an inner 1P rectangle to a true tapered hull waterline contour across all 1st-person, stem-to-stern walk, OpenXR VR, and 3rd-person cameras (plus nearby remote multiplayer hulls, while keeping submerged Flo-Flo well decks naturally flooded)"
+      ],
+      "removed": [
+        "Eliminated dead waterline seams at 0.0–1.5 kts, storm wave crests clipping inside dry cargo holds in 1P deck-walk or 3rd-person views, uniform topside hull wetness gloss, and silent/un-sprayed sunny head-sea bow slams"
+      ]
+    },
+    {
+      "version": "v1.9.22",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Mesh-measured 64-station longitudinal hull & bulwark walk contour across all 35 vessels — walk all the way forward into the tapered bow forecastle nose (past windlasses & anchor chains), slide smoothly along curved bow rails, traverse port/starboard gangways to the stern fantail taffrail, and step across full-width aft bridge balconies & connected bridge wings",
         "Full multiplayer dock mooring & 60 FPS STS gantry crane cargo sync (Direct UDP + Firebase RTDB) — moored remote player vessels render 6 sagged 3D catenary mooring hawsers to concrete quay bollards, and port 54.92m STS gantry cranes animate trolley travel, hoist cables, spreader lowering, and progressive 3D container placement onto remote ships"
