@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-18T00:55:00Z",
+  "updatedAtUtc": "2026-11-18T06:26:38Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.21",
-  "latestReleaseTag": "v1.9.21",
-  "buildPhase": "Release v1.9.21 Live — Clean 8-Monitor Wheelhouse Interior Overhaul (Zero Baked Static Monitor Slabs or Side Pedestals Across All 35 Vessels)",
-  "buildStatus": "Release v1.9.21 Live — Clean 8-Monitor Wheelhouse Interior Overhaul (Zero Baked Static Monitor Slabs or Side Pedestals Across All 35 Vessels)",
+  "activeVersion": "v1.9.22",
+  "latestReleaseTag": "v1.9.22",
+  "buildPhase": "Release v1.9.22 Live — Stem-to-Stern Whole-Ship Walkability, Multiplayer 3D Mooring & 60 FPS STS Crane Sync, & Proportional Big-Ship Cabin Lounges",
+  "buildStatus": "Release v1.9.22 Live — Stem-to-Stern Whole-Ship Walkability, Multiplayer 3D Mooring & 60 FPS STS Crane Sync, & Proportional Big-Ship Cabin Lounges",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1922-whole-ship-walk-mp-mooring-crane-cabin-lounge",
+      "timestampUtc": "2026-11-18T06:26:38Z",
+      "version": "v1.9.22",
+      "summary": "Published TrueHelm v1.9.22 Live Release (1-Click In-Launcher Update): True Stem-to-Stern Whole-Ship Walkability (Bow Forecastle Tip, Stern Fantail & Bridge Wings), Multiplayer Dock Mooring Lines & 60 FPS STS Gantry Crane Sync, Clean Companionways, Proportional Big-Ship Cabin Lounges, & Zero-Lag Monitor Cursors Across All 35 Vessels.",
+      "added": [
+        "Mesh-measured 64-station longitudinal hull & bulwark walk contour across all 35 vessels — walk all the way forward into the tapered bow forecastle nose (past windlasses & anchor chains), slide smoothly along curved bow rails, traverse port/starboard gangways to the stern fantail taffrail, and step across full-width aft bridge balconies & connected bridge wings",
+        "Full multiplayer dock mooring & 60 FPS STS gantry crane cargo sync (Direct UDP + Firebase RTDB) — moored remote player vessels render 6 sagged 3D catenary mooring hawsers to concrete quay bollards, and port 54.92m STS gantry cranes animate trolley travel, hoist cables, spreader lowering, and progressive 3D container placement onto remote ships"
+      ],
+      "changed": [
+        "Scaled Cabin YouTube TVs & lounge sofas proportionally with vessel & wheelhouse size across all 35 bridges — 68\"–85\" widescreen TVs + warm-oak credenzas & 3-seat sofas on medium ships (#08–#14), 88\"–108\" cinema TVs on large ships, and 118\"–136\" flagship wall TVs on megaships",
+        "Unified 1st-person & OpenXR VR 3D monitor cursors for zero frame lag — crisp single HUD crosshair turning AmberGold with corner brackets on Desktop and live 90/120 Hz unlit 3D fingertip proximity ring in VR without redundant 3K RenderTarget cursor redraws"
+      ],
+      "removed": [
+        "Removed white parapet walls blocking companionway stair entrances, stripped legacy baked diagonal exterior staircases on port & starboard aft deckhouses, eliminated white-vs-wood floor Z-fighting inside intermediate elevator rooms, and permanently removed the floating horn sphere artifact"
+      ]
+    },
     {
       "id": "milestone-v1921-clean-8-monitor-wheelhouse-interior-purge",
       "timestampUtc": "2026-11-18T00:55:00Z",
@@ -518,10 +535,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.21",
+      "version": "v1.9.22",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Mesh-measured 64-station longitudinal hull & bulwark walk contour across all 35 vessels — walk all the way forward into the tapered bow forecastle nose (past windlasses & anchor chains), slide smoothly along curved bow rails, traverse port/starboard gangways to the stern fantail taffrail, and step across full-width aft bridge balconies & connected bridge wings",
+        "Full multiplayer dock mooring & 60 FPS STS gantry crane cargo sync (Direct UDP + Firebase RTDB) — moored remote player vessels render 6 sagged 3D catenary mooring hawsers to concrete quay bollards, and port 54.92m STS gantry cranes animate trolley travel, hoist cables, spreader lowering, and progressive 3D container placement onto remote ships"
+      ],
+      "changed": [
+        "Scaled Cabin YouTube TVs & lounge sofas proportionally with vessel & wheelhouse size across all 35 bridges — 68\"–85\" widescreen TVs + warm-oak credenzas & 3-seat sofas on medium ships (#08–#14), 88\"–108\" cinema TVs on large ships, and 118\"–136\" flagship wall TVs on megaships",
+        "Unified 1st-person & OpenXR VR 3D monitor cursors for zero frame lag — crisp single HUD crosshair turning AmberGold with corner brackets on Desktop and live 90/120 Hz unlit 3D fingertip proximity ring in VR without redundant 3K RenderTarget cursor redraws"
+      ],
+      "removed": [
+        "Removed white parapet walls blocking companionway stair entrances, stripped legacy baked diagonal exterior staircases on port & starboard aft deckhouses, eliminated white-vs-wood floor Z-fighting inside intermediate elevator rooms, and permanently removed the floating horn sphere artifact"
+      ]
+    },
+    {
+      "version": "v1.9.21",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "3D Separating Axis Theorem (SAT) wheelhouse interior cavity verifier & GPU/CPU LOD0 mesh audit across all 35 vessels — guaranteeing strictly the 8 live interactive 3K Bridge MFD screens (+ 4 overhead hull cameras & Cabin YouTube TV) inside every wheelhouse",
         "Dedicated interior bridge material-slot & wall-hugging prop classification preserving 100% of exterior bridge-wing lifebuoys, navigation lights, window mullions, and painted cabin shells (#03 & #08)"
