@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-18T07:57:39Z",
+  "updatedAtUtc": "2026-11-18T12:12:25Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.23",
-  "latestReleaseTag": "v1.9.23",
-  "buildPhase": "Release v1.9.23 Live — Naval Hydrodynamics Overhaul, Green-Water Surge & Scuppers, Windshield Sea-Spray, Quay Wave Reflection & Shallow Sediment Plumes",
-  "buildStatus": "Release v1.9.23 Live — Naval Hydrodynamics Overhaul, Green-Water Surge & Scuppers, Windshield Sea-Spray, Quay Wave Reflection & Shallow Sediment Plumes",
+  "activeVersion": "v1.9.24",
+  "latestReleaseTag": "v1.9.24",
+  "buildPhase": "Release v1.9.24 Live — Planted Big-Ship Waterline, Zero Normal-Wave Bobbing, Green-Water Spray & Sea Realism",
+  "buildStatus": "Release v1.9.24 Live — Planted Big-Ship Waterline, Zero Normal-Wave Bobbing, Green-Water Spray & Sea Realism",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1924-planted-big-ship-waterline-zero-wave-bobbing",
+      "timestampUtc": "2026-11-18T12:12:25Z",
+      "version": "v1.9.24",
+      "summary": "Published TrueHelm v1.9.24 Live Release (1-Click In-Launcher Update): Planted Heavy-Displacement Waterline & Zero Wave-Hit Bobbing on Medium & Large Ships (#08–#35) — Rock-Steady Normal-Wave Slicing With Full Spray, Wet-Band & Storm Realism Intact.",
+      "added": [
+        "Long-ship wavelength hydrostatics filter across medium and large ships (#08–#35, 74m–400m) — heavy displacement hulls slice rock-steady straight through normal ocean chop (< 1.5 cm vertical bob, zero wave-hit pitch bounce) while preserving heavy slow pitch/roll in severe storms",
+        "Deeply planted lower-hull forefoot waterline tracking across all displacement freighters, tankers, liners, and megaships (#08 MV Ocean Adventure through 400m ULCVs) at full cruising speed",
+        "Synchronized remote multiplayer heavy-ship heave, pitch & roll wavelength smoothing across Direct UDP and US Ocean Server telemetry so passing big ships glide smoothly through normal seas"
+      ],
+      "changed": [
+        "Decoupled visual tapered interior hull water masking strictly onto rendered ocean mesh vertices so physical buoyancy height queries always sample the true ocean surface across local and remote multiplayer vessels",
+        "Unified medium and large vessels (#08–#35) onto a single critically-damped hydrostatic heave spring (Zeta >= 0.98, 6.0–9.0s period) while preserving 100% of bow spray, sunny windshield salt droplets, 1–3m wet-hull bands, storm green-water surge, and sub-bass wave-impact acoustics"
+      ],
+      "removed": [
+        "Eliminated upward wave-hit hull bobbing, secondary multi-station heave/pitch overrides, high-frequency structural whipping vertical offsets, and forefoot lift out of normal waves on medium and large ships (#08–#35)"
+      ]
+    },
     {
       "id": "milestone-v1923-naval-hydrodynamics-green-water-spray-acoustics",
       "timestampUtc": "2026-11-18T07:57:39Z",
@@ -553,10 +571,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.23",
+      "version": "v1.9.24",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Long-ship wavelength hydrostatics filter across medium and large ships (#08–#35, 74m–400m) — heavy displacement hulls slice rock-steady straight through normal ocean chop (< 1.5 cm vertical bob, zero wave-hit pitch bounce) while preserving heavy slow pitch/roll in severe storms",
+        "Deeply planted lower-hull forefoot waterline tracking across all displacement freighters, tankers, liners, and megaships (#08 MV Ocean Adventure through 400m ULCVs) at full cruising speed",
+        "Synchronized remote multiplayer heavy-ship heave, pitch & roll wavelength smoothing across Direct UDP and US Ocean Server telemetry so passing big ships glide smoothly through normal seas"
+      ],
+      "changed": [
+        "Decoupled visual tapered interior hull water masking strictly onto rendered ocean mesh vertices so physical buoyancy height queries always sample the true ocean surface across local and remote multiplayer vessels",
+        "Unified medium and large vessels (#08–#35) onto a single critically-damped hydrostatic heave spring (Zeta >= 0.98, 6.0–9.0s period) while preserving 100% of bow spray, sunny windshield salt droplets, 1–3m wet-hull bands, storm green-water surge, and sub-bass wave-impact acoustics"
+      ],
+      "removed": [
+        "Eliminated upward wave-hit hull bobbing, secondary multi-station heave/pitch overrides, high-frequency structural whipping vertical offsets, and forefoot lift out of normal waves on medium and large ships (#08–#35)"
+      ]
+    },
+    {
+      "version": "v1.9.23",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Green-water forecastle deck surge & 8 port/starboard scupper runoff streams, 1–3m conformal glossy waterline wet-hull band (~4s drying hysteresis), and bow-slam 3D salt-spray droplets on bridge windshields even on sunny windy days — all synced across multiplayer",
         "Dynamic 0–1.5 kt wave-slap foam & moored pier-to-hull fender slosh, analytical concrete quay standing-wave clapotis reflection, sheltered harbor & >= 180m hull leeward wave shadowing, and churned turquoise-tan shallow-water sediment plumes (UKC < 2.0m)",
