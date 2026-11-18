@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-17T22:15:00Z",
+  "updatedAtUtc": "2026-11-18T00:12:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.19",
-  "latestReleaseTag": "v1.9.19",
-  "buildPhase": "Release v1.9.19 Live — Unobstructed 3D Doorway, Cabin & Elevator Threshold Clearance Across All 35 Vessels & Every Deck Level",
-  "buildStatus": "Release v1.9.19 Live — Unobstructed 3D Doorway, Cabin & Elevator Threshold Clearance Across All 35 Vessels & Every Deck Level",
+  "activeVersion": "v1.9.20",
+  "latestReleaseTag": "v1.9.20",
+  "buildPhase": "Release v1.9.20 Live — Pristine 3D Exterior Superstructures, Internalized Multi-Story Ship Elevators & Flush Marine-White Companionway Stairs Across All 35 Vessels",
+  "buildStatus": "Release v1.9.20 Live — Pristine 3D Exterior Superstructures, Internalized Multi-Story Ship Elevators & Flush Marine-White Companionway Stairs Across All 35 Vessels",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1920-pristine-superstructures-internal-elevator-flush-stairs",
+      "timestampUtc": "2026-11-18T00:12:00Z",
+      "version": "v1.9.20",
+      "summary": "Published TrueHelm v1.9.20 Live Release (1-Click In-Launcher Update): 100% Pristine 3D Exterior Superstructure Restoration, Internalized Multi-Story Ship Elevators (Flush Bridge & Deck-Room Doors), & Flush Marine-White Companionway Stairs Across All 35 Vessels.",
+      "added": [
+        "100% internalized multi-story ship elevator architecture across all 27 vessels taller than 3 stories — sliding bi-parting doors and [▲ UP / ▼ DOWN] call panels sit flush inside the starboard-aft Bridge bulkhead and open directly into every lower deck's lit furnished room (Floor 1..N-1) with zero rooftop or exterior hull protrusions",
+        "Compact marine-white stringer & teak-tread companionway staircases measured directly to each vessel's real stepped aft deckhouse profile — hugging flush inboard of bridge wings across all 35 vessels while preserving full 360° cargo-deck loops and 307/307 clear doorways"
+      ],
+      "changed": [
+        "Replaced broad aft-superstructure mesh stripping with surgical doorway-only 3D SAT aperture cuts and strictly inboard (>= 48 cm inside exterior skin) room/shaft cavity carving — restoring 100% solid white exterior superstructure walls, aft bridge windows, port/starboard bridge wings, lifebuoys, and SOLAS lifeboat davits across #08 MV Ocean Adventure and the entire 35-ship fleet",
+        "Framed center aft Bridge doorways cleanly with matching white marine superstructure trim so wheelhouse exteriors blend seamlessly in 3rd-person daylight & night views"
+      ],
+      "removed": [
+        "Eliminated exterior rooftop elevator housings, cantilevered outboard black catwalk platforms, exposed industrial scaffolding towers, and over-wide aft superstructure mesh cutouts"
+      ]
+    },
     {
       "id": "milestone-v1919-all-ship-doorway-aperture-clearance",
       "timestampUtc": "2026-11-17T22:15:00Z",
@@ -484,10 +501,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.19",
+      "version": "v1.9.20",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "100% internalized multi-story ship elevator architecture across all 27 vessels taller than 3 stories — sliding bi-parting doors and [▲ UP / ▼ DOWN] call panels sit flush inside the starboard-aft Bridge bulkhead and open directly into every lower deck's lit furnished room (Floor 1..N-1) with zero rooftop or exterior hull protrusions",
+        "Compact marine-white stringer & teak-tread companionway staircases measured directly to each vessel's real stepped aft deckhouse profile — hugging flush inboard of bridge wings across all 35 vessels while preserving full 360° cargo-deck loops and 307/307 clear doorways"
+      ],
+      "changed": [
+        "Replaced broad aft-superstructure mesh stripping with surgical doorway-only 3D SAT aperture cuts and strictly inboard (>= 48 cm inside exterior skin) room/shaft cavity carving — restoring 100% solid white exterior superstructure walls, aft bridge windows, port/starboard bridge wings, lifebuoys, and SOLAS lifeboat davits across #08 MV Ocean Adventure and the entire 35-ship fleet",
+        "Framed center aft Bridge doorways cleanly with matching white marine superstructure trim so wheelhouse exteriors blend seamlessly in 3rd-person daylight & night views"
+      ],
+      "removed": [
+        "Eliminated exterior rooftop elevator housings, cantilevered outboard black catwalk platforms, exposed industrial scaffolding towers, and over-wide aft superstructure mesh cutouts"
+      ]
+    },
+    {
+      "version": "v1.9.19",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "All-material 3D Separating Axis Theorem (SAT) doorway aperture carving & GPU/CPU vertex-buffer verification across every Bridge Door, intermediate Deck Room Door, and Elevator threshold across all 35 vessels",
         "Proportional tween-deck doorway/room/elevator portal scaling and starboard-jamb hinge geometry on aft-switchback deck doors so open cabin doors swing cleanly clear of adjacent elevator entrances"
