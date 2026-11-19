@@ -1,14 +1,50 @@
 {
-  "updatedAtUtc": "2026-11-18T13:28:22Z",
+  "updatedAtUtc": "2026-11-19T04:16:34Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.25",
-  "latestReleaseTag": "v1.9.25",
-  "buildPhase": "Release v1.9.25 Live — Interactive Overhead CCTV PTZ Controls, 1.62x Open-Ocean Fetch Swells, 50% Cabin Wave Insulation & Steady 1P Cameras",
-  "buildStatus": "Release v1.9.25 Live — Interactive Overhead CCTV PTZ Controls, 1.62x Open-Ocean Fetch Swells, 50% Cabin Wave Insulation & Steady 1P Cameras",
+  "activeVersion": "v1.9.27",
+  "latestReleaseTag": "v1.9.27",
+  "buildPhase": "Release v1.9.27 Live — 918 Wide Coral Reefs, 3D Deck Fluid & Frothy Weir Scuppers, Dock Wake-Slap, Photoreal Windshield Drops, Individual Volumes & Saved-Ocean 60 FPS Startup",
+  "buildStatus": "Release v1.9.27 Live — 918 Wide Coral Reefs, 3D Deck Fluid & Frothy Weir Scuppers, Dock Wake-Slap, Photoreal Windshield Drops, Individual Volumes & Saved-Ocean 60 FPS Startup",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1927-saved-ocean-startup-photoreal-droplets-volumes-parallel-dock-wake-slap-wide-reefs",
+      "timestampUtc": "2026-11-19T04:16:34Z",
+      "version": "v1.9.27",
+      "summary": "Published TrueHelm v1.9.27 Live Release (1-Click In-Launcher Update): Saved-Ocean 60+ FPS Startup Intro, Desktop Seated Armrest Pitch, Photorealistic Optical Windshield Droplets, Individual Horn/Engine/YouTube Volume Sliders, Parallel Broadside Docking, 3D Boat-Wake Quay Slap & Reflected Wakes, Frothy Weir Scuppers, & 918 Wide Open-Ocean Coral Reefs Across All 35 Vessels.",
+      "added": [
+        "Individual persistent 0%-100% volume sliders for Ship Horn, Boat Engine, and Cabin YouTube TV in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS]",
+        "Photorealistic 3D boat-wake-to-concrete-dock wave-slap physics (128-cell Bagnold 1D wall run-up solver, overturning 3D whitewater splash curtains, 7.5s wet concrete soak bands, and specular reflected diamond clapotis wakes)",
+        "918 wide coral reefs (including 331 inter-island open-ocean barrier reefs, atolls, and banks spanning 0.32 km to 1.68 km wide with 6.8 km visibility and turquoise shallow-water color grading)"
+      ],
+      "changed": [
+        "Startup opening cinematic now showcases returning captains' saved vessels at their exact last saved ocean or port location (complete with saved 3D cargo and moored/anchored state) at a silky-smooth 60+ FPS from frame 1, and widens Desktop 1st-person seated pitch to -86° to easily click [STAND & WALK] on all 35 vessels (OpenXR VR untouched)",
+        "Upgraded bridge windshield spray & rain to single-draw-call optical meniscus water droplets (dark TIR rims, caustic crescents & HDR sun glints), enforced realistic side-by-side parallel broadside docking (preserving stern-ramp mooring on Ro-Ro ferries #07/#14/#18), and upgraded bow wave flooding + scuppers into rectangular weir sheets breaking into frothy whitewater ribbons"
+      ],
+      "removed": [
+        "Eliminated frame-1 GPU stalls during the startup intro, milky opaque cartoon octagon windshield drops, bow-in perpendicular docking on standard cargo hulls, smooth cyan plastic-tube scupper streams, and barren reef-free open-ocean stretches between islands"
+      ]
+    },
+    {
+      "id": "milestone-v1926-3d-deck-fluid-scupper-waterfalls-mp-walk-own-boat-join",
+      "timestampUtc": "2026-11-19T02:21:29Z",
+      "version": "v1.9.26",
+      "summary": "Published TrueHelm v1.9.26 Live Release (1-Click In-Launcher Update): 3D Shallow-Water Gravity Deck Fluid Simulation, 4 Physical Scupper Holes & Curved 3D Ocean Waterfalls With Size-Scaled Splash Ripples, Starter-Boat Wave Thump, Live Multiplayer Whole-Boat Walk Sync, & Own-Boat Company Join Across All 35 Vessels.",
+      "added": [
+        "Real 180 Hz 24x16 Saint-Venant shallow-water gravity deck fluid solver & 4 physical brushed-steel freeing-port scupper openings (2 Port, 2 Starboard) across all 35 vessels — waves overtopping the bow slosh across the deck under gravity and drain through the scupper holes as curved 3D cylindrical translucent waterfalls",
+        "Size-scaled dynamic ocean surface splash crowns, churning whitewater boil, and expanding circular gravity-wave ripples where 3D scupper waterfalls plunge into the sea — synced end-to-end across multiplayer (UDP + Firebase RTDB)",
+        "Live multiplayer whole-boat ship-walk avatar sync (1.25 km draw distance) — nearby ships see captains and co-op crewmates walking across balconies, exterior companionway stairs, rooms, bow forecastle, stern fantail, cabin sofa, and pool table"
+      ],
+      "changed": [
+        "Restored a warm, dampened (~0.40x) wave-landing thump specifically on the small starter boats (#03 18m & #01 22m) when cresting and dropping down waves while keeping medium and large ships (#04–#35) free of thumps in normal chop",
+        "Updated [JOIN COMPANY] in [P] and Bridge Monitor 7 to default to SailMyOwnShip (keeping your own boat with explicit [BOARD CO-OP SHIP] / [MY OWN SHIP] buttons and <= 85m physical boarding guards so separate-boat company members never ghost-spawn onto each other's hulls)"
+      ],
+      "removed": [
+        "Deleted 100% of flat 2D white scupper ribbon strips on local and remote vessels, froze-at-helm remote captain poses when walking on deck, and unwanted co-op ghost avatar cross-spawning when joining an open company on separate boats"
+      ]
+    },
     {
       "id": "milestone-v1925-cctv-ptz-open-ocean-fetch-cabin-audio-steady-1p",
       "timestampUtc": "2026-11-18T13:28:22Z",
@@ -589,10 +625,46 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.25",
+      "version": "v1.9.27",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Individual persistent 0%-100% volume sliders for Ship Horn, Boat Engine, and Cabin YouTube TV in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS]",
+        "Photorealistic 3D boat-wake-to-concrete-dock wave-slap physics (128-cell Bagnold 1D wall run-up solver, overturning 3D whitewater splash curtains, 7.5s wet concrete soak bands, and specular reflected diamond clapotis wakes)",
+        "918 wide coral reefs (including 331 inter-island open-ocean barrier reefs, atolls, and banks spanning 0.32 km to 1.68 km wide with 6.8 km visibility and turquoise shallow-water color grading)"
+      ],
+      "changed": [
+        "Startup opening cinematic now showcases returning captains' saved vessels at their exact last saved ocean or port location (complete with saved 3D cargo and moored/anchored state) at a silky-smooth 60+ FPS from frame 1, and widens Desktop 1st-person seated pitch to -86° to easily click [STAND & WALK] on all 35 vessels (OpenXR VR untouched)",
+        "Upgraded bridge windshield spray & rain to single-draw-call optical meniscus water droplets (dark TIR rims, caustic crescents & HDR sun glints), enforced realistic side-by-side parallel broadside docking (preserving stern-ramp mooring on Ro-Ro ferries #07/#14/#18), and upgraded bow wave flooding + scuppers into rectangular weir sheets breaking into frothy whitewater ribbons"
+      ],
+      "removed": [
+        "Eliminated frame-1 GPU stalls during the startup intro, milky opaque cartoon octagon windshield drops, bow-in perpendicular docking on standard cargo hulls, smooth cyan plastic-tube scupper streams, and barren reef-free open-ocean stretches between islands"
+      ]
+    },
+    {
+      "version": "v1.9.26",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
+      "added": [
+        "Real 180 Hz 24x16 Saint-Venant shallow-water gravity deck fluid solver & 4 physical brushed-steel freeing-port scupper openings (2 Port, 2 Starboard) across all 35 vessels — waves overtopping the bow slosh across the deck under gravity and drain through the scupper holes as curved 3D cylindrical translucent waterfalls",
+        "Size-scaled dynamic ocean surface splash crowns, churning whitewater boil, and expanding circular gravity-wave ripples where 3D scupper waterfalls plunge into the sea — synced end-to-end across multiplayer (UDP + Firebase RTDB)",
+        "Live multiplayer whole-boat ship-walk avatar sync (1.25 km draw distance) — nearby ships see captains and co-op crewmates walking across balconies, exterior companionway stairs, rooms, bow forecastle, stern fantail, cabin sofa, and pool table"
+      ],
+      "changed": [
+        "Restored a warm, dampened (~0.40x) wave-landing thump specifically on the small starter boats (#03 18m & #01 22m) when cresting and dropping down waves while keeping medium and large ships (#04–#35) free of thumps in normal chop",
+        "Updated [JOIN COMPANY] in [P] and Bridge Monitor 7 to default to SailMyOwnShip (keeping your own boat with explicit [BOARD CO-OP SHIP] / [MY OWN SHIP] buttons and <= 85m physical boarding guards so separate-boat company members never ghost-spawn onto each other's hulls)"
+      ],
+      "removed": [
+        "Deleted 100% of flat 2D white scupper ribbon strips on local and remote vessels, froze-at-helm remote captain poses when walking on deck, and unwanted co-op ghost avatar cross-spawning when joining an open company on separate boats"
+      ]
+    },
+    {
+      "version": "v1.9.25",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Interactive UP / DOWN / LEFT / RIGHT (+ center RST) PTZ camera D-pads on all 4 overhead bridge CCTV monitors (BOW CAM 01, PORT CAM 02, STBD CAM 03, STERN CAM 04) — click to step 5° or hold to pan/tilt smoothly at 40°/sec in Desktop 1st-person & OpenXR VR",
         "Live on-screen PTZ pan/tilt angle telemetry, zero-lag AmberGold crosshair & OpenXR VR fingertip cursor feedback, and persistent per-camera custom viewing angles saved across ship swaps and sessions",
