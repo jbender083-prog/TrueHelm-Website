@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-19T04:16:34Z",
+  "updatedAtUtc": "2026-11-19T14:57:51Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.27",
-  "latestReleaseTag": "v1.9.27",
-  "buildPhase": "Release v1.9.27 Live — 918 Wide Coral Reefs, 3D Deck Fluid & Frothy Weir Scuppers, Dock Wake-Slap, Photoreal Windshield Drops, Individual Volumes & Saved-Ocean 60 FPS Startup",
-  "buildStatus": "Release v1.9.27 Live — 918 Wide Coral Reefs, 3D Deck Fluid & Frothy Weir Scuppers, Dock Wake-Slap, Photoreal Windshield Drops, Individual Volumes & Saved-Ocean 60 FPS Startup",
+  "activeVersion": "v1.9.28",
+  "latestReleaseTag": "v1.9.28",
+  "buildPhase": "Release v1.9.28 Live — Full-Hull Stem-to-Stern Deck Water & 7-Outlet Scuppers, Spinning 3D Propellers, 4,183 Whole-Map Reefs (7x Mega-Reefs), 3-Speed Multiplayer Cranes & Zero-Lag Region Streaming",
+  "buildStatus": "Release v1.9.28 Live — Full-Hull Stem-to-Stern Deck Water & 7-Outlet Scuppers, Spinning 3D Propellers, 4,183 Whole-Map Reefs (7x Mega-Reefs), 3-Speed Multiplayer Cranes & Zero-Lag Region Streaming",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1928-full-hull-deck-water-mega-reefs-propellers-3speed-cranes-fast-rescue",
+      "timestampUtc": "2026-11-19T14:57:51Z",
+      "version": "v1.9.28",
+      "summary": "Published TrueHelm v1.9.28 Live Release (1-Click In-Launcher Update): Strict True-Deck Wave Gate & Full-Hull Stem-to-Stern Deck Flow, 7-Outlet Scupper Cascades & Overhead CCTV Water, Spinning 3D Stern Propellers, 4,183 Whole-Map Reefs (7x Mega-Reefs & 1,113 Marine Animals), Zero-Lag Region Streaming, 3-Speed Multiplayer Cranes, Docking Guide Toggle, 4-Speed Wipers, Manual Night Lights, & <60s Zero-Clip Rescues Across All 35 Vessels.",
+      "added": [
+        "Full-hull 48x20 Saint-Venant stem-to-stern deck water solver with strict above-deck wave gating, 6 distributed freeing-port scuppers + stern fantail spill, Coanda hull-clinging runoff, direct 2D SWE ocean mesh wave deformation, and live deck-water rendering on all 4 Overhead Bridge CCTV Monitors",
+        "Articulated spinning 3D bronze/steel stern propellers across all 35 vessels matched to each ship's engine count (1 single-screw, 2 counter-rotating twin-screws, 3 triple-screws on Icebreaker #28, and 4 quad-screws on FLNG #34) that reverse astern",
+        "4,183 whole-map coral reefs across the entire 4,617 km ocean (including 250 7x-wider Mega-Barrier Reefs spanning 6.7-11.7 km wide and 1,113 marine animals), 3-speed port crane controls (Realistic / Medium / Fast synced per-player in multiplayer), 4-step windshield wiper speeds, and a Docking Guide Arrow & Berth Square [ON/OFF] toggle"
+      ],
+      "changed": [
+        "Thinned central Port Horizon reefs by ~70% for wide-open central sea lanes while pooling procedural reef & port streaming (< 4 ms zero-lag region transitions), intensified 3D falling rainstorms (3.2x streaks) + 3,200-droplet rain/wave-burst windshields, and smoothed keyboard [W]/[S] throttle to a gentle 1%-by-1% ramp",
+        "Moved Beam Swell Hazard alerts cleanly inside Bridge MFDs with a quiet subtle chime, tightened Rescue Tug & Fuel Boat spawns to ~380 m (< 55s arrival at realistic ~15 kt speed) with OBB hull-avoidance steering (0.0 cm player-hull clipping), and snapped concrete dock-wall wake hits flush against the pier wall"
+      ],
+      "removed": [
+        "Removed premature below-deck bow water triggers, artificial forward deck-water traps, automatic dusk/night cabin & front bow spotlight activation (now 100% manual), loud Beam Swell alarm sirens & floating 2D warning banners, overcrowded central-map reef rings, and the dark harbor line on dock-wall wakes"
+      ]
+    },
     {
       "id": "milestone-v1927-saved-ocean-startup-photoreal-droplets-volumes-parallel-dock-wake-slap-wide-reefs",
       "timestampUtc": "2026-11-19T04:16:34Z",
@@ -625,10 +643,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.27",
+      "version": "v1.9.28",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Full-hull 48x20 Saint-Venant stem-to-stern deck water solver with strict above-deck wave gating, 6 distributed freeing-port scuppers + stern fantail spill, Coanda hull-clinging runoff, direct 2D SWE ocean mesh wave deformation, and live deck-water rendering on all 4 Overhead Bridge CCTV Monitors",
+        "Articulated spinning 3D bronze/steel stern propellers across all 35 vessels matched to each ship's engine count (1 single-screw, 2 counter-rotating twin-screws, 3 triple-screws on Icebreaker #28, and 4 quad-screws on FLNG #34) that reverse astern",
+        "4,183 whole-map coral reefs across the entire 4,617 km ocean (including 250 7x-wider Mega-Barrier Reefs spanning 6.7-11.7 km wide and 1,113 marine animals), 3-speed port crane controls (Realistic / Medium / Fast synced per-player in multiplayer), 4-step windshield wiper speeds, and a Docking Guide Arrow & Berth Square [ON/OFF] toggle"
+      ],
+      "changed": [
+        "Thinned central Port Horizon reefs by ~70% for wide-open central sea lanes while pooling procedural reef & port streaming (< 4 ms zero-lag region transitions), intensified 3D falling rainstorms (3.2x streaks) + 3,200-droplet rain/wave-burst windshields, and smoothed keyboard [W]/[S] throttle to a gentle 1%-by-1% ramp",
+        "Moved Beam Swell Hazard alerts cleanly inside Bridge MFDs with a quiet subtle chime, tightened Rescue Tug & Fuel Boat spawns to ~380 m (< 55s arrival at realistic ~15 kt speed) with OBB hull-avoidance steering (0.0 cm player-hull clipping), and snapped concrete dock-wall wake hits flush against the pier wall"
+      ],
+      "removed": [
+        "Removed premature below-deck bow water triggers, artificial forward deck-water traps, automatic dusk/night cabin & front bow spotlight activation (now 100% manual), loud Beam Swell alarm sirens & floating 2D warning banners, overcrowded central-map reef rings, and the dark harbor line on dock-wall wakes"
+      ]
+    },
+    {
+      "version": "v1.9.27",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Individual persistent 0%-100% volume sliders for Ship Horn, Boat Engine, and Cabin YouTube TV in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS]",
         "Photorealistic 3D boat-wake-to-concrete-dock wave-slap physics (128-cell Bagnold 1D wall run-up solver, overturning 3D whitewater splash curtains, 7.5s wet concrete soak bands, and specular reflected diamond clapotis wakes)",
