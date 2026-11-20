@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T12:41:09Z",
+  "updatedAtUtc": "2026-11-20T15:02:51Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.34",
-  "latestReleaseTag": "v1.9.34",
-  "buildPhase": "Release v1.9.34 Live — Hanging Yokohama Dock Fender Buoys, Giant Mooring Bollards, Wind Rope Physics, Smooth Solid-Color Hulls, Seamless Bridge Desk & Exterior-Only Rain Reflections",
-  "buildStatus": "Release v1.9.34 Live — Hanging Yokohama Dock Fender Buoys, Giant Mooring Bollards, Wind Rope Physics, Smooth Solid-Color Hulls, Seamless Bridge Desk & Exterior-Only Rain Reflections",
+  "activeVersion": "v1.9.35",
+  "latestReleaseTag": "v1.9.35",
+  "buildPhase": "Release v1.9.35 Live — Solid Undocked Yokohama Dock Buoy Collision, Concrete-Draped Mooring Ropes, Zero-Flicker 1P/VR Bridge Desk & Storm Decks, Watertight 35-Ship Floors, 2-Axis Anchor Pendulum Physics & +20% Marine Wildlife",
+  "buildStatus": "Release v1.9.35 Live — Solid Undocked Yokohama Dock Buoy Collision, Concrete-Draped Mooring Ropes, Zero-Flicker 1P/VR Bridge Desk & Storm Decks, Watertight 35-Ship Floors, 2-Axis Anchor Pendulum Physics & +20% Marine Wildlife",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1935-undocked-buoys-draped-pier-ropes-zero-flicker-desk-storm-decks-watertight-floors-anchor-pendulum-wildlife20pct",
+      "timestampUtc": "2026-11-20T15:02:51Z",
+      "version": "v1.9.35",
+      "summary": "Published TrueHelm v1.9.35 Live Release (1-Click In-Launcher Update): Solid Undocked Yokohama Dock Buoy Collision, Concrete-Draped Mooring Ropes, Zero-Flicker 1P/VR Bridge Desk & Storm Decks, Watertight 35-Ship Floors, 2-Axis Anchor Pendulum Physics & +20% Marine Wildlife.",
+      "added": [
+        "Solid free-sailing Yokohama pneumatic dock fender buoy collision & live berthing squish across all 35 vessels — approaching ships physically contact, elastically compress, and rebound off hanging port fender buoys before tying mooring lines, springing cleanly back to round when pulling clear",
+        "2-axis damped gravity & hydrodynamic rigid-body anchor pendulum physics — suspended anchors hang plumb-vertical with natural inertial swing in air and water during dropping and weighing, embed flukes smoothly on the seabed, and fair cleanly home into the hawsepipe cradle",
+        "+20% open-ocean, archipelago & coral-reef wildlife population boost (whales, orcas, dolphins, sharks, manta rays, sea turtles, schooling fish, and seabirds) swimming closer to the sunlit surface with more frequent voyage sightings"
+      ],
+      "changed": [
+        "Upgraded both local and remote multiplayer mooring hawsers with 2-span concrete-coping-edge draped physics so slacked ropes rest cleanly over the concrete pier edge and apron on their way to the bollards",
+        "Rebuilt cockpit hardware meshes with strictly single-sided outward-facing triangles (50% fewer cockpit draw triangles and zero black/grey Z-fighting in 1st-person or OpenXR VR), sealed all 35 vessels for 100% watertight exterior floors, and stabilized wet storm-deck roughness & shadow bias"
+      ],
+      "removed": [
+        "Eliminated undocked vessel phasing through hanging Yokohama fender buoys, mooring ropes clipping into concrete piers, see-through exterior walkway floor gaps, duplicate coplanar cockpit triangle flickering, stiff L-angle suspended anchors, and dark storm-deck shadow/SSR flickering"
+      ]
+    },
     {
       "id": "milestone-v1934-yokohama-dock-fenders-giant-bollards-wind-rope-physics-smooth-hulls-seamless-desk-exterior-rain",
       "timestampUtc": "2026-11-20T12:41:09Z",
@@ -751,10 +769,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.34",
+      "version": "v1.9.35",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Solid free-sailing Yokohama pneumatic dock fender buoy collision & live berthing squish across all 35 vessels — approaching ships physically contact, elastically compress, and rebound off hanging port fender buoys before tying mooring lines, springing cleanly back to round when pulling clear",
+        "2-axis damped gravity & hydrodynamic rigid-body anchor pendulum physics — suspended anchors hang plumb-vertical with natural inertial swing in air and water during dropping and weighing, embed flukes smoothly on the seabed, and fair cleanly home into the hawsepipe cradle",
+        "+20% open-ocean, archipelago & coral-reef wildlife population boost (whales, orcas, dolphins, sharks, manta rays, sea turtles, schooling fish, and seabirds) swimming closer to the sunlit surface with more frequent voyage sightings"
+      ],
+      "changed": [
+        "Upgraded both local and remote multiplayer mooring hawsers with 2-span concrete-coping-edge draped physics so slacked ropes rest cleanly over the concrete pier edge and apron on their way to the bollards",
+        "Rebuilt cockpit hardware meshes with strictly single-sided outward-facing triangles (50% fewer cockpit draw triangles and zero black/grey Z-fighting in 1st-person or OpenXR VR), sealed all 35 vessels for 100% watertight exterior floors, and stabilized wet storm-deck roughness & shadow bias"
+      ],
+      "removed": [
+        "Eliminated undocked vessel phasing through hanging Yokohama fender buoys, mooring ropes clipping into concrete piers, see-through exterior walkway floor gaps, duplicate coplanar cockpit triangle flickering, stiff L-angle suspended anchors, and dark storm-deck shadow/SSR flickering"
+      ]
+    },
+    {
+      "version": "v1.9.34",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Hanging Yokohama pneumatic rubber fender buoys & massive cast-iron T-head commercial mooring bollards along every port quay — with thick multi-turn braided mooring hawsers wrapped directly around the bollard necks",
         "Real wind-driven moored vessel, fender cushion & catenary rope physics — onshore winds push moored hulls smoothly onto the hanging Yokohama fender buoys (elastic rubber cushioning with zero concrete contact) while mooring ropes slouch into deep catenaries; offshore winds pull all 6 hawsers razor-taut",
