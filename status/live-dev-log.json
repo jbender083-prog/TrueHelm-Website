@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T07:53:41Z",
+  "updatedAtUtc": "2026-11-20T11:27:54Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.32",
-  "latestReleaseTag": "v1.9.32",
-  "buildPhase": "Release v1.9.32 Live — Full Blender 4.2 Photorealistic 3D Exterior & Interior Remodel of All 35 Vessels, 3x-Detail Cockpit Monitors & Helm Hardware + 30 Seamless 1024x1024 PBR Materials",
-  "buildStatus": "Release v1.9.32 Live — Full Blender 4.2 Photorealistic 3D Exterior & Interior Remodel of All 35 Vessels, 3x-Detail Cockpit Monitors & Helm Hardware + 30 Seamless 1024x1024 PBR Materials",
+  "activeVersion": "v1.9.33",
+  "latestReleaseTag": "v1.9.33",
+  "buildPhase": "Release v1.9.33 Live — Shipyard-Fresh Zero-Rust MV Vanguard 2048x1024 Hulls Across All 35 Vessels, Clean Gearless Cargo Decks, Stenciled Containers & Walk-In Bridge/Corridor Overhaul",
+  "buildStatus": "Release v1.9.33 Live — Shipyard-Fresh Zero-Rust MV Vanguard 2048x1024 Hulls Across All 35 Vessels, Clean Gearless Cargo Decks, Stenciled Containers & Walk-In Bridge/Corridor Overhaul",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1933-shipyard-fresh-zero-rust-vanguard-2k-hulls-gearless-decks-stenciled-containers-bridge-interiors",
+      "timestampUtc": "2026-11-20T11:27:54Z",
+      "version": "v1.9.33",
+      "summary": "Published TrueHelm v1.9.33 Live Release (1-Click In-Launcher Update): Shipyard-Fresh Zero-Rust MV Vanguard 2048x1024 Longitudinal Hulls Across All 35 Vessels, Clean Gearless Cargo Decks, Stenciled Corrugated Containers & Walk-In Bridge/Corridor Overhaul (0.000 cm Cockpit Layout Drift).",
+      "added": [
+        "Shipyard-fresh zero-rust MV Vanguard 2048x1024 longitudinal hull maps across all 35 vessels — desaturated deep maritime factory liveries, welded steel strake seams, structural oil-canning rib waves, crisp white waterline trim stripe, bow/mid/stern 2M–8M draft marks, midships Lloyd's L R Plimsoll Load Line, and glossy wet waterline (Roughness 0.14) vs factory satin clearcoat contrast",
+        "Brand-new 1024x1024 stenciled corrugated Corten steel containers on both baked and dynamic cargo stacks — authentic shipping-line hues with crisp white stenciled logos (TRUEHELM LINE, NORTH SEA CARGO, BALTIC FREIGHT, TRANS-OCEANIC), 45G1 & MAX GROSS 30,480 KG ISO markings, yellow/black corner warning stripes, and vertical corrugation normals (0% rust)",
+        "Vanguard exterior & walk-in interior architecture across all 35 vessels — bow jackstaff masts, 3-bar tubular safety railings, sloped anti-glare forward bridge windows with black anodized mullions, dark recessed overhead gauge soffit brow, twin sculpted pedestal helm chairs, two-tone cream/slate-blue bulkheads with yellow/black baseboards, mottled reflective dark charcoal bridge floors, overhead color-coded pipes, and brass-porthole watertight doors"
+      ],
+      "changed": [
+        "Configured all commercial cargo ships as clean modern gearless vessels (zero onboard deck cranes on cargo hulls, served cleanly by port STS gantry cranes) and upgraded dynamic cargo container UVs & materials so every loaded container displays crisp upright shipping-line stencils",
+        "Refined dark satin anodized console surfaces, warm teak/brass front lip trim, glowing marine status indicators, and cool-white overhead LED fill while keeping the exact same 8-monitor cockpit layout & hitboxes (0.000 cm drift) at 100+ FPS 1st-person Ultra"
+      ],
+      "removed": [
+        "Removed all onboard deck cranes from cargo vessels and eliminated all rust streaks, hawsepipe stains, container grime, waterline algae, and overly bright toy-like hull/superstructure hues so every purchased vessel looks 100% factory brand-new"
+      ]
+    },
     {
       "id": "milestone-v1932-photoreal-blender-35ship-remodel-cockpit-hardware-pbr-materials",
       "timestampUtc": "2026-11-20T07:53:41Z",
@@ -715,10 +733,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.32",
+      "version": "v1.9.33",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Shipyard-fresh zero-rust MV Vanguard 2048x1024 longitudinal hull maps across all 35 vessels — desaturated deep maritime factory liveries, welded steel strake seams, structural oil-canning rib waves, crisp white waterline trim stripe, bow/mid/stern 2M–8M draft marks, midships Lloyd's L R Plimsoll Load Line, and glossy wet waterline (Roughness 0.14) vs factory satin clearcoat contrast",
+        "Brand-new 1024x1024 stenciled corrugated Corten steel containers on both baked and dynamic cargo stacks — authentic shipping-line hues with crisp white stenciled logos (TRUEHELM LINE, NORTH SEA CARGO, BALTIC FREIGHT, TRANS-OCEANIC), 45G1 & MAX GROSS 30,480 KG ISO markings, yellow/black corner warning stripes, and vertical corrugation normals (0% rust)",
+        "Vanguard exterior & walk-in interior architecture across all 35 vessels — bow jackstaff masts, 3-bar tubular safety railings, sloped anti-glare forward bridge windows with black anodized mullions, dark recessed overhead gauge soffit brow, twin sculpted pedestal helm chairs, two-tone cream/slate-blue bulkheads with yellow/black baseboards, mottled reflective dark charcoal bridge floors, overhead color-coded pipes, and brass-porthole watertight doors"
+      ],
+      "changed": [
+        "Configured all commercial cargo ships as clean modern gearless vessels (zero onboard deck cranes on cargo hulls, served cleanly by port STS gantry cranes) and upgraded dynamic cargo container UVs & materials so every loaded container displays crisp upright shipping-line stencils",
+        "Refined dark satin anodized console surfaces, warm teak/brass front lip trim, glowing marine status indicators, and cool-white overhead LED fill while keeping the exact same 8-monitor cockpit layout & hitboxes (0.000 cm drift) at 100+ FPS 1st-person Ultra"
+      ],
+      "removed": [
+        "Removed all onboard deck cranes from cargo vessels and eliminated all rust streaks, hawsepipe stains, container grime, waterline algae, and overly bright toy-like hull/superstructure hues so every purchased vessel looks 100% factory brand-new"
+      ]
+    },
+    {
+      "version": "v1.9.32",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Full Blender 4.2 photorealistic 3D exterior and walk-in interior remodel across all 35 vessels (1.25M+ fleet triangles with 3 hardware LODs) — sculpted bulbous bows, welded gunwale cap rails, recessed hawsepipe pockets, hydraulic windlasses, corrugated ISO containers & lashing bridges, tanker manifolds, deck cranes, recessed window mullions, lifeboats/davits, louvered funnels, X/S-band radar masts, and detailed walk-in wheelhouses",
         "30 seamless 1024x1024 PBR texture maps (Albedo, MikkTSpace Normal, Roughness/Metallic/AO) powering 29 upgraded marine & cockpit PBR materials — staggered welded steel hull plates with oil-canning & salt-spray AO, copper-oxide boot-top patina, 45-degree diamond-plate non-skid weather decks, varnished Burmese Teak & Holly cabin planks, and anisotropic brushed stainless steel",
