@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T11:27:54Z",
+  "updatedAtUtc": "2026-11-20T12:41:09Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.33",
-  "latestReleaseTag": "v1.9.33",
-  "buildPhase": "Release v1.9.33 Live — Shipyard-Fresh Zero-Rust MV Vanguard 2048x1024 Hulls Across All 35 Vessels, Clean Gearless Cargo Decks, Stenciled Containers & Walk-In Bridge/Corridor Overhaul",
-  "buildStatus": "Release v1.9.33 Live — Shipyard-Fresh Zero-Rust MV Vanguard 2048x1024 Hulls Across All 35 Vessels, Clean Gearless Cargo Decks, Stenciled Containers & Walk-In Bridge/Corridor Overhaul",
+  "activeVersion": "v1.9.34",
+  "latestReleaseTag": "v1.9.34",
+  "buildPhase": "Release v1.9.34 Live — Hanging Yokohama Dock Fender Buoys, Giant Mooring Bollards, Wind Rope Physics, Smooth Solid-Color Hulls, Seamless Bridge Desk & Exterior-Only Rain Reflections",
+  "buildStatus": "Release v1.9.34 Live — Hanging Yokohama Dock Fender Buoys, Giant Mooring Bollards, Wind Rope Physics, Smooth Solid-Color Hulls, Seamless Bridge Desk & Exterior-Only Rain Reflections",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1934-yokohama-dock-fenders-giant-bollards-wind-rope-physics-smooth-hulls-seamless-desk-exterior-rain",
+      "timestampUtc": "2026-11-20T12:41:09Z",
+      "version": "v1.9.34",
+      "summary": "Published TrueHelm v1.9.34 Live Release (1-Click In-Launcher Update): Hanging Yokohama Dock Fender Buoys, Giant Cast-Iron Mooring Bollards, Wind-Driven Rope/Fender Physics, Smooth Solid-Color Hulls, Seamless Bridge Console Desk, Bone-Dry Cabin Floors & Exterior-Only Rain Reflections.",
+      "added": [
+        "Hanging Yokohama pneumatic rubber fender buoys & massive cast-iron T-head commercial mooring bollards along every port quay — with thick multi-turn braided mooring hawsers wrapped directly around the bollard necks",
+        "Real wind-driven moored vessel, fender cushion & catenary rope physics — onshore winds push moored hulls smoothly onto the hanging Yokohama fender buoys (elastic rubber cushioning with zero concrete contact) while mooring ropes slouch into deep catenaries; offshore winds pull all 6 hawsers razor-taut",
+        "Dynamic exterior-only rain wetness reflections across all 35 vessels — live rainstorms smoothly build glossy wet rain reflections exclusively outside on weather decks, hulls, and containers while wheelhouse interiors stay 100% bone-dry"
+      ],
+      "changed": [
+        "Refined all 35 vessel hulls with smooth, solid factory-painted marine liveries (zero brick-like plate grid lines, preserving crisp white waterline stripes, 2M–8M draft marks & Plimsoll marks) and clean logo-free satin-white paint on spherical LNG Moss tanks and cylindrical port fuel storage tanks",
+        "Redesigned the center helm console and mitered side wings with zero overlap — featuring a beveled dark matte-charcoal fascia, flush warm-teak inlay strip, recessed dark shadow-gap service panels, and 100% bone-dry anti-glare matte-satin cabin flooring while keeping 100% identical 8-monitor & control positions (0.000 cm drift)"
+      ],
+      "removed": [
+        "Removed staggered brick-like hull plate seam lines, overlapping wing console bolster pipes, bright silver front locker panels, glossy indoor cabin floor reflections, and baked dry-weather deck puddles"
+      ]
+    },
     {
       "id": "milestone-v1933-shipyard-fresh-zero-rust-vanguard-2k-hulls-gearless-decks-stenciled-containers-bridge-interiors",
       "timestampUtc": "2026-11-20T11:27:54Z",
@@ -733,10 +751,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.33",
+      "version": "v1.9.34",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Hanging Yokohama pneumatic rubber fender buoys & massive cast-iron T-head commercial mooring bollards along every port quay — with thick multi-turn braided mooring hawsers wrapped directly around the bollard necks",
+        "Real wind-driven moored vessel, fender cushion & catenary rope physics — onshore winds push moored hulls smoothly onto the hanging Yokohama fender buoys (elastic rubber cushioning with zero concrete contact) while mooring ropes slouch into deep catenaries; offshore winds pull all 6 hawsers razor-taut",
+        "Dynamic exterior-only rain wetness reflections across all 35 vessels — live rainstorms smoothly build glossy wet rain reflections exclusively outside on weather decks, hulls, and containers while wheelhouse interiors stay 100% bone-dry"
+      ],
+      "changed": [
+        "Refined all 35 vessel hulls with smooth, solid factory-painted marine liveries (zero brick-like plate grid lines, preserving crisp white waterline stripes, 2M–8M draft marks & Plimsoll marks) and clean logo-free satin-white paint on spherical LNG Moss tanks and cylindrical port fuel storage tanks",
+        "Redesigned the center helm console and mitered side wings with zero overlap — featuring a beveled dark matte-charcoal fascia, flush warm-teak inlay strip, recessed dark shadow-gap service panels, and 100% bone-dry anti-glare matte-satin cabin flooring while keeping 100% identical 8-monitor & control positions (0.000 cm drift)"
+      ],
+      "removed": [
+        "Removed staggered brick-like hull plate seam lines, overlapping wing console bolster pipes, bright silver front locker panels, glossy indoor cabin floor reflections, and baked dry-weather deck puddles"
+      ]
+    },
+    {
+      "version": "v1.9.33",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Shipyard-fresh zero-rust MV Vanguard 2048x1024 longitudinal hull maps across all 35 vessels — desaturated deep maritime factory liveries, welded steel strake seams, structural oil-canning rib waves, crisp white waterline trim stripe, bow/mid/stern 2M–8M draft marks, midships Lloyd's L R Plimsoll Load Line, and glossy wet waterline (Roughness 0.14) vs factory satin clearcoat contrast",
         "Brand-new 1024x1024 stenciled corrugated Corten steel containers on both baked and dynamic cargo stacks — authentic shipping-line hues with crisp white stenciled logos (TRUEHELM LINE, NORTH SEA CARGO, BALTIC FREIGHT, TRANS-OCEANIC), 45G1 & MAX GROSS 30,480 KG ISO markings, yellow/black corner warning stripes, and vertical corrugation normals (0% rust)",
