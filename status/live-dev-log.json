@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-19T14:57:51Z",
+  "updatedAtUtc": "2026-11-20T01:49:44Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.28",
-  "latestReleaseTag": "v1.9.28",
-  "buildPhase": "Release v1.9.28 Live — Full-Hull Stem-to-Stern Deck Water & 7-Outlet Scuppers, Spinning 3D Propellers, 4,183 Whole-Map Reefs (7x Mega-Reefs), 3-Speed Multiplayer Cranes & Zero-Lag Region Streaming",
-  "buildStatus": "Release v1.9.28 Live — Full-Hull Stem-to-Stern Deck Water & 7-Outlet Scuppers, Spinning 3D Propellers, 4,183 Whole-Map Reefs (7x Mega-Reefs), 3-Speed Multiplayer Cranes & Zero-Lag Region Streaming",
+  "activeVersion": "v1.9.29",
+  "latestReleaseTag": "v1.9.29",
+  "buildPhase": "Release v1.9.29 Live — 100+ FPS 1st-Person Bridge, See-Through Translucent Seawater & Dry Cabins, Restored Classic Wave Heave/Pitch/Roll, 2,876 Compact Reefs & Active Corridor Thunderstorms",
+  "buildStatus": "Release v1.9.29 Live — 100+ FPS 1st-Person Bridge, See-Through Translucent Seawater & Dry Cabins, Restored Classic Wave Heave/Pitch/Roll, 2,876 Compact Reefs & Active Corridor Thunderstorms",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1929-1p-100fps-translucent-seawater-dry-cabins-natural-wave-heave-corridor-storms",
+      "timestampUtc": "2026-11-20T01:49:44Z",
+      "version": "v1.9.29",
+      "summary": "Published TrueHelm v1.9.29 Live Release (1-Click In-Launcher Update): 100+ FPS 1st-Person Bridge Optimization, See-Through Translucent Seawater & True Outer-Bulwark Gate, 100% Zero Rain or Water Inside Cabins, Restored Classic Wave Heave/Pitch/Roll, 2,876 Compact Coral Reefs (Zero Giant Blue Patches), & Active Corridor Thunderstorms Across All 35 Vessels.",
+      "added": [
+        "100+ FPS 1st-person bridge optimization pipeline across all 35 vessels — fast active-packed GPU windshield droplets, upward-ceiling-gaze 22 Hz Overhead CCTV gating, single-MFD round-robin refreshes with O(1) spatial radar lookups, and offscreen cabin display culling",
+        "7 active roaming thunderstorms, gale fronts, and forked-lightning squall cells positioned directly across primary archipelago shipping corridors (clearly labeled STORM / SQUALL and GALE STORM on the [M] World Map and Bridge Radar)",
+        "3D ray-box interior rain & deck-water exclusion across every bridge, rear lounge, and lower superstructure room — guaranteeing 100% dry cabin interiors while rain streaks and deck water stay strictly outside the glass"
+      ],
+      "changed": [
+        "Switched deck green water to see-through translucent slate-teal seawater (16%-43% alpha) and tightened wave-entry gating strictly to the true top of the outer bulwark/gunwale so decks stay 100% dry until real ocean swells overtop the rail",
+        "Restored full classic pre-v1.9.24 multi-station wave heave, pitch, and roll physics across medium and large ships (#08-#35) so heavy hulls ride big ocean swells naturally, while pruning coral reefs by ~30% to 2,876 compact reefs across the map"
+      ],
+      "removed": [
+        "Removed giant multi-kilometer blue coral mega-patches from the ocean map, eliminated per-frame multi-camera CCTV & 8-MFD GPU stalls in 1st-person, and eliminated opaque white deck-water sheets, premature below-bulwark bow water, and rain or deck water clipping inside cabins"
+      ]
+    },
     {
       "id": "milestone-v1928-full-hull-deck-water-mega-reefs-propellers-3speed-cranes-fast-rescue",
       "timestampUtc": "2026-11-19T14:57:51Z",
@@ -643,10 +661,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.28",
+      "version": "v1.9.29",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "100+ FPS 1st-person bridge optimization pipeline across all 35 vessels — fast active-packed GPU windshield droplets, upward-ceiling-gaze 22 Hz Overhead CCTV gating, single-MFD round-robin refreshes with O(1) spatial radar lookups, and offscreen cabin display culling",
+        "7 active roaming thunderstorms, gale fronts, and forked-lightning squall cells positioned directly across primary archipelago shipping corridors (clearly labeled STORM / SQUALL and GALE STORM on the [M] World Map and Bridge Radar)",
+        "3D ray-box interior rain & deck-water exclusion across every bridge, rear lounge, and lower superstructure room — guaranteeing 100% dry cabin interiors while rain streaks and deck water stay strictly outside the glass"
+      ],
+      "changed": [
+        "Switched deck green water to see-through translucent slate-teal seawater (16%-43% alpha) and tightened wave-entry gating strictly to the true top of the outer bulwark/gunwale so decks stay 100% dry until real ocean swells overtop the rail",
+        "Restored full classic pre-v1.9.24 multi-station wave heave, pitch, and roll physics across medium and large ships (#08-#35) so heavy hulls ride big ocean swells naturally, while pruning coral reefs by ~30% to 2,876 compact reefs across the map"
+      ],
+      "removed": [
+        "Removed giant multi-kilometer blue coral mega-patches from the ocean map, eliminated per-frame multi-camera CCTV & 8-MFD GPU stalls in 1st-person, and eliminated opaque white deck-water sheets, premature below-bulwark bow water, and rain or deck water clipping inside cabins"
+      ]
+    },
+    {
+      "version": "v1.9.28",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Full-hull 48x20 Saint-Venant stem-to-stern deck water solver with strict above-deck wave gating, 6 distributed freeing-port scuppers + stern fantail spill, Coanda hull-clinging runoff, direct 2D SWE ocean mesh wave deformation, and live deck-water rendering on all 4 Overhead Bridge CCTV Monitors",
         "Articulated spinning 3D bronze/steel stern propellers across all 35 vessels matched to each ship's engine count (1 single-screw, 2 counter-rotating twin-screws, 3 triple-screws on Icebreaker #28, and 4 quad-screws on FLNG #34) that reverse astern",
