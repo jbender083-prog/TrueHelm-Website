@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T01:49:44Z",
+  "updatedAtUtc": "2026-11-20T02:56:53Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.29",
-  "latestReleaseTag": "v1.9.29",
-  "buildPhase": "Release v1.9.29 Live — 100+ FPS 1st-Person Bridge, See-Through Translucent Seawater & Dry Cabins, Restored Classic Wave Heave/Pitch/Roll, 2,876 Compact Reefs & Active Corridor Thunderstorms",
-  "buildStatus": "Release v1.9.29 Live — 100+ FPS 1st-Person Bridge, See-Through Translucent Seawater & Dry Cabins, Restored Classic Wave Heave/Pitch/Roll, 2,876 Compact Reefs & Active Corridor Thunderstorms",
+  "activeVersion": "v1.9.30",
+  "latestReleaseTag": "v1.9.30",
+  "buildPhase": "Release v1.9.30 Live — Restored Planted v1.9.27 Wave Physics, Clean Dry Decks, Dedicated Storm & Rain Volume Slider + Balanced Storm Acoustics & ~120 FPS 1st-Person Bridge",
+  "buildStatus": "Release v1.9.30 Live — Restored Planted v1.9.27 Wave Physics, Clean Dry Decks, Dedicated Storm & Rain Volume Slider + Balanced Storm Acoustics & ~120 FPS 1st-Person Bridge",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1930-v1927-wave-physics-clean-dry-decks-storm-rain-volume-slider",
+      "timestampUtc": "2026-11-20T02:56:53Z",
+      "version": "v1.9.30",
+      "summary": "Published TrueHelm v1.9.30 Live Release (1-Click In-Launcher Update): Restored Exact v1.9.27 Planted Boat-Wave Physics, Complete Removal of Deck-Top Water & Scupper Waterfalls, Dedicated Storm & Rain Volume Slider (0%-100%) + Balanced Storm Acoustics, & ~120 FPS 1st-Person Bridge Performance Across All 35 Vessels.",
+      "added": [
+        "Dedicated persistent Storm & Rain Volume slider (0%-100%, default 65%) in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS], joining Ship Horn, Boat Engine, and YouTube TV for 4 independent audio mix channels",
+        "Balanced thunderstorm & heavy-rain acoustic mastering (~0.52x raw peak gain + ~0.62x closed-cabin muffling) scaling exclusively rain and thunder audio while keeping ocean surf, engine, horn, YouTube TV, and VHF independent",
+        "Cloud & local Career profile persistence for Storm & Rain Volume across quick-switches, restarts, and live weather transitions (with instant 0% mute support)"
+      ],
+      "changed": [
+        "Restored exact v1.9.27 planted boat-wave interaction physics across all 35 vessels — medium and large ships (#08-#35) slice rock-steady through normal ocean chop while small coastal vessels (#01-#07) keep lively pontoon buoyancy and #03 starter wave-landing thumps",
+        "Boosted 1st-person bridge performance to ~120 FPS Ultra and 3rd-person 2-Boat Ultra to ~85 FPS while preserving 100% of spinning 3D stern propellers, optical windshield droplets, 3-speed multiplayer cranes, 2,876 compact coral reefs, and 7 active corridor thunderstorms"
+      ],
+      "removed": [
+        "Completely removed all water coming onto the top of vessels, deck-top water meshes, hull scupper cutouts, and side scupper waterfalls across all local and multiplayer ships for permanently clean, dry decks"
+      ]
+    },
     {
       "id": "milestone-v1929-1p-100fps-translucent-seawater-dry-cabins-natural-wave-heave-corridor-storms",
       "timestampUtc": "2026-11-20T01:49:44Z",
@@ -661,10 +679,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.29",
+      "version": "v1.9.30",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Dedicated persistent Storm & Rain Volume slider (0%-100%, default 65%) in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS], joining Ship Horn, Boat Engine, and YouTube TV for 4 independent audio mix channels",
+        "Balanced thunderstorm & heavy-rain acoustic mastering (~0.52x raw peak gain + ~0.62x closed-cabin muffling) scaling exclusively rain and thunder audio while keeping ocean surf, engine, horn, YouTube TV, and VHF independent",
+        "Cloud & local Career profile persistence for Storm & Rain Volume across quick-switches, restarts, and live weather transitions (with instant 0% mute support)"
+      ],
+      "changed": [
+        "Restored exact v1.9.27 planted boat-wave interaction physics across all 35 vessels — medium and large ships (#08-#35) slice rock-steady through normal ocean chop while small coastal vessels (#01-#07) keep lively pontoon buoyancy and #03 starter wave-landing thumps",
+        "Boosted 1st-person bridge performance to ~120 FPS Ultra and 3rd-person 2-Boat Ultra to ~85 FPS while preserving 100% of spinning 3D stern propellers, optical windshield droplets, 3-speed multiplayer cranes, 2,876 compact coral reefs, and 7 active corridor thunderstorms"
+      ],
+      "removed": [
+        "Completely removed all water coming onto the top of vessels, deck-top water meshes, hull scupper cutouts, and side scupper waterfalls across all local and multiplayer ships for permanently clean, dry decks"
+      ]
+    },
+    {
+      "version": "v1.9.29",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "100+ FPS 1st-person bridge optimization pipeline across all 35 vessels — fast active-packed GPU windshield droplets, upward-ceiling-gaze 22 Hz Overhead CCTV gating, single-MFD round-robin refreshes with O(1) spatial radar lookups, and offscreen cabin display culling",
         "7 active roaming thunderstorms, gale fronts, and forked-lightning squall cells positioned directly across primary archipelago shipping corridors (clearly labeled STORM / SQUALL and GALE STORM on the [M] World Map and Bridge Radar)",

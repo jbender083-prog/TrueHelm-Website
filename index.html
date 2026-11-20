@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261119b" />
+  <link rel="stylesheet" href="./styles.css?v=20261119c" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,13 +93,13 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.29 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.30 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
           <p class="hero-summary">
-            Command 35 vessels at 100+ FPS in 1st-person across a 4,617 km ocean world spanning 74 islands, active corridor thunderstorms, and 2,876 vibrant coral reefs. Ride steep swells with natural heave &amp; pitch, watch see-through seawater drain out 7 scuppers while your cabin stays 100% dry, or steer in OpenXR VR.
+            Command 35 vessels at ~120 FPS in 1st-person across a 4,617 km ocean world spanning 74 islands, active corridor thunderstorms, and 2,876 vibrant coral reefs. Enjoy planted heavy-ship wave physics, clean dry decks, 4-channel audio sliders (including Storm &amp; Rain), or OpenXR VR hands.
           </p>
 
           <!-- Primary 1-Click Edge-Friendly Windows Installer (.zip) + Direct .exe Option -->
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.29</small>
+                <small>Added, changed &amp; removed in Release v1.9.30</small>
               </span>
             </a>
           </div>
@@ -199,19 +199,19 @@
           <article class="card">
             <div class="card-tag">35 Vessels</div>
             <h3>Spinning 3D Propellers, Elevators &amp; PTZ CCTV</h3>
-            <p>Every vessel spins <strong>1&ndash;4 articulated 3D stern propellers</strong> matched to its engines, plus <strong>stem-to-stern walking</strong>, <strong>internal elevators</strong>, and <strong>4 PTZ CCTV feeds</strong> showing deck water.</p>
+            <p>Every vessel spins <strong>1&ndash;4 articulated 3D stern propellers</strong> matched to its engines, plus <strong>clean dry stem-to-stern walking</strong>, <strong>internal elevators</strong>, and <strong>4 interactive PTZ CCTV feeds</strong>.</p>
           </article>
 
           <article class="card">
             <div class="card-tag amber">Dynamic Sea</div>
-            <h3>Translucent Deck Water, Storms &amp; 2,876 Reefs</h3>
-            <p>Ride big swells with <strong>natural wave heave &amp; pitch</strong>, <strong>see-through exterior-only deck seawater</strong>, <strong>7 active corridor thunderstorms</strong>, and <strong>2,876 compact coral reefs</strong>.</p>
+            <h3>Planted Wave Physics, Storms &amp; 2,876 Reefs</h3>
+            <p>Big ships slice <strong>rock-steady through normal chop</strong> while coastal craft ride ocean swells across <strong>7 active corridor thunderstorms</strong>, dock wake reflections, and <strong>2,876 compact coral reefs</strong>.</p>
           </article>
 
           <article class="card">
             <div class="card-tag emerald">PC &amp; In-Game VR</div>
-            <h3>100+ FPS Bridge, Dry Cabins &amp; Audio Mix</h3>
-            <p>Cruise at <strong>100+ FPS in 1st-person</strong> inside <strong>100% rain- &amp; water-sealed cabins</strong> with <strong>smooth 1% throttle</strong>, <strong>4-step wipers</strong>, and <strong>Horn / Engine / TV volume sliders</strong>.</p>
+            <h3>~120 FPS Bridge, Storm Audio &amp; 8 Monitors</h3>
+            <p>Cruise at <strong>~120 FPS in 1st-person</strong> inside <strong>100% rain-sealed cabins</strong> with <strong>smooth 1% throttle</strong>, <strong>4-step wipers</strong>, and <strong>Storm/Rain, Horn, Engine &amp; TV volume sliders</strong>.</p>
           </article>
         </div>
       </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.29</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.29 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.30</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.30 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.29</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.30</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,33 +542,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.29</h3>
+              <h3 id="dash-added-heading">Added in v1.9.30</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>100+ FPS 1st-person bridge optimization pipeline across all 35 vessels &mdash; fast active-packed GPU windshield droplets, upward-ceiling-gaze 22 Hz Overhead CCTV gating, single-MFD round-robin refreshes with O(1) spatial radar lookups, and offscreen cabin display culling</li>
-              <li>7 active roaming thunderstorms, gale fronts, and forked-lightning squall cells positioned directly across primary archipelago shipping corridors (clearly labeled <code>STORM / SQUALL</code> and <code>GALE STORM</code> on the <code>[M]</code> World Map and Bridge Radar)</li>
-              <li>3D ray-box interior rain &amp; deck-water exclusion across every bridge, rear lounge, and lower superstructure room &mdash; guaranteeing 100% dry cabin interiors while rain streaks and deck water stay strictly outside the glass</li>
+              <li>Dedicated persistent <strong>Storm &amp; Rain Volume</strong> slider (0%&ndash;100%, default 65%) in both 3rd-Person <code>[ESC] &rarr; SETTINGS</code> and 1st-Person Bridge Monitor 7 <code>[SETTINGS]</code>, joining Ship Horn, Boat Engine, and YouTube TV for 4 independent audio mix channels</li>
+              <li>Balanced thunderstorm &amp; heavy-rain acoustic mastering (~0.52x raw peak gain + ~0.62x closed-cabin muffling) scaling exclusively rain and thunder audio while keeping ocean surf, engine, horn, YouTube TV, and VHF independent</li>
+              <li>Cloud &amp; local Career profile persistence for Storm &amp; Rain Volume across quick-switches, restarts, and live weather transitions (with instant 0% mute support)</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.29</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.30</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Switched deck green water to see-through translucent slate-teal seawater (16%&ndash;43% alpha) and tightened wave-entry gating strictly to the true top of the outer bulwark/gunwale so decks stay 100% dry until real ocean swells overtop the rail</li>
-              <li>Restored full classic pre-v1.9.24 multi-station wave heave, pitch, and roll physics across medium and large ships (<code>#08&ndash;#35</code>) so heavy hulls ride big ocean swells naturally, while pruning coral reefs by ~30% to 2,876 compact reefs across the map</li>
+              <li>Restored exact v1.9.27 planted boat-wave interaction physics across all 35 vessels &mdash; medium and large ships (<code>#08&ndash;#35</code>) slice rock-steady through normal ocean chop while small coastal vessels (<code>#01&ndash;#07</code>) keep lively pontoon buoyancy and <code>#03</code> starter wave-landing thumps</li>
+              <li>Boosted 1st-person bridge performance to ~120 FPS Ultra and 3rd-person 2-Boat Ultra to ~85 FPS while preserving 100% of spinning 3D stern propellers, optical windshield droplets, 3-speed multiplayer cranes, 2,876 compact coral reefs, and 7 active corridor thunderstorms</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.29</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.30</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Removed giant multi-kilometer blue coral mega-patches from the ocean map, eliminated per-frame multi-camera CCTV &amp; 8-MFD GPU stalls in 1st-person, and eliminated opaque white deck-water sheets, premature below-bulwark bow water, and rain or deck water clipping inside cabins</li>
+              <li>Completely removed all water coming onto the top of vessels, deck-top water meshes, hull scupper cutouts, and side scupper waterfalls across all local and multiplayer ships for permanently clean, dry decks</li>
             </ul>
           </article>
         </div>
@@ -587,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.29 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.30 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -595,8 +595,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.29</strong>
+                  <strong class="ver-num">v1.9.30</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Dedicated Storm &amp; Rain Volume Slider (0%&ndash;100%, Default 65%)</strong> in both <code>[ESC] &rarr; SETTINGS</code> and Bridge Monitor 7 <code>[SETTINGS]</code> (saved locally &amp; in Cloud Captain profiles alongside Horn, Engine &amp; YouTube TV volumes) · <strong>Balanced Thunderstorm &amp; Rain Acoustics</strong> (~0.52x raw peak + ~0.62x cabin muffling).</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>Restored Exact v1.9.27 Planted Boat-Wave Interaction Physics</strong> across all 35 vessels (rock-steady normal-chop slicing on <code>#08&ndash;#35</code> + responsive pontoon buoyancy &amp; <code>#03</code> landing thumps on <code>#01&ndash;#07</code>) · <strong>~120 FPS 1st-Person Bridge &amp; ~85 FPS 2-Boat Ultra</strong> with spinning 3D propellers, 3-speed multiplayer cranes, 2,876 compact reefs &amp; 7 corridor thunderstorms intact.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Completely removed all deck-top water, hull scupper cutouts, and side scupper waterfalls across local and multiplayer vessels for permanently clean, dry decks.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.29</strong>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1354,7 +1369,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261119b"></script>
-  <script type="module" src="./globe.js?v=20261119b"></script>
+  <script src="./app.js?v=20261119c"></script>
+  <script type="module" src="./globe.js?v=20261119c"></script>
 </body>
 </html>
