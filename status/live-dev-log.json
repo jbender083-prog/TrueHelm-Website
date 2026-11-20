@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T04:59:02Z",
+  "updatedAtUtc": "2026-11-20T07:53:41Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.31",
-  "latestReleaseTag": "v1.9.31",
-  "buildPhase": "Release v1.9.31 Live — Deterministic Seeded-Waypoint Roaming Storms & Forming/Dissipating Lifecycles + 1-Click Co-Op [BOARD SHIP] & 45-Char HostID Fix",
-  "buildStatus": "Release v1.9.31 Live — Deterministic Seeded-Waypoint Roaming Storms & Forming/Dissipating Lifecycles + 1-Click Co-Op [BOARD SHIP] & 45-Char HostID Fix",
+  "activeVersion": "v1.9.32",
+  "latestReleaseTag": "v1.9.32",
+  "buildPhase": "Release v1.9.32 Live — Full Blender 4.2 Photorealistic 3D Exterior & Interior Remodel of All 35 Vessels, 3x-Detail Cockpit Monitors & Helm Hardware + 30 Seamless 1024x1024 PBR Materials",
+  "buildStatus": "Release v1.9.32 Live — Full Blender 4.2 Photorealistic 3D Exterior & Interior Remodel of All 35 Vessels, 3x-Detail Cockpit Monitors & Helm Hardware + 30 Seamless 1024x1024 PBR Materials",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1932-photoreal-blender-35ship-remodel-cockpit-hardware-pbr-materials",
+      "timestampUtc": "2026-11-20T07:53:41Z",
+      "version": "v1.9.32",
+      "summary": "Published TrueHelm v1.9.32 Live Release (1-Click In-Launcher Update): Full Blender 4.2 Photorealistic 3D Exterior & Interior Remodel of All 35 Vessels, 3x-Detail Cockpit Monitors & Helm Hardware (100% Identical Layout), & 30 Seamless 1024x1024 Marine PBR Materials.",
+      "added": [
+        "Full Blender 4.2 photorealistic 3D exterior and walk-in interior remodel across all 35 vessels (1.25M+ fleet triangles with 3 hardware LODs) — sculpted bulbous bows, welded gunwale cap rails, recessed hawsepipe pockets, hydraulic windlasses, corrugated ISO containers & lashing bridges, tanker manifolds, deck cranes, recessed window mullions, lifeboats/davits, louvered funnels, X/S-band radar masts, and detailed walk-in wheelhouses",
+        "30 seamless 1024x1024 PBR texture maps (Albedo, MikkTSpace Normal, Roughness/Metallic/AO) powering 29 upgraded marine & cockpit PBR materials — staggered welded steel hull plates with oil-canning & salt-spray AO, copper-oxide boot-top patina, 45-degree diamond-plate non-skid weather decks, varnished Burmese Teak & Holly cabin planks, and anisotropic brushed stainless steel",
+        "3x-higher-detail Blender 4.2 cockpit hardware suite (97,400 tris with 0.000 cm layout drift) — CNC multi-chamfer anodized monitor bezels with corner hex bolts, glare hoods, knurled knobs & VESA yokes, stitched leather console bolsters, lathe-turned varnished teak & stainless-steel helm wheel with brass magnetic binnacle compass, and machined detent telegraph quadrants"
+      ],
+      "changed": [
+        "Kept the exact same 8-monitor cockpit layout, control positions, and hitboxes (0.000 cm drift) while upgrading MFD optical bezel vignettes, precision radar/speedometer graduation ticks, and warm/cool cockpit specular fill lighting",
+        "Enhanced DirectX 12 maritime sun specular highlights, ocean-hemisphere Skylight bounce, and Ultra tonemapper crispness while preserving 100+ FPS 1st-person Bridge Ultra and 60+ FPS 3rd-person 2-Boat Ultra performance"
+      ],
+      "removed": [
+        "Replaced flat untextured ship hull/deck/cockpit shaders and low-poly block-out ship/console geometry across all 35 vessels while keeping full stem-to-stern walkability, unobstructed cabin windows, and doorway clearances 100% intact"
+      ]
+    },
     {
       "id": "milestone-v1931-roaming-storms-lifecycles-coop-board-ship-hostid-fix",
       "timestampUtc": "2026-11-20T04:59:02Z",
@@ -697,10 +715,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.31",
+      "version": "v1.9.32",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Full Blender 4.2 photorealistic 3D exterior and walk-in interior remodel across all 35 vessels (1.25M+ fleet triangles with 3 hardware LODs) — sculpted bulbous bows, welded gunwale cap rails, recessed hawsepipe pockets, hydraulic windlasses, corrugated ISO containers & lashing bridges, tanker manifolds, deck cranes, recessed window mullions, lifeboats/davits, louvered funnels, X/S-band radar masts, and detailed walk-in wheelhouses",
+        "30 seamless 1024x1024 PBR texture maps (Albedo, MikkTSpace Normal, Roughness/Metallic/AO) powering 29 upgraded marine & cockpit PBR materials — staggered welded steel hull plates with oil-canning & salt-spray AO, copper-oxide boot-top patina, 45-degree diamond-plate non-skid weather decks, varnished Burmese Teak & Holly cabin planks, and anisotropic brushed stainless steel",
+        "3x-higher-detail Blender 4.2 cockpit hardware suite (97,400 tris with 0.000 cm layout drift) — CNC multi-chamfer anodized monitor bezels with corner hex bolts, glare hoods, knurled knobs & VESA yokes, stitched leather console bolsters, lathe-turned varnished teak & stainless-steel helm wheel with brass magnetic binnacle compass, and machined detent telegraph quadrants"
+      ],
+      "changed": [
+        "Kept the exact same 8-monitor cockpit layout, control positions, and hitboxes (0.000 cm drift) while upgrading MFD optical bezel vignettes, precision radar/speedometer graduation ticks, and warm/cool cockpit specular fill lighting",
+        "Enhanced DirectX 12 maritime sun specular highlights, ocean-hemisphere Skylight bounce, and Ultra tonemapper crispness while preserving 100+ FPS 1st-person Bridge Ultra and 60+ FPS 3rd-person 2-Boat Ultra performance"
+      ],
+      "removed": [
+        "Replaced flat untextured ship hull/deck/cockpit shaders and low-poly block-out ship/console geometry across all 35 vessels while keeping full stem-to-stern walkability, unobstructed cabin windows, and doorway clearances 100% intact"
+      ]
+    },
+    {
+      "version": "v1.9.31",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Stateless deterministic UTC + SharedWorldSeed 6-waypoint Catmull-Rom roaming storms across regional, mid-basin, and 4-quadrant outer-ocean bands — 100% synchronized to 0.0000 cm across all multiplayer captains with zero center-map camping",
         "Natural 50-90 minute Forming -> Mature -> Dissipating storm lifecycles with zero-pop generation rollovers, dynamic horizon & chart lifecycle fading, and mature-squall 3D forked lightning anchoring",

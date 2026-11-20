@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261119d" />
+  <link rel="stylesheet" href="./styles.css?v=20261120a" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,13 +93,13 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.31 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.32 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
           <p class="hero-summary">
-            Command 35 vessels at ~120 FPS in 1st-person across a 4,617 km ocean world spanning 74 islands, multiplayer-synced roaming storms with natural forming &amp; dissipating lifecycles, and 2,876 vibrant coral reefs. Click <code>[BOARD SHIP]</code> to crew a friend&rsquo;s vessel in 1 click, or steer with OpenXR VR hands.
+            Command 35 photorealistically remodeled vessels (1.25M+ fleet tris, welded steel PBR hulls &amp; varnished teak/brass 3x-detail bridges) at ~118 FPS across a 4,617 km ocean with 74 islands, roaming storm lifecycles, and 2,876 coral reefs. Click <code>[BOARD SHIP]</code> for 1-click Co-Op, or steer in OpenXR VR.
           </p>
 
           <!-- Primary 1-Click Edge-Friendly Windows Installer (.zip) + Direct .exe Option -->
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.31</small>
+                <small>Added, changed &amp; removed in Release v1.9.32</small>
               </span>
             </a>
           </div>
@@ -198,8 +198,8 @@
 
           <article class="card">
             <div class="card-tag">35 Vessels</div>
-            <h3>Spinning 3D Propellers, Elevators &amp; PTZ CCTV</h3>
-            <p>Every vessel spins <strong>1&ndash;4 articulated 3D stern propellers</strong> matched to its engines, plus <strong>clean dry stem-to-stern walking</strong>, <strong>internal elevators</strong>, and <strong>4 interactive PTZ CCTV feeds</strong>.</p>
+            <h3>Photoreal PBR Fleet, Elevators &amp; Propellers</h3>
+            <p>All 35 vessels feature <strong>remodeled 3D exteriors &amp; walk-in interiors</strong>, <strong>1024p welded-steel PBR maps</strong>, <strong>1&ndash;4 spinning stern propellers</strong>, <strong>elevators</strong>, and <strong>PTZ CCTV</strong>.</p>
           </article>
 
           <article class="card">
@@ -210,8 +210,8 @@
 
           <article class="card">
             <div class="card-tag emerald">PC &amp; In-Game VR</div>
-            <h3>~120 FPS Bridge, Storm Audio &amp; 8 Monitors</h3>
-            <p>Cruise at <strong>~120 FPS in 1st-person</strong> inside <strong>100% rain-sealed cabins</strong> with <strong>smooth 1% throttle</strong>, <strong>4-step wipers</strong>, and <strong>Storm/Rain, Horn, Engine &amp; TV volume sliders</strong>.</p>
+            <h3>3x-Detail Cockpit, ~118 FPS &amp; 4-Ch Audio</h3>
+            <p>Helm a <strong>3x-detail CNC monitor &amp; teak/brass bridge</strong> (identical layout) at <strong>~118 FPS Ultra</strong> with <strong>4-step wipers</strong> and <strong>Storm/Rain, Horn, Engine &amp; TV volume sliders</strong>.</p>
           </article>
         </div>
       </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.31</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.31 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.32</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.32 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.31</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.32</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,33 +542,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.31</h3>
+              <h3 id="dash-added-heading">Added in v1.9.32</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Stateless deterministic <code>UTC + SharedWorldSeed</code> 6-waypoint Catmull-Rom roaming storms across regional, mid-basin, and 4-quadrant outer-ocean bands &mdash; 100% synchronized to 0.0000 cm across all multiplayer captains with zero center-map camping</li>
-              <li>Natural 50&ndash;90 minute <code>Forming &rarr; Mature &rarr; Dissipating</code> storm lifecycles with zero-pop generation rollovers, dynamic horizon &amp; chart lifecycle fading, and mature-squall 3D forked lightning anchoring</li>
-              <li>Direct 1-click <strong><code>[ BOARD SHIP ]</code></strong> button right next to <code>[ TELEPORT ]</code> / <code>[TP]</code> on every company teammate&rsquo;s roster row in both <kbd>P</kbd> Multiplayer Co-Op and 1st-Person Bridge Monitor 7 <code>[COMPANY]</code></li>
+              <li>Full Blender 4.2 photorealistic 3D exterior and walk-in interior remodel across all 35 vessels (1.25M+ fleet triangles with 3 hardware LODs) &mdash; sculpted bulbous bows, welded gunwale cap rails, recessed hawsepipe pockets, hydraulic windlasses, corrugated ISO containers &amp; lashing bridges, tanker manifolds, deck cranes, recessed window mullions, lifeboats/davits, louvered funnels, X/S-band radar masts, and detailed walk-in wheelhouses</li>
+              <li>30 seamless 1024&times;1024 PBR texture maps (Albedo, MikkTSpace Normal, Roughness/Metallic/AO) powering 29 upgraded marine &amp; cockpit PBR materials &mdash; staggered welded steel hull plates with oil-canning &amp; salt-spray AO, copper-oxide boot-top patina, 45-degree diamond-plate non-skid weather decks, varnished Burmese Teak &amp; Holly cabin planks, and anisotropic brushed stainless steel</li>
+              <li>3x-higher-detail Blender 4.2 cockpit hardware suite (97,400 tris with 0.000 cm layout drift) &mdash; CNC multi-chamfer anodized monitor bezels with corner hex bolts, glare hoods, knurled knobs &amp; VESA yokes, stitched leather console bolsters, lathe-turned varnished teak &amp; stainless-steel helm wheel with brass magnetic binnacle compass, and machined detent telegraph quadrants</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.31</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.32</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Widened UDP and Cloud JSON <code>CompanyHostPlayerId</code> / <code>CompanyId</code> serialization buffers (up to 96 chars) and hardened member role &amp; failover guards so joined company crewmates always preserve <code>ROLE: HUMAN MEMBER</code> and <code>[ 1. BOARD OWNER SHIP (CO-OP) ]</code></li>
-              <li>Enabled full-map storm wave amplification across outer ocean basins up to &plusmn;2,000+ km and updated <code>[M]</code> Nautical World Chart &amp; 3rd-person Mini-Radar weather overlays to reflect live storm lifecycle intensity</li>
+              <li>Kept the exact same 8-monitor cockpit layout, control positions, and hitboxes (0.000 cm drift) while upgrading MFD optical bezel vignettes, precision radar/speedometer graduation ticks, and warm/cool cockpit specular fill lighting</li>
+              <li>Enhanced DirectX 12 maritime sun specular highlights, ocean-hemisphere Skylight bounce, and Ultra tonemapper crispness while preserving 100+ FPS 1st-person Bridge Ultra and 60+ FPS 3rd-person 2-Boat Ultra performance</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.31</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.32</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Removed fixed elliptical storm orbits that repeatedly looped near the center of the map, and eliminated 40-character Windows <code>LocalInstanceGuid</code> truncation that could falsely promote joined company members to <code>COMPANY OWNER</code></li>
+              <li>Replaced flat untextured ship hull/deck/cockpit shaders and low-poly block-out ship/console geometry across all 35 vessels while keeping full stem-to-stern walkability, unobstructed cabin windows, and doorway clearances 100% intact</li>
             </ul>
           </article>
         </div>
@@ -587,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.31 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.32 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -595,8 +595,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.31</strong>
+                  <strong class="ver-num">v1.9.32</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Full Blender 4.2 Photorealistic 3D Exterior &amp; Walk-In Interior Remodel of All 35 Vessels</strong> (1.25M+ fleet tris + 3 hardware LODs) · <strong>30 Seamless 1024&times;1024 Marine &amp; Bridge PBR Textures</strong> (welded steel hull plates, diamond-plate decks, Burmese Teak &amp; Holly cabin planks, brushed stainless steel) · <strong>3x-Detail CNC Cockpit Monitors &amp; Teak/Brass Helm Hardware</strong>.</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>100% Identical 8-Monitor Cockpit Layout &amp; Hitboxes (0.000 cm Drift)</strong> with upgraded MFD optical vignettes &amp; precision graduation ticks · <strong>DX12 Maritime Specular &amp; Skylight Bounce Polish</strong> at ~118 FPS 1st-Person Ultra &amp; ~87 FPS 2-Boat Ultra.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Replaced flat untextured hull/deck/cockpit shaders and low-poly block-out geometry across all 35 vessels while preserving 100% stem-to-stern walkability and doorway clearances.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.31</strong>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1384,7 +1399,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261119d"></script>
-  <script type="module" src="./globe.js?v=20261119d"></script>
+  <script src="./app.js?v=20261120a"></script>
+  <script type="module" src="./globe.js?v=20261120a"></script>
 </body>
 </html>
