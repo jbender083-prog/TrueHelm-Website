@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-20T02:56:53Z",
+  "updatedAtUtc": "2026-11-20T04:59:02Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.30",
-  "latestReleaseTag": "v1.9.30",
-  "buildPhase": "Release v1.9.30 Live — Restored Planted v1.9.27 Wave Physics, Clean Dry Decks, Dedicated Storm & Rain Volume Slider + Balanced Storm Acoustics & ~120 FPS 1st-Person Bridge",
-  "buildStatus": "Release v1.9.30 Live — Restored Planted v1.9.27 Wave Physics, Clean Dry Decks, Dedicated Storm & Rain Volume Slider + Balanced Storm Acoustics & ~120 FPS 1st-Person Bridge",
+  "activeVersion": "v1.9.31",
+  "latestReleaseTag": "v1.9.31",
+  "buildPhase": "Release v1.9.31 Live — Deterministic Seeded-Waypoint Roaming Storms & Forming/Dissipating Lifecycles + 1-Click Co-Op [BOARD SHIP] & 45-Char HostID Fix",
+  "buildStatus": "Release v1.9.31 Live — Deterministic Seeded-Waypoint Roaming Storms & Forming/Dissipating Lifecycles + 1-Click Co-Op [BOARD SHIP] & 45-Char HostID Fix",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1931-roaming-storms-lifecycles-coop-board-ship-hostid-fix",
+      "timestampUtc": "2026-11-20T04:59:02Z",
+      "version": "v1.9.31",
+      "summary": "Published TrueHelm v1.9.31 Live Release (1-Click In-Launcher Update): Deterministic Seeded-Waypoint Roaming Storms & Natural Forming/Dissipating Lifecycles (100% Multiplayer Synced, Zero Center Camping) + 1-Click Co-Op [BOARD SHIP] & 45-Char HostID Member Role Fix Across All 35 Vessels.",
+      "added": [
+        "Stateless deterministic UTC + SharedWorldSeed 6-waypoint Catmull-Rom roaming storms across regional, mid-basin, and 4-quadrant outer-ocean bands — 100% synchronized to 0.0000 cm across all multiplayer captains with zero center-map camping",
+        "Natural 50-90 minute Forming -> Mature -> Dissipating storm lifecycles with zero-pop generation rollovers, dynamic horizon & chart lifecycle fading, and mature-squall 3D forked lightning anchoring",
+        "Direct 1-click [ BOARD SHIP ] button right next to [ TELEPORT ] / [TP] on every company teammate's roster row in both [P] Multiplayer Co-Op and 1st-Person Bridge Monitor 7 [COMPANY]"
+      ],
+      "changed": [
+        "Widened UDP and Cloud JSON CompanyHostPlayerId / CompanyId serialization buffers (up to 96 chars) and hardened member role & failover guards so joined company crewmates always preserve ROLE: HUMAN MEMBER and [ 1. BOARD OWNER SHIP (CO-OP) ]",
+        "Enabled full-map storm wave amplification across outer ocean basins up to +-2,000+ km and updated [M] Nautical World Chart & 3rd-person Mini-Radar weather overlays to reflect live storm lifecycle intensity"
+      ],
+      "removed": [
+        "Removed fixed elliptical storm orbits that repeatedly looped near the center of the map, and eliminated 40-character Windows LocalInstanceGuid truncation that could falsely promote joined company members to COMPANY OWNER"
+      ]
+    },
     {
       "id": "milestone-v1930-v1927-wave-physics-clean-dry-decks-storm-rain-volume-slider",
       "timestampUtc": "2026-11-20T02:56:53Z",
@@ -679,10 +697,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.30",
+      "version": "v1.9.31",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Stateless deterministic UTC + SharedWorldSeed 6-waypoint Catmull-Rom roaming storms across regional, mid-basin, and 4-quadrant outer-ocean bands — 100% synchronized to 0.0000 cm across all multiplayer captains with zero center-map camping",
+        "Natural 50-90 minute Forming -> Mature -> Dissipating storm lifecycles with zero-pop generation rollovers, dynamic horizon & chart lifecycle fading, and mature-squall 3D forked lightning anchoring",
+        "Direct 1-click [ BOARD SHIP ] button right next to [ TELEPORT ] / [TP] on every company teammate's roster row in both [P] Multiplayer Co-Op and 1st-Person Bridge Monitor 7 [COMPANY]"
+      ],
+      "changed": [
+        "Widened UDP and Cloud JSON CompanyHostPlayerId / CompanyId serialization buffers (up to 96 chars) and hardened member role & failover guards so joined company crewmates always preserve ROLE: HUMAN MEMBER and [ 1. BOARD OWNER SHIP (CO-OP) ]",
+        "Enabled full-map storm wave amplification across outer ocean basins up to +-2,000+ km and updated [M] Nautical World Chart & 3rd-person Mini-Radar weather overlays to reflect live storm lifecycle intensity"
+      ],
+      "removed": [
+        "Removed fixed elliptical storm orbits that repeatedly looped near the center of the map, and eliminated 40-character Windows LocalInstanceGuid truncation that could falsely promote joined company members to COMPANY OWNER"
+      ]
+    },
+    {
+      "version": "v1.9.30",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Dedicated persistent Storm & Rain Volume slider (0%-100%, default 65%) in both 3rd-Person [ESC] -> SETTINGS and 1st-Person Bridge Monitor 7 [SETTINGS], joining Ship Horn, Boat Engine, and YouTube TV for 4 independent audio mix channels",
         "Balanced thunderstorm & heavy-rain acoustic mastering (~0.52x raw peak gain + ~0.62x closed-cabin muffling) scaling exclusively rain and thunder audio while keeping ocean surf, engine, horn, YouTube TV, and VHF independent",

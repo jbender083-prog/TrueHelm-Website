@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261119c" />
+  <link rel="stylesheet" href="./styles.css?v=20261119d" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,13 +93,13 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.30 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.31 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
           <p class="hero-summary">
-            Command 35 vessels at ~120 FPS in 1st-person across a 4,617 km ocean world spanning 74 islands, active corridor thunderstorms, and 2,876 vibrant coral reefs. Enjoy planted heavy-ship wave physics, clean dry decks, 4-channel audio sliders (including Storm &amp; Rain), or OpenXR VR hands.
+            Command 35 vessels at ~120 FPS in 1st-person across a 4,617 km ocean world spanning 74 islands, multiplayer-synced roaming storms with natural forming &amp; dissipating lifecycles, and 2,876 vibrant coral reefs. Click <code>[BOARD SHIP]</code> to crew a friend&rsquo;s vessel in 1 click, or steer with OpenXR VR hands.
           </p>
 
           <!-- Primary 1-Click Edge-Friendly Windows Installer (.zip) + Direct .exe Option -->
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.30</small>
+                <small>Added, changed &amp; removed in Release v1.9.31</small>
               </span>
             </a>
           </div>
@@ -186,8 +186,8 @@
 
           <article class="card">
             <div class="card-tag emerald">Multiplayer</div>
-            <h3>Companies, 3-Speed Cranes &amp; Deck-Walk Sync</h3>
-            <p>Press <kbd>P</kbd> to join a company on your own ship or click <code>[BOARD CO-OP SHIP]</code>, see captains <strong>walking live on deck</strong>, and sync <strong>Realistic / Medium / Fast port crane speeds</strong> per player.</p>
+            <h3>1-Click [BOARD SHIP], Cranes &amp; Deck-Walk</h3>
+            <p>Press <kbd>P</kbd> or open <code>Mon 7</code> to join a company and click <code>[BOARD SHIP]</code> on any teammate&rsquo;s row, see captains <strong>walking live on deck</strong>, and sync <strong>3-speed port cranes</strong>.</p>
           </article>
 
           <article class="card">
@@ -204,8 +204,8 @@
 
           <article class="card">
             <div class="card-tag amber">Dynamic Sea</div>
-            <h3>Planted Wave Physics, Storms &amp; 2,876 Reefs</h3>
-            <p>Big ships slice <strong>rock-steady through normal chop</strong> while coastal craft ride ocean swells across <strong>7 active corridor thunderstorms</strong>, dock wake reflections, and <strong>2,876 compact coral reefs</strong>.</p>
+            <h3>Roaming Storm Lifecycles &amp; 2,876 Reefs</h3>
+            <p>Sail across <strong>12 multiplayer-synced roaming weather cells</strong> with natural 50&ndash;90 min forming &amp; dissipating lifecycles, planted big-ship wave physics, and <strong>2,876 compact coral reefs</strong>.</p>
           </article>
 
           <article class="card">
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.30</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.30 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.31</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.31 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.30</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.31</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,33 +542,33 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.30</h3>
+              <h3 id="dash-added-heading">Added in v1.9.31</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Dedicated persistent <strong>Storm &amp; Rain Volume</strong> slider (0%&ndash;100%, default 65%) in both 3rd-Person <code>[ESC] &rarr; SETTINGS</code> and 1st-Person Bridge Monitor 7 <code>[SETTINGS]</code>, joining Ship Horn, Boat Engine, and YouTube TV for 4 independent audio mix channels</li>
-              <li>Balanced thunderstorm &amp; heavy-rain acoustic mastering (~0.52x raw peak gain + ~0.62x closed-cabin muffling) scaling exclusively rain and thunder audio while keeping ocean surf, engine, horn, YouTube TV, and VHF independent</li>
-              <li>Cloud &amp; local Career profile persistence for Storm &amp; Rain Volume across quick-switches, restarts, and live weather transitions (with instant 0% mute support)</li>
+              <li>Stateless deterministic <code>UTC + SharedWorldSeed</code> 6-waypoint Catmull-Rom roaming storms across regional, mid-basin, and 4-quadrant outer-ocean bands &mdash; 100% synchronized to 0.0000 cm across all multiplayer captains with zero center-map camping</li>
+              <li>Natural 50&ndash;90 minute <code>Forming &rarr; Mature &rarr; Dissipating</code> storm lifecycles with zero-pop generation rollovers, dynamic horizon &amp; chart lifecycle fading, and mature-squall 3D forked lightning anchoring</li>
+              <li>Direct 1-click <strong><code>[ BOARD SHIP ]</code></strong> button right next to <code>[ TELEPORT ]</code> / <code>[TP]</code> on every company teammate&rsquo;s roster row in both <kbd>P</kbd> Multiplayer Co-Op and 1st-Person Bridge Monitor 7 <code>[COMPANY]</code></li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.30</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.31</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Restored exact v1.9.27 planted boat-wave interaction physics across all 35 vessels &mdash; medium and large ships (<code>#08&ndash;#35</code>) slice rock-steady through normal ocean chop while small coastal vessels (<code>#01&ndash;#07</code>) keep lively pontoon buoyancy and <code>#03</code> starter wave-landing thumps</li>
-              <li>Boosted 1st-person bridge performance to ~120 FPS Ultra and 3rd-person 2-Boat Ultra to ~85 FPS while preserving 100% of spinning 3D stern propellers, optical windshield droplets, 3-speed multiplayer cranes, 2,876 compact coral reefs, and 7 active corridor thunderstorms</li>
+              <li>Widened UDP and Cloud JSON <code>CompanyHostPlayerId</code> / <code>CompanyId</code> serialization buffers (up to 96 chars) and hardened member role &amp; failover guards so joined company crewmates always preserve <code>ROLE: HUMAN MEMBER</code> and <code>[ 1. BOARD OWNER SHIP (CO-OP) ]</code></li>
+              <li>Enabled full-map storm wave amplification across outer ocean basins up to &plusmn;2,000+ km and updated <code>[M]</code> Nautical World Chart &amp; 3rd-person Mini-Radar weather overlays to reflect live storm lifecycle intensity</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.30</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.31</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Completely removed all water coming onto the top of vessels, deck-top water meshes, hull scupper cutouts, and side scupper waterfalls across all local and multiplayer ships for permanently clean, dry decks</li>
+              <li>Removed fixed elliptical storm orbits that repeatedly looped near the center of the map, and eliminated 40-character Windows <code>LocalInstanceGuid</code> truncation that could falsely promote joined company members to <code>COMPANY OWNER</code></li>
             </ul>
           </article>
         </div>
@@ -587,7 +587,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.30 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.31 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -595,8 +595,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.30</strong>
+                  <strong class="ver-num">v1.9.31</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Deterministic Seeded-Waypoint Roaming Storms &amp; Natural Lifecycles</strong> &mdash; <code>UTC + SharedWorldSeed</code> Catmull-Rom roaming weather cells across all 4 ocean quadrants (100% synced in multiplayer, zero center camping) with 50&ndash;90 min <code>Forming &rarr; Mature &rarr; Dissipating</code> lifecycles · <strong>1-Click <code>[ BOARD SHIP ]</code> Button</strong> next to <code>[ TELEPORT ]</code> on teammate rows in both <kbd>P</kbd> Co-Op and Bridge Monitor 7 <code>[COMPANY]</code>.</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>Full 45-Char Windows <code>CompanyHostPlayerId</code> Sync &amp; Member Role Preservation</strong> ensuring joined crewmates always retain <code>HUMAN MEMBER</code> and <code>[ 1. BOARD OWNER SHIP (CO-OP) ]</code> · <strong>Full-Map Outer Basin Storm Waves &amp; Lifecycle Radar/Chart Overlays</strong>.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Removed fixed elliptical center-looping storm orbits and eliminated 40-char <code>LocalInstanceGuid</code> truncation in multiplayer company sync.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.30</strong>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1107,13 +1122,13 @@
               <ol class="clean-list">
                 <li>Have the other player press <kbd>P</kbd> <em>(or click <strong>[COMPANY]</strong> on their rightmost 1st-person bridge monitor)</em>.</li>
                 <li>Look at the live <strong>US Ocean Server</strong> player list at the bottom of that menu &mdash; your callsign, active ship, and <code>[COMPANY NAME]</code> appear automatically within 1&ndash;2 seconds.</li>
-                <li>Click <strong>[ JOIN COMPANY ]</strong> on your row to join while keeping their own boat, then click <strong>[ BOARD CO-OP SHIP ]</strong> anytime to teleport <strong>straight onto your ship&rsquo;s bridge</strong>!</li>
+                <li>Click <strong>[ JOIN COMPANY ]</strong> on your row to join while keeping their own boat, then click <strong>[ BOARD SHIP ]</strong> right next to <code>[ TELEPORT ]</code> on your row (or <strong>[ 1. BOARD OWNER SHIP (CO-OP) ]</strong>) anytime to teleport <strong>straight onto your ship&rsquo;s bridge</strong>!</li>
               </ol>
             </div>
           </div>
 
           <div class="coop-modes-box">
-            <h4>What Happens Once They Join &amp; Click <code>[ BOARD CO-OP SHIP ]</code></h4>
+            <h4>What Happens Once They Join &amp; Click <code>[ BOARD SHIP ]</code></h4>
             <ul class="clean-list">
               <li><strong>Shared Bridge, Lounge &amp; Controls:</strong> Walk around the wheelhouse &amp; aft lounge together (<kbd>C</kbd> / <kbd>F9</kbd>), sit on the sofa (<kbd>E</kbd>), watch the same <strong>110&quot; YouTube TV in live Watch-Party sync</strong> (Pause, Play &amp; timeline scrub synced across your company), and see each other&rsquo;s crew avatars live. Helm/throttle, anchor/mooring, and navigation/autopilot sync across the hull, and every cargo contract payout splits automatically.</li>
               <li><strong>Switch Between 3 Crew Ship Modes Anytime (<kbd>P</kbd>):</strong>
@@ -1369,7 +1384,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261119c"></script>
-  <script type="module" src="./globe.js?v=20261119c"></script>
+  <script src="./app.js?v=20261119d"></script>
+  <script type="module" src="./globe.js?v=20261119d"></script>
 </body>
 </html>

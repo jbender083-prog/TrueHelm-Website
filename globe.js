@@ -10,7 +10,7 @@ import { GLTFLoader } from './assets/vendor/three/GLTFLoader.js';
   const loadingText = document.getElementById('globe-loading-text');
   if (!canvas || !stageEl) return;
 
-  const ASSET_VER = '20261119c';
+  const ASSET_VER = '20261119d';
 
   // Constants matching Public/ShipTypes.h + ShippingGameInstance.cpp + generate_truehelm_globe_assets.py 1-to-1
   const GLOBE_RADIUS = 100.0;
