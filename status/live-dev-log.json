@@ -1,14 +1,34 @@
 {
-  "updatedAtUtc": "2026-11-21T16:40:00Z",
+  "updatedAtUtc": "2026-11-21T17:45:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.42",
-  "latestReleaseTag": "v1.9.42",
-  "buildPhase": "Release v1.9.42 Live — Life Simulator Phase 2 (Full Regional Airports & Walk-In Terminals on All 74 Islands, Smartphone FLIGHTS App & Live Real-Time 3D Commercial Island-to-Island Flights)",
-  "buildStatus": "Release v1.9.42 Live — Life Simulator Phase 2 (Full Regional Airports & Walk-In Terminals on All 74 Islands, Smartphone FLIGHTS App & Live Real-Time 3D Commercial Island-to-Island Flights)",
+  "activeVersion": "v1.9.43",
+  "latestReleaseTag": "v1.9.43",
+  "buildPhase": "Release v1.9.43 Live — Life Simulator Phase 3 (Drivable Personal Cars, Live AI Road Traffic Obeying Traffic Lights, Physical 3D Uber Pickups, Living Town NPCs & Smartphone MOTORS App)",
+  "buildStatus": "Release v1.9.43 Live — Life Simulator Phase 3 (Drivable Personal Cars, Live AI Road Traffic Obeying Traffic Lights, Physical 3D Uber Pickups, Living Town NPCs & Smartphone MOTORS App)",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1943-life-sim-phase3-drivable-cars-live-ai-traffic-physical-uber-living-npcs-motors-app",
+      "timestampUtc": "2026-11-21T17:45:00Z",
+      "version": "v1.9.43",
+      "summary": "Published TrueHelm v1.9.43 Live Release (1-Click In-Launcher Update): Life Simulator Phase 3 — Drivable Personal Cars, Live AI Road Traffic Obeying Traffic Lights, Physical 3D Uber Pickups & Rides, Living Town NPC Daily Routines & 8th Smartphone MOTORS App.",
+      "added": [
+        "Drivable Personal Cars Parked in Every Island's Starter Home Paved Driveway — walk up and press [E] to get behind the wheel of 4 drivable island vehicles (Coastal Compact Hatchback starter car, TrueHelm Executive Sedan, Coastal Explorer SUV, and Harbor Crew Pickup Truck), drive smoothly across terrain-conforming island roads with [W/A/S/D] + [SPACE] handbrake, toggle [L] headlights & [H] horn, and switch [V] between 3rd-Person Chase and a 1st-Person Driver Cockpit featuring a rotating 3-spoke sport steering wheel, glowing panoramic digital speedometer/RPM/GPS cluster, and visible painted hood",
+        "Live AI Civilian Road Traffic Obeying Working 3-Aspect Traffic Lights — 10 diverse metallic clearcoat AI cars per island drive right-hand road lanes across downtown & residential neighborhoods, stop cleanly behind zebra crosswalks on Red & Yellow signals, proceed smoothly on Green, maintain safe car-following anti-collision spacing around other cars and your vehicle, and automatically illuminate bright LED headlights and crimson taillights at dusk and night",
+        "Physical 3D Uber Black Executive Sedan Pickups & Driven Island Rides — ordering an Uber on your smartphone while ashore now dispatches a physical glossy Midnight Black Uber Sedan with a glowing UBER roof beacon that pulls up curbside and drives you smoothly along island roads to your destination, complete with a live ride telemetry HUD bar and instant [SPACE]/[F] Skip to Arrival",
+        "Living Coastal Town NPC Citizens on Daily Time-of-Day Routines — 20 animated pedestrians per island stroll along raised concrete sidewalks, shop the aisles inside Horizon Fresh Market, work at Harborview Commerce Center, and travel through each island's Walk-In Regional Airport Terminal",
+        "8th Smartphone App: MOTORS (TrueHelm Motors) — purchase and switch between all 4 drivable car models (logged to your Bank ledger & Email receipts with persistent save support), customize your vehicle across 7 metallic clearcoat finishes (Cobalt Blue, Pearl White, Ruby Red, Silver Metallic, Midnight Black, Emerald Teal, Sunburst Gold), or tap Deliver My Car to Curb to bring your car right to your current street"
+      ],
+      "changed": [
+        "Replaced instant ashore Uber teleports with physical 3D curbside Uber Sedan pickups and live road drives while keeping instant dock-to-island Uber transfers fast from aboard ship",
+        "Streamlined the driving and Uber HUD experience by hiding the on-foot shore bar while driving or riding and displaying a sleek bottom-center Speedometer/Controls pill"
+      ],
+      "removed": [
+        "Removed empty static island streets and instant ashore Uber fade-jumps in favor of live signal-obeying AI traffic, strolling town citizens, and physical curbside Uber Executive Sedans"
+      ]
+    },
     {
       "id": "milestone-v1942-life-sim-phase2-regional-airports-walkin-terminals-flights-app-live-3d-airliner-flights",
       "timestampUtc": "2026-11-21T16:40:00Z",
