@@ -1,5 +1,5 @@
 {
-  "updatedAtUtc": "2026-11-21T22:45:00Z",
+  "updatedAtUtc": "2026-11-21T22:53:00Z",
   "syncMode": "on-launcher-release",
   "activeVersion": "v1.9.46",
   "latestReleaseTag": "v1.9.46",
@@ -970,10 +970,29 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.45",
+      "version": "v1.9.46",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Photorealistic Sculpted 3D Cars & 4-Seat Luxury Interiors — rebuilt all 4 drivable & AI vehicles (Compact Hatchback, Executive Sedan / Uber Black, Coastal SUV, and Harbor Pickup Truck) with glossy ClearCoat paintwork, 10-spoke alloy wheels with crimson brake calipers, sculpted LED headlights & full-width taillight bars, plus a full 4-seat smooth Nappa & diamond-quilted saddle-leather cabin featuring a backlit digital gauge cluster, widescreen GPS navigation tablet, carbon center console, ambient cyan LED lighting, flat-bottom sport steering wheel, and a visible seated Uber chauffeur",
+        "Realistic 30-60s Paved-Road Uber Approach & Walk-Up [E] Boarding — ordering an Uber from your home keeps you 100% grounded on foot while a glossy Midnight Black Uber Black sedan drives along paved island streets to pull up curbside outside your house; walk to the street and press [E] (or Click) to enter the rear executive seat with full mouse free-look and [V] interior/chase camera toggle",
+        "Law-Abiding House-to-Airport Paved-Road Navigation — Uber rides now calculate smooth multi-waypoint paved-road paths strictly on island streets, obeying every Red/Yellow traffic light, full 1.5-second Stop Sign checks, cross-traffic right-of-way yielding, and pedestrian courtesy stops before pulling smoothly up to the Regional Airport Terminal entrance curb"
+      ],
+      "changed": [
+        "Fixed the ground fall-through bug when ordering an Uber at a house so players remain solidly grounded on foot until physically walking up to board the parked curbside Uber",
+        "Upgraded Regional Airport Terminal Pickup Loops across all 74 islands with curved multi-waypoint asphalt edges and clean uncovered black asphalt curbside drop-off lanes right outside the glass terminal doors",
+        "Hardened Uber anti-collision & parked-vehicle courtesy handling so Ubers smoothly clear stationary parked cars without deadlocking while strictly obeying signals, stop signs, and moving traffic"
+      ],
+      "removed": [
+        "Removed instant teleport-into-Uber boarding and off-road / grass-cutting Uber shortcuts in favor of realistic curbside pickups and law-abiding paved-road routes"
+      ]
+    },
+    {
+      "version": "v1.9.45",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Interactive First-Time Airplane Window-Seat Arrival — start your island journey aboard TrueHelm Airways Flight TH-101 descending into your chosen island Regional Airport Runway 36 with full mouse free-look across our new photorealistic 3D walkable airliner cabin, 2-2 quilted leather seating, overhead stowage bins, seated fellow travelers, and sculpted oval windows overlooking the swept wing and approaching island",
         "Walk-Off Gate 1 Disembark & Complimentary Welcome Uber Home — once parked at Gate 1 (Seatbelt Sign OFF), press [E] to unbuckle and stand up into the carpeted aisle, walk forward to the glowing green EXIT GATE 1 front boarding door, press [E] to step into the Regional Airport Terminal, and call a complimentary Welcome Uber Black sedan straight to your newly granted Starter Home & Cobalt Blue Starter Car",
