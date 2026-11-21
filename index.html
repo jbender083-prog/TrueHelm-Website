@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261120f" />
+  <link rel="stylesheet" href="./styles.css?v=20261120g" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,13 +93,13 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.37 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.38 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
           <p class="hero-summary">
-            Command 35 watertight vessels across a 4,617 km ocean &amp; press <kbd>G</kbd> to step ashore across 74 islands with 240-design photorealistic walk-in homes (see-through glass, <kbd>E</kbd> hinged doors &amp; 3D furniture), tide-floating Yokohama dock buoys &amp; coupled anchor swing at ~116 FPS. Click <code>[BOARD SHIP]</code> for Co-Op or OpenXR VR.
+            Command 35 watertight vessels with exact curved-hull vs per-buoy Yokohama dock fender physics (zero air-gap bounce), press <kbd>G</kbd> to step ashore across 74 islands with 240-design walk-in homes (<kbd>E</kbd> hinged doors &amp; 3D furniture), and sail at ~117 FPS. Click <code>[BOARD SHIP]</code> for Co-Op or OpenXR VR.
           </p>
 
           <!-- Primary 1-Click Edge-Friendly Windows Installer (.zip) + Direct .exe Option -->
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.37</small>
+                <small>Added, changed &amp; removed in Release v1.9.38</small>
               </span>
             </a>
           </div>
@@ -198,8 +198,8 @@
 
           <article class="card">
             <div class="card-tag">35 Vessels</div>
-            <h3>Watertight 35-Ship Hulls &amp; Floating Buoys</h3>
-            <p>All 35 vessels feature <strong>100% seamless watertight welds &amp; panelized superstructures</strong>, <strong>tide-floating Yokohama dock fender buoys</strong>, <strong>draped mooring ropes</strong> &amp; <strong>coupled heavy anchor swing</strong>.</p>
+            <h3>Curved-Hull Per-Buoy Physics &amp; 35 Hulls</h3>
+            <p>All 35 vessels feature <strong>exact 26-vertex curved-hull vs per-buoy Yokohama fender squish &amp; berthing pivot</strong> (zero air-gap bounce), <strong>tide-floating buoys</strong>, <strong>draped ropes</strong> &amp; <strong>coupled anchor swing</strong>.</p>
           </article>
 
           <article class="card">
@@ -210,8 +210,8 @@
 
           <article class="card">
             <div class="card-tag emerald">PC &amp; In-Game VR</div>
-            <h3>Zero-Flicker Bridge Desk, ~116 FPS &amp; Audio</h3>
-            <p>Helm a <strong>single-sided zero-flicker matte-charcoal desk</strong> (<strong>100% bone-dry cabin floor</strong> &amp; 0.000 cm cockpit drift) at <strong>~116 FPS Ultra</strong> with <strong>4-channel audio sliders</strong>.</p>
+            <h3>Zero-Flicker Bridge Desk, ~117 FPS &amp; Audio</h3>
+            <p>Helm a <strong>single-sided zero-flicker matte-charcoal desk</strong> (<strong>100% bone-dry cabin floor</strong> &amp; 0.000 cm cockpit drift) at <strong>~117 FPS Ultra</strong> with <strong>4-channel audio sliders</strong>.</p>
           </article>
         </div>
       </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.37</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.37 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.38</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.38 Live · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.37</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.38</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,32 +542,31 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.37</h3>
+              <h3 id="dash-added-heading">Added in v1.9.38</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li><strong>Life-Sim Island Housing Overhaul across all 74 islands</strong> &mdash; 20 to 50 photorealistic walk-in homes per island generated from a <strong>240-design architectural catalog</strong> (humble coastal cottages, 1&ndash;2 story family homes, 2&ndash;3 story townhouses &amp; villas, and grand 2&ndash;3 story luxury mansions) with <kbd>G</kbd> Step Ashore on foot, true see-through glass windows, <kbd>E</kbd> hinged exterior &amp; interior room doors, walkable 1F&ndash;3F staircases, and fully furnished living rooms, kitchens, dining rooms, bedrooms, and bathrooms</li>
-              <li><strong>Buoyant tide- and wave-floating Yokohama pneumatic dock fender buoys</strong> across all ports &mdash; buoys float proudly (~62% above the waterline) on rising high tides and harbor swells with wave-slope roll/pitch and live berthing squish while forged-steel concrete wall brackets stay bolted to the pier rim and dual suspension ropes slacken dynamically in a seaward catenary</li>
-              <li><strong>Heavy coupled finite-mass chain &amp; rigid-body anchor pendulum physics</strong> &mdash; anchors and chain links swing together along one coherent arc with splash-entry and water-breakout angular impulses, free air swing all the way up to the hawsepipe throat, and authentic vessel-mass rotational inertia</li>
+              <li>Exact <strong>26-vertex curved-hull polygon vs individual floating Yokohama fender buoy capsule</strong> (2.1 m barrel + domed ends) contact solver across all 35 vessels &mdash; angled bow-in or stern-in approaches sail right up to true flush hull-on-rubber contact with zero phantom air-gap bounce</li>
+              <li><strong>Individual per-buoy elastic compression and lever-arm rotational berthing pivot</strong> &mdash; only the exact fender buoy(s) physically touched by the curved hull squish while neighboring buoys remain 100% round, and brushing a buoy at an angle gently pivots the vessel alongside the pier</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.37</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.38</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Welded all co-located hull, deck, well-deck, and forward wheelhouse vertices across all 35 vessels with 3-level hardware LODs for <strong>100% seamless watertight exterior walkways and bulwarks</strong></li>
+              <li>Upgraded offshore channel and <strong>harbor navigation buoys</strong> to the exact 26-vertex curved-hull polygon distance solver while preserving 100% solid concrete quay wall protection at any angle or speed</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.37</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.38</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Completely removed all legacy placeholder box buildings, midrise blocks, and static coastal houses across all 74 islands, along with submerged high-tide dock buoys, premature mid-air anchor stiffening, deck step seam cracks, and legacy bow bulwark cutouts</li>
+              <li>Eliminated rectangular bounding-box bow/stern corner air-gap bounces on angled berthing approaches and virtual invisible walls across the 16.4-meter open-water gaps between dock fender buoys</li>
             </ul>
           </article>
         </div>
@@ -586,7 +585,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.37 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.38 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -594,8 +593,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.37</strong>
+                  <strong class="ver-num">v1.9.38</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Exact 26-Vertex Curved-Hull Polygon vs Individual Floating Yokohama Capsule Contact Solver</strong> across all 35 vessels (zero phantom air-gap bounce on angled approaches) · <strong>Individual Per-Buoy Elastic Squish &amp; Lever-Arm Berthing Pivot</strong>.</p>
+                <p><span class="log-pill changed">~ Changed</span> <strong>Curved-Hull Offshore Channel &amp; Harbor Navigation Buoy Contact Solver</strong> + 100% solid concrete quay wall protection (~117 FPS 1st-Person Ultra).</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Eliminated rectangular bounding-box corner air-gap bounces and invisible walls across the 16.4-meter open-water gaps between dock fender buoys.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.37</strong>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1473,7 +1487,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261120f"></script>
-  <script type="module" src="./globe.js?v=20261120f"></script>
+  <script src="./app.js?v=20261120g"></script>
+  <script type="module" src="./globe.js?v=20261120g"></script>
 </body>
 </html>
