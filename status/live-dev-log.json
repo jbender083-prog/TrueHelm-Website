@@ -1,14 +1,33 @@
 {
-  "updatedAtUtc": "2026-11-21T18:45:00Z",
+  "updatedAtUtc": "2026-11-21T20:00:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.44",
-  "latestReleaseTag": "v1.9.44",
-  "buildPhase": "Release v1.9.44 Live — Life Simulator Phase 4 (Interactive Grocery Shopping & Pantry, Player Needs & In-Home Sleep, 3 Playable Land Careers, 3D Home Upgrades, Living NPC Conversations & 9th Smartphone JOBS App)",
-  "buildStatus": "Release v1.9.44 Live — Life Simulator Phase 4 (Interactive Grocery Shopping & Pantry, Player Needs & In-Home Sleep, 3 Playable Land Careers, 3D Home Upgrades, Living NPC Conversations & 9th Smartphone JOBS App)",
+  "activeVersion": "v1.9.45",
+  "latestReleaseTag": "v1.9.45",
+  "buildPhase": "Release v1.9.45 Live — Interactive Airplane Window-Seat Arrival, Walkable 3D Cabin, Smooth Spline Flight Physics, Exact Returning-Player Resume & Full Multiplayer World Sync",
+  "buildStatus": "Release v1.9.45 Live — Interactive Airplane Window-Seat Arrival, Walkable 3D Cabin, Smooth Spline Flight Physics, Exact Returning-Player Resume & Full Multiplayer World Sync",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1945-airplane-window-arrival-walkable-cabin-smooth-flight-exact-resume-multiplayer-sync",
+      "timestampUtc": "2026-11-21T20:00:00Z",
+      "version": "v1.9.45",
+      "summary": "Published TrueHelm v1.9.45 Live Release (1-Click In-Launcher Update): Interactive Airplane Window-Seat Arrival, Photorealistic Walkable 3D Cabin, Smooth Spline Flight Physics, Exact Returning-Player Resume (Boat / Car / House) & Full Multiplayer World Sync.",
+      "added": [
+        "Interactive First-Time Airplane Window-Seat Arrival — start your island journey aboard TrueHelm Airways Flight TH-101 descending into your chosen island Regional Airport Runway 36 with full mouse free-look across our new photorealistic 3D walkable airliner cabin, 2-2 quilted leather seating, overhead stowage bins, seated fellow travelers, and sculpted oval windows overlooking the swept wing and approaching island",
+        "Walk-Off Gate 1 Disembark & Complimentary Welcome Uber Home — once parked at Gate 1 (Seatbelt Sign OFF), press [E] to unbuckle and stand up into the carpeted aisle, walk forward to the glowing green EXIT GATE 1 front boarding door, press [E] to step into the Regional Airport Terminal, and call a complimentary Welcome Uber Black sedan straight to your newly granted Starter Home & Cobalt Blue Starter Car",
+        "Exact Returning-Player Session Resume — returning captains now spawn right where they left off, whether aboard their vessel at sea or berth, inside their personal car on an island street or driveway, or inside their coastal residence",
+        "Full Multiplayer Life-Sim World Sync — synchronized UTC traffic light cycles, deterministic AI road traffic, strolling town pedestrians, ambient sky airliners, and live 3D remote player airplanes, cars, Ubers & on-foot avatars across all 74 islands"
+      ],
+      "changed": [
+        "Rebuilt commercial airplane flight physics for both first-time arrivals and inter-island flights onto a continuous C2 spline trajectory with coordinated turn banking, smooth velocity integration, aerodynamic takeoff rotation/landing flare & damped exterior chase camera",
+        "Upgraded Smartphone Uber MY HOME rides on the same island to dispatch real physical 3D Midnight Black Uber Executive Sedans directly from the airport curb to your house"
+      ],
+      "removed": [
+        "Removed the initial boat sail-in startup animation on game launch in favor of an instant sunlit coastal island & airport vista Main Menu"
+      ]
+    },
     {
       "id": "milestone-v1944-life-sim-phase4-grocery-shopping-needs-pantry-land-careers-home-upgrades-npc-talk-jobs-app",
       "timestampUtc": "2026-11-21T18:45:00Z",
@@ -932,10 +951,29 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.39",
+      "version": "v1.9.45",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Interactive First-Time Airplane Window-Seat Arrival — start your island journey aboard TrueHelm Airways Flight TH-101 descending into your chosen island Regional Airport Runway 36 with full mouse free-look across our new photorealistic 3D walkable airliner cabin, 2-2 quilted leather seating, overhead stowage bins, seated fellow travelers, and sculpted oval windows overlooking the swept wing and approaching island",
+        "Walk-Off Gate 1 Disembark & Complimentary Welcome Uber Home — once parked at Gate 1 (Seatbelt Sign OFF), press [E] to unbuckle and stand up into the carpeted aisle, walk forward to the glowing green EXIT GATE 1 front boarding door, press [E] to step into the Regional Airport Terminal, and call a complimentary Welcome Uber Black sedan straight to your newly granted Starter Home & Cobalt Blue Starter Car",
+        "Exact Returning-Player Session Resume — returning captains now spawn right where they left off, whether aboard their vessel at sea or berth, inside their personal car on an island street or driveway, or inside their coastal residence",
+        "Full Multiplayer Life-Sim World Sync — synchronized UTC traffic light cycles, deterministic AI road traffic, strolling town pedestrians, ambient sky airliners, and live 3D remote player airplanes, cars, Ubers & on-foot avatars across all 74 islands"
+      ],
+      "changed": [
+        "Rebuilt commercial airplane flight physics for both first-time arrivals and inter-island flights onto a continuous C2 spline trajectory with coordinated turn banking, smooth velocity integration, aerodynamic takeoff rotation/landing flare & damped exterior chase camera",
+        "Upgraded Smartphone Uber MY HOME rides on the same island to dispatch real physical 3D Midnight Black Uber Executive Sedans directly from the airport curb to your house"
+      ],
+      "removed": [
+        "Removed the initial boat sail-in startup animation on game launch in favor of an instant sunlit coastal island & airport vista Main Menu"
+      ]
+    },
+    {
+      "version": "v1.9.39",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "3D Character Customization Studio & Choose-Your-Spawn-Island Start — new arrivals customize Male or Female 3D characters on a live 360-degree turntable (5 shirts, 5 pants, 5 hats, 5 glasses, 5 shoes, plus skin tone & hair color swatches) and choose any island across the archipelago to spawn on foot (with re-customization available anytime in Settings)",
         "Interactive Captain's Smartphone ([MMB] Middle Mouse Button popup) featuring 5 connected life-sim apps — Zillow Real Estate (browse and purchase any of the 2,671 walk-in homes across all 74 islands with persistent ownership), Uber (instant rides to your Owned Home's front porch, island neighborhoods, or back to your docked ship), Phone (persistent +1 555 number, multiplayer friend numbers & keypad dialer), Email (property deed receipts & dispatches), and Bank (live balance & transaction ledger)",
