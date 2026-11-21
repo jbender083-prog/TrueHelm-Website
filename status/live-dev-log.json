@@ -1,14 +1,34 @@
 {
-  "updatedAtUtc": "2026-11-21T17:45:00Z",
+  "updatedAtUtc": "2026-11-21T18:45:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.43",
-  "latestReleaseTag": "v1.9.43",
-  "buildPhase": "Release v1.9.43 Live — Life Simulator Phase 3 (Drivable Personal Cars, Live AI Road Traffic Obeying Traffic Lights, Physical 3D Uber Pickups, Living Town NPCs & Smartphone MOTORS App)",
-  "buildStatus": "Release v1.9.43 Live — Life Simulator Phase 3 (Drivable Personal Cars, Live AI Road Traffic Obeying Traffic Lights, Physical 3D Uber Pickups, Living Town NPCs & Smartphone MOTORS App)",
+  "activeVersion": "v1.9.44",
+  "latestReleaseTag": "v1.9.44",
+  "buildPhase": "Release v1.9.44 Live — Life Simulator Phase 4 (Interactive Grocery Shopping & Pantry, Player Needs & In-Home Sleep, 3 Playable Land Careers, 3D Home Upgrades, Living NPC Conversations & 9th Smartphone JOBS App)",
+  "buildStatus": "Release v1.9.44 Live — Life Simulator Phase 4 (Interactive Grocery Shopping & Pantry, Player Needs & In-Home Sleep, 3 Playable Land Careers, 3D Home Upgrades, Living NPC Conversations & 9th Smartphone JOBS App)",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1944-life-sim-phase4-grocery-shopping-needs-pantry-land-careers-home-upgrades-npc-talk-jobs-app",
+      "timestampUtc": "2026-11-21T18:45:00Z",
+      "version": "v1.9.44",
+      "summary": "Published TrueHelm v1.9.44 Live Release (1-Click In-Launcher Update): Life Simulator Phase 4 — Interactive Grocery Shopping & Pantry, Player Needs & In-Home Sleep, 3 Playable Land Careers (Uber Driver, Express Parcel Run, Harborview Office Shifts), 3D Home Upgrade Furniture Packs, Living NPC Conversations & 9th Smartphone JOBS App.",
+      "added": [
+        "Player Life-Sim Needs (Hunger, Energy & Mood), Pantry & Cozy In-Home Rest — track your live status via a sleek compact top-left pill while ashore or driving (keeping the 3rd-person ocean ship view 100% unobstructed), earn a +15% Well-Rested Career Pay Bonus when Hunger & Energy stay at 60%+, eat meals from your stocked Pantry, or press [E] inside your owned home to Rest & Sleep back to 100% Energy",
+        "Interactive Horizon Fresh Market Express Checkout Kiosks — step inside any island's Horizon Fresh Market and interact ([E]) with the glowing stainless-steel & coastal-oak Express POS Kiosk to buy 6 grocery items (Fresh Island Coffee, Artisan Sandwich, Coastal Seafood Bowl, Organic Fruit Basket, Gourmet Steak Dinner, and Family Groceries Pack) logged directly to your Bank ledger & Email receipts",
+        "3 Playable Land-Based Careers & Glowing 3D Waypoint Beacons — earn cash outside maritime shipping with Uber Driver Gigs (drive your own car to glowing Cyan pickup rings with waiting 3D passengers and deliver to Emerald destination curbs), Express Parcel Delivery Runs (multi-stop residential driveway drops guided by Gold beacons), and Harborview Commerce Center Logistics Office Shifts (clock in at the glowing 3D Careers Terminal in the 1F lobby for rank promotions from Island Associate up to Port Director)",
+        "Purchasable 3D Owned-Home Lifestyle Upgrades & Living NPC Citizen Conversations — unlock and immediately spawn photorealistic 3D Artisan Espresso Bars, 65-Inch 4K Coastal Smart TV & Oak Soundbar Credenzas, and Ceramic Botanical Planters at your island residence, plus walk up to any living coastal town citizen and press [E] to chat for contextual island tips and a +5% Mood boost",
+        "9th Smartphone App: JOBS (TrueHelm Careers & Life) — completes a clean symmetrical 3x3 smartphone app grid with dedicated CAREERS, MARKET (grocery store & pantry eating), and HOME (3D home upgrades & quick rest) tabs, all persisted seamlessly in your career save profile"
+      ],
+      "changed": [
+        "Upgraded island town streaming so switching or streaming additional archipelago islands preserves all active island vehicles, careers, and landmarks cleanly",
+        "Replaced the on-foot top banner automatically whenever an active Land Career Dispatch Bar or Office Shift Progress Bar is on screen to keep HUD layout crisp and zero-overlap"
+      ],
+      "removed": [
+        "Removed passive non-interactive grocery counters and commercial lobbies in favor of working 3D Express Self-Checkout Kiosks, Harborview Careers Shift Terminals, and interactive town citizen dialogue"
+      ]
+    },
     {
       "id": "milestone-v1943-life-sim-phase3-drivable-cars-live-ai-traffic-physical-uber-living-npcs-motors-app",
       "timestampUtc": "2026-11-21T17:45:00Z",
