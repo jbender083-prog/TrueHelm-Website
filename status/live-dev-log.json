@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-21T04:44:28Z",
+  "updatedAtUtc": "2026-11-21T09:35:35Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.38",
-  "latestReleaseTag": "v1.9.38",
-  "buildPhase": "Release v1.9.38 Live — Exact Curved-Hull-to-Buoy Capsule Contact Physics, Individual Per-Buoy Squish & Lever-Arm Berthing Pivot",
-  "buildStatus": "Release v1.9.38 Live — Exact Curved-Hull-to-Buoy Capsule Contact Physics, Individual Per-Buoy Squish & Lever-Arm Berthing Pivot",
+  "activeVersion": "v1.9.39",
+  "latestReleaseTag": "v1.9.39",
+  "buildPhase": "Release v1.9.39 Live — 3D Character Studio & Island Spawn, Captain's Smartphone (Zillow, Uber, Phone, Email & Bank), Clean 3P UI Toggle, True Reflective Mirrors, Wall-Hugging Bathrooms & On-Foot [SPACE] Jump",
+  "buildStatus": "Release v1.9.39 Live — 3D Character Studio & Island Spawn, Captain's Smartphone (Zillow, Uber, Phone, Email & Bank), Clean 3P UI Toggle, True Reflective Mirrors, Wall-Hugging Bathrooms & On-Foot [SPACE] Jump",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1939-3d-character-studio-island-spawn-smartphone-zillow-uber-clean3p-real-mirrors-jump",
+      "timestampUtc": "2026-11-21T09:35:35Z",
+      "version": "v1.9.39",
+      "summary": "Published TrueHelm v1.9.39 Live Release (1-Click In-Launcher Update): 3D Character Studio & Island Spawn, Captain's Smartphone (Zillow, Uber, Phone, Email & Bank), Clean 3P UI Toggle, True Reflective Mirrors, Wall-Hugging Bathrooms & On-Foot [SPACE] Jump.",
+      "added": [
+        "3D Character Customization Studio & Choose-Your-Spawn-Island Start — new arrivals customize Male or Female 3D characters on a live 360-degree turntable (5 shirts, 5 pants, 5 hats, 5 glasses, 5 shoes, plus skin tone & hair color swatches) and choose any island across the archipelago to spawn on foot (with re-customization available anytime in Settings)",
+        "Interactive Captain's Smartphone ([MMB] Middle Mouse Button popup) featuring 5 connected life-sim apps — Zillow Real Estate (browse and purchase any of the 2,671 walk-in homes across all 74 islands with persistent ownership), Uber (instant rides to your Owned Home's front porch, island neighborhoods, or back to your docked ship), Phone (persistent +1 555 number, multiplayer friend numbers & keypad dialer), Email (property deed receipts & dispatches), and Bank (live balance & transaction ledger)",
+        "Clean 3rd-Person Driving UI Toggle (defaulting OFF for a 100% clean unobstructed cinematic 3rd-person view), true reflective silvered glass mirrors, 5 individual wall-hugging bathroom fixtures, 8 new wall-to-wall 3D room furnishings & coastal art, and ceiling-safe on-foot [SPACE] jumping ashore, inside homes, and aboard ship"
+      ],
+      "changed": [
+        "Upgraded interior room proportions and wall-aware fixture placement across all 240 island house designs so furniture hugs solid walls cleanly without blocking doorways or windows, plus gridded warm ceiling lighting in larger rooms"
+      ],
+      "removed": [
+        "Eliminated mandatory boat-first onboarding for brand-new players, veined marble textures on bathroom mirrors, center-of-room single-piece bathroom clumps, floating mid-air mirrors, and cluttered default 3rd-person HUD overlays"
+      ]
+    },
     {
       "id": "milestone-v1938-exact-curved-hull-buoy-capsule-contact-per-buoy-squish-lever-pivot",
       "timestampUtc": "2026-11-21T04:44:28Z",
@@ -819,10 +836,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.38",
+      "version": "v1.9.39",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "3D Character Customization Studio & Choose-Your-Spawn-Island Start — new arrivals customize Male or Female 3D characters on a live 360-degree turntable (5 shirts, 5 pants, 5 hats, 5 glasses, 5 shoes, plus skin tone & hair color swatches) and choose any island across the archipelago to spawn on foot (with re-customization available anytime in Settings)",
+        "Interactive Captain's Smartphone ([MMB] Middle Mouse Button popup) featuring 5 connected life-sim apps — Zillow Real Estate (browse and purchase any of the 2,671 walk-in homes across all 74 islands with persistent ownership), Uber (instant rides to your Owned Home's front porch, island neighborhoods, or back to your docked ship), Phone (persistent +1 555 number, multiplayer friend numbers & keypad dialer), Email (property deed receipts & dispatches), and Bank (live balance & transaction ledger)",
+        "Clean 3rd-Person Driving UI Toggle (defaulting OFF for a 100% clean unobstructed cinematic 3rd-person view), true reflective silvered glass mirrors, 5 individual wall-hugging bathroom fixtures, 8 new wall-to-wall 3D room furnishings & coastal art, and ceiling-safe on-foot [SPACE] jumping ashore, inside homes, and aboard ship"
+      ],
+      "changed": [
+        "Upgraded interior room proportions and wall-aware fixture placement across all 240 island house designs so furniture hugs solid walls cleanly without blocking doorways or windows, plus gridded warm ceiling lighting in larger rooms"
+      ],
+      "removed": [
+        "Eliminated mandatory boat-first onboarding for brand-new players, veined marble textures on bathroom mirrors, center-of-room single-piece bathroom clumps, floating mid-air mirrors, and cluttered default 3rd-person HUD overlays"
+      ]
+    },
+    {
+      "version": "v1.9.38",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Exact 26-vertex curved-hull polygon vs individual floating Yokohama fender buoy capsule (2.1 m barrel + domed ends) contact solver across all 35 vessels — angled bow-in or stern-in approaches sail right up to true flush hull-on-rubber contact with zero phantom air-gap bounce",
         "Individual per-buoy elastic compression and lever-arm rotational berthing pivot — only the exact fender buoy(s) physically touched by the curved hull squish while neighboring buoys remain 100% round, and brushing a buoy at an angle gently pivots the vessel alongside the pier"
