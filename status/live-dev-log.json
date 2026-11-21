@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-21T09:35:35Z",
+  "updatedAtUtc": "2026-11-21T13:10:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.39",
-  "latestReleaseTag": "v1.9.39",
-  "buildPhase": "Release v1.9.39 Live — 3D Character Studio & Island Spawn, Captain's Smartphone (Zillow, Uber, Phone, Email & Bank), Clean 3P UI Toggle, True Reflective Mirrors, Wall-Hugging Bathrooms & On-Foot [SPACE] Jump",
-  "buildStatus": "Release v1.9.39 Live — 3D Character Studio & Island Spawn, Captain's Smartphone (Zillow, Uber, Phone, Email & Bank), Clean 3P UI Toggle, True Reflective Mirrors, Wall-Hugging Bathrooms & On-Foot [SPACE] Jump",
+  "activeVersion": "v1.9.40",
+  "latestReleaseTag": "v1.9.40",
+  "buildPhase": "Release v1.9.40 Live — 3D Character Creator on Main Menu, Pause Menu, Bridge Monitor 7 & Smartphone Avatar App + Guaranteed New & Upgrading Captain Onboarding",
+  "buildStatus": "Release v1.9.40 Live — 3D Character Creator on Main Menu, Pause Menu, Bridge Monitor 7 & Smartphone Avatar App + Guaranteed New & Upgrading Captain Onboarding",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1940-3d-character-creator-everywhere-main-menu-pause-smartphone-monitor7-upgrade-flow",
+      "timestampUtc": "2026-11-21T13:10:00Z",
+      "version": "v1.9.40",
+      "summary": "Published TrueHelm v1.9.40 Live Release (1-Click In-Launcher Update): Dedicated CHARACTER buttons on the Main Menu, Pause Menu, Bridge Monitor 7 & Smartphone Avatar App, plus guaranteed 3D Character Creator onboarding for both new and upgrading captains.",
+      "added": [
+        "Dedicated CHARACTER button right on the Main Menu sidebar, the in-game [ESC] Pause Menu, Bridge Monitor 7 Settings (1st-Person cockpit), and a new 6th Avatar app icon on the Captain's Smartphone home screen ([MMB]) so you can customize your 3D captain from anywhere in 1 click",
+        "Upgrading returning captains who haven't customized their 3D character yet now launch cleanly into the 3D Character Creator once (with a SAVE CHARACTER & PLAY option that keeps all existing ships, cash, and houses, plus an optional jump straight to Choose Spawn Island)",
+        "Automatic indoor & bridge occlusion-avoidance camera framing for the 3D Character Creator turntable plus working [ESC] Pause Menu support while exploring islands and walk-in houses on foot"
+      ],
+      "changed": [
+        "Unified both the Main Menu PLAY button and the bottom-right gold Launch CTA so neither bypasses the 3D Character Creator for new or upgrading players, and ensured New Career / Reset cleanly resets character creation and spawn-island onboarding"
+      ],
+      "removed": [
+        "Removed the silent v1.9.39 legacy save auto-skip that prevented existing accounts from seeing the 3D Character Creator on first launch after updating"
+      ]
+    },
     {
       "id": "milestone-v1939-3d-character-studio-island-spawn-smartphone-zillow-uber-clean3p-real-mirrors-jump",
       "timestampUtc": "2026-11-21T09:35:35Z",
