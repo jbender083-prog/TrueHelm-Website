@@ -1,14 +1,34 @@
 {
-  "updatedAtUtc": "2026-11-21T13:10:00Z",
+  "updatedAtUtc": "2026-11-21T14:50:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.40",
-  "latestReleaseTag": "v1.9.40",
-  "buildPhase": "Release v1.9.40 Live — 3D Character Creator on Main Menu, Pause Menu, Bridge Monitor 7 & Smartphone Avatar App + Guaranteed New & Upgrading Captain Onboarding",
-  "buildStatus": "Release v1.9.40 Live — 3D Character Creator on Main Menu, Pause Menu, Bridge Monitor 7 & Smartphone Avatar App + Guaranteed New & Upgrading Captain Onboarding",
+  "activeVersion": "v1.9.41",
+  "latestReleaseTag": "v1.9.41",
+  "buildPhase": "Release v1.9.41 Live — Life Simulator Phase 1 (Expanded Islands & Airport Pads, Photorealistic Road Networks, Working Traffic Lights, Road-Aligned Houses & Driveways, Walk-In Grocery Store & Commerce Center) + 4 Bugfixes",
+  "buildStatus": "Release v1.9.41 Live — Life Simulator Phase 1 (Expanded Islands & Airport Pads, Photorealistic Road Networks, Working Traffic Lights, Road-Aligned Houses & Driveways, Walk-In Grocery Store & Commerce Center) + 4 Bugfixes",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1941-life-sim-phase1-expanded-islands-roads-traffic-lights-driveways-grocery-commercial-bugfixes",
+      "timestampUtc": "2026-11-21T14:50:00Z",
+      "version": "v1.9.41",
+      "summary": "Published TrueHelm v1.9.41 Live Release (1-Click In-Launcher Update): Life Simulator Phase 1 — Expanded Islands & Airport Reserve Pads, Photorealistic Road Networks & Working 3-Aspect Traffic Lights, Dusk Streetlights, Road-Aligned Walk-In Homes & Driveways, Walk-In Grocery Store & Commercial Workplace, plus 4 Player-Reported Fixes.",
+      "added": [
+        "Expanded Small Islands & Airport Reserve Pads across all 74 archipelago islands — smaller residential islands now feature expanded landmasses with dedicated flat, clear 620m+ Airport Reserve Pads and paved Terminal Pickup Loops ready for Phase 2 aviation while preserving all ocean shipping lanes and harbor depths",
+        "Photorealistic Multi-LOD Road Networks, Synchronized 3-Aspect Traffic Lights & Warm Dusk Streetlights — full paved asphalt road grids with double-yellow centerlines, crosswalks, raised curbs, concrete sidewalks, stop/street signs, live Red/Yellow/Green intersection signal cycles, warm evening streetlights, and a clean lane/intersection waypoint graph connecting Harbor Port Quay -> Downtown Main St -> Residential Streets -> Airport Terminal Pickup Loop",
+        "Road-Aligned Walk-In Houses, Paved Driveways & Starter Car Parking — all 20 to 50 walk-in homes per island (preserving all 240 architectural archetypes, furnished interiors, real mirrors, working [E] doors, and Zillow listings) align cleanly along residential streets with flat paved driveways meeting the curb, including a designated Tier 0 Starter Home parking pad",
+        "Walk-In Photoreal Town Destinations & Uber Town Hub Drops — step inside Horizon Fresh Market (glass storefront, working [E] double doors, stocked grocery aisles, glass-door refrigerated coolers, fresh produce displays, checkout lanes, and striped parking lot) and the 2-story Harborview Commerce Center workplace on Main Street, now directly bookable from your smartphone's Uber app"
+      ],
+      "changed": [
+        "Locked vessel stern propellers strictly to the hull shaft hub even when the engine is turned off, eliminating any detached or drifting propeller artifacts at zero RPM",
+        "Upgraded house interior furnishing placement across all 240 archetypes to verify full-height solid wall backing behind every mirror, painting, console, and cabinet, prevent kitchen range hoods over exterior windows, and enforce non-overlapping footprints between dining tables, chairs, consoles, and kitchen island barstools",
+        "Scoped mouse-wheel scrolling while the Captain's Smartphone is open so scrolling over the phone exclusively scrolls phone apps without zooming the in-game camera"
+      ],
+      "removed": [
+        "Eliminated detached engine-off boat propellers, floating wall mirrors/art in stair hallways, overlapping dining/kitchen chairs, kitchen range hoods over windows, and simultaneous camera-zoom interference while scrolling smartphone apps"
+      ]
+    },
     {
       "id": "milestone-v1940-3d-character-creator-everywhere-main-menu-pause-smartphone-monitor7-upgrade-flow",
       "timestampUtc": "2026-11-21T13:10:00Z",

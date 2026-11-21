@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css?v=20261121b" />
+  <link rel="stylesheet" href="./styles.css?v=20261121c" />
 </head>
 <body>
   <!-- Full-Viewport 60fps Scroll-Driven Sailing Ship & Parallax Ocean Background -->
@@ -93,13 +93,13 @@
         <div class="hero-content">
           <div class="version-pill">
             <span class="live-dot"></span>
-            <span>Release v1.9.40 · Free Multiplayer Edition · Windows PC &amp; In-Game OpenXR VR</span>
+            <span>Release v1.9.41 · Life Simulator Phase 1 · Windows PC &amp; In-Game OpenXR VR</span>
           </div>
 
           <h1>TrueHelm: Realistic Shipping Lanes</h1>
 
           <p class="hero-summary">
-            Customize your 3D character &amp; choose any of 74 islands to spawn on foot, open your <code>[MMB]</code> Smartphone (Zillow across 2,671 walk-in homes, Uber, Phone, Email &amp; Bank), jump with <kbd>SPACE</kbd>, and command 35 vessels at ~120 FPS. Click <code>[BOARD SHIP]</code> for Co-Op or OpenXR VR.
+            Explore expanded islands with photorealistic road networks, working traffic lights, dusk streetlights, walk-in Horizon Fresh Market &amp; Harborview Commerce Center, Airport Reserve Pads, road-aligned homes with paved driveways, your <code>[MMB]</code> Smartphone, 3D Character Creator, and 35 playable vessels.
           </p>
 
           <!-- Primary 1-Click Edge-Friendly Windows Installer (.zip) + Direct .exe Option -->
@@ -122,7 +122,7 @@
             <a class="btn btn-secondary" href="#logs">
               <span class="btn-copy">
                 <strong>Official Release &amp; Update Logs</strong>
-                <small>Added, changed &amp; removed in Release v1.9.40</small>
+                <small>Added, changed &amp; removed in Release v1.9.41</small>
               </span>
             </a>
           </div>
@@ -527,12 +527,12 @@
               <span class="pulse-dot"></span>
               <span>OFFICIAL RELEASE LOG · SYNCED ON LAUNCHER RELEASE</span>
             </span>
-            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.40</span>
-            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.40 Live · Synced with TrueHelm Launcher</span>
+            <span class="dash-target-pill" id="dash-target-version">Release: v1.9.41</span>
+            <span class="dash-phase-text" id="dash-build-phase">Release v1.9.41 Live · Life Simulator Phase 1 · Synced with TrueHelm Launcher</span>
           </div>
           <div class="dash-status-right">
             <span class="dash-meta" id="dash-last-checked">Synced on page load</span>
-            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.40</span>
+            <span class="dash-meta" id="dash-last-updated">Latest release: v1.9.41</span>
             <button type="button" class="dash-refresh-btn" id="dash-refresh-btn">↻ Refresh</button>
           </div>
         </div>
@@ -542,32 +542,35 @@
           <article class="card dash-col dash-added">
             <div class="dash-col-head">
               <span class="dash-symbol added">+</span>
-              <h3 id="dash-added-heading">Added in v1.9.40</h3>
+              <h3 id="dash-added-heading">Added in v1.9.41</h3>
             </div>
             <ul class="dash-list" id="dash-added-list">
-              <li>Dedicated <strong>CHARACTER</strong> button directly on the Main Menu sidebar, the in-game <kbd>ESC</kbd> Pause Menu, Bridge Monitor 7 Settings (1st-Person cockpit), and a new 6th <strong>Avatar</strong> app on the Captain&rsquo;s Smartphone home screen (<code>[MMB]</code>) for instant 1-click access anywhere</li>
-              <li><strong>Seamless Upgrade Onboarding</strong> &mdash; returning captains who haven&rsquo;t customized their 3D character yet now enter the 3D Character Creator once on launch (preserving all ships, cash, and houses with <em>Save Character &amp; Play</em>, or optional jump to Choose Spawn Island)</li>
-              <li><strong>Zero-Clipping Indoor &amp; Bridge 3D Turntable Framing</strong> plus full <kbd>ESC</kbd> Pause Menu support while exploring islands and walk-in homes on foot</li>
+              <li><strong>Expanded Small Islands &amp; Airport Reserve Pads</strong> &mdash; expanded landmasses across all 74 islands with dedicated flat, clear 620m+ Airport Reserve Pads &amp; paved Terminal Pickup Loops ready for Phase 2 aviation while preserving all ocean shipping lanes and harbor berth depths</li>
+              <li><strong>Photorealistic Road Networks, Working 3-Aspect Traffic Lights &amp; Dusk Streetlights</strong> &mdash; multi-LOD asphalt streets with lane markings, zebra crosswalks, curbs, sidewalks, stop/street signs, synchronized Red/Yellow/Green intersection cycles, warm evening streetlights, and a full runtime lane/waypoint graph</li>
+              <li><strong>Road-Aligned Walk-In Houses &amp; Paved Driveways</strong> &mdash; all 20&ndash;50 walk-in homes per island (240 archetypes) align cleanly along residential streets with flat paved driveways meeting the curb plus a designated Tier 0 Starter Home parking pad</li>
+              <li><strong>Walk-In Horizon Fresh Market &amp; Harborview Commerce Center</strong> &mdash; walk-in Main Street grocery store (glass storefront, working <code>[E]</code> double doors, stocked aisles, refrigerated coolers, produce displays, checkouts &amp; parking lot) and 2-story workplace building, bookable directly in the Uber smartphone app</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-changed">
             <div class="dash-col-head">
               <span class="dash-symbol changed">~</span>
-              <h3 id="dash-changed-heading">Changed in v1.9.40</h3>
+              <h3 id="dash-changed-heading">Changed in v1.9.41</h3>
             </div>
             <ul class="dash-list" id="dash-changed-list">
-              <li>Unified both the Main Menu <strong>PLAY</strong> button and the bottom-right gold Launch button so neither bypasses the 3D Character Creator, and updated <strong>New Career / Reset</strong> to cleanly reset character customization and spawn-island onboarding</li>
+              <li>Locked vessel stern propellers strictly to the hull shaft hub even when the engine is turned off, eliminating detached/drifting propellers at zero RPM</li>
+              <li>Verified continuous solid wall backing behind every wall mirror, art frame, console, and cabinet across all 240 house designs, blocked kitchen range hoods over exterior windows, and enforced non-overlapping footprints between dining chairs, consoles, and kitchen island barstools</li>
+              <li>Scoped mouse-wheel scrolling while the Captain&rsquo;s Smartphone is open so hovering over the phone scrolls only the phone without zooming the in-game camera</li>
             </ul>
           </article>
 
           <article class="card dash-col dash-removed">
             <div class="dash-col-head">
               <span class="dash-symbol removed">&minus;</span>
-              <h3 id="dash-removed-heading">Removed in v1.9.40</h3>
+              <h3 id="dash-removed-heading">Removed in v1.9.41</h3>
             </div>
             <ul class="dash-list" id="dash-removed-list">
-              <li>Removed the silent v1.9.39 returning-save auto-skip that bypassed the 3D Character Creator on first launch after updating</li>
+              <li>Eliminated detached engine-off boat propellers, floating wall mirrors/paintings in stair hallways, overlapping dining/kitchen chairs, kitchen range hoods over windows, and simultaneous camera zoom while scrolling smartphone apps</li>
             </ul>
           </article>
         </div>
@@ -586,7 +589,7 @@
           </div>
         </div>
 
-        <!-- Version Changelog Cards (v1.9.40 .. v1.6.0) -->
+        <!-- Version Changelog Cards (v1.9.41 .. v1.6.0) -->
         <div class="version-logs-wrap">
           <h3 class="sub-heading">Release &amp; Version Update Logs</h3>
           <div class="version-logs-stack" id="version-logs-stack">
@@ -594,8 +597,23 @@
             <details class="card ver-card" open>
               <summary>
                 <div class="ver-title-group">
-                  <strong class="ver-num">v1.9.40</strong>
+                  <strong class="ver-num">v1.9.41</strong>
                   <span class="ver-badge emerald">Current Live Release</span>
+                </div>
+                <span class="ver-date">November 2026</span>
+              </summary>
+              <div class="ver-body">
+                <p><span class="log-pill added">+ Added</span> <strong>Life Simulator Phase 1</strong> &mdash; Expanded Small Islands with Flat 620m+ Airport Reserve Pads &amp; Terminal Pickup Loops · Photorealistic Multi-LOD Road Networks, Synchronized 3-Aspect Traffic Lights &amp; Dusk Streetlights · Road-Aligned Walk-In Homes with Paved Driveways &amp; Starter Car Parking · Walk-In <strong>Horizon Fresh Market</strong> Grocery Store &amp; 2-Story <strong>Harborview Commerce Center</strong> on Main Street + Uber Town Hub Destinations.</p>
+                <p><span class="log-pill changed">~ Changed</span> Locked engine-off stern propellers cleanly to hull hubs · Enforced solid wall backing &amp; zero-overlap furniture footprints across all 240 house archetypes · Isolated mouse-wheel scrolling to the Captain&rsquo;s Smartphone when hovered.</p>
+                <p><span class="log-pill removed">&minus; Removed</span> Eliminated detached engine-off boat propellers, floating stair-hall mirrors/art, overlapping kitchen/dining chairs, range hoods over windows, and background camera zoom while scrolling smartphone apps.</p>
+              </div>
+            </details>
+
+            <details class="card ver-card">
+              <summary>
+                <div class="ver-title-group">
+                  <strong class="ver-num">v1.9.40</strong>
+                  <span class="ver-badge">Shipped</span>
                 </div>
                 <span class="ver-date">November 2026</span>
               </summary>
@@ -1518,7 +1536,7 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261121b"></script>
-  <script type="module" src="./globe.js?v=20261121b"></script>
+  <script src="./app.js?v=20261121c"></script>
+  <script type="module" src="./globe.js?v=20261121c"></script>
 </body>
 </html>
