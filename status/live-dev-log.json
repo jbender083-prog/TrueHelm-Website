@@ -1,14 +1,31 @@
 {
-  "updatedAtUtc": "2026-11-20T15:02:51Z",
+  "updatedAtUtc": "2026-11-21T00:55:56Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.35",
-  "latestReleaseTag": "v1.9.35",
-  "buildPhase": "Release v1.9.35 Live — Solid Undocked Yokohama Dock Buoy Collision, Concrete-Draped Mooring Ropes, Zero-Flicker 1P/VR Bridge Desk & Storm Decks, Watertight 35-Ship Floors, 2-Axis Anchor Pendulum Physics & +20% Marine Wildlife",
-  "buildStatus": "Release v1.9.35 Live — Solid Undocked Yokohama Dock Buoy Collision, Concrete-Draped Mooring Ropes, Zero-Flicker 1P/VR Bridge Desk & Storm Decks, Watertight 35-Ship Floors, 2-Axis Anchor Pendulum Physics & +20% Marine Wildlife",
+  "activeVersion": "v1.9.36",
+  "latestReleaseTag": "v1.9.36",
+  "buildPhase": "Release v1.9.36 Live — Intact Side-by-Side Multiplayer Cabins, Panelized 35-Ship Superstructures, Occupied Remote Wheelhouse Interiors, Watertight Doors & Close-Range Culling Protection",
+  "buildStatus": "Release v1.9.36 Live — Intact Side-by-Side Multiplayer Cabins, Panelized 35-Ship Superstructures, Occupied Remote Wheelhouse Interiors, Watertight Doors & Close-Range Culling Protection",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1936-intact-multiplayer-cabins-panelized-superstructures-occupied-remote-wheelhouses",
+      "timestampUtc": "2026-11-21T00:55:56Z",
+      "version": "v1.9.36",
+      "summary": "Published TrueHelm v1.9.36 Live Release (1-Click In-Launcher Update): Intact Side-by-Side Multiplayer Cabins, Panelized 35-Ship Superstructures, Occupied Remote Wheelhouse Interiors, Watertight Doors & Close-Range Culling Protection.",
+      "added": [
+        "Complete occupied remote wheelhouse cabins, closed watertight porthole doors, flush exterior doorway seals, and aft exterior staircases on nearby multiplayer friend vessels (<= 1,500 m) and co-op ships — looking across at a friend's bridge now shows a solid occupied cabin with their captain standing behind the helm console desk",
+        "Close-range frustum and occlusion protection on remote multiplayer ships so side-by-side fleet convoys remain rock-solid from every bridge window and exterior camera angle"
+      ],
+      "changed": [
+        "Panelized wheelhouse aft bulkheads and multi-tier accommodation superstructures across all 35 vessels with 3-level hardware LODs so walk-in doorway apertures preserve 92%+ raw exterior walls with 0.000 cm silhouette drift and 100% watertight exterior floors",
+        "Synchronized full exterior wall, watertight door, and staircase restoration on replicated co-op vessels when switching hulls in multiplayer"
+      ],
+      "removed": [
+        "Eliminated side-by-side multiplayer cabin & deckhouse wall gaps where shared walk-in doorway carving previously hid wide aft/side superstructure walls on nearby friend or traffic vessels"
+      ]
+    },
     {
       "id": "milestone-v1935-undocked-buoys-draped-pier-ropes-zero-flicker-desk-storm-decks-watertight-floors-anchor-pendulum-wildlife20pct",
       "timestampUtc": "2026-11-20T15:02:51Z",
@@ -769,10 +786,27 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.35",
+      "version": "v1.9.36",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Complete occupied remote wheelhouse cabins, closed watertight porthole doors, flush exterior doorway seals, and aft exterior staircases on nearby multiplayer friend vessels (<= 1,500 m) and co-op ships — looking across at a friend's bridge now shows a solid occupied cabin with their captain standing behind the helm console desk",
+        "Close-range frustum and occlusion protection on remote multiplayer ships so side-by-side fleet convoys remain rock-solid from every bridge window and exterior camera angle"
+      ],
+      "changed": [
+        "Panelized wheelhouse aft bulkheads and multi-tier accommodation superstructures across all 35 vessels with 3-level hardware LODs so walk-in doorway apertures preserve 92%+ raw exterior walls with 0.000 cm silhouette drift and 100% watertight exterior floors",
+        "Synchronized full exterior wall, watertight door, and staircase restoration on replicated co-op vessels when switching hulls in multiplayer"
+      ],
+      "removed": [
+        "Eliminated side-by-side multiplayer cabin & deckhouse wall gaps where shared walk-in doorway carving previously hid wide aft/side superstructure walls on nearby friend or traffic vessels"
+      ]
+    },
+    {
+      "version": "v1.9.35",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Solid free-sailing Yokohama pneumatic dock fender buoy collision & live berthing squish across all 35 vessels — approaching ships physically contact, elastically compress, and rebound off hanging port fender buoys before tying mooring lines, springing cleanly back to round when pulling clear",
         "2-axis damped gravity & hydrodynamic rigid-body anchor pendulum physics — suspended anchors hang plumb-vertical with natural inertial swing in air and water during dropping and weighing, embed flukes smoothly on the seabed, and fair cleanly home into the hawsepipe cradle",
