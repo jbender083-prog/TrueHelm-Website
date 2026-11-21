@@ -1,14 +1,33 @@
 {
-  "updatedAtUtc": "2026-11-21T14:50:00Z",
+  "updatedAtUtc": "2026-11-21T16:40:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.41",
-  "latestReleaseTag": "v1.9.41",
-  "buildPhase": "Release v1.9.41 Live — Life Simulator Phase 1 (Expanded Islands & Airport Pads, Photorealistic Road Networks, Working Traffic Lights, Road-Aligned Houses & Driveways, Walk-In Grocery Store & Commerce Center) + 4 Bugfixes",
-  "buildStatus": "Release v1.9.41 Live — Life Simulator Phase 1 (Expanded Islands & Airport Pads, Photorealistic Road Networks, Working Traffic Lights, Road-Aligned Houses & Driveways, Walk-In Grocery Store & Commerce Center) + 4 Bugfixes",
+  "activeVersion": "v1.9.42",
+  "latestReleaseTag": "v1.9.42",
+  "buildPhase": "Release v1.9.42 Live — Life Simulator Phase 2 (Full Regional Airports & Walk-In Terminals on All 74 Islands, Smartphone FLIGHTS App & Live Real-Time 3D Commercial Island-to-Island Flights)",
+  "buildStatus": "Release v1.9.42 Live — Life Simulator Phase 2 (Full Regional Airports & Walk-In Terminals on All 74 Islands, Smartphone FLIGHTS App & Live Real-Time 3D Commercial Island-to-Island Flights)",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1942-life-sim-phase2-regional-airports-walkin-terminals-flights-app-live-3d-airliner-flights",
+      "timestampUtc": "2026-11-21T16:40:00Z",
+      "version": "v1.9.42",
+      "summary": "Published TrueHelm v1.9.42 Live Release (1-Click In-Launcher Update): Life Simulator Phase 2 — Full Regional Airports & Walk-In Terminals on All 74 Islands, Smartphone FLIGHTS App (TrueHelm Airways) & Live Real-Time 3D Island-to-Island Commercial Flights.",
+      "added": [
+        "Full Regional Airport Complexes across all 74 archipelago islands — featuring a 22m x 42m Walk-In Regional Airport Terminal (panoramic glass curtain walls, cantilevered steel drop-off canopy, working [E] double entrance doors, 4 Express Self-Service Check-In Kiosks, 2 walk-through Security Arches & X-Ray baggage belts, double-sided illuminated LED FIDS Departures Board, Gate 1 Boarding Desk, navy-leather waiting lounge benches, and stainless-steel Baggage Claim Carousel)",
+        "Complete Airfield Landmarks & Dusk/Night Illuminated Aviation Lighting — 27m ATC Control Tower with red obstruction beacon, 24m steel Maintenance Hangar, Glass Passenger Jet Bridge kissing a parked TrueHelm Airways TH-720 Regional Jet, PAPI glideslope indicator bar, windsock, yellow taxiway lead-in lines, and twilight/night illuminated white runway edge lights, green threshold light bars, and blue taxiway lights",
+        "7th Smartphone App: FLIGHTS (TrueHelm Airways) — browse direct flights to all 73 other archipelago islands sorted by distance with IATA airport codes, flight numbers, distance, flight time, and realistic fares, purchase persistent electronic boarding passes logged to your Bank ledger & Email inbox, order an Uber straight to the Terminal Entrance doors, or board directly at Gate 1 ([E])",
+        "Live Real-Time 3D Island-to-Island Commercial Flights & Ambient Archipelago Air Traffic — experience pushback, Runway 36 takeoff roll, climb, high-altitude archipelago cruise, approach, landing rollout, and disembarking right inside your destination island's Walk-In Airport Terminal, complete with 3 switchable camera views ([V]: 1st-Person Window Seat 4A looking over the swept wing & ocean, 3rd-Person Airliner Chase, and Flight Deck Nose view), sleek In-Flight Telemetry HUD bar, and [SPACE]/[F] Skip to Arrival"
+      ],
+      "changed": [
+        "Expanded every island's flat Airport Complex layout to cleanly accommodate the Terminal Pickup Loop, Walk-In Terminal, Concrete Aircraft Apron, Jet Bridge, Parked Airliner, Control Tower, Hangar, and Runway 36/18 with generous wingtip safety margins",
+        "Upgraded Smartphone Uber Option 7 (Airport Terminal) to drop passengers right outside the Walk-In Regional Airport Terminal sliding glass entrance doors"
+      ],
+      "removed": [
+        "Cleared legacy coastal streetlamp poles and ground light discs from all town and airport complex footprints across all 74 islands so runway approaches and paved aprons stay 100% unobstructed"
+      ]
+    },
     {
       "id": "milestone-v1941-life-sim-phase1-expanded-islands-roads-traffic-lights-driveways-grocery-commercial-bugfixes",
       "timestampUtc": "2026-11-21T14:50:00Z",
