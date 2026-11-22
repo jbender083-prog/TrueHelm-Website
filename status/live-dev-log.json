@@ -1,14 +1,32 @@
 {
-  "updatedAtUtc": "2026-11-22T02:16:00Z",
+  "updatedAtUtc": "2026-11-22T03:18:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.49",
-  "latestReleaseTag": "v1.9.49",
-  "buildPhase": "Release v1.9.49 Live — Silent House Interactions, Model-Exact 3D Aiming (Houses & Boats) & Complete Smallest-House Layouts",
-  "buildStatus": "Release v1.9.49 Live — Silent House Interactions, Model-Exact 3D Aiming (Houses & Boats) & Complete Smallest-House Layouts",
+  "activeVersion": "v1.9.50",
+  "latestReleaseTag": "v1.9.50",
+  "buildPhase": "Release v1.9.50 Live — Zero Teleporting, Animated Ocean Swimming, Underwater Vision & Dedicated 240m Boat Parking Docks",
+  "buildStatus": "Release v1.9.50 Live — Zero Teleporting, Animated Ocean Swimming, Underwater Vision & Dedicated 240m Boat Parking Docks",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1950-zero-teleporting-overboard-swimming-underwater-vision-240m-boat-parking-dock-trailer-lot",
+      "timestampUtc": "2026-11-22T03:18:00Z",
+      "version": "v1.9.50",
+      "summary": "Published TrueHelm v1.9.50 Live Release (1-Click In-Launcher Update): Zero Teleporting in Live Gameplay, Overboard Boat Jumping, Full 3D Ocean Swimming with 1P/3P Animations, Distinct Underwater Vision, and Dedicated 240m Boat Parking Docks + Big Truck & Boat-Trailer Parking Lots Across All 74 Islands.",
+      "added": [
+        "Dedicated 240-Meter Long Boat Parking Dock & Big Truck + Boat-Trailer Parking Lot on All 74 Islands — completely separate from each island's commercial cargo delivery port, featuring space for 10–14 boats along both cushioned rubber-fender sides, mooring cleats, yellow bollards, coastal pier lamps with lifebuoys, 10 stainless steel swim ladders, a grooved concrete boat launch ramp, a 16-bay pull-through Truck & Boat-Trailer Parking Lot with an archway gantry sign, and a dedicated Uber pickup curb",
+        "Overboard Boat Jumping & Full 3D Ocean Swimming with 1P/3P Animations — walk out onto any boat's deck and press [SPACE] near the rail to leap overboard into live 3D ocean waves (or step directly onto the 240m Boat Parking Dock when parked alongside it), swim with sculpted 1st-person animated swimming arms or toggle [V] for a 3rd-person animated swimmer, dive underwater with [CTRL/C], surface with [SPACE], wade smoothly ashore onto any beach, climb dock swim ladders ([E]), and climb back aboard your waiting boat ([E])",
+        "Distinct Underwater Swimming Vision — submerging beneath the waves shifts into luminous aquamarine color grading, dense turquoise underwater optical fog, optical mask vignette & refraction fringe, rising 3D bubbles, and a sleek Depth & Oxygen HUD bar"
+      ],
+      "changed": [
+        "Upgraded Smartphone Uber Option 1 to dispatch a real physical Uber Black sedan right to the Boat Parking Dock & Truck + Boat-Trailer Parking Lot so you can park your boat, Uber home, and Uber back to your waiting boat",
+        "Added cushioned boat-dock fender collision physics along every island's 240m Boat Parking Dock and enabled seamless coastal beach wading and dock splash-jumps"
+      ],
+      "removed": [
+        "Removed live gameplay teleporting — removed instant [G] ship/island warps, instant ship-to-land & cross-island Uber teleports, instant Water-Taxi teleports, and live [SPACE]/[F] Uber Skip-to-Arrival"
+      ]
+    },
     {
       "id": "milestone-v1949-silent-house-interactions-model-exact-aim-houses-boats-complete-tiny-homes",
       "timestampUtc": "2026-11-22T02:16:00Z",
@@ -1029,10 +1047,28 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.49",
+      "version": "v1.9.50",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Dedicated 240-Meter Long Boat Parking Dock & Big Truck + Boat-Trailer Parking Lot on All 74 Islands — completely separate from each island's commercial cargo delivery port, featuring space for 10–14 boats along both cushioned rubber-fender sides, mooring cleats, yellow bollards, coastal pier lamps with lifebuoys, 10 stainless steel swim ladders, a grooved concrete boat launch ramp, a 16-bay pull-through Truck & Boat-Trailer Parking Lot with an archway gantry sign, and a dedicated Uber pickup curb",
+        "Overboard Boat Jumping & Full 3D Ocean Swimming with 1P/3P Animations — walk out onto any boat's deck and press [SPACE] near the rail to leap overboard into live 3D ocean waves (or step directly onto the 240m Boat Parking Dock when parked alongside it), swim with sculpted 1st-person animated swimming arms or toggle [V] for a 3rd-person animated swimmer, dive underwater with [CTRL/C], surface with [SPACE], wade smoothly ashore onto any beach, climb dock swim ladders ([E]), and climb back aboard your waiting boat ([E])",
+        "Distinct Underwater Swimming Vision — submerging beneath the waves shifts into luminous aquamarine color grading, dense turquoise underwater optical fog, optical mask vignette & refraction fringe, rising 3D bubbles, and a sleek Depth & Oxygen HUD bar"
+      ],
+      "changed": [
+        "Upgraded Smartphone Uber Option 1 to dispatch a real physical Uber Black sedan right to the Boat Parking Dock & Truck + Boat-Trailer Parking Lot so you can park your boat, Uber home, and Uber back to your waiting boat",
+        "Added cushioned boat-dock fender collision physics along every island's 240m Boat Parking Dock and enabled seamless coastal beach wading and dock splash-jumps"
+      ],
+      "removed": [
+        "Removed live gameplay teleporting — removed instant [G] ship/island warps, instant ship-to-land & cross-island Uber teleports, instant Water-Taxi teleports, and live [SPACE]/[F] Uber Skip-to-Arrival"
+      ]
+    },
+    {
+      "version": "v1.9.49",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Complete Smallest-House Interiors Across All 74 Islands — guaranteed that every compact starter cottage now includes a working clickable small sofa (sit down cleanly with natural eye height), a private bedroom with a real bed, a full kitchen counter with sink, stove & openable cabinets, and a Smart French-Door Refrigerator",
         "Strict Model-Exact 3D Ray Aiming (Houses & Boats) — upgraded interaction raycasts to test directly against each live 3D model's exact mesh bounding volume so your crosshair must point directly at the light switch, refrigerator, 3D food item, cabinet door, sofa, house door, or boat helm control / cabin door to interact"
