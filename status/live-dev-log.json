@@ -1,14 +1,35 @@
 {
-  "updatedAtUtc": "2026-11-22T04:40:00Z",
+  "updatedAtUtc": "2026-11-22T14:00:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.51",
-  "latestReleaseTag": "v1.9.51",
-  "buildPhase": "Release v1.9.51 Live — Photorealistic Characters, Airliner & Walkable Jetbridge, Smartphone Maps, Map House Icon & Life-Sim Polish",
-  "buildStatus": "Release v1.9.51 Live — Photorealistic Characters, Airliner & Walkable Jetbridge, Smartphone Maps, Map House Icon & Life-Sim Polish",
+  "activeVersion": "v1.9.52",
+  "latestReleaseTag": "v1.9.52",
+  "buildPhase": "Release v1.9.52 Live — Car & Marine Dealerships, 26 Boats & Walk-In Superyachts, Slipway Rolling-Airbag Launch + 4x4 Pickup Truck, Boat Trailer Physics, Bow-Hook Launch & Stern Swim Ladder",
+  "buildStatus": "Release v1.9.52 Live — Car & Marine Dealerships, 26 Boats & Walk-In Superyachts, Slipway Rolling-Airbag Launch + 4x4 Pickup Truck, Boat Trailer Physics, Bow-Hook Launch & Stern Swim Ladder",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1952-car-marine-dealerships-26-boats-walkin-superyachts-reveal-warehouses-slipway-airbags-truck-trailer-launch",
+      "timestampUtc": "2026-11-22T14:00:00Z",
+      "version": "v1.9.52",
+      "summary": "Published TrueHelm v1.9.52 Live Release (1-Click In-Launcher Update): Walk-In Car Dealership (8 Photoreal Cars Lined Up + Reveal Warehouse Gate), Waterfront Marine & Jet-Ski Dealership Beside the 240m Pedestrian Dock (26 Boats, Jet Skis & Walk-In Mansion Superyachts), Warehouse 1 Trailer Bay & Warehouse 2 Superyacht Slipway Rolling-Airbag Launch Hall, PLUS Starter 4x4 Pickup Truck, Tri-Axle Boat Trailer, Articulated Reversing Physics, Metal Bow Hook Water Launch & Stern Swim Ladder Climbing Animation.",
+      "added": [
+        "Walk-In Car Dealership (TrueHelm Motors — All 8 Photoreal ClearCoat Cars Lined Up) + Motorized Reveal Warehouse Gate — walk inside the illuminated glass showroom to inspect all 8 cars (including the brand-new V8 Coastal Muscle GT, Riviera Grand Tourer Convertible, Sovereign Prestige V12 SUV & Apex Horizon V10 Supercar), configure 7 ClearCoat paint colors on the 4K kiosk screen, and press [E] / Click to slowly roll open the Car Delivery Warehouse gate to reveal and drive out your new car",
+        "Waterfront Marine & Jet-Ski Dealership (Horizon Marine & Yachts) Beside the 240m Pedestrian Boat Parking Dock — 26 distinct 10x photorealistic personal vessels (,500 to ,850,000) across 3 Jet Skis, 13 Trailerable Fishing/Utility/Pontoon/Wake/Sail/Offshore Boats, and 10 massive Walk-In Mansion Superyachts (13.8m to 48m with open aft sliding doors into cream leather salons, marble coffee tables, 75-inch cinema TVs, Chef marble kitchens, formal dining rooms, Master Stateroom king beds, flybridges, jacuzzis, infinity pools & foredeck helipads)",
+        "Two Waterfront Marine Delivery Warehouses (Zero Teleporting) — Warehouse 1 (Trailer Bay) spawns purchased trailerable boats & jet skis on top of a galvanized Tri-Axle Boat Trailer behind a closed motorized roll-up gate ([E] / Click to open, back up your Pickup Truck to hitch, drive onto the Boat Launch Ramp & launch!); Warehouse 2 (Superyacht Slipway Rolling-Airbag Launch Hall) stages colossal yachts atop 8 inflated pneumatic black-rubber Marine Launch Airbags behind an 18m motorized hangar gate so releasing the Slipway Winch rolls your yacht down the inclined concrete slipway straight into deep water right beside the 240m Pedestrian Dock",
+        "Starter 4x4 Pickup Truck, Galvanized Tri-Axle Boat Trailer & Expanded 31.5m Starter Home Driveway — new and existing players start with a Harbor 4x4 Heavy-Duty Pickup Truck hitched to a custom Tri-Axle Boat Trailer carrying their starter boat right outside an expanded starter driveway",
+        "Authentic Articulated Trailer Reversing & Jackknife Physics + Interactive Forged Metal Bow Hook Launch & 3D Stern Swim Ladder Climbing — realistic tractor-trailer kinematics with [V] Trailer Backup Cam & live hitch-angle HUD gauge, clickable Forged Metal Bow Hook water slide-off launch (with dry-land safety lock and round-trip winch-back), and a smooth 3-phase rung-by-rung stern boarding ladder climbing animation from ocean water"
+      ],
+      "changed": [
+        "Rebuilt vehicles with 10x photorealistic dual-layer ClearCoat paint, sculpted LED light bars, hollow multi-spoke rims with red calipers, and an upgraded first-person driver cockpit with crisp digital gauges, widescreen navigation display & leather wheel",
+        "Added CAR DEALER and BOAT DEALER landmarks on both the [M] Fullscreen World Map and Smartphone [MMB] MAPS app",
+        "Graded flush paved Marina waterfront aprons straight into Marine Warehouse 1 so pickup trucks back in and hitch purchased boat trailers seamlessly"
+      ],
+      "removed": [
+        "Removed instant teleport spawns on car and boat purchases in favor of zero-teleport closed-gate reveal warehouses and physical rolling-airbag superyacht slipway launches"
+      ]
+    },
     {
       "id": "milestone-v1951-character-profile-maps-app-house-icon-walkable-jetbridge-photoreal-airliner-humans-road-fix",
       "timestampUtc": "2026-11-22T04:40:00Z",
@@ -1070,10 +1091,31 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.51",
+      "version": "v1.9.52",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Walk-In Car Dealership (TrueHelm Motors — All 8 Photoreal ClearCoat Cars Lined Up) + Motorized Reveal Warehouse Gate — walk inside the illuminated glass showroom to inspect all 8 cars (including the brand-new V8 Coastal Muscle GT, Riviera Grand Tourer Convertible, Sovereign Prestige V12 SUV & Apex Horizon V10 Supercar), configure 7 ClearCoat paint colors on the 4K kiosk screen, and press [E] / Click to slowly roll open the Car Delivery Warehouse gate to reveal and drive out your new car",
+        "Waterfront Marine & Jet-Ski Dealership (Horizon Marine & Yachts) Beside the 240m Pedestrian Boat Parking Dock — 26 distinct 10x photorealistic personal vessels (,500 to ,850,000) across 3 Jet Skis, 13 Trailerable Fishing/Utility/Pontoon/Wake/Sail/Offshore Boats, and 10 massive Walk-In Mansion Superyachts (13.8m to 48m with open aft sliding doors into cream leather salons, marble coffee tables, 75-inch cinema TVs, Chef marble kitchens, formal dining rooms, Master Stateroom king beds, flybridges, jacuzzis, infinity pools & foredeck helipads)",
+        "Two Waterfront Marine Delivery Warehouses (Zero Teleporting) — Warehouse 1 (Trailer Bay) spawns purchased trailerable boats & jet skis on top of a galvanized Tri-Axle Boat Trailer behind a closed motorized roll-up gate ([E] / Click to open, back up your Pickup Truck to hitch, drive onto the Boat Launch Ramp & launch!); Warehouse 2 (Superyacht Slipway Rolling-Airbag Launch Hall) stages colossal yachts atop 8 inflated pneumatic black-rubber Marine Launch Airbags behind an 18m motorized hangar gate so releasing the Slipway Winch rolls your yacht down the inclined concrete slipway straight into deep water right beside the 240m Pedestrian Dock",
+        "Starter 4x4 Pickup Truck, Galvanized Tri-Axle Boat Trailer & Expanded 31.5m Starter Home Driveway — new and existing players start with a Harbor 4x4 Heavy-Duty Pickup Truck hitched to a custom Tri-Axle Boat Trailer carrying their starter boat right outside an expanded starter driveway",
+        "Authentic Articulated Trailer Reversing & Jackknife Physics + Interactive Forged Metal Bow Hook Launch & 3D Stern Swim Ladder Climbing — realistic tractor-trailer kinematics with [V] Trailer Backup Cam & live hitch-angle HUD gauge, clickable Forged Metal Bow Hook water slide-off launch (with dry-land safety lock and round-trip winch-back), and a smooth 3-phase rung-by-rung stern boarding ladder climbing animation from ocean water"
+      ],
+      "changed": [
+        "Rebuilt vehicles with 10x photorealistic dual-layer ClearCoat paint, sculpted LED light bars, hollow multi-spoke rims with red calipers, and an upgraded first-person driver cockpit with crisp digital gauges, widescreen navigation display & leather wheel",
+        "Added CAR DEALER and BOAT DEALER landmarks on both the [M] Fullscreen World Map and Smartphone [MMB] MAPS app",
+        "Graded flush paved Marina waterfront aprons straight into Marine Warehouse 1 so pickup trucks back in and hitch purchased boat trailers seamlessly"
+      ],
+      "removed": [
+        "Removed instant teleport spawns on car and boat purchases in favor of zero-teleport closed-gate reveal warehouses and physical rolling-airbag superyacht slipway launches"
+      ]
+    },
+    {
+      "version": "v1.9.51",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Interactive Smartphone MAPS App ([MMB]) — browse live Island and World maps directly on your phone with zoom controls, quick focus buttons (ME, HOME, BOAT, DOCK), golden House Icons for your owned homes, live boat/car/dock/road/airport pins, real-time distances, and 1-tap physical Uber ordering",
         "Owned House Icon on Fullscreen World Map ([M]) & 3D Bridge Chart Display — every owned home now displays a crisp golden pitched-roof House Icon and MY HOME pill alongside a quick [ MY HOME ] toolbar focus button and 240m Boat Parking Dock indicator",
