@@ -1,14 +1,33 @@
 {
-  "updatedAtUtc": "2026-11-22T00:18:00Z",
+  "updatedAtUtc": "2026-11-22T01:32:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.47",
-  "latestReleaseTag": "v1.9.47",
-  "buildPhase": "Release v1.9.47 Live — Photoreal Interactive House Interiors (Lights, Wall Switches, Shower, Toilet, 3D Fridge Food Storage, Cabinets, 5-Ch Smart TV, Couch) & Car-Exit Walk Fix",
-  "buildStatus": "Release v1.9.47 Live — Photoreal Interactive House Interiors (Lights, Wall Switches, Shower, Toilet, 3D Fridge Food Storage, Cabinets, 5-Ch Smart TV, Couch) & Car-Exit Walk Fix",
+  "activeVersion": "v1.9.48",
+  "latestReleaseTag": "v1.9.48",
+  "buildPhase": "Release v1.9.48 Live — Direct 3D Fridge-to-Hand Food Pickup, Fridge Bounce Fix, Full Couch Click-to-Sit & Wall Light Switch Priority",
+  "buildStatus": "Release v1.9.48 Live — Direct 3D Fridge-to-Hand Food Pickup, Fridge Bounce Fix, Full Couch Click-to-Sit & Wall Light Switch Priority",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1948-direct-3d-fridge-to-hand-food-pickup-fridge-bounce-fix-couch-sit-switch-priority",
+      "timestampUtc": "2026-11-22T01:32:00Z",
+      "version": "v1.9.48",
+      "summary": "Published TrueHelm v1.9.48 Live Release (1-Click In-Launcher Update): Direct 3D Mouse-Click Fridge Food Pickup into Visible First-Person Hand, Refrigerator Camera Bounce Fix, Full 3-Seat Couch Click-to-Sit & Wall Light Switch Aim Priority Over Adjacent Doors.",
+      "added": [
+        "Direct 3D Mouse-Click Fridge Pickup into Visible First-Person Hand — opening any house refrigerator now swings both brushed-stainless French doors smoothly open in live first-person view so you can aim and click directly on any 3D food item sitting on the illuminated tempered-glass shelves (Artisan Sandwich, Fresh Island Coffee, Coastal Seafood Bowl, Organic Fruit Basket, Gourmet Steak Dinner, or Milk & Orange Juice) to pick it right into your first-person hand",
+        "Carry, Eat & Put-Back Food Flow — carry your visible 3D food item around your house or sit on the coastal couch while watching Smart TV, press [LMB / F] to eat directly from your hand (+Hunger, +Energy & +Mood), click inside an open refrigerator shelf or open kitchen cabinet to put your held item right back onto its 3D shelf, press [Q] to pull food from or stow into your grocery bag, or press [R] anytime for the optional bulk refrigerator list",
+        "Live Saved Fridge Inventory Sync — walking into any residence immediately displays your exact saved fridge stock across all 6 illuminated 3D glass shelf slots"
+      ],
+      "changed": [
+        "Fixed the refrigerator camera bounce bug where opening the fridge could launch the camera up into the air and back down repeatedly — opening both the live fridge doors and optional [R] storage list now stays rock-solid inside your kitchen",
+        "Upgraded house interior targeting to precise 3D ray-testing so clicking anywhere on the left, center, or right cushions, armrests, or backrest of any 3-seat couch reliably sits you down facing the Smart TV",
+        "Fixed wall-mounted Decora light switches positioned next to doorways so clicking a light switch cleanly toggles that room's ceiling light ON/OFF instead of opening the adjacent door"
+      ],
+      "removed": [
+        "Removed the forced popup menu on refrigerator open and proximity door overrides in favor of direct 3D mouse-click shelf pickup into your first-person hand and crisp crosshair targeting"
+      ]
+    },
     {
       "id": "milestone-v1947-photoreal-interactive-house-interiors-fridge-storage-lights-switches-tv-couch-car-exit-fix",
       "timestampUtc": "2026-11-22T00:18:00Z",
@@ -991,10 +1010,29 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.47",
+      "version": "v1.9.48",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Direct 3D Mouse-Click Fridge Pickup into Visible First-Person Hand — opening any house refrigerator now swings both brushed-stainless French doors smoothly open in live first-person view so you can aim and click directly on any 3D food item sitting on the illuminated tempered-glass shelves (Artisan Sandwich, Fresh Island Coffee, Coastal Seafood Bowl, Organic Fruit Basket, Gourmet Steak Dinner, or Milk & Orange Juice) to pick it right into your first-person hand",
+        "Carry, Eat & Put-Back Food Flow — carry your visible 3D food item around your house or sit on the coastal couch while watching Smart TV, press [LMB / F] to eat directly from your hand (+Hunger, +Energy & +Mood), click inside an open refrigerator shelf or open kitchen cabinet to put your held item right back onto its 3D shelf, press [Q] to pull food from or stow into your grocery bag, or press [R] anytime for the optional bulk refrigerator list",
+        "Live Saved Fridge Inventory Sync — walking into any residence immediately displays your exact saved fridge stock across all 6 illuminated 3D glass shelf slots"
+      ],
+      "changed": [
+        "Fixed the refrigerator camera bounce bug where opening the fridge could launch the camera up into the air and back down repeatedly — opening both the live fridge doors and optional [R] storage list now stays rock-solid inside your kitchen",
+        "Upgraded house interior targeting to precise 3D ray-testing so clicking anywhere on the left, center, or right cushions, armrests, or backrest of any 3-seat couch reliably sits you down facing the Smart TV",
+        "Fixed wall-mounted Decora light switches positioned next to doorways so clicking a light switch cleanly toggles that room's ceiling light ON/OFF instead of opening the adjacent door"
+      ],
+      "removed": [
+        "Removed the forced popup menu on refrigerator open and proximity door overrides in favor of direct 3D mouse-click shelf pickup into your first-person hand and crisp crosshair targeting"
+      ]
+    },
+    {
+      "version": "v1.9.47",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Photorealistic Interactive House Interiors Across All Homes — rebuilt 21 high-detail multi-LOD interior fixtures & 3D food props across every walk-in house on all 74 archipelago islands",
         "Per-Room Individual Ceiling Lights & Wall Light Switches — every room in every house now has its own brushed-brass & frosted-glass ceiling light and flush wall-mounted Decora rocker switch beside the doorway; press [E] to toggle each room's light ON or OFF independently with warm dynamic room lighting",
