@@ -1,14 +1,33 @@
 {
-  "updatedAtUtc": "2026-11-22T01:32:00Z",
+  "updatedAtUtc": "2026-11-22T02:16:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.48",
-  "latestReleaseTag": "v1.9.48",
-  "buildPhase": "Release v1.9.48 Live — Direct 3D Fridge-to-Hand Food Pickup, Fridge Bounce Fix, Full Couch Click-to-Sit & Wall Light Switch Priority",
-  "buildStatus": "Release v1.9.48 Live — Direct 3D Fridge-to-Hand Food Pickup, Fridge Bounce Fix, Full Couch Click-to-Sit & Wall Light Switch Priority",
+  "activeVersion": "v1.9.49",
+  "latestReleaseTag": "v1.9.49",
+  "buildPhase": "Release v1.9.49 Live — Silent House Interactions, Model-Exact 3D Aiming (Houses & Boats) & Complete Smallest-House Layouts",
+  "buildStatus": "Release v1.9.49 Live — Silent House Interactions, Model-Exact 3D Aiming (Houses & Boats) & Complete Smallest-House Layouts",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1949-silent-house-interactions-model-exact-aim-houses-boats-complete-tiny-homes",
+      "timestampUtc": "2026-11-22T02:16:00Z",
+      "version": "v1.9.49",
+      "summary": "Published TrueHelm v1.9.49 Live Release (1-Click In-Launcher Update): Removed All House Interaction Beeping Sounds, Strict Model-Exact 3D Aiming Across Houses & Boats, and Guaranteed Working Small Sofa, Bed, Kitchen & Fridge Inside Every Smallest Cottage.",
+      "added": [
+        "Complete Smallest-House Interiors Across All 74 Islands — guaranteed that every compact starter cottage now includes a working clickable small sofa (sit down cleanly with natural eye height), a private bedroom with a real bed, a full kitchen counter with sink, stove & openable cabinets, and a Smart French-Door Refrigerator",
+        "Strict Model-Exact 3D Ray Aiming (Houses & Boats) — upgraded interaction raycasts to test directly against each live 3D model's exact mesh bounding volume so your crosshair must point directly at the light switch, refrigerator, 3D food item, cabinet door, sofa, house door, or boat helm control / cabin door to interact"
+      ],
+      "changed": [
+        "Eliminated 1–2 foot off-target click triggers on wall light switches, refrigerators, house doors, and boat controls/doors",
+        "Tightened boat bridge console switches, anchor lever, horn lanyard, throttle levers, Captain's Chair exit button, elevator buttons, and watertight/cabin door hitboxes to match their exact 3D models",
+        "Improved compact sofa seating eye height and room-clamped stand-up clearance inside cozy cottages"
+      ],
+      "removed": [
+        "Removed all repetitive beeping/chime sound effects whenever interacting with lights, wall switches, refrigerators, food items, cabinets, showers, toilets, Smart TVs, or sofas inside homes",
+        "Removed wide proximity-cone interaction fallbacks across house interiors and boat doors"
+      ]
+    },
     {
       "id": "milestone-v1948-direct-3d-fridge-to-hand-food-pickup-fridge-bounce-fix-couch-sit-switch-priority",
       "timestampUtc": "2026-11-22T01:32:00Z",
@@ -1010,10 +1029,29 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.48",
+      "version": "v1.9.49",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Complete Smallest-House Interiors Across All 74 Islands — guaranteed that every compact starter cottage now includes a working clickable small sofa (sit down cleanly with natural eye height), a private bedroom with a real bed, a full kitchen counter with sink, stove & openable cabinets, and a Smart French-Door Refrigerator",
+        "Strict Model-Exact 3D Ray Aiming (Houses & Boats) — upgraded interaction raycasts to test directly against each live 3D model's exact mesh bounding volume so your crosshair must point directly at the light switch, refrigerator, 3D food item, cabinet door, sofa, house door, or boat helm control / cabin door to interact"
+      ],
+      "changed": [
+        "Eliminated 1–2 foot off-target click triggers on wall light switches, refrigerators, house doors, and boat controls/doors",
+        "Tightened boat bridge console switches, anchor lever, horn lanyard, throttle levers, Captain's Chair exit button, elevator buttons, and watertight/cabin door hitboxes to match their exact 3D models",
+        "Improved compact sofa seating eye height and room-clamped stand-up clearance inside cozy cottages"
+      ],
+      "removed": [
+        "Removed all repetitive beeping/chime sound effects whenever interacting with lights, wall switches, refrigerators, food items, cabinets, showers, toilets, Smart TVs, or sofas inside homes",
+        "Removed wide proximity-cone interaction fallbacks across house interiors and boat doors"
+      ]
+    },
+    {
+      "version": "v1.9.48",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Direct 3D Mouse-Click Fridge Pickup into Visible First-Person Hand — opening any house refrigerator now swings both brushed-stainless French doors smoothly open in live first-person view so you can aim and click directly on any 3D food item sitting on the illuminated tempered-glass shelves (Artisan Sandwich, Fresh Island Coffee, Coastal Seafood Bowl, Organic Fruit Basket, Gourmet Steak Dinner, or Milk & Orange Juice) to pick it right into your first-person hand",
         "Carry, Eat & Put-Back Food Flow — carry your visible 3D food item around your house or sit on the coastal couch while watching Smart TV, press [LMB / F] to eat directly from your hand (+Hunger, +Energy & +Mood), click inside an open refrigerator shelf or open kitchen cabinet to put your held item right back onto its 3D shelf, press [Q] to pull food from or stow into your grocery bag, or press [R] anytime for the optional bulk refrigerator list",
