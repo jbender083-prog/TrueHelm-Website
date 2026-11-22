@@ -1,14 +1,37 @@
 {
-  "updatedAtUtc": "2026-11-22T03:18:00Z",
+  "updatedAtUtc": "2026-11-22T04:40:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.50",
-  "latestReleaseTag": "v1.9.50",
-  "buildPhase": "Release v1.9.50 Live — Zero Teleporting, Animated Ocean Swimming, Underwater Vision & Dedicated 240m Boat Parking Docks",
-  "buildStatus": "Release v1.9.50 Live — Zero Teleporting, Animated Ocean Swimming, Underwater Vision & Dedicated 240m Boat Parking Docks",
+  "activeVersion": "v1.9.51",
+  "latestReleaseTag": "v1.9.51",
+  "buildPhase": "Release v1.9.51 Live — Photorealistic Characters, Airliner & Walkable Jetbridge, Smartphone Maps, Map House Icon & Life-Sim Polish",
+  "buildStatus": "Release v1.9.51 Live — Photorealistic Characters, Airliner & Walkable Jetbridge, Smartphone Maps, Map House Icon & Life-Sim Polish",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1951-character-profile-maps-app-house-icon-walkable-jetbridge-photoreal-airliner-humans-road-fix",
+      "timestampUtc": "2026-11-22T04:40:00Z",
+      "version": "v1.9.51",
+      "summary": "Published TrueHelm v1.9.51 Live Release (1-Click In-Launcher Update): Character Profile Setup, Full-Body 3D Character Creator Framing, Owned House Icon on World Map & Bridge Chart, Interactive Smartphone MAPS App, Walkable Connected Airport Jetbridge (Zero Teleporting), Shorter Photorealistic Animated Characters & Town NPCs, Remodeled Photorealistic Airliner Exterior/Interior, and Grass-Free Paved Harbor Roads.",
+      "added": [
+        "Interactive Smartphone MAPS App ([MMB]) — browse live Island and World maps directly on your phone with zoom controls, quick focus buttons (ME, HOME, BOAT, DOCK), golden House Icons for your owned homes, live boat/car/dock/road/airport pins, real-time distances, and 1-tap physical Uber ordering",
+        "Owned House Icon on Fullscreen World Map ([M]) & 3D Bridge Chart Display — every owned home now displays a crisp golden pitched-roof House Icon and MY HOME pill alongside a quick [ MY HOME ] toolbar focus button and 240m Boat Parking Dock indicator",
+        "Walkable Connected Airport Jetbridge & Automatic Gate 1 Sliding Doors (Zero Teleporting) — walk smoothly out of the remodeled airliner through the open Port-Left L1 doorway, down the brightly lit panoramic glass Passenger Jetbridge, and through Gate 1 sliding doors directly into the Regional Airport terminal (and walk right back up the Jetbridge to board!)",
+        "Photorealistic Airliner Exterior & Walk-In Cabin + Illuminated Glass Cockpit — sculpted fuselage with real open cabin windows, swept wings with split-scimitar winglets, twin 20-blade turbofans, tricycle landing gear, curved Sky-Interior overhead bins with LED cove lighting, quilted leather seats with glowing archipelago route-map IFE touchscreens, forward stainless galley, emerald floor escape strips, and an illuminated glass cockpit",
+        "Photorealistic Rigged Playable Character, Town NPCs & Smooth 60fps Walking Animations — high-detail anatomical rigged human models with tailored normal-mapped clothing and smooth biomechanical Idle, Walk, Run, and Sit animations across all 74 islands"
+      ],
+      "changed": [
+        "Updated onboarding from Captain Profile Setup to Character Profile Setup with optional Business / Crew Name to reflect TrueHelm's full life-simulator world",
+        "Calibrated 3D Character Creator full-body camera framing so your entire character from hat to shoes and turntable pedestal fits cleanly inside the middle preview",
+        "Scaled playable characters, town NPCs, and first-person eye height down to realistic natural proportions",
+        "Re-graded island town plateau slopes and recessed Harbor Blvd & town roadbeds cleanly below asphalt across all 74 islands so grass never covers paved roads or sidewalks"
+      ],
+      "removed": [
+        "Removed airport plane-to-terminal deplaning and boarding teleports in favor of physically walking through the connected Gate 1 Jetbridge",
+        "Removed legacy blocky cylinder town pedestrian meshes in favor of photorealistic animated skeletal NPCs"
+      ]
+    },
     {
       "id": "milestone-v1950-zero-teleporting-overboard-swimming-underwater-vision-240m-boat-parking-dock-trailer-lot",
       "timestampUtc": "2026-11-22T03:18:00Z",
@@ -1047,10 +1070,33 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.50",
+      "version": "v1.9.51",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Interactive Smartphone MAPS App ([MMB]) — browse live Island and World maps directly on your phone with zoom controls, quick focus buttons (ME, HOME, BOAT, DOCK), golden House Icons for your owned homes, live boat/car/dock/road/airport pins, real-time distances, and 1-tap physical Uber ordering",
+        "Owned House Icon on Fullscreen World Map ([M]) & 3D Bridge Chart Display — every owned home now displays a crisp golden pitched-roof House Icon and MY HOME pill alongside a quick [ MY HOME ] toolbar focus button and 240m Boat Parking Dock indicator",
+        "Walkable Connected Airport Jetbridge & Automatic Gate 1 Sliding Doors (Zero Teleporting) — walk smoothly out of the remodeled airliner through the open Port-Left L1 doorway, down the brightly lit panoramic glass Passenger Jetbridge, and through Gate 1 sliding doors directly into the Regional Airport terminal (and walk right back up the Jetbridge to board!)",
+        "Photorealistic Airliner Exterior & Walk-In Cabin + Illuminated Glass Cockpit — sculpted fuselage with real open cabin windows, swept wings with split-scimitar winglets, twin 20-blade turbofans, tricycle landing gear, curved Sky-Interior overhead bins with LED cove lighting, quilted leather seats with glowing archipelago route-map IFE touchscreens, forward stainless galley, emerald floor escape strips, and an illuminated glass cockpit",
+        "Photorealistic Rigged Playable Character, Town NPCs & Smooth 60fps Walking Animations — high-detail anatomical rigged human models with tailored normal-mapped clothing and smooth biomechanical Idle, Walk, Run, and Sit animations across all 74 islands"
+      ],
+      "changed": [
+        "Updated onboarding from Captain Profile Setup to Character Profile Setup with optional Business / Crew Name to reflect TrueHelm's full life-simulator world",
+        "Calibrated 3D Character Creator full-body camera framing so your entire character from hat to shoes and turntable pedestal fits cleanly inside the middle preview",
+        "Scaled playable characters, town NPCs, and first-person eye height down to realistic natural proportions",
+        "Re-graded island town plateau slopes and recessed Harbor Blvd & town roadbeds cleanly below asphalt across all 74 islands so grass never covers paved roads or sidewalks"
+      ],
+      "removed": [
+        "Removed airport plane-to-terminal deplaning and boarding teleports in favor of physically walking through the connected Gate 1 Jetbridge",
+        "Removed legacy blocky cylinder town pedestrian meshes in favor of photorealistic animated skeletal NPCs"
+      ]
+    },
+    {
+      "version": "v1.9.50",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Dedicated 240-Meter Long Boat Parking Dock & Big Truck + Boat-Trailer Parking Lot on All 74 Islands — completely separate from each island's commercial cargo delivery port, featuring space for 10–14 boats along both cushioned rubber-fender sides, mooring cleats, yellow bollards, coastal pier lamps with lifebuoys, 10 stainless steel swim ladders, a grooved concrete boat launch ramp, a 16-bay pull-through Truck & Boat-Trailer Parking Lot with an archway gantry sign, and a dedicated Uber pickup curb",
         "Overboard Boat Jumping & Full 3D Ocean Swimming with 1P/3P Animations — walk out onto any boat's deck and press [SPACE] near the rail to leap overboard into live 3D ocean waves (or step directly onto the 240m Boat Parking Dock when parked alongside it), swim with sculpted 1st-person animated swimming arms or toggle [V] for a 3rd-person animated swimmer, dive underwater with [CTRL/C], surface with [SPACE], wade smoothly ashore onto any beach, climb dock swim ladders ([E]), and climb back aboard your waiting boat ([E])",
