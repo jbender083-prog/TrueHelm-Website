@@ -1,14 +1,35 @@
 {
-  "updatedAtUtc": "2026-11-21T22:53:00Z",
+  "updatedAtUtc": "2026-11-22T00:18:00Z",
   "syncMode": "on-launcher-release",
-  "activeVersion": "v1.9.46",
-  "latestReleaseTag": "v1.9.46",
-  "buildPhase": "Release v1.9.46 Live — Photoreal 3D Cars, 4-Seat Luxury Interiors, Ground-Fall Fix & Law-Abiding Curbside Uber Navigation",
-  "buildStatus": "Release v1.9.46 Live — Photoreal 3D Cars, 4-Seat Luxury Interiors, Ground-Fall Fix & Law-Abiding Curbside Uber Navigation",
+  "activeVersion": "v1.9.47",
+  "latestReleaseTag": "v1.9.47",
+  "buildPhase": "Release v1.9.47 Live — Photoreal Interactive House Interiors (Lights, Wall Switches, Shower, Toilet, 3D Fridge Food Storage, Cabinets, 5-Ch Smart TV, Couch) & Car-Exit Walk Fix",
+  "buildStatus": "Release v1.9.47 Live — Photoreal Interactive House Interiors (Lights, Wall Switches, Shower, Toilet, 3D Fridge Food Storage, Cabinets, 5-Ch Smart TV, Couch) & Car-Exit Walk Fix",
   "currentlyAdded": [],
   "currentlyChanged": [],
   "currentlyRemoved": [],
   "historyLog": [
+    {
+      "id": "milestone-v1947-photoreal-interactive-house-interiors-fridge-storage-lights-switches-tv-couch-car-exit-fix",
+      "timestampUtc": "2026-11-22T00:18:00Z",
+      "version": "v1.9.47",
+      "summary": "Published TrueHelm v1.9.47 Live Release (1-Click In-Launcher Update): Photorealistic Fully Interactive House Interiors Across All Homes (Per-Room Ceiling Lights & Wall Switches, Rainfall Shower, Flushing Toilet, 3D Refrigerator Put-In / Take-Out Food Storage, Openable Double Kitchen Cabinets, 5-Channel 65-Inch Smart TV, Sit-On-Couch) + Car-Exit Movement Fix.",
+      "added": [
+        "Photorealistic Interactive House Interiors Across All Homes — rebuilt 21 high-detail multi-LOD interior fixtures & 3D food props across every walk-in house on all 74 archipelago islands",
+        "Per-Room Individual Ceiling Lights & Wall Light Switches — every room in every house now has its own brushed-brass & frosted-glass ceiling light and flush wall-mounted Decora rocker switch beside the doorway; press [E] to toggle each room's light ON or OFF independently with warm dynamic room lighting",
+        "Interactive Walk-In Rainfall Shower & Flushing Porcelain Toilet — press [E] on the Carrara marble corner shower to swing open the frameless glass door and run live glistening rainfall water streams (+20% Energy, +18% Mood), or press [E] on the sculpted porcelain toilet to lift the lid, use, and flush (+8% Mood)",
+        "Interactive French-Door Smart Refrigerator & Symmetrical Openable Kitchen Cabinets — press [E] to swing open both stainless fridge doors and inspect live 3D food items stocked on illuminated tempered-glass shelves, use the right-hand Smart Refrigerator storage panel to Put Food IN from your grocery bag, Take Food OUT, or Eat Fresh (persisted in your save profile), and open any upper or lower double shaker kitchen cabinet ([E] door / [R] pantry storage)",
+        "65-Inch 4K Smart TV with 5 Live Switchable Channels & Sit-On-Couch — press [E] or [T] to tune across 5 broadcast channels (CH 01 THN Maritime News, CH 02 Archipelago Weather HD, CH 03 Ocean Discovery 4K, CH 04 Island Sports Network, CH 05 Harbor Cinema HD, plus OFF), and press [E] on the plush coastal sofa to sit facing the TV with mouse free-look, remote channel flipping, passive relaxation recovery, and instant stand-up"
+      ],
+      "changed": [
+        "Fixed the car-exit movement bug where pressing [E] to leave a parked car could allow jumping while freezing [W/A/S/D] walking — players now step cleanly onto a collider-free spot beside their car and walk freely away",
+        "Upgraded bathroom layouts across all multi-room residences so compact bathrooms cleanly fit a corner walk-in rainfall shower alongside the vanity mirror, tub, and toilet",
+        "Refined Uber pedestrian yield corridor so curbside airport terminal drop-offs never stall behind pedestrians walking safely on the sidewalk"
+      ],
+      "removed": [
+        "Removed static non-interactive house appliances, dark unlit room fixtures, and frozen car-exit input states in favor of fully interactive lighting, plumbing, kitchen food storage, live Smart TV channels, and responsive on-foot movement"
+      ]
+    },
     {
       "id": "milestone-v1946-photoreal-3d-cars-luxury-interiors-ground-fall-fix-law-abiding-curbside-uber",
       "timestampUtc": "2026-11-21T22:45:00Z",
@@ -970,10 +991,31 @@
   ],
   "versionLogs": [
     {
-      "version": "v1.9.46",
+      "version": "v1.9.47",
       "badge": "Current Live Download",
       "date": "November 2026",
       "openByDefault": true,
+      "added": [
+        "Photorealistic Interactive House Interiors Across All Homes — rebuilt 21 high-detail multi-LOD interior fixtures & 3D food props across every walk-in house on all 74 archipelago islands",
+        "Per-Room Individual Ceiling Lights & Wall Light Switches — every room in every house now has its own brushed-brass & frosted-glass ceiling light and flush wall-mounted Decora rocker switch beside the doorway; press [E] to toggle each room's light ON or OFF independently with warm dynamic room lighting",
+        "Interactive Walk-In Rainfall Shower & Flushing Porcelain Toilet — press [E] on the Carrara marble corner shower to swing open the frameless glass door and run live glistening rainfall water streams (+20% Energy, +18% Mood), or press [E] on the sculpted porcelain toilet to lift the lid, use, and flush (+8% Mood)",
+        "Interactive French-Door Smart Refrigerator & Symmetrical Openable Kitchen Cabinets — press [E] to swing open both stainless fridge doors and inspect live 3D food items stocked on illuminated tempered-glass shelves, use the right-hand Smart Refrigerator storage panel to Put Food IN from your grocery bag, Take Food OUT, or Eat Fresh (persisted in your save profile), and open any upper or lower double shaker kitchen cabinet ([E] door / [R] pantry storage)",
+        "65-Inch 4K Smart TV with 5 Live Switchable Channels & Sit-On-Couch — press [E] or [T] to tune across 5 broadcast channels (CH 01 THN Maritime News, CH 02 Archipelago Weather HD, CH 03 Ocean Discovery 4K, CH 04 Island Sports Network, CH 05 Harbor Cinema HD, plus OFF), and press [E] on the plush coastal sofa to sit facing the TV with mouse free-look, remote channel flipping, passive relaxation recovery, and instant stand-up"
+      ],
+      "changed": [
+        "Fixed the car-exit movement bug where pressing [E] to leave a parked car could allow jumping while freezing [W/A/S/D] walking — players now step cleanly onto a collider-free spot beside their car and walk freely away",
+        "Upgraded bathroom layouts across all multi-room residences so compact bathrooms cleanly fit a corner walk-in rainfall shower alongside the vanity mirror, tub, and toilet",
+        "Refined Uber pedestrian yield corridor so curbside airport terminal drop-offs never stall behind pedestrians walking safely on the sidewalk"
+      ],
+      "removed": [
+        "Removed static non-interactive house appliances, dark unlit room fixtures, and frozen car-exit input states in favor of fully interactive lighting, plumbing, kitchen food storage, live Smart TV channels, and responsive on-foot movement"
+      ]
+    },
+    {
+      "version": "v1.9.46",
+      "badge": "Shipped",
+      "date": "November 2026",
+      "openByDefault": false,
       "added": [
         "Photorealistic Sculpted 3D Cars & 4-Seat Luxury Interiors — rebuilt all 4 drivable & AI vehicles (Compact Hatchback, Executive Sedan / Uber Black, Coastal SUV, and Harbor Pickup Truck) with glossy ClearCoat paintwork, 10-spoke alloy wheels with crimson brake calipers, sculpted LED headlights & full-width taillight bars, plus a full 4-seat smooth Nappa & diamond-quilted saddle-leather cabin featuring a backlit digital gauge cluster, widescreen GPS navigation tablet, carbon center console, ambient cyan LED lighting, flat-bottom sport steering wheel, and a visible seated Uber chauffeur",
         "Realistic 30-60s Paved-Road Uber Approach & Walk-Up [E] Boarding — ordering an Uber from your home keeps you 100% grounded on foot while a glossy Midnight Black Uber Black sedan drives along paved island streets to pull up curbside outside your house; walk to the street and press [E] (or Click) to enter the rear executive seat with full mouse free-look and [V] interior/chase camera toggle",
