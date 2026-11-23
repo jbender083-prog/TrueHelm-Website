@@ -1,6 +1,9 @@
 {
   "activeVersion": "v1.9.52",
   "added": [
+    "Persistent World Exact Resume & Streamlined Main Menu \u2014 Returning players now skip island selection and spawn directly where their character left off (on foot, indoors, in a car, on a jet ski or boat, walking aboard a superyacht, or at the helm) with every car, trailer, and vessel persisting at its exact world position; top owned-vessel selector cards were removed from the Main Menu",
+    "Jet Ski 3D Rider, Small-Craft Wave Air Physics & Dynamic Water Spray \u2014 Playable customized 3D characters visibly straddle jet skis holding the handlebars and leaning into carving turns, while jet skis bounce over individual wave crests, catch air off big swells, bank deeply into sharp turns, and throw 3D stern rooster-tail and carving side water spray",
+    "New 80m Wave-Floating Superyacht Boarding Dock, Dry-Land Warehouse 2 Entrance & Trailer Boat Boarding \u2014 Added a second articulated multi-point wave-floating dock with hinged gangway right beside the Warehouse 2 slipway, cut a wide dry-land side entrance into Warehouse 2 leading onto dry catwalks, added [T] / [E] trailer connect & disconnect, and enabled climbing onto boats and jet skis right on their trailers",
     "Floating Pontoon Boat Docks & 16m Articulated Aluminum Gangways (All 74 Islands) \u2014 Replaced static wooden-stilt boat docks with buoyant black HDPE floating pontoon piers that rise and fall live with synchronized multiplayer tides & waves (+68cm dry even at Peak High Tide), joined to a raised +4.4m bone-dry Truck & Boat-Trailer Parking Lot by a dynamically pitching marine aluminum truss gangway",
     "Small-Boat Floating Dock Mooring & Full 1P/3P Vehicle Mouse Free-Look \u2014 Small & medium boats (up to 60m) can now moor directly at any island's Floating Boat Dock with braided 3D mooring lines tied to the live moving bollards (while huge cargo ships are routed to the Western Commercial Cargo Quay); driving any car, pickup truck, trailer backup cam, jet ski, boat, or superyacht now supports full mouse free-look in 1st-person and full 360-degree orbit in 3rd-person ([V] switches 1P/3P, [C] recenters)",
     "Persistent Exclusive Multiplayer Housing, Phone Sell-House (SELL 85%) & Full Multiplayer Vehicle/Boat/Trailer Sync \u2014 Your owned house stays permanently tied to your exact house on your exact island across sessions; no two players in multiplayer can own the same house (20-50 distinct Beginner, Family, Villa & Mansion homes per island with live TAKEN badges in Zillow), sell any owned house directly from your smartphone for 85% market resale value to release it back onto the market, and see every remote captain's real-time car (all 8 models), custom boat trailer + loaded boat, jet ski, or 158ft superyacht live in multiplayer",
@@ -11,6 +14,12 @@
   ],
   "buildPhase": "Release v1.9.52 Live \u2014 Persistent Exclusive Multiplayer Housing & Phone Sell-House, Overhauled Jet Skis & 16 Custom Boat Trailers, Car & Marine Dealerships (26 Boats & Walk-In Superyachts), & Full Multiplayer Sync",
   "buildStatus": "Release v1.9.52 Live \u2014 Persistent Exclusive Multiplayer Housing & Phone Sell-House, Overhauled Jet Skis & 16 Custom Boat Trailers, Car & Marine Dealerships (26 Boats & Walk-In Superyachts), & Full Multiplayer Sync",
+  "changed": [
+    "Multi-Point Wave Buoyancy Docks, Clear Boat Ramp & Clear Warehouse 1 Apron \u2014 Upgraded the 240m floating boat dock to multi-point articulated wave buoyancy so every section rides live ocean waves naturally, cleared the blocking seawall section across the concrete boat launch ramp, removed the two parking spots in front of Warehouse 1's garage door, and eliminated accidental swim teleports on the dry concrete marina apron",
+    "Silky 3rd-Person Driving, Shallow-Water Jet Ski Launch, Jitter-Free Character Creator & Fresh-Start Career \u2014 Eliminated 3rd-person car/Uber camera jitter and Character Creator framing jitter, tuned shallow-water trailer launch detection for jet skis and small boats, and streamlined fresh careers to start with a Beginner Car, one free Beginner Home choice on Zillow, and free Uber rides to both dealerships",
+    "Seamless Zero-Teleport Jump Off Boats & Mega Yacht Swim-Ladder Boarding \u2014 Jumping off your boat launches into a natural gravity-driven jump arc from your exact deck spot onto the floating dock or into the waves with zero teleport snap; swimming up to the back stern swim ladder of any launched 158ft Mega Yacht, boat, or jet ski now lets you click or press [E] to climb straight aboard",
+    "Dealership Monitor Mouse Unlock, Custom Trailer Hitching, Silent Far Anchor Audio, Accurate Uber Land/Boat/Water Detection & Zero-Grass Roads \u2014 Dealership kiosk monitors now always unlock and display the mouse cursor ([ESC] to exit); custom jet ski & boat trailers in Warehouse 1 now prioritize the trailer coupler hitch ([E/Click] on foot or [T] from cab); anchor chain & boat engine sound smoothly attenuates to complete silence beyond 115m or indoors; Uber displays accurate live On Land / Floating Dock vs On Boat vs In Water status; and Oak Ridge Ave South & Car Dealership roads are completely free of grass across all 74 islands"
+  ],
   "historyLog": [
     {
       "added": [
@@ -1079,7 +1088,7 @@
   "latestReleaseTag": "v1.9.52",
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-22T21:21:04Z",
-  "updatedUtc": "2026-11-22T21:41:46Z",
+  "updatedUtc": "2026-11-23T00:00:34Z",
   "versionLogs": [
     {
       "added": [
@@ -2003,9 +2012,5 @@
       ],
       "version": "v1.6.0"
     }
-  ],
-  "changed": [
-    "Seamless Zero-Teleport Jump Off Boats & Mega Yacht Swim-Ladder Boarding \u2014 Jumping off your boat launches into a natural gravity-driven jump arc from your exact deck spot onto the floating dock or into the waves with zero teleport snap; swimming up to the back stern swim ladder of any launched 158ft Mega Yacht, boat, or jet ski now lets you click or press [E] to climb straight aboard",
-    "Dealership Monitor Mouse Unlock, Custom Trailer Hitching, Silent Far Anchor Audio, Accurate Uber Land/Boat/Water Detection & Zero-Grass Roads \u2014 Dealership kiosk monitors now always unlock and display the mouse cursor ([ESC] to exit); custom jet ski & boat trailers in Warehouse 1 now prioritize the trailer coupler hitch ([E/Click] on foot or [T] from cab); anchor chain & boat engine sound smoothly attenuates to complete silence beyond 115m or indoors; Uber displays accurate live On Land / Floating Dock vs On Boat vs In Water status; and Oak Ridge Ave South & Car Dealership roads are completely free of grass across all 74 islands"
   ]
 }
