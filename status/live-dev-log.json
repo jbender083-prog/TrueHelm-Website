@@ -1,25 +1,40 @@
 {
-  "activeVersion": "v1.9.53",
+  "activeVersion": "v1.9.54",
   "added": [
-    "Persistent Returning-Player World Resume: Players resume exactly where they left off (ship, personal boat, car, house, or island) with every parked car, boat trailer, and personal boat persisting in the world \u2014 island selection only appears on first arrival",
-    "Jet Ski 3D Rider, Wave-Air Physics & Water Spray: Customized 3D riders visibly sit on jet skis, grip the handlebars, and lean into turns with wave-bouncing, airborne swell jumps, sharp-turn banking, and spray wakes",
-    "Multi-Point Wave-Floating Docks & Unobstructed Boat Launch Ramps: Both the 240m Boat Parking Dock and 80m Superyacht Dock flex naturally across live ocean waves beside fully carved concrete boat ramps with slope-matched lane striping",
-    "Solid Swept Collisions Across Dealerships, Closed Warehouse Gates, Cars & Hitched Trailers: Added analytical wall, jamb, and closed-gate collisions for walking players, cars, and hitched boat trailers with AI traffic & Uber yielding"
+    "Full 3D Helm Cockpits Across All 26 Buyable Personal Boats, Jet Skis & Walk-In Superyachts: Modeled bespoke sculpted 3D cockpits for every Marine Dealership vessel \u2014 angled jet-ski panoramic dash pods, riveted skiff side console, mahogany runabout helm, tournament bass & center-console consoles, sport bowrider & wake/surf command pods, sculpted sailboat steering pedestal with binnacle guard & chrome winches, carbon offshore cigarette dash with 6 gauges & quad throttles, and enclosed teak panoramic pilothouse bridges on all 10 walk-in yachts and tri-deck superyachts",
+    "Live Animated 3D Steering, Throttles & Real-Time Marine Chartplotter MFD: Every personal vessel now features animated 3D steering wheels or jet-ski handlebars that turn smoothly with rudder input, throttle levers (single, twin, or quad) that tilt dynamically with forward/reverse power, and a live glowing 3D marine MFD screen displaying real-time knots, heading compass tape, gear, RPM bar, rudder angle, sonar depth, pitch/roll, nav lights, and airborne alerts",
+    "First-Person Cockpit & Open-Air Flybridge Helm Stations ([V] Camera Cycle): Driving any personal boat defaults to an eye-level 1st-person cockpit view with full mouse free-look, [V] cycles cleanly between 1P Main Cockpit, 1P Open-Air Upper Flybridge (on all 9 flybridge & tri-deck yachts), and 3P Chase Camera with a visibly seated 3D captain gripping the wheel",
+    "Interactive Cockpit Horn ([H]), Toggleable Dash & Nav Lights ([L]) & Enhanced Small-Craft Water Physics: Sound each vessel's marine horn with [H], toggle warm cockpit & navigation lighting with [L], feel nimble wave-crest planing and airborne splashdowns on small boats, authentic wind-heeling on sailboats, and deep fin-keel waterline draft on coastal sailing cruisers"
   ],
-  "buildPhase": "Release v1.9.53 Live \u2014 Massive 5-Wave Stability Pass (250+ Fixes), Persistent World Resume, 3D Jet Ski Rider & Wave-Air Physics, Wave-Floating Docks & Full Multiplayer Sync",
-  "buildStatus": "Release v1.9.53 Live \u2014 Massive 5-Wave Stability Pass (250+ Fixes), Persistent World Resume, 3D Jet Ski Rider & Wave-Air Physics, Wave-Floating Docks & Full Multiplayer Sync",
+  "buildPhase": "Release v1.9.54 Live \u2014 Full 3D Cockpits on All 26 Personal Boats & Superyachts, Live Animated Controls & 3D Marine MFD, Open-Air Flybridge Helms & Small-Boat Wave Physics",
+  "buildStatus": "Release v1.9.54 Live \u2014 Full 3D Cockpits on All 26 Personal Boats & Superyachts, Live Animated Controls & 3D Marine MFD, Open-Air Flybridge Helms & Small-Boat Wave Physics",
   "changed": [
-    "Wave 5 Deep Stability, Ocean, Bridge, Life-Sim, Vehicles & Multiplayer Pass (72 Fixes): Fixed coastal/quay ocean safety east of commercial ports, storm/reef geometry, cargo archetype classification & cancel resets, lateral momentum/shore-push physics, Fuel Rescue & Autopilot safety interlocks, VR chair locking, 3D spatial horn/slam audio, North-Up chart grid alignment, Monitor 6/7 hitboxes & front-face raycasts, CCTV pan/tilt release, 240 Hz 8-ball pool physics, non-blocking Cabin TV Watch-Party sync, Co-Op host failover & locked-company protection, Gate 1 airliner pushback, elevator & swimming failsafes, free-starter house release rules, and full personal boat/car cloud merges",
-    "Wave 4 Comprehensive Stability, Ocean, Bridge, Life-Sim & Multiplayer Pass (71 Fixes): Hardened roaming storm math, worker-thread ocean sync, outer-continent depths, suspension bridges, port crane/shiploader isolation, Autopilot berth routing, VR bow thrusters & eye height, North-Up 2D charts & compass ticks, Co-Op host-only splits, jetbridge/ladder elevation checks, Uber cancel safety, primary save graphics/CCTV persistence, and 10 Hz direct UDP vessel/trailer/swimmer sync",
-    "Wave 3 Deep Ocean, Physics, Controls, Life-Sim, Audio & Multiplayer Bug-Fix Pass (63 Fixes): Fixed SWE wake stability, wide-beam & Flo-Flo docking alignment, Shipyard Lv 5 speed/agility upgrades, Chemical Tanker routing, giant-island marina reach, car wall collisions, personal boat grounding recovery, avatar gender swaps, phone house-sale sync, Windows VHF echo, and startup warnings",
-    "Waves 1 & 2 Engine, Housing, Cargo, Multiplayer & Zero-Warning Stability Pass: Added housing wall sub-stepping, closed-door occlusion, multi-floor fixture isolation, Commerce Center guardrails, atomic career saves, room-code filtering, house claim race guards, and eliminated runtime engine/HUD/material/EOS warnings"
+    "Redesigned Walk-In Yacht & Superyacht Pilothouse Bridges: Cleared the forward bridge windshield across all 10 walk-in cruisers and superyachts (relocating the master stateroom cleanly on tri-deck superyachts) to install raised enclosed panoramic teak pilothouse bridges with triple glass-bridge MFDs, Stidd captain chairs, compasses, bow-thruster joysticks, and seamless walk-in helm boarding prompts",
+    "Showroom, Trailered & Live Multiplayer Cockpit Parity: Marine Dealership showroom boats, trailered boats, and remote multiplayer vessels now render matching 3D wheels, handlebars, throttles, and helm screens consistently across the world, while seated trailer-boat 1st-person views align directly to each boat's cockpit eye position",
+    "Personal Boat Telemetry HUD Upgrade: Upgraded the bottom driving telemetry bar with live compass heading, camera mode label (1P COCKPIT / 1P FLYBRIDGE / 3P CHASE), cockpit light indicator, and [H] Horn / [L] Lights quick controls"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1953-5wave-stability-persistent-world-jetski-floating-docks",
-      "version": "v1.9.53",
-      "timestampUtc": "2026-11-23T12:49:35Z",
-      "summary": "Published TrueHelm v1.9.53 Live Release (1-Click In-Launcher Update): All 5 Deep Forensic Stability & Gameplay Waves (250+ Verified Fixes) + Persistent World Resume, 3D Jet Ski Rider & Wave-Air Physics, Multi-Point Wave-Floating Docks, Unobstructed Boat Ramps & Solid Trailer Collisions.",
+      "id": "milestone-v1954-full-3d-boat-superyacht-cockpits-live-mfd",
+      "version": "v1.9.54",
+      "timestampUtc": "2026-11-23T14:01:27Z",
+      "summary": "Published TrueHelm v1.9.54 Live Release (1-Click In-Launcher Update): Full 3D Driving Cockpits on All 26 Personal Boats, Jet Skis & Walk-In Superyachts, Live Animated Steering/Throttles & 3D Marine Chartplotter MFD, Enclosed Panoramic Yacht Bridges + Open-Air Flybridges ([V]), [H] Horn, [L] Cockpit/Nav Lights & Water Physics.",
+      "added": [
+        "Full 3D Helm Cockpits Across All 26 Buyable Personal Boats, Jet Skis & Walk-In Superyachts: Modeled bespoke sculpted 3D cockpits for every Marine Dealership vessel \u2014 angled jet-ski panoramic dash pods, riveted skiff side console, mahogany runabout helm, tournament bass & center-console consoles, sport bowrider & wake/surf command pods, sculpted sailboat steering pedestal with binnacle guard & chrome winches, carbon offshore cigarette dash with 6 gauges & quad throttles, and enclosed teak panoramic pilothouse bridges on all 10 walk-in yachts and tri-deck superyachts",
+        "Live Animated 3D Steering, Throttles & Real-Time Marine Chartplotter MFD: Every personal vessel now features animated 3D steering wheels or jet-ski handlebars that turn smoothly with rudder input, throttle levers (single, twin, or quad) that tilt dynamically with forward/reverse power, and a live glowing 3D marine MFD screen displaying real-time knots, heading compass tape, gear, RPM bar, rudder angle, sonar depth, pitch/roll, nav lights, and airborne alerts",
+        "First-Person Cockpit & Open-Air Flybridge Helm Stations ([V] Camera Cycle): Driving any personal boat defaults to an eye-level 1st-person cockpit view with full mouse free-look, [V] cycles cleanly between 1P Main Cockpit, 1P Open-Air Upper Flybridge (on all 9 flybridge & tri-deck yachts), and 3P Chase Camera with a visibly seated 3D captain gripping the wheel",
+        "Interactive Cockpit Horn ([H]), Toggleable Dash & Nav Lights ([L]) & Enhanced Small-Craft Water Physics: Sound each vessel's marine horn with [H], toggle warm cockpit & navigation lighting with [L], feel nimble wave-crest planing and airborne splashdowns on small boats, authentic wind-heeling on sailboats, and deep fin-keel waterline draft on coastal sailing cruisers"
+      ],
+      "changed": [
+        "Redesigned Walk-In Yacht & Superyacht Pilothouse Bridges: Cleared the forward bridge windshield across all 10 walk-in cruisers and superyachts (relocating the master stateroom cleanly on tri-deck superyachts) to install raised enclosed panoramic teak pilothouse bridges with triple glass-bridge MFDs, Stidd captain chairs, compasses, bow-thruster joysticks, and seamless walk-in helm boarding prompts",
+        "Showroom, Trailered & Live Multiplayer Cockpit Parity: Marine Dealership showroom boats, trailered boats, and remote multiplayer vessels now render matching 3D wheels, handlebars, throttles, and helm screens consistently across the world, while seated trailer-boat 1st-person views align directly to each boat's cockpit eye position",
+        "Personal Boat Telemetry HUD Upgrade: Upgraded the bottom driving telemetry bar with live compass heading, camera mode label (1P COCKPIT / 1P FLYBRIDGE / 3P CHASE), cockpit light indicator, and [H] Horn / [L] Lights quick controls"
+      ],
+      "removed": [
+        "Removed obstructed forward cabin beds blocking the pilothouse windshields on walk-in cruisers and superyachts, replacing them with open panoramic enclosed bridge cockpits"
+      ]
+    },
+    {
       "added": [
         "Persistent Returning-Player World Resume: Players resume exactly where they left off (ship, personal boat, car, house, or island) with every parked car, boat trailer, and personal boat persisting in the world \u2014 island selection only appears on first arrival",
         "Jet Ski 3D Rider, Wave-Air Physics & Water Spray: Customized 3D riders visibly sit on jet skis, grip the handlebars, and lean into turns with wave-bouncing, airborne swell jumps, sharp-turn banking, and spray wakes",
@@ -32,9 +47,13 @@
         "Wave 3 Deep Ocean, Physics, Controls, Life-Sim, Audio & Multiplayer Bug-Fix Pass (63 Fixes): Fixed SWE wake stability, wide-beam & Flo-Flo docking alignment, Shipyard Lv 5 speed/agility upgrades, Chemical Tanker routing, giant-island marina reach, car wall collisions, personal boat grounding recovery, avatar gender swaps, phone house-sale sync, Windows VHF echo, and startup warnings",
         "Waves 1 & 2 Engine, Housing, Cargo, Multiplayer & Zero-Warning Stability Pass: Added housing wall sub-stepping, closed-door occlusion, multi-floor fixture isolation, Commerce Center guardrails, atomic career saves, room-code filtering, house claim race guards, and eliminated runtime engine/HUD/material/EOS warnings"
       ],
+      "id": "milestone-v1953-5wave-stability-persistent-world-jetski-floating-docks",
       "removed": [
         "Removed forced island re-selection for returning players and eliminated legacy runtime engine, HUD hitbox, material, and placeholder EOS warnings"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.53 Live Release (1-Click In-Launcher Update): All 5 Deep Forensic Stability & Gameplay Waves (250+ Verified Fixes) + Persistent World Resume, 3D Jet Ski Rider & Wave-Air Physics, Multi-Point Wave-Floating Docks, Unobstructed Boat Ramps & Solid Trailer Collisions.",
+      "timestampUtc": "2026-11-23T12:49:35Z",
+      "version": "v1.9.53"
     },
     {
       "added": [
@@ -1100,31 +1119,54 @@
       "version": "v1.9.1"
     }
   ],
-  "latestReleaseTag": "v1.9.53",
+  "latestReleaseTag": "v1.9.54",
+  "removed": [
+    "Removed obstructed forward cabin beds blocking the pilothouse windshields on walk-in cruisers and superyachts, replacing them with open panoramic enclosed bridge cockpits"
+  ],
   "syncMode": "on-launcher-release",
-  "updatedAtUtc": "2026-11-23T12:49:35Z",
-  "updatedUtc": "2026-11-23T12:49:35Z",
+  "updatedAtUtc": "2026-11-23T14:01:27Z",
+  "updatedUtc": "2026-11-23T14:01:27Z",
   "versionLogs": [
     {
-      "version": "v1.9.53",
+      "version": "v1.9.54",
       "badge": "Current Live Release",
       "date": "November 2026",
-      "title": "Massive 5-Wave Stability Pass (250+ Fixes), Persistent World Resume, 3D Jet Ski Rider & Wave-Floating Docks",
+      "title": "Full 3D Boat & Superyacht Cockpits (All 26 Vessels), Live Animated Controls, 3D Marine MFD & Flybridge Helms",
+      "added": [
+        "Full 3D Helm Cockpits Across All 26 Buyable Personal Boats, Jet Skis & Walk-In Superyachts: Modeled bespoke sculpted 3D cockpits for every Marine Dealership vessel \u2014 angled jet-ski panoramic dash pods, riveted skiff side console, mahogany runabout helm, tournament bass & center-console consoles, sport bowrider & wake/surf command pods, sculpted sailboat steering pedestal with binnacle guard & chrome winches, carbon offshore cigarette dash with 6 gauges & quad throttles, and enclosed teak panoramic pilothouse bridges on all 10 walk-in yachts and tri-deck superyachts",
+        "Live Animated 3D Steering, Throttles & Real-Time Marine Chartplotter MFD: Every personal vessel now features animated 3D steering wheels or jet-ski handlebars that turn smoothly with rudder input, throttle levers (single, twin, or quad) that tilt dynamically with forward/reverse power, and a live glowing 3D marine MFD screen displaying real-time knots, heading compass tape, gear, RPM bar, rudder angle, sonar depth, pitch/roll, nav lights, and airborne alerts",
+        "First-Person Cockpit & Open-Air Flybridge Helm Stations ([V] Camera Cycle): Driving any personal boat defaults to an eye-level 1st-person cockpit view with full mouse free-look, [V] cycles cleanly between 1P Main Cockpit, 1P Open-Air Upper Flybridge (on all 9 flybridge & tri-deck yachts), and 3P Chase Camera with a visibly seated 3D captain gripping the wheel",
+        "Interactive Cockpit Horn ([H]), Toggleable Dash & Nav Lights ([L]) & Enhanced Small-Craft Water Physics: Sound each vessel's marine horn with [H], toggle warm cockpit & navigation lighting with [L], feel nimble wave-crest planing and airborne splashdowns on small boats, authentic wind-heeling on sailboats, and deep fin-keel waterline draft on coastal sailing cruisers"
+      ],
+      "changed": [
+        "Redesigned Walk-In Yacht & Superyacht Pilothouse Bridges: Cleared the forward bridge windshield across all 10 walk-in cruisers and superyachts (relocating the master stateroom cleanly on tri-deck superyachts) to install raised enclosed panoramic teak pilothouse bridges with triple glass-bridge MFDs, Stidd captain chairs, compasses, bow-thruster joysticks, and seamless walk-in helm boarding prompts",
+        "Showroom, Trailered & Live Multiplayer Cockpit Parity: Marine Dealership showroom boats, trailered boats, and remote multiplayer vessels now render matching 3D wheels, handlebars, throttles, and helm screens consistently across the world, while seated trailer-boat 1st-person views align directly to each boat's cockpit eye position",
+        "Personal Boat Telemetry HUD Upgrade: Upgraded the bottom driving telemetry bar with live compass heading, camera mode label (1P COCKPIT / 1P FLYBRIDGE / 3P CHASE), cockpit light indicator, and [H] Horn / [L] Lights quick controls"
+      ],
+      "removed": [
+        "Removed obstructed forward cabin beds blocking the pilothouse windshields on walk-in cruisers and superyachts, replacing them with open panoramic enclosed bridge cockpits"
+      ]
+    },
+    {
       "added": [
         "Persistent Returning-Player World Resume: Players resume exactly where they left off (ship, personal boat, car, house, or island) with every parked car, boat trailer, and personal boat persisting in the world \u2014 island selection only appears on first arrival",
         "Jet Ski 3D Rider, Wave-Air Physics & Water Spray: Customized 3D riders visibly sit on jet skis, grip the handlebars, and lean into turns with wave-bouncing, airborne swell jumps, sharp-turn banking, and spray wakes",
         "Multi-Point Wave-Floating Docks & Unobstructed Boat Launch Ramps: Both the 240m Boat Parking Dock and 80m Superyacht Dock flex naturally across live ocean waves beside fully carved concrete boat ramps with slope-matched lane striping",
         "Solid Swept Collisions Across Dealerships, Closed Warehouse Gates, Cars & Hitched Trailers: Added analytical wall, jamb, and closed-gate collisions for walking players, cars, and hitched boat trailers with AI traffic & Uber yielding"
       ],
+      "badge": "Shipped",
       "changed": [
         "Wave 5 Deep Stability, Ocean, Bridge, Life-Sim, Vehicles & Multiplayer Pass (72 Fixes): Fixed coastal/quay ocean safety east of commercial ports, storm/reef geometry, cargo archetype classification & cancel resets, lateral momentum/shore-push physics, Fuel Rescue & Autopilot safety interlocks, VR chair locking, 3D spatial horn/slam audio, North-Up chart grid alignment, Monitor 6/7 hitboxes & front-face raycasts, CCTV pan/tilt release, 240 Hz 8-ball pool physics, non-blocking Cabin TV Watch-Party sync, Co-Op host failover & locked-company protection, Gate 1 airliner pushback, elevator & swimming failsafes, free-starter house release rules, and full personal boat/car cloud merges",
         "Wave 4 Comprehensive Stability, Ocean, Bridge, Life-Sim & Multiplayer Pass (71 Fixes): Hardened roaming storm math, worker-thread ocean sync, outer-continent depths, suspension bridges, port crane/shiploader isolation, Autopilot berth routing, VR bow thrusters & eye height, North-Up 2D charts & compass ticks, Co-Op host-only splits, jetbridge/ladder elevation checks, Uber cancel safety, primary save graphics/CCTV persistence, and 10 Hz direct UDP vessel/trailer/swimmer sync",
         "Wave 3 Deep Ocean, Physics, Controls, Life-Sim, Audio & Multiplayer Bug-Fix Pass (63 Fixes): Fixed SWE wake stability, wide-beam & Flo-Flo docking alignment, Shipyard Lv 5 speed/agility upgrades, Chemical Tanker routing, giant-island marina reach, car wall collisions, personal boat grounding recovery, avatar gender swaps, phone house-sale sync, Windows VHF echo, and startup warnings",
         "Waves 1 & 2 Engine, Housing, Cargo, Multiplayer & Zero-Warning Stability Pass: Added housing wall sub-stepping, closed-door occlusion, multi-floor fixture isolation, Commerce Center guardrails, atomic career saves, room-code filtering, house claim race guards, and eliminated runtime engine/HUD/material/EOS warnings"
       ],
+      "date": "November 2026",
       "removed": [
         "Removed forced island re-selection for returning players and eliminated legacy runtime engine, HUD hitbox, material, and placeholder EOS warnings"
-      ]
+      ],
+      "title": "Massive 5-Wave Stability Pass (250+ Fixes), Persistent World Resume, 3D Jet Ski Rider & Wave-Floating Docks",
+      "version": "v1.9.53"
     },
     {
       "added": [
@@ -2048,8 +2090,5 @@
       ],
       "version": "v1.6.0"
     }
-  ],
-  "removed": [
-    "Removed forced island re-selection for returning players and eliminated legacy runtime engine, HUD hitbox, material, and placeholder EOS warnings"
   ]
 }
