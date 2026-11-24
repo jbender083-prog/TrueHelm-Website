@@ -1,23 +1,42 @@
 {
-  "activeVersion": "v1.9.56",
+  "activeVersion": "v1.9.57",
   "added": [
-    "Overhauled 3D Regional Airliner & Animated Sub-Components: Rebuilt the TH-720 regional jet with a thick-walled fuselage, 16 beveled oval windows, 6-pane panoramic translucent windshield, supercritical swept wings with Split-Scimitar winglets, solid high-bypass turbofans with spinning 22-blade rotors & spiral spinners, animated retractable Nose & Main landing gear, curved hinged L1 plug door, animated Fowler flaps & landing spoilers, pulsing red beacons, double-flash wingtip strobes, landing light spotlight, high-altitude contrails & touchdown tire smoke",
-    "Conformal Walk-In Cabin, Enclosed Glass Cockpit & Live In-Flight Screens: Added an open flight-deck doorway from the curved conformal cabin into a complete Walk-In Glass Cockpit (dual pilot seats, yokes, thrust levers, overhead panel & 5 live PFD/ND/EICAS screens with real-time pitch/roll horizon, airspeed, altitude, heading, N1, flaps & gear), Live Seatback Moving-Map IFE screens, readable EXIT & FASTEN SEATBELT signs, grounded seated passengers, and smooth cruise aisle/cockpit walking ([E] or W when seatbelt sign turns off)",
-    "Full Multi-Layer Procedural Airplane Audio & 74-Island Airport Live Systems: Added procedural twin-turbofan N1 whine, jet roar, reverse thrust, slipstream airflow, cabin environmental hum, landing gear hydraulics, touchdown tire chirp, two-tone airline seatbelt chimes, and ambient overhead flyover rumble; upgraded all 74 island airports with 74/74 unique IATA codes, ceiling-suspended Live Per-Island Terminal FIDS Departure Boards, commercial sliding glass doors, rotating ATC tower radars, wind-driven windsocks, glideslope-reactive FAA WW-RR PAPI lights, smooth hangars, flush tapered jetbridges, and ramp GSE (fuel truck, pushback tug, baggage cart)",
-    "Animated Multiplayer Airliners & All-Surface Radar/Map Tracking: Expanded global multiplayer bounds across all 74 islands, upgraded remote multiplayer airliners with smooth high-speed dead-reckoning interpolation, spinning fans, retractable gear, strobes, contrails, and Gate 2 stand separation, and plotted live remote multiplayer jets across the 3P HUD Radar, 2D World Map, 1P Bridge Radar, 1P Bridge ECDIS, and Smartphone Maps"
+    "Real Procedural Road-Vehicle Acoustics & Listener-Local Ocean Splashdown: Added authentic dual-tone (400/500 Hz) automotive car horn on [H], speed-reactive car and Uber engine RPM rumble with tire road noise, and listener-local ocean splashdown audio unaffected by commercial ship distance",
+    "Multiplayer Lobby Roster Pagination & Mouse-Wheel Scrolling: Added Previous/Next pagination controls, page indicator, and mouse-wheel scrolling to the Multiplayer Lobby roster so captains can interact with every player online when more than 4 captains share the ocean",
+    "Approach Viaduct T-Pier & Sloped Ramp Air-Draft Bridge Collision: Added solid hull and mast air-draft collision along sloped approach viaducts and concrete T-piers in addition to main suspension towers",
+    "Smart Warehouse Gate Clearance & Personal Boat Refloat Safety: Added clear-to-close safety checks on all dealership warehouse gates and upgraded personal boat refloat scanning to avoid islands, quays, floating docks, marina lots, and commercial ships"
   ],
-  "buildPhase": "Release v1.9.56 Live — Complete Regional Jet 3D Overhaul, Animated Gear/Fans/Door/Flaps, Walk-In Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Terminal FIDS, Flight Physics/Audio, 74-Island Airports & MP Airliners",
-  "buildStatus": "Release v1.9.56 Live — Complete Regional Jet 3D Overhaul, Animated Gear/Fans/Door/Flaps, Walk-In Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Terminal FIDS, Flight Physics/Audio, 74-Island Airports & MP Airliners",
+  "buildPhase": "Release v1.9.57 Live — Wave 6 Forensic Bug Hunt & Stability Pass (63 Fixes): Airliner Pushback/Lights/FIDS, Ghost-Ship & Co-Op Fixes, North-Up ECDIS, Superyacht Dock, VR Off-Ship & Cabin Fix, Real Car Audio & UI Polish",
+  "buildStatus": "Release v1.9.57 Live — Wave 6 Forensic Bug Hunt & Stability Pass (63 Fixes): Airliner Pushback/Lights/FIDS, Ghost-Ship & Co-Op Fixes, North-Up ECDIS, Superyacht Dock, VR Off-Ship & Cabin Fix, Real Car Audio & UI Polish",
   "changed": [
-    "Realistic Flight Physics, Terrain Clearance, Pacing & Camera Framing: Added reverse Gate 1 pushback clear of the glass jetbridge, 100% paved apron & taxiway connector routing, wide smooth departure/arrival turn arcs, dynamic terrain-cleared cruise altitudes up to 1,950 m, 4.2-degree glideslope with nose-up touchdown flare, properly signed coordinated turn banking, cross-world cruise speed scaling, zero-velocity-lag mouse-orbitable 3P Chase camera, VR cabin input support, single-player pause guard, and [SPACE] skip directly to Gate 1",
-    "74-Island Airport Pads, Streaming, Ocean Horizon & Ship Persistence: Eliminated terrain and grass poke-through across all 74 airport pads, fixed apron/runway clearance and runway aiming/touchdown markings, added 45 km early destination airport streaming, seamless high-altitude ocean horizons, volumetric clouds raised cleanly above cruise, Smartphone ticket Cancel/Refund and underway boarding guards, and full moored-ship, floating-dock, cargo-quay re-boarding & mid-flight save persistence"
+    "Airports, Flights & Remote Airliners: Fixed Gate 1 pushback-to-taxi spline orientation, parked airliner beacon/strobe ticking and post-flight visibility restoration, guaranteed boarding-pass consumption on departure, Chase and Glass Cockpit free-look while standing in the cabin aisle, live Terminal FIDS BOARDING display before boarding, and exact remote multiplayer airliner sub-part/contrail alignment with smooth dead-reckoning",
+    "Multiplayer, Cloud Saves & Co-Op Reliability: Eliminated the 4-second ghost-ship respawn cycle, protected direct UDP peers from premature cloud pruning, gated exclusive house claims on initial claim sync, fixed Google sign-in flag serialization, pre-exit sign-out auto-save protection, full personal boat/yacht session-resume merging, moored cargo load restoration, clean identity-switch resets, co-op host failover grace windows, 85 m shared-hull commission split proximity checks, and multi-kick broadcast debouncing",
+    "Ocean, Weather, Mooring, Bridge Monitors & VR: Fixed high-altitude ocean horizon shading and cloud layer sync, tightened airport pad terrain clamping, made overlapping storm and fog cells order-independent, hid duplicate remote captains on ships while ashore/driving/flying, fixed floating pontoon dock mooring line elevations and 35-degree alignment, aligned Bridge Monitor 4 to True North-Up ECDIS and fixed Monitor 2's true tidal-phase sine marker, enforced single-capture-per-frame Overhead CCTV and PTZ release, kept bridge controls/VHF/TV active during NPC towing, and fixed OpenXR VR off-ship locomotion, airplane controller bindings, and VR cabin tracking origin alignment",
+    "Life-Sim Vehicles, Yachts & HUD/Smartphone Polish: Shifted the floating Superyacht Boarding Dock cleanly clear of Warehouse 2 and smoothly berthed launching superyachts beside it, synced walking players with coasting superyachts, validated dock-side disembarking, separated Aft Swim Deck vs enclosed Grand Salon zones, enabled [N] MFD cycling on trailer standby boats, fixed per-vehicle tow-balls, calm-tide trailer launch hysteresis, obstacle-free car curb summoning, AI intersection deadlock breaking, True North compass headings, off-ship 2D World Map autopilot guards, first-launch onboarding timing, 720p/900p HUD/Smartphone/Map layouts, clipped Smartphone Map islands, Zillow live island targeting, Flights clipping, Welcome Uber cancel recovery, and keybind prompts"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1956-complete-airplanes-flight-physics-glass-cockpit-and-74-airports",
-      "version": "v1.9.56",
-      "timestampUtc": "2026-11-24T03:20:23Z",
-      "summary": "Published TrueHelm v1.9.56 Live Release (1-Click In-Launcher Update): Complete 3D Regional Jet & Animated Sub-Part Overhaul, Conformal Walk-In Cabin & Enclosed Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Per-Island Terminal FIDS, Overhauled Flight Physics/Terrain Clearance/Procedural Jet Audio, 74/74 Unique IATA Airports + GSE, & Live Multiplayer Airliners.",
+      "id": "milestone-v1957-wave-6-forensic-bug-hunt-63-fixes",
+      "version": "v1.9.57",
+      "timestampUtc": "2026-11-24T05:05:46Z",
+      "summary": "Published TrueHelm v1.9.57 Live Release (1-Click In-Launcher Update): Wave 6 Full-Codebase Forensic Bug Hunt (63 Verified Fixes) across Airports/Flights, Multiplayer/Cloud Saves/Co-Op, Ocean/Weather/Mooring/Monitors, Life-Sim Vehicles/Yachts/Boats, VR/Procedural Audio, and HUD/Smartphone UI.",
+      "added": [
+        "Real Procedural Road-Vehicle Acoustics & Listener-Local Ocean Splashdown: Added authentic dual-tone (400/500 Hz) automotive car horn on [H], speed-reactive car and Uber engine RPM rumble with tire road noise, and listener-local ocean splashdown audio unaffected by commercial ship distance",
+        "Multiplayer Lobby Roster Pagination & Mouse-Wheel Scrolling: Added Previous/Next pagination controls, page indicator, and mouse-wheel scrolling to the Multiplayer Lobby roster so captains can interact with every player online when more than 4 captains share the ocean",
+        "Approach Viaduct T-Pier & Sloped Ramp Air-Draft Bridge Collision: Added solid hull and mast air-draft collision along sloped approach viaducts and concrete T-piers in addition to main suspension towers",
+        "Smart Warehouse Gate Clearance & Personal Boat Refloat Safety: Added clear-to-close safety checks on all dealership warehouse gates and upgraded personal boat refloat scanning to avoid islands, quays, floating docks, marina lots, and commercial ships"
+      ],
+      "changed": [
+        "Airports, Flights & Remote Airliners: Fixed Gate 1 pushback-to-taxi spline orientation, parked airliner beacon/strobe ticking and post-flight visibility restoration, guaranteed boarding-pass consumption on departure, Chase and Glass Cockpit free-look while standing in the cabin aisle, live Terminal FIDS BOARDING display before boarding, and exact remote multiplayer airliner sub-part/contrail alignment with smooth dead-reckoning",
+        "Multiplayer, Cloud Saves & Co-Op Reliability: Eliminated the 4-second ghost-ship respawn cycle, protected direct UDP peers from premature cloud pruning, gated exclusive house claims on initial claim sync, fixed Google sign-in flag serialization, pre-exit sign-out auto-save protection, full personal boat/yacht session-resume merging, moored cargo load restoration, clean identity-switch resets, co-op host failover grace windows, 85 m shared-hull commission split proximity checks, and multi-kick broadcast debouncing",
+        "Ocean, Weather, Mooring, Bridge Monitors & VR: Fixed high-altitude ocean horizon shading and cloud layer sync, tightened airport pad terrain clamping, made overlapping storm and fog cells order-independent, hid duplicate remote captains on ships while ashore/driving/flying, fixed floating pontoon dock mooring line elevations and 35-degree alignment, aligned Bridge Monitor 4 to True North-Up ECDIS and fixed Monitor 2's true tidal-phase sine marker, enforced single-capture-per-frame Overhead CCTV and PTZ release, kept bridge controls/VHF/TV active during NPC towing, and fixed OpenXR VR off-ship locomotion, airplane controller bindings, and VR cabin tracking origin alignment",
+        "Life-Sim Vehicles, Yachts & HUD/Smartphone Polish: Shifted the floating Superyacht Boarding Dock cleanly clear of Warehouse 2 and smoothly berthed launching superyachts beside it, synced walking players with coasting superyachts, validated dock-side disembarking, separated Aft Swim Deck vs enclosed Grand Salon zones, enabled [N] MFD cycling on trailer standby boats, fixed per-vehicle tow-balls, calm-tide trailer launch hysteresis, obstacle-free car curb summoning, AI intersection deadlock breaking, True North compass headings, off-ship 2D World Map autopilot guards, first-launch onboarding timing, 720p/900p HUD/Smartphone/Map layouts, clipped Smartphone Map islands, Zillow live island targeting, Flights clipping, Welcome Uber cancel recovery, and keybind prompts"
+      ],
+      "removed": [
+        "Eliminated the 4-second multiplayer ghost-ship respawn loop, mid-air 7.2 m mooring lines on floating boat docks, car-horn cash-chime placeholder audio, procedural audio chunk-boundary phase clicks, off-ship VHF PTT and caution-beep leaks, VR off-ship movement soft-locks, Warehouse 2 yacht dock overlap, and stale pre-game starter-boat flag resets"
+      ]
+    },
+    {
       "added": [
         "Overhauled 3D Regional Airliner & Animated Sub-Components: Rebuilt the TH-720 regional jet with a thick-walled fuselage, 16 beveled oval windows, 6-pane panoramic translucent windshield, supercritical swept wings with Split-Scimitar winglets, solid high-bypass turbofans with spinning 22-blade rotors & spiral spinners, animated retractable Nose & Main landing gear, curved hinged L1 plug door, animated Fowler flaps & landing spoilers, pulsing red beacons, double-flash wingtip strobes, landing light spotlight, high-altitude contrails & touchdown tire smoke",
         "Conformal Walk-In Cabin, Enclosed Glass Cockpit & Live In-Flight Screens: Added an open flight-deck doorway from the curved conformal cabin into a complete Walk-In Glass Cockpit (dual pilot seats, yokes, thrust levers, overhead panel & 5 live PFD/ND/EICAS screens with real-time pitch/roll horizon, airspeed, altitude, heading, N1, flaps & gear), Live Seatback Moving-Map IFE screens, readable EXIT & FASTEN SEATBELT signs, grounded seated passengers, and smooth cruise aisle/cockpit walking ([E] or W when seatbelt sign turns off)",
@@ -28,9 +47,13 @@
         "Realistic Flight Physics, Terrain Clearance, Pacing & Camera Framing: Added reverse Gate 1 pushback clear of the glass jetbridge, 100% paved apron & taxiway connector routing, wide smooth departure/arrival turn arcs, dynamic terrain-cleared cruise altitudes up to 1,950 m, 4.2-degree glideslope with nose-up touchdown flare, properly signed coordinated turn banking, cross-world cruise speed scaling, zero-velocity-lag mouse-orbitable 3P Chase camera, VR cabin input support, single-player pause guard, and [SPACE] skip directly to Gate 1",
         "74-Island Airport Pads, Streaming, Ocean Horizon & Ship Persistence: Eliminated terrain and grass poke-through across all 74 airport pads, fixed apron/runway clearance and runway aiming/touchdown markings, added 45 km early destination airport streaming, seamless high-altitude ocean horizons, volumetric clouds raised cleanly above cruise, Smartphone ticket Cancel/Refund and underway boarding guards, and full moored-ship, floating-dock, cargo-quay re-boarding & mid-flight save persistence"
       ],
+      "id": "milestone-v1956-complete-airplanes-flight-physics-glass-cockpit-and-74-airports",
       "removed": [
         "Eliminated cabin-to-fuselage exterior poke-through, duplicate IATA airport codes, Gate 1 parked-jet streaming resurrections, mid-flight cross-world duration stalls, apron/runway overlaps, terminal drop-off streetlight collisions, and silent airplane flights"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.56 Live Release (1-Click In-Launcher Update): Complete 3D Regional Jet & Animated Sub-Part Overhaul, Conformal Walk-In Cabin & Enclosed Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Per-Island Terminal FIDS, Overhauled Flight Physics/Terrain Clearance/Procedural Jet Audio, 74/74 Unique IATA Airports + GSE, & Live Multiplayer Airliners.",
+      "timestampUtc": "2026-11-24T03:20:23Z",
+      "version": "v1.9.56"
     },
     {
       "added": [
@@ -1159,11 +1182,11 @@
   ],
   "latestReleaseTag": "v1.9.54",
   "removed": [
-    "Eliminated cabin-to-fuselage exterior poke-through, duplicate IATA airport codes, Gate 1 parked-jet streaming resurrections, mid-flight cross-world duration stalls, apron/runway overlaps, terminal drop-off streetlight collisions, and silent airplane flights"
+    "Eliminated the 4-second multiplayer ghost-ship respawn loop, mid-air 7.2 m mooring lines on floating boat docks, car-horn cash-chime placeholder audio, procedural audio chunk-boundary phase clicks, off-ship VHF PTT and caution-beep leaks, VR off-ship movement soft-locks, Warehouse 2 yacht dock overlap, and stale pre-game starter-boat flag resets"
   ],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-24T03:20:23Z",
+  "updatedUtc": "2026-11-24T05:05:46Z",
   "versionLogs": [
     {
       "added": [
