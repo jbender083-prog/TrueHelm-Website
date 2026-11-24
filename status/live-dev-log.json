@@ -1,24 +1,38 @@
 {
-  "activeVersion": "v1.9.55",
+  "activeVersion": "v1.9.56",
   "added": [
-    "All 38 Flanking Glass-Bridge Screens Live + [N] MFD Page Switching: Every dual- and triple-screen boat & superyacht helm (including all 9 open-air Flybridges) now renders an independent North-Up Live Marine Chartplotter on the left screen, Navigation Telemetry in the center, and a sweeping Green Marine Radar & Engine Systems Scope on the right; press [N] on any personal boat, jet ski, or trailered vessel to cycle the center MFD through Nav, Chartplotter, and Radar/Systems",
-    "Personal Boat Propulsion Audio, Long-Range [H] Horn & Physical [L] COLREG Nav/Spotlight Lighting: Added procedural class-matched propulsion audio (Jet Ski, V6/V8 outboards, quiet sailboat auxiliary, and twin yacht diesels), planing water rush & wave-landing splashdowns; fixed [H] marine horn to play at full clarity anywhere on the ocean; added physical Port Red, Starboard Green, Stern White, Flybridge Dash, and Bow Docking Spotlight beams toggled via [L]",
-    "Multi-Deck Walk-In Superyacht Stairs ([T]), Boat Anchoring ([I]) & Sea Tow Refloat ([R]): Climb between the Main Deck/Salon, Deck 2 Pilothouse Bridge, and Deck 3 Open-Air Flybridge while walking aboard multi-deck superyachts; drop or raise anchor on any personal boat with [I]; press [R] to safely refloat if grounded",
-    "Full World Map, Smartphone Map & Bridge Radar/ECDIS Personal Boat Tracking: Added MY BOAT, TRAILER, 80m Yacht Dock, and remote multiplayer boat pins plus a [MY BOAT] focus button on the 2D World Map, aligned Smartphone Maps to True North-Up with separate SHIP & MY BOAT pins, and plotted personal & remote boats on commercial ship Radar and ECDIS monitors"
+    "Overhauled 3D Regional Airliner & Animated Sub-Components: Rebuilt the TH-720 regional jet with a thick-walled fuselage, 16 beveled oval windows, 6-pane panoramic translucent windshield, supercritical swept wings with Split-Scimitar winglets, solid high-bypass turbofans with spinning 22-blade rotors & spiral spinners, animated retractable Nose & Main landing gear, curved hinged L1 plug door, animated Fowler flaps & landing spoilers, pulsing red beacons, double-flash wingtip strobes, landing light spotlight, high-altitude contrails & touchdown tire smoke",
+    "Conformal Walk-In Cabin, Enclosed Glass Cockpit & Live In-Flight Screens: Added an open flight-deck doorway from the curved conformal cabin into a complete Walk-In Glass Cockpit (dual pilot seats, yokes, thrust levers, overhead panel & 5 live PFD/ND/EICAS screens with real-time pitch/roll horizon, airspeed, altitude, heading, N1, flaps & gear), Live Seatback Moving-Map IFE screens, readable EXIT & FASTEN SEATBELT signs, grounded seated passengers, and smooth cruise aisle/cockpit walking ([E] or W when seatbelt sign turns off)",
+    "Full Multi-Layer Procedural Airplane Audio & 74-Island Airport Live Systems: Added procedural twin-turbofan N1 whine, jet roar, reverse thrust, slipstream airflow, cabin environmental hum, landing gear hydraulics, touchdown tire chirp, two-tone airline seatbelt chimes, and ambient overhead flyover rumble; upgraded all 74 island airports with 74/74 unique IATA codes, ceiling-suspended Live Per-Island Terminal FIDS Departure Boards, commercial sliding glass doors, rotating ATC tower radars, wind-driven windsocks, glideslope-reactive FAA WW-RR PAPI lights, smooth hangars, flush tapered jetbridges, and ramp GSE (fuel truck, pushback tug, baggage cart)",
+    "Animated Multiplayer Airliners & All-Surface Radar/Map Tracking: Expanded global multiplayer bounds across all 74 islands, upgraded remote multiplayer airliners with smooth high-speed dead-reckoning interpolation, spinning fans, retractable gear, strobes, contrails, and Gate 2 stand separation, and plotted live remote multiplayer jets across the 3P HUD Radar, 2D World Map, 1P Bridge Radar, 1P Bridge ECDIS, and Smartphone Maps"
   ],
-  "buildPhase": "Release v1.9.55 Live — Live Multi-Screen Boat Glass-Bridge MFDs (Chartplotter + Nav + Radar), Personal Boat Audio, Long-Range Horn, Physical COLREG Lights, Multi-Deck Superyacht Stairs, Anchoring & Full Boat Systems Pass",
-  "buildStatus": "Release v1.9.55 Live — Live Multi-Screen Boat Glass-Bridge MFDs (Chartplotter + Nav + Radar), Personal Boat Audio, Long-Range Horn, Physical COLREG Lights, Multi-Deck Superyacht Stairs, Anchoring & Full Boat Systems Pass",
+  "buildPhase": "Release v1.9.56 Live — Complete Regional Jet 3D Overhaul, Animated Gear/Fans/Door/Flaps, Walk-In Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Terminal FIDS, Flight Physics/Audio, 74-Island Airports & MP Airliners",
+  "buildStatus": "Release v1.9.56 Live — Complete Regional Jet 3D Overhaul, Animated Gear/Fans/Door/Flaps, Walk-In Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Terminal FIDS, Flight Physics/Audio, 74-Island Airports & MP Airliners",
   "changed": [
-    "3D Cockpit Polish Across All 26 Boats & Live Standby Screens: Raised Jet Ski dash pods cleanly above the cowl, fixed the 38' Offshore Cigarette Racer bow stripe & forward-raked windscreen, cleared Cuddy Cabin and Sailboat NavPod overlaps, aligned triple offshore helm seats, eliminated switch/gauge & cup-holder/throttle overlaps, and activated live standby MFDs on showroom, trailered, and multiplayer boats",
-    "Boat Handling, Deep Sailboat Keel Draft, Multi-Island/Ship Collisions & Trailer Winching: Corrected the 29' Sailboat fin-keel rest draft when launched or parked, added OBB dock & multi-island/ship/AI-traffic hull collisions, tightened water-only trailer winching, SUV tow-ball alignment, wide-hull collision probes, and AI traffic yielding across the full trailer length",
-    "Bridge Overhead CCTV, Off-Ship Performance & Persistent Multiplayer Boats: Fixed Overhead CCTV live views at normal helm pitch and outer cameras, skipped unused commercial bridge screen flushes while off-ship, preserved complete camera/lights/anchor/deck-tier state across cloud saves, and ensured remote multiplayer personal boats stay visible with riders, wakes, and lights even when their captain steps ashore"
+    "Realistic Flight Physics, Terrain Clearance, Pacing & Camera Framing: Added reverse Gate 1 pushback clear of the glass jetbridge, 100% paved apron & taxiway connector routing, wide smooth departure/arrival turn arcs, dynamic terrain-cleared cruise altitudes up to 1,950 m, 4.2-degree glideslope with nose-up touchdown flare, properly signed coordinated turn banking, cross-world cruise speed scaling, zero-velocity-lag mouse-orbitable 3P Chase camera, VR cabin input support, single-player pause guard, and [SPACE] skip directly to Gate 1",
+    "74-Island Airport Pads, Streaming, Ocean Horizon & Ship Persistence: Eliminated terrain and grass poke-through across all 74 airport pads, fixed apron/runway clearance and runway aiming/touchdown markings, added 45 km early destination airport streaming, seamless high-altitude ocean horizons, volumetric clouds raised cleanly above cruise, Smartphone ticket Cancel/Refund and underway boarding guards, and full moored-ship, floating-dock, cargo-quay re-boarding & mid-flight save persistence"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1955-live-multi-screen-boat-mfds-and-full-boat-systems-pass",
-      "version": "v1.9.55",
-      "timestampUtc": "2026-11-24T01:16:37Z",
-      "summary": "Published TrueHelm v1.9.55 Live Release (1-Click In-Launcher Update): All 38 Flanking Glass-Bridge Screens Live (Chartplotter + Nav + Green Radar) + [N] Page Cycle, Personal Boat Audio/Horn/COLREG Lights, [T] Multi-Deck Superyacht Stairs, [I] Anchoring, [R] Refloat, 3D Cockpit Polish, Trailer/Map/Bridge Monitor Fixes & Persistent Multiplayer Boats.",
+      "id": "milestone-v1956-complete-airplanes-flight-physics-glass-cockpit-and-74-airports",
+      "version": "v1.9.56",
+      "timestampUtc": "2026-11-24T03:20:23Z",
+      "summary": "Published TrueHelm v1.9.56 Live Release (1-Click In-Launcher Update): Complete 3D Regional Jet & Animated Sub-Part Overhaul, Conformal Walk-In Cabin & Enclosed Glass Cockpit with 5 Live PFDs, Live Seatback IFE & Per-Island Terminal FIDS, Overhauled Flight Physics/Terrain Clearance/Procedural Jet Audio, 74/74 Unique IATA Airports + GSE, & Live Multiplayer Airliners.",
+      "added": [
+        "Overhauled 3D Regional Airliner & Animated Sub-Components: Rebuilt the TH-720 regional jet with a thick-walled fuselage, 16 beveled oval windows, 6-pane panoramic translucent windshield, supercritical swept wings with Split-Scimitar winglets, solid high-bypass turbofans with spinning 22-blade rotors & spiral spinners, animated retractable Nose & Main landing gear, curved hinged L1 plug door, animated Fowler flaps & landing spoilers, pulsing red beacons, double-flash wingtip strobes, landing light spotlight, high-altitude contrails & touchdown tire smoke",
+        "Conformal Walk-In Cabin, Enclosed Glass Cockpit & Live In-Flight Screens: Added an open flight-deck doorway from the curved conformal cabin into a complete Walk-In Glass Cockpit (dual pilot seats, yokes, thrust levers, overhead panel & 5 live PFD/ND/EICAS screens with real-time pitch/roll horizon, airspeed, altitude, heading, N1, flaps & gear), Live Seatback Moving-Map IFE screens, readable EXIT & FASTEN SEATBELT signs, grounded seated passengers, and smooth cruise aisle/cockpit walking ([E] or W when seatbelt sign turns off)",
+        "Full Multi-Layer Procedural Airplane Audio & 74-Island Airport Live Systems: Added procedural twin-turbofan N1 whine, jet roar, reverse thrust, slipstream airflow, cabin environmental hum, landing gear hydraulics, touchdown tire chirp, two-tone airline seatbelt chimes, and ambient overhead flyover rumble; upgraded all 74 island airports with 74/74 unique IATA codes, ceiling-suspended Live Per-Island Terminal FIDS Departure Boards, commercial sliding glass doors, rotating ATC tower radars, wind-driven windsocks, glideslope-reactive FAA WW-RR PAPI lights, smooth hangars, flush tapered jetbridges, and ramp GSE (fuel truck, pushback tug, baggage cart)",
+        "Animated Multiplayer Airliners & All-Surface Radar/Map Tracking: Expanded global multiplayer bounds across all 74 islands, upgraded remote multiplayer airliners with smooth high-speed dead-reckoning interpolation, spinning fans, retractable gear, strobes, contrails, and Gate 2 stand separation, and plotted live remote multiplayer jets across the 3P HUD Radar, 2D World Map, 1P Bridge Radar, 1P Bridge ECDIS, and Smartphone Maps"
+      ],
+      "changed": [
+        "Realistic Flight Physics, Terrain Clearance, Pacing & Camera Framing: Added reverse Gate 1 pushback clear of the glass jetbridge, 100% paved apron & taxiway connector routing, wide smooth departure/arrival turn arcs, dynamic terrain-cleared cruise altitudes up to 1,950 m, 4.2-degree glideslope with nose-up touchdown flare, properly signed coordinated turn banking, cross-world cruise speed scaling, zero-velocity-lag mouse-orbitable 3P Chase camera, VR cabin input support, single-player pause guard, and [SPACE] skip directly to Gate 1",
+        "74-Island Airport Pads, Streaming, Ocean Horizon & Ship Persistence: Eliminated terrain and grass poke-through across all 74 airport pads, fixed apron/runway clearance and runway aiming/touchdown markings, added 45 km early destination airport streaming, seamless high-altitude ocean horizons, volumetric clouds raised cleanly above cruise, Smartphone ticket Cancel/Refund and underway boarding guards, and full moored-ship, floating-dock, cargo-quay re-boarding & mid-flight save persistence"
+      ],
+      "removed": [
+        "Eliminated cabin-to-fuselage exterior poke-through, duplicate IATA airport codes, Gate 1 parked-jet streaming resurrections, mid-flight cross-world duration stalls, apron/runway overlaps, terminal drop-off streetlight collisions, and silent airplane flights"
+      ]
+    },
+    {
       "added": [
         "All 38 Flanking Glass-Bridge Screens Live + [N] MFD Page Switching: Every dual- and triple-screen boat & superyacht helm (including all 9 open-air Flybridges) now renders an independent North-Up Live Marine Chartplotter on the left screen, Navigation Telemetry in the center, and a sweeping Green Marine Radar & Engine Systems Scope on the right; press [N] on any personal boat, jet ski, or trailered vessel to cycle the center MFD through Nav, Chartplotter, and Radar/Systems",
         "Personal Boat Propulsion Audio, Long-Range [H] Horn & Physical [L] COLREG Nav/Spotlight Lighting: Added procedural class-matched propulsion audio (Jet Ski, V6/V8 outboards, quiet sailboat auxiliary, and twin yacht diesels), planing water rush & wave-landing splashdowns; fixed [H] marine horn to play at full clarity anywhere on the ocean; added physical Port Red, Starboard Green, Stern White, Flybridge Dash, and Bow Docking Spotlight beams toggled via [L]",
@@ -30,9 +44,13 @@
         "Boat Handling, Deep Sailboat Keel Draft, Multi-Island/Ship Collisions & Trailer Winching: Corrected the 29' Sailboat fin-keel rest draft when launched or parked, added OBB dock & multi-island/ship/AI-traffic hull collisions, tightened water-only trailer winching, SUV tow-ball alignment, wide-hull collision probes, and AI traffic yielding across the full trailer length",
         "Bridge Overhead CCTV, Off-Ship Performance & Persistent Multiplayer Boats: Fixed Overhead CCTV live views at normal helm pitch and outer cameras, skipped unused commercial bridge screen flushes while off-ship, preserved complete camera/lights/anchor/deck-tier state across cloud saves, and ensured remote multiplayer personal boats stay visible with riders, wakes, and lights even when their captain steps ashore"
       ],
+      "id": "milestone-v1955-live-multi-screen-boat-mfds-and-full-boat-systems-pass",
       "removed": [
         "Replaced all 38 static cyan placeholder side displays across boats and flybridges with live Chartplotter and Marine Radar glass-bridge screens, and eliminated underwater deep-dive boat boarding and remote multiplayer cockpit component leaks"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.55 Live Release (1-Click In-Launcher Update): All 38 Flanking Glass-Bridge Screens Live (Chartplotter + Nav + Green Radar) + [N] Page Cycle, Personal Boat Audio/Horn/COLREG Lights, [T] Multi-Deck Superyacht Stairs, [I] Anchoring, [R] Refloat, 3D Cockpit Polish, Trailer/Map/Bridge Monitor Fixes & Persistent Multiplayer Boats.",
+      "timestampUtc": "2026-11-24T01:16:37Z",
+      "version": "v1.9.55"
     },
     {
       "added": [
@@ -1141,11 +1159,11 @@
   ],
   "latestReleaseTag": "v1.9.54",
   "removed": [
-    "Replaced all 38 static cyan placeholder side displays across boats and flybridges with live Chartplotter and Marine Radar glass-bridge screens, and eliminated underwater deep-dive boat boarding and remote multiplayer cockpit component leaks"
+    "Eliminated cabin-to-fuselage exterior poke-through, duplicate IATA airport codes, Gate 1 parked-jet streaming resurrections, mid-flight cross-world duration stalls, apron/runway overlaps, terminal drop-off streetlight collisions, and silent airplane flights"
   ],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-24T01:16:37Z",
+  "updatedUtc": "2026-11-24T03:20:23Z",
   "versionLogs": [
     {
       "added": [
