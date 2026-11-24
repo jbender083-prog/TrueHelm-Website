@@ -1,25 +1,42 @@
 {
-  "activeVersion": "v1.9.57",
+  "activeVersion": "v1.9.58",
   "added": [
-    "Real Procedural Road-Vehicle Acoustics & Listener-Local Ocean Splashdown: Added authentic dual-tone (400/500 Hz) automotive car horn on [H], speed-reactive car and Uber engine RPM rumble with tire road noise, and listener-local ocean splashdown audio unaffected by commercial ship distance",
-    "Multiplayer Lobby Roster Pagination & Mouse-Wheel Scrolling: Added Previous/Next pagination controls, page indicator, and mouse-wheel scrolling to the Multiplayer Lobby roster so captains can interact with every player online when more than 4 captains share the ocean",
-    "Approach Viaduct T-Pier & Sloped Ramp Air-Draft Bridge Collision: Added solid hull and mast air-draft collision along sloped approach viaducts and concrete T-piers in addition to main suspension towers",
-    "Smart Warehouse Gate Clearance & Personal Boat Refloat Safety: Added clear-to-close safety checks on all dealership warehouse gates and upgraded personal boat refloat scanning to avoid islands, quays, floating docks, marina lots, and commercial ships"
+    "Carved Warehouse 2 Superyacht Marine Slipway Trough: Graded the interior slipway trough cleanly beneath the inclined concrete launch ramp and all 8 pneumatic rolling airbags right into open water for unobstructed superyacht launches",
+    "Active Commerce Shift 3D Guidance Beacon & Compass Marker: Added a glowing cyan 3D destination beacon and compass guidance toward the Commerce Office whenever an active Commerce Shift is running",
+    "Terminal FIDS Booked-Flight Pinning: Pinned the player's actively booked regional flight to row 1 of the Airport Terminal FIDS departure board so your gate and boarding status are always immediately visible",
+    "Indoor Wall-Occlusion Door Ray Checks & Safe-Water Boat Disembark Sharing: Added 2D wall-occlusion ray checks on interior house doors and unified safe-water disembarking across all personal boats and yachts"
   ],
-  "buildPhase": "Release v1.9.57 Live — Wave 6 Forensic Bug Hunt & Stability Pass (63 Fixes): Airliner Pushback/Lights/FIDS, Ghost-Ship & Co-Op Fixes, North-Up ECDIS, Superyacht Dock, VR Off-Ship & Cabin Fix, Real Car Audio & UI Polish",
-  "buildStatus": "Release v1.9.57 Live — Wave 6 Forensic Bug Hunt & Stability Pass (63 Fixes): Airliner Pushback/Lights/FIDS, Ghost-Ship & Co-Op Fixes, North-Up ECDIS, Superyacht Dock, VR Off-Ship & Cabin Fix, Real Car Audio & UI Polish",
+  "buildPhase": "Release v1.9.58 Live — Wave 7 Deep Forensic Bug Hunt & Stability Pass (67 Fixes): Live MP Wake Physics, Carved Superyacht Slipway, Draft Grounding, Co-Op Rev Sync, FIDS Pinning, Rigid-Palm VR CCTV & Swim Audio Fix",
+  "buildStatus": "Release v1.9.58 Live — Wave 7 Deep Forensic Bug Hunt & Stability Pass (67 Fixes): Live MP Wake Physics, Carved Superyacht Slipway, Draft Grounding, Co-Op Rev Sync, FIDS Pinning, Rigid-Palm VR CCTV & Swim Audio Fix",
   "changed": [
-    "Airports, Flights & Remote Airliners: Fixed Gate 1 pushback-to-taxi spline orientation, parked airliner beacon/strobe ticking and post-flight visibility restoration, guaranteed boarding-pass consumption on departure, Chase and Glass Cockpit free-look while standing in the cabin aisle, live Terminal FIDS BOARDING display before boarding, and exact remote multiplayer airliner sub-part/contrail alignment with smooth dead-reckoning",
-    "Multiplayer, Cloud Saves & Co-Op Reliability: Eliminated the 4-second ghost-ship respawn cycle, protected direct UDP peers from premature cloud pruning, gated exclusive house claims on initial claim sync, fixed Google sign-in flag serialization, pre-exit sign-out auto-save protection, full personal boat/yacht session-resume merging, moored cargo load restoration, clean identity-switch resets, co-op host failover grace windows, 85 m shared-hull commission split proximity checks, and multi-kick broadcast debouncing",
-    "Ocean, Weather, Mooring, Bridge Monitors & VR: Fixed high-altitude ocean horizon shading and cloud layer sync, tightened airport pad terrain clamping, made overlapping storm and fog cells order-independent, hid duplicate remote captains on ships while ashore/driving/flying, fixed floating pontoon dock mooring line elevations and 35-degree alignment, aligned Bridge Monitor 4 to True North-Up ECDIS and fixed Monitor 2's true tidal-phase sine marker, enforced single-capture-per-frame Overhead CCTV and PTZ release, kept bridge controls/VHF/TV active during NPC towing, and fixed OpenXR VR off-ship locomotion, airplane controller bindings, and VR cabin tracking origin alignment",
-    "Life-Sim Vehicles, Yachts & HUD/Smartphone Polish: Shifted the floating Superyacht Boarding Dock cleanly clear of Warehouse 2 and smoothly berthed launching superyachts beside it, synced walking players with coasting superyachts, validated dock-side disembarking, separated Aft Swim Deck vs enclosed Grand Salon zones, enabled [N] MFD cycling on trailer standby boats, fixed per-vehicle tow-balls, calm-tide trailer launch hysteresis, obstacle-free car curb summoning, AI intersection deadlock breaking, True North compass headings, off-ship 2D World Map autopilot guards, first-launch onboarding timing, 720p/900p HUD/Smartphone/Map layouts, clipped Smartphone Map islands, Zillow live island targeting, Flights clipping, Welcome Uber cancel recovery, and keybind prompts"
+    "Ocean, Weather, Wake Physics & Streaming: Fixed remote multiplayer wake filtering so other captains' moving vessels physically generate hull-rocking wakes while marine breach rings stay visual-only; synced surface-height capillary ripples and removed bow-spray wake double-counting; upgraded harbor crane trolley and shuttle tracking to double precision, fixed crane beam yaw and lighthouse altitude accuracy, smoothed storm/fog transitions, removed duplicate ocean/cloud tick drift, and hardened high-speed island streaming",
+    "Ship Controls, Grounding, Cargo & Co-Op Reliability: Upgraded shallow-water grounding checks to honor actual vessel draft and under-keel clearance (eliminating false groundings in 12 m marinas); fixed cabin lounge sofa sit/stand flow, trailered boat climb-aboard blocking, full life-sim state cleanup before switching hulls, and live Smartphone/VHF/bridge/TV operation during NPC towing; cleared stale payout sequence state when leaving a company, protected shared company fleets against zero-revision packets, enforced strict monotonic company revisions, protected active direct UDP peers, and added offline housing claim fallback",
+    "Life-Sim Vehicles, Boats, Dealerships & Character Systems: Fixed Starter Boat #03 trailered boarding pose, camera framing, and step-off; upgraded superyacht broadside collision probes; enabled [N] MFD page cycling on trailered boats even when another boat is floating; added warehouse rear-exit escape probes, standing helm animation speed tracking, indoor character creator preview stage clamping, continuous pedestrian walk speeds, and accurate remote multiplayer boat rider poses",
+    "Airports, VR, Procedural Audio & HUD/Smartphone Polish: Fixed parked regional airliner unstreamed visibility restoration; switched VR overhead CCTV pointing rays to rigid palm orientation so pulling the trigger never pulls the ray off PTZ controls; fixed immediate swim-splashdown procedural audio RMS and per-sample decay inside the audio synthesis loop; prevented Uber Option 1 from charging $25 for a zero-distance ride when already standing on the Boat Parking Dock or Trailer Lot; and polished HUD, 3D Monitor, and Smartphone overlays"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1957-wave-6-forensic-bug-hunt-63-fixes",
-      "version": "v1.9.57",
-      "timestampUtc": "2026-11-24T05:05:46Z",
-      "summary": "Published TrueHelm v1.9.57 Live Release (1-Click In-Launcher Update): Wave 6 Full-Codebase Forensic Bug Hunt (63 Verified Fixes) across Airports/Flights, Multiplayer/Cloud Saves/Co-Op, Ocean/Weather/Mooring/Monitors, Life-Sim Vehicles/Yachts/Boats, VR/Procedural Audio, and HUD/Smartphone UI.",
+      "id": "milestone-v1958-wave-7-forensic-bug-hunt-67-fixes",
+      "version": "v1.9.58",
+      "timestampUtc": "2026-11-24T06:54:42Z",
+      "summary": "Published TrueHelm v1.9.58 Live Release (1-Click In-Launcher Update): Wave 7 Full-Codebase Deep Forensic Bug Hunt (67 Verified Fixes) across Ocean/Wake Physics, Ship Grounding/Cargo/Co-Op, Superyacht Slipway/Life-Sim/Vehicles, Airports/FIDS, VR CCTV, Procedural Audio, and HUD/Smartphone UI.",
+      "added": [
+        "Carved Warehouse 2 Superyacht Marine Slipway Trough: Graded the interior slipway trough cleanly beneath the inclined concrete launch ramp and all 8 pneumatic rolling airbags right into open water for unobstructed superyacht launches",
+        "Active Commerce Shift 3D Guidance Beacon & Compass Marker: Added a glowing cyan 3D destination beacon and compass guidance toward the Commerce Office whenever an active Commerce Shift is running",
+        "Terminal FIDS Booked-Flight Pinning: Pinned the player's actively booked regional flight to row 1 of the Airport Terminal FIDS departure board so your gate and boarding status are always immediately visible",
+        "Indoor Wall-Occlusion Door Ray Checks & Safe-Water Boat Disembark Sharing: Added 2D wall-occlusion ray checks on interior house doors and unified safe-water disembarking across all personal boats and yachts"
+      ],
+      "changed": [
+        "Ocean, Weather, Wake Physics & Streaming: Fixed remote multiplayer wake filtering so other captains' moving vessels physically generate hull-rocking wakes while marine breach rings stay visual-only; synced surface-height capillary ripples and removed bow-spray wake double-counting; upgraded harbor crane trolley and shuttle tracking to double precision, fixed crane beam yaw and lighthouse altitude accuracy, smoothed storm/fog transitions, removed duplicate ocean/cloud tick drift, and hardened high-speed island streaming",
+        "Ship Controls, Grounding, Cargo & Co-Op Reliability: Upgraded shallow-water grounding checks to honor actual vessel draft and under-keel clearance (eliminating false groundings in 12 m marinas); fixed cabin lounge sofa sit/stand flow, trailered boat climb-aboard blocking, full life-sim state cleanup before switching hulls, and live Smartphone/VHF/bridge/TV operation during NPC towing; cleared stale payout sequence state when leaving a company, protected shared company fleets against zero-revision packets, enforced strict monotonic company revisions, protected active direct UDP peers, and added offline housing claim fallback",
+        "Life-Sim Vehicles, Boats, Dealerships & Character Systems: Fixed Starter Boat #03 trailered boarding pose, camera framing, and step-off; upgraded superyacht broadside collision probes; enabled [N] MFD page cycling on trailered boats even when another boat is floating; added warehouse rear-exit escape probes, standing helm animation speed tracking, indoor character creator preview stage clamping, continuous pedestrian walk speeds, and accurate remote multiplayer boat rider poses",
+        "Airports, VR, Procedural Audio & HUD/Smartphone Polish: Fixed parked regional airliner unstreamed visibility restoration; switched VR overhead CCTV pointing rays to rigid palm orientation so pulling the trigger never pulls the ray off PTZ controls; fixed immediate swim-splashdown procedural audio RMS and per-sample decay inside the audio synthesis loop; prevented Uber Option 1 from charging $25 for a zero-distance ride when already standing on the Boat Parking Dock or Trailer Lot; and polished HUD, 3D Monitor, and Smartphone overlays"
+      ],
+      "removed": [
+        "Eliminated terrain sand clipping through the Warehouse 2 Superyacht Slipway airbags, false shallow-water groundings in 12 m deep marinas, remote multiplayer wakes being silently ignored by hull buoyancy, double-counted bow-spray wake boosts, zero-revision co-op fleet mask clobbering, VR CCTV trigger ray drift, and zero-distance $25 Boat Parking Dock Uber charges"
+      ]
+    },
+    {
       "added": [
         "Real Procedural Road-Vehicle Acoustics & Listener-Local Ocean Splashdown: Added authentic dual-tone (400/500 Hz) automotive car horn on [H], speed-reactive car and Uber engine RPM rumble with tire road noise, and listener-local ocean splashdown audio unaffected by commercial ship distance",
         "Multiplayer Lobby Roster Pagination & Mouse-Wheel Scrolling: Added Previous/Next pagination controls, page indicator, and mouse-wheel scrolling to the Multiplayer Lobby roster so captains can interact with every player online when more than 4 captains share the ocean",
@@ -32,9 +49,13 @@
         "Ocean, Weather, Mooring, Bridge Monitors & VR: Fixed high-altitude ocean horizon shading and cloud layer sync, tightened airport pad terrain clamping, made overlapping storm and fog cells order-independent, hid duplicate remote captains on ships while ashore/driving/flying, fixed floating pontoon dock mooring line elevations and 35-degree alignment, aligned Bridge Monitor 4 to True North-Up ECDIS and fixed Monitor 2's true tidal-phase sine marker, enforced single-capture-per-frame Overhead CCTV and PTZ release, kept bridge controls/VHF/TV active during NPC towing, and fixed OpenXR VR off-ship locomotion, airplane controller bindings, and VR cabin tracking origin alignment",
         "Life-Sim Vehicles, Yachts & HUD/Smartphone Polish: Shifted the floating Superyacht Boarding Dock cleanly clear of Warehouse 2 and smoothly berthed launching superyachts beside it, synced walking players with coasting superyachts, validated dock-side disembarking, separated Aft Swim Deck vs enclosed Grand Salon zones, enabled [N] MFD cycling on trailer standby boats, fixed per-vehicle tow-balls, calm-tide trailer launch hysteresis, obstacle-free car curb summoning, AI intersection deadlock breaking, True North compass headings, off-ship 2D World Map autopilot guards, first-launch onboarding timing, 720p/900p HUD/Smartphone/Map layouts, clipped Smartphone Map islands, Zillow live island targeting, Flights clipping, Welcome Uber cancel recovery, and keybind prompts"
       ],
+      "id": "milestone-v1957-wave-6-forensic-bug-hunt-63-fixes",
       "removed": [
         "Eliminated the 4-second multiplayer ghost-ship respawn loop, mid-air 7.2 m mooring lines on floating boat docks, car-horn cash-chime placeholder audio, procedural audio chunk-boundary phase clicks, off-ship VHF PTT and caution-beep leaks, VR off-ship movement soft-locks, Warehouse 2 yacht dock overlap, and stale pre-game starter-boat flag resets"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.57 Live Release (1-Click In-Launcher Update): Wave 6 Full-Codebase Forensic Bug Hunt (63 Verified Fixes) across Airports/Flights, Multiplayer/Cloud Saves/Co-Op, Ocean/Weather/Mooring/Monitors, Life-Sim Vehicles/Yachts/Boats, VR/Procedural Audio, and HUD/Smartphone UI.",
+      "timestampUtc": "2026-11-24T05:05:46Z",
+      "version": "v1.9.57"
     },
     {
       "added": [
@@ -1182,11 +1203,11 @@
   ],
   "latestReleaseTag": "v1.9.54",
   "removed": [
-    "Eliminated the 4-second multiplayer ghost-ship respawn loop, mid-air 7.2 m mooring lines on floating boat docks, car-horn cash-chime placeholder audio, procedural audio chunk-boundary phase clicks, off-ship VHF PTT and caution-beep leaks, VR off-ship movement soft-locks, Warehouse 2 yacht dock overlap, and stale pre-game starter-boat flag resets"
+    "Eliminated terrain sand clipping through the Warehouse 2 Superyacht Slipway airbags, false shallow-water groundings in 12 m deep marinas, remote multiplayer wakes being silently ignored by hull buoyancy, double-counted bow-spray wake boosts, zero-revision co-op fleet mask clobbering, VR CCTV trigger ray drift, and zero-distance $25 Boat Parking Dock Uber charges"
   ],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-24T05:05:46Z",
+  "updatedUtc": "2026-11-24T06:54:42Z",
   "versionLogs": [
     {
       "added": [
