@@ -1,27 +1,36 @@
 {
-  "activeVersion": "v1.9.63",
+  "activeVersion": "v1.9.64",
   "added": [
-    "VIP Superyacht & Offshore Resort Charters (New Smartphone Charters App): Accept passenger charter contracts across all 46 scenic and resort archipelago islands using your owned offshore boats or luxury superyachts, complete with visible 3D VIP guests aboard, glowing gold resort dock beacons, live charter HUD progress, and Bank/Email payouts",
-    "Port Broker Maritime Synergy: Completing Harborview Commerce Office shifts now awards Port Broker Priority voyages (stacking up to 6), granting +15% commercial cargo freight margin and -20% port bunker fuel and hull repair costs",
-    "Predictive Tide / Under-Keel Clearance (UKC) & Route Weather Risk Badges: Added live low-tide countdowns, approach UKC warnings, and color-coded route weather risk tiers (CALM, MOD SWELL, ROUGH SEAS, STORM RISK) on the Bridge Navigation Display, 2D Tide HUD, Cargo Dispatch, and Bridge Cargo Monitor",
-    "Living Shipping Fairways & Active Regional Runway Traffic: Added 6 deepwater AI merchant vessels with COLREGs night/fog navigation lights, passing horn blasts, and VHF Channel 16 advisories, plus 3 active regional jets flying full takeoff, climb, coastal circuit, approach, and landing cycles across island runways",
-    "Diegetic OpenXR VR Wrist Smartphone & Character Creator Gear: Added a live 3D wrist-mounted smartphone for VR players (raise left wrist or press Left X, tap directly with right fingertip) with Character Creator skin tone sync on VR hands, plus 5 sculpted Hair Styles and 4 Marine Gear Accessories (SOLAS Lifejacket, Captain Binoculars, Officer Epaulettes, VHF Harness)",
-    "Split Multiplayer Sync Channels + Livery & Appearance Replication: Split live multiplayer updates into a lightweight high-frequency kinematics channel and an on-change metadata channel while replicating vessel hull paint liveries and customized character appearances across remote ships, co-op crewmates, and shore avatars"
+    "Full 5-Need Everyday Living, Home Cooking & Island Cafe: Added Hygiene and Comfort needs alongside Hunger, Energy, and Mood with a +25% Thriving Life Bonus; Rainfall Showers restore Hygiene to 100%, Toilets and Coastal Sofas restore Comfort, Bedroom Wardrobes open character dressing directly, and players can cook 4 recipes from groceries/fresh fish or dine out at the Island Cafe",
+    "Persistent Island Neighbors & New Smartphone Messages App: Added the Messages app with 8 named island locals, persistent relationship progression, threaded SMS chats, food/fish gifting, cafe hangouts, 3D visiting home guests, and real Friend Perks unlocked at Friend tier",
+    "Real Estate Life — Mortgages, Passive Rentals, Weekly Bills & Home Personalization: Added 20% down payment Zillow home financing, 1-tap tenant rental leasing for weekly passive income, a new Bank Bills & Mortgages tab with early payoff and weekly settlement statements, and 5 live Interior Lighting & Decor themes per owned home",
+    "Coastal Hobbies, 6 Personal Life Skills & Daily Calendar Goals: Added pier/dock/shoreline fishing across 6 coastal species (cook or sell at Horizon Fresh Market), fitness workouts, 6 leveling personal skills (Cooking, Driving, Fishing, Fitness, Charisma, Seamanship), 4 Coastal Boutique style packs, and an in-game Day/Weekday calendar with 4 refreshing Daily Life Goals"
   ],
-  "buildPhase": "Release v1.9.63 Live — Wave 12 Major Gameplay Expansion & Core Refactor: VIP Yacht Charters, Port Broker Synergy, UKC/Weather Warnings, Living Fairway Ships & Runway Jets, VR Wrist Phone, Crew Gear & Split Sync",
-  "buildStatus": "Release v1.9.63 Live — Wave 12 Major Gameplay Expansion & Core Refactor: VIP Yacht Charters, Port Broker Synergy, UKC/Weather Warnings, Living Fairway Ships & Runway Jets, VR Wrist Phone, Crew Gear & Split Sync",
+  "buildPhase": "Release v1.9.64 Live — Wave 13 Everyday Life Simulator Expansion: 5 Daily Needs, Home Cooking, Messages & Neighbors, Mortgages & Rentals, Home Lighting Themes, Fishing, Fitness & 6 Life Skills",
+  "buildStatus": "Release v1.9.64 Live — Wave 13 Everyday Life Simulator Expansion: 5 Daily Needs, Home Cooking, Messages & Neighbors, Mortgages & Rentals, Home Lighting Themes, Fishing, Fitness & 6 Life Skills",
   "changed": [
-    "Unified Food Inventory & Single-Item Drinks: Unified carried bag, home refrigerator, and kitchen cabinet stock with one-click Store All transfers and made Fresh Milk & Orange Juice individually purchasable for $8 while moving the Family Groceries Pack to an optional bundle",
-    "Indoor Home-Upgrade Furniture Placement: Moved owned 3D home-upgrade props strictly inside residence interiors rather than outside on exterior porches",
-    "Unified 2D Modals & 3D Bridge Monitors: Synchronized bridge audio toggles, dealership access checks, emergency tug/fuel rescue button visibility, horn/right-click modal guards, developer menu toggle parity, and co-op failover handling across both 2D and 3D interfaces",
-    "Modular Core Architecture: Refactored core vessel, ocean, audio, VR, co-op, rescue, and multiplayer sync subsystems into cleaner modular components with reduced package footprint"
+    "Upgraded the compact shore HUD to display the live Calendar Day, career rank, Thriving status, all 5 daily needs, and active waterfront fishing bite alerts",
+    "Expanded the Smartphone Life app to 4 organized tabs (Jobs, Market/Kitchen/Cafe, Home/Style/Boutique, Skills/Hobbies/Daily Goals) and persisted all Wave 13 life-sim state across local and cloud saves"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1963-wave-12-full-expansion-and-refactor",
-      "version": "v1.9.63",
-      "timestampUtc": "2026-11-25T02:25:22Z",
-      "summary": "Published TrueHelm v1.9.63 Live Release (1-Click In-Launcher Update): Wave 12 Major Expansion & Architecture Refactor adding VIP Superyacht Charters, Port Broker Synergy, Predictive Tide/UKC & Route Weather Risk Badges, Living Fairway Ships & Active Runway Jets, Diegetic OpenXR VR Wrist Smartphone, Character Creator Hair Styles & Marine Gear, Split Multiplayer Sync with Livery/Appearance Replication, Unified Food Inventory & Indoor Home Upgrades.",
+      "id": "milestone-v1964-wave-13-everyday-life-simulator-expansion",
+      "version": "v1.9.64",
+      "timestampUtc": "2026-11-25T03:23:07Z",
+      "summary": "Published TrueHelm v1.9.64 Live Release (1-Click In-Launcher Update): Wave 13 Everyday Life Simulator Expansion adding Hygiene & Comfort needs, Home Cooking & Island Cafe, Interactive Bedroom Wardrobes & Coastal Boutique, Smartphone Messages App with 8 Persistent Neighbors & 3D Visiting Guests, Zillow 20% Mortgages & Passive Tenant Rentals, Weekly Bank Bills, Per-Home Lighting & Decor Personalization, Waterfront Fishing, Fitness Workouts, 6 Personal Life Skills, and Daily Calendar Goals.",
+      "added": [
+        "Full 5-Need Everyday Living, Home Cooking & Island Cafe: Added Hygiene and Comfort needs alongside Hunger, Energy, and Mood with a +25% Thriving Life Bonus; Rainfall Showers restore Hygiene to 100%, Toilets and Coastal Sofas restore Comfort, Bedroom Wardrobes open character dressing directly, and players can cook 4 recipes from groceries/fresh fish or dine out at the Island Cafe",
+        "Persistent Island Neighbors & New Smartphone Messages App: Added the Messages app with 8 named island locals, persistent relationship progression, threaded SMS chats, food/fish gifting, cafe hangouts, 3D visiting home guests, and real Friend Perks unlocked at Friend tier",
+        "Real Estate Life — Mortgages, Passive Rentals, Weekly Bills & Home Personalization: Added 20% down payment Zillow home financing, 1-tap tenant rental leasing for weekly passive income, a new Bank Bills & Mortgages tab with early payoff and weekly settlement statements, and 5 live Interior Lighting & Decor themes per owned home",
+        "Coastal Hobbies, 6 Personal Life Skills & Daily Calendar Goals: Added pier/dock/shoreline fishing across 6 coastal species (cook or sell at Horizon Fresh Market), fitness workouts, 6 leveling personal skills (Cooking, Driving, Fishing, Fitness, Charisma, Seamanship), 4 Coastal Boutique style packs, and an in-game Day/Weekday calendar with 4 refreshing Daily Life Goals"
+      ],
+      "changed": [
+        "Upgraded the compact shore HUD to display the live Calendar Day, career rank, Thriving status, all 5 daily needs, and active waterfront fishing bite alerts",
+        "Expanded the Smartphone Life app to 4 organized tabs (Jobs, Market/Kitchen/Cafe, Home/Style/Boutique, Skills/Hobbies/Daily Goals) and persisted all Wave 13 life-sim state across local and cloud saves"
+      ],
+      "removed": []
+    },
+    {
       "added": [
         "VIP Superyacht & Offshore Resort Charters (New Smartphone Charters App): Accept passenger charter contracts across all 46 scenic and resort archipelago islands using your owned offshore boats or luxury superyachts, complete with visible 3D VIP guests aboard, glowing gold resort dock beacons, live charter HUD progress, and Bank/Email payouts",
         "Port Broker Maritime Synergy: Completing Harborview Commerce Office shifts now awards Port Broker Priority voyages (stacking up to 6), granting +15% commercial cargo freight margin and -20% port bunker fuel and hull repair costs",
@@ -36,9 +45,13 @@
         "Unified 2D Modals & 3D Bridge Monitors: Synchronized bridge audio toggles, dealership access checks, emergency tug/fuel rescue button visibility, horn/right-click modal guards, developer menu toggle parity, and co-op failover handling across both 2D and 3D interfaces",
         "Modular Core Architecture: Refactored core vessel, ocean, audio, VR, co-op, rescue, and multiplayer sync subsystems into cleaner modular components with reduced package footprint"
       ],
+      "id": "milestone-v1963-wave-12-full-expansion-and-refactor",
       "removed": [
         "Pruned retired legacy scaffolding including duplicate internal header files, flat legacy wake strips, legacy 4-line mooring cylinders, retired 3D polygon storm-cloud buffers, retired startup wireframe/scan-curtain/wave-grid holograms, and retired onboard articulated heavy-lift ship crane placeholders (preserving active semi-submersible and LNG cranes)"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.63 Live Release (1-Click In-Launcher Update): Wave 12 Major Expansion & Architecture Refactor adding VIP Superyacht Charters, Port Broker Synergy, Predictive Tide/UKC & Route Weather Risk Badges, Living Fairway Ships & Active Runway Jets, Diegetic OpenXR VR Wrist Smartphone, Character Creator Hair Styles & Marine Gear, Split Multiplayer Sync with Livery/Appearance Replication, Unified Food Inventory & Indoor Home Upgrades.",
+      "timestampUtc": "2026-11-25T02:25:22Z",
+      "version": "v1.9.63"
     },
     {
       "added": [
@@ -1311,12 +1324,10 @@
     }
   ],
   "latestReleaseTag": "v1.9.54",
-  "removed": [
-    "Pruned retired legacy scaffolding including duplicate internal header files, flat legacy wake strips, legacy 4-line mooring cylinders, retired 3D polygon storm-cloud buffers, retired startup wireframe/scan-curtain/wave-grid holograms, and retired onboard articulated heavy-lift ship crane placeholders (preserving active semi-submersible and LNG cranes)"
-  ],
+  "removed": [],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-25T02:25:22Z",
+  "updatedUtc": "2026-11-25T03:23:07Z",
   "versionLogs": [
     {
       "added": [
