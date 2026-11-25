@@ -1,23 +1,38 @@
 {
-  "activeVersion": "v1.9.64",
+  "activeVersion": "v1.9.65",
   "added": [
-    "Full 5-Need Everyday Living, Home Cooking & Island Cafe: Added Hygiene and Comfort needs alongside Hunger, Energy, and Mood with a +25% Thriving Life Bonus; Rainfall Showers restore Hygiene to 100%, Toilets and Coastal Sofas restore Comfort, Bedroom Wardrobes open character dressing directly, and players can cook 4 recipes from groceries/fresh fish or dine out at the Island Cafe",
-    "Persistent Island Neighbors & New Smartphone Messages App: Added the Messages app with 8 named island locals, persistent relationship progression, threaded SMS chats, food/fish gifting, cafe hangouts, 3D visiting home guests, and real Friend Perks unlocked at Friend tier",
-    "Real Estate Life — Mortgages, Passive Rentals, Weekly Bills & Home Personalization: Added 20% down payment Zillow home financing, 1-tap tenant rental leasing for weekly passive income, a new Bank Bills & Mortgages tab with early payoff and weekly settlement statements, and 5 live Interior Lighting & Decor themes per owned home",
-    "Coastal Hobbies, 6 Personal Life Skills & Daily Calendar Goals: Added pier/dock/shoreline fishing across 6 coastal species (cook or sell at Horizon Fresh Market), fitness workouts, 6 leveling personal skills (Cooking, Driving, Fishing, Fitness, Charisma, Seamanship), 4 Coastal Boutique style packs, and an in-game Day/Weekday calendar with 4 refreshing Daily Life Goals"
+    "Compact Starter-Cottage Bedroom Dressers & Exact Wardrobe Targeting: Tier 0 starter cottages now spawn properly scaled interactive bedroom dressers alongside sharper interior wardrobe detection",
+    "Wrapped Multi-Line Smartphone Chat Bubbles & Scrollable Conversations: Messages conversations now wrap long texts cleanly inside clipped scrollable panels with automatic bottom anchoring",
+    "Active Coastal Boutique & Neighbor Friend Perks: Boutique style packs now grant their permanent +3% career pay bonus (up to +12%) with accurate outfit presets, while Friend-tier perks now actively discount port fuel/repairs (-15%), grocery/cafe prices (-15%), and boost Harborview office shift pay (+10%)"
   ],
-  "buildPhase": "Release v1.9.64 Live — Wave 13 Everyday Life Simulator Expansion: 5 Daily Needs, Home Cooking, Messages & Neighbors, Mortgages & Rentals, Home Lighting Themes, Fishing, Fitness & 6 Life Skills",
-  "buildStatus": "Release v1.9.64 Live — Wave 13 Everyday Life Simulator Expansion: 5 Daily Needs, Home Cooking, Messages & Neighbors, Mortgages & Rentals, Home Lighting Themes, Fishing, Fitness & 6 Life Skills",
+  "buildPhase": "Release v1.9.65 Live — Wave 14 Full-Game Forensic Bug-Fix & Polish Update: ~50 Verified Fixes Across Everyday Life Sim, Housing, Smartphone/VR, Ocean, Airports & Multiplayer",
+  "buildStatus": "Release v1.9.65 Live — Wave 14 Full-Game Forensic Bug-Fix & Polish Update: ~50 Verified Fixes Across Everyday Life Sim, Housing, Smartphone/VR, Ocean, Airports & Multiplayer",
   "changed": [
-    "Upgraded the compact shore HUD to display the live Calendar Day, career rank, Thriving status, all 5 daily needs, and active waterfront fishing bite alerts",
-    "Expanded the Smartphone Life app to 4 organized tabs (Jobs, Market/Kitchen/Cafe, Home/Style/Boutique, Skills/Hobbies/Daily Goals) and persisted all Wave 13 life-sim state across local and cloud saves"
+    "Everyday Life, Fishing & Housing Reliability: Enforced real ingredient checks for home cooking, preserved trophy fish value through cooking/gifting/selling, prevented waterfront fishing from hijacking dealership/dock/boat prompts, restricted cooking and sleeping to owned non-rented homes, grounded 3D visiting neighbor guests cleanly on the invited island, fixed 7-day weekly bill catch-up and fuel debt preservation, and cleaned up mortgages/rentals/lighting themes on house sale",
+    "Smartphone, HUD & VR Polish: Tightened Zillow starter banners, Bank Bills clipping, and Life tab live pricing; cleared shore HUD overlaps with Uber rides, VIP Yacht Charter banners, and the 5-Need Pill; prevented modal/chat typing from firing shore hotkeys; and improved ashore OpenXR hand tracking and VR wrist smartphone tapping",
+    "Ocean, Fairways, Yachts & Airports: Rerouted Emerald Carrier clear of Coral Gateway Atoll, kept all 6 Fairway AI Ships active in multiplayer, restored passing AI ship horn audio, smoothed regional jet climb/banking/turnarounds, fixed predictive tide/UKC island matching and shallow shoal reporting, and hardened VIP Yacht Charters, trailer boat launches, and floating-dock emergency fuel rescue",
+    "Multiplayer Co-Op & Cloud Persistence: Eliminated periodic world-clock/wave jumps and spawn slingshots, hardened co-op host failover and hybrid direct-UDP/cloud-relay syncing, guarded remote avatar clothing bounds, and made owned-home price maps, fresh fish value, and concurrent real-estate refunds resilient across cloud saves"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1964-wave-13-everyday-life-simulator-expansion",
-      "version": "v1.9.64",
-      "timestampUtc": "2026-11-25T03:23:07Z",
-      "summary": "Published TrueHelm v1.9.64 Live Release (1-Click In-Launcher Update): Wave 13 Everyday Life Simulator Expansion adding Hygiene & Comfort needs, Home Cooking & Island Cafe, Interactive Bedroom Wardrobes & Coastal Boutique, Smartphone Messages App with 8 Persistent Neighbors & 3D Visiting Guests, Zillow 20% Mortgages & Passive Tenant Rentals, Weekly Bank Bills, Per-Home Lighting & Decor Personalization, Waterfront Fishing, Fitness Workouts, 6 Personal Life Skills, and Daily Calendar Goals.",
+      "id": "milestone-v1965-wave-14-full-game-forensic-bug-fixes",
+      "version": "v1.9.65",
+      "timestampUtc": "2026-11-25T11:36:17Z",
+      "summary": "Published TrueHelm v1.9.65 Live Release (1-Click In-Launcher Update): Wave 14 Full-Game Forensic Bug-Fix & Polish Pass resolving ~50 issues across everyday life simulation, cooking, fishing, neighbors, mortgages/rentals, smartphone layouts, shore HUD, OpenXR VR, regional airport jets, ocean fairways, VIP yacht charters, multiplayer co-op sync, and cloud persistence.",
+      "added": [
+        "Compact Starter-Cottage Bedroom Dressers & Exact Wardrobe Targeting: Tier 0 starter cottages now spawn properly scaled interactive bedroom dressers alongside sharper interior wardrobe detection",
+        "Wrapped Multi-Line Smartphone Chat Bubbles & Scrollable Conversations: Messages conversations now wrap long texts cleanly inside clipped scrollable panels with automatic bottom anchoring",
+        "Active Coastal Boutique & Neighbor Friend Perks: Boutique style packs now grant their permanent +3% career pay bonus (up to +12%) with accurate outfit presets, while Friend-tier perks now actively discount port fuel/repairs (-15%), grocery/cafe prices (-15%), and boost Harborview office shift pay (+10%)"
+      ],
+      "changed": [
+        "Everyday Life, Fishing & Housing Reliability: Enforced real ingredient checks for home cooking, preserved trophy fish value through cooking/gifting/selling, prevented waterfront fishing from hijacking dealership/dock/boat prompts, restricted cooking and sleeping to owned non-rented homes, grounded 3D visiting neighbor guests cleanly on the invited island, fixed 7-day weekly bill catch-up and fuel debt preservation, and cleaned up mortgages/rentals/lighting themes on house sale",
+        "Smartphone, HUD & VR Polish: Tightened Zillow starter banners, Bank Bills clipping, and Life tab live pricing; cleared shore HUD overlaps with Uber rides, VIP Yacht Charter banners, and the 5-Need Pill; prevented modal/chat typing from firing shore hotkeys; and improved ashore OpenXR hand tracking and VR wrist smartphone tapping",
+        "Ocean, Fairways, Yachts & Airports: Rerouted Emerald Carrier clear of Coral Gateway Atoll, kept all 6 Fairway AI Ships active in multiplayer, restored passing AI ship horn audio, smoothed regional jet climb/banking/turnarounds, fixed predictive tide/UKC island matching and shallow shoal reporting, and hardened VIP Yacht Charters, trailer boat launches, and floating-dock emergency fuel rescue",
+        "Multiplayer Co-Op & Cloud Persistence: Eliminated periodic world-clock/wave jumps and spawn slingshots, hardened co-op host failover and hybrid direct-UDP/cloud-relay syncing, guarded remote avatar clothing bounds, and made owned-home price maps, fresh fish value, and concurrent real-estate refunds resilient across cloud saves"
+      ],
+      "removed": []
+    },
+    {
       "added": [
         "Full 5-Need Everyday Living, Home Cooking & Island Cafe: Added Hygiene and Comfort needs alongside Hunger, Energy, and Mood with a +25% Thriving Life Bonus; Rainfall Showers restore Hygiene to 100%, Toilets and Coastal Sofas restore Comfort, Bedroom Wardrobes open character dressing directly, and players can cook 4 recipes from groceries/fresh fish or dine out at the Island Cafe",
         "Persistent Island Neighbors & New Smartphone Messages App: Added the Messages app with 8 named island locals, persistent relationship progression, threaded SMS chats, food/fish gifting, cafe hangouts, 3D visiting home guests, and real Friend Perks unlocked at Friend tier",
@@ -28,7 +43,10 @@
         "Upgraded the compact shore HUD to display the live Calendar Day, career rank, Thriving status, all 5 daily needs, and active waterfront fishing bite alerts",
         "Expanded the Smartphone Life app to 4 organized tabs (Jobs, Market/Kitchen/Cafe, Home/Style/Boutique, Skills/Hobbies/Daily Goals) and persisted all Wave 13 life-sim state across local and cloud saves"
       ],
-      "removed": []
+      "id": "milestone-v1964-wave-13-everyday-life-simulator-expansion",
+      "summary": "Published TrueHelm v1.9.64 Live Release (1-Click In-Launcher Update): Wave 13 Everyday Life Simulator Expansion adding Hygiene & Comfort needs, Home Cooking & Island Cafe, Interactive Bedroom Wardrobes & Coastal Boutique, Smartphone Messages App with 8 Persistent Neighbors & 3D Visiting Guests, Zillow 20% Mortgages & Passive Tenant Rentals, Weekly Bank Bills, Per-Home Lighting & Decor Personalization, Waterfront Fishing, Fitness Workouts, 6 Personal Life Skills, and Daily Calendar Goals.",
+      "timestampUtc": "2026-11-25T03:23:07Z",
+      "version": "v1.9.64"
     },
     {
       "added": [
@@ -1324,10 +1342,9 @@
     }
   ],
   "latestReleaseTag": "v1.9.54",
-  "removed": [],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-25T03:23:07Z",
+  "updatedUtc": "2026-11-25T11:36:17Z",
   "versionLogs": [
     {
       "added": [
@@ -2292,5 +2309,6 @@
       ],
       "version": "v1.6.0"
     }
-  ]
+  ],
+  "removed": []
 }
