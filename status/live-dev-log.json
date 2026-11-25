@@ -1,24 +1,34 @@
 {
-  "activeVersion": "v1.9.65",
+  "activeVersion": "v1.9.66",
   "added": [
-    "Compact Starter-Cottage Bedroom Dressers & Exact Wardrobe Targeting: Tier 0 starter cottages now spawn properly scaled interactive bedroom dressers alongside sharper interior wardrobe detection",
-    "Wrapped Multi-Line Smartphone Chat Bubbles & Scrollable Conversations: Messages conversations now wrap long texts cleanly inside clipped scrollable panels with automatic bottom anchoring",
-    "Active Coastal Boutique & Neighbor Friend Perks: Boutique style packs now grant their permanent +3% career pay bonus (up to +12%) with accurate outfit presets, while Friend-tier perks now actively discount port fuel/repairs (-15%), grocery/cafe prices (-15%), and boost Harborview office shift pay (+10%)"
+    "Live Working In-Car & Uber GPS Navigation Screens: Center infotainment tablets across all called Ubers and all 8 drivable cars now render real-time heading-up island road maps, traffic light aspects, active green Uber route polylines, destination pins, Land Job waypoints, and live ETA/status telemetry",
+    "Live Digital Driver Gauge Cluster Across All 8 Cars & Ubers: Dashboard instrument displays now update live with speed (KM/H and MPH), animated RPM bars, automatic gear selection (P/R/D1-D6), heading, clock, headlights, brake indicator, and boat-trailer tow mode status"
   ],
-  "buildPhase": "Release v1.9.65 Live — Wave 14 Full-Game Forensic Bug-Fix & Polish Update: ~50 Verified Fixes Across Everyday Life Sim, Housing, Smartphone/VR, Ocean, Airports & Multiplayer",
-  "buildStatus": "Release v1.9.65 Live — Wave 14 Full-Game Forensic Bug-Fix & Polish Update: ~50 Verified Fixes Across Everyday Life Sim, Housing, Smartphone/VR, Ocean, Airports & Multiplayer",
+  "buildPhase": "Release v1.9.66 Live — Playtest Visual & Live Vehicle Cockpit Update: Live Uber & Car GPS/Gauge Screens, Rebuilt Hollow Car Exteriors, Sidewalk Airport Pillars & Full-Height Starter Kitchens",
+  "buildStatus": "Release v1.9.66 Live — Playtest Visual & Live Vehicle Cockpit Update: Live Uber & Car GPS/Gauge Screens, Rebuilt Hollow Car Exteriors, Sidewalk Airport Pillars & Full-Height Starter Kitchens",
   "changed": [
-    "Everyday Life, Fishing & Housing Reliability: Enforced real ingredient checks for home cooking, preserved trophy fish value through cooking/gifting/selling, prevented waterfront fishing from hijacking dealership/dock/boat prompts, restricted cooking and sleeping to owned non-rented homes, grounded 3D visiting neighbor guests cleanly on the invited island, fixed 7-day weekly bill catch-up and fuel debt preservation, and cleaned up mortgages/rentals/lighting themes on house sale",
-    "Smartphone, HUD & VR Polish: Tightened Zillow starter banners, Bank Bills clipping, and Life tab live pricing; cleared shore HUD overlaps with Uber rides, VIP Yacht Charter banners, and the 5-Need Pill; prevented modal/chat typing from firing shore hotkeys; and improved ashore OpenXR hand tracking and VR wrist smartphone tapping",
-    "Ocean, Fairways, Yachts & Airports: Rerouted Emerald Carrier clear of Coral Gateway Atoll, kept all 6 Fairway AI Ships active in multiplayer, restored passing AI ship horn audio, smoothed regional jet climb/banking/turnarounds, fixed predictive tide/UKC island matching and shallow shoal reporting, and hardened VIP Yacht Charters, trailer boat launches, and floating-dock emergency fuel rescue",
-    "Multiplayer Co-Op & Cloud Persistence: Eliminated periodic world-clock/wave jumps and spawn slingshots, hardened co-op host failover and hybrid direct-UDP/cloud-relay syncing, guarded remote avatar clothing bounds, and made owned-home price maps, fresh fish value, and concurrent real-estate refunds resilient across cloud saves"
+    "Rebuilt All 8 Car Exteriors with True Hollow Cabins & Carved Wheel Arches: Eliminated the solid mid-height interior slab visible through car windows, recessed circular wheel wells with dark inner liners cleanly around every tire, aligned seats and driver-side steering wheels, and tuned automotive glass transparency",
+    "Airport Drop-Off Canopy Pillars Moved onto Concrete Sidewalk: Relocated all regional airport canopy support columns completely off the asphalt pickup roadway onto the sidewalk clear of entrance doors and bollards",
+    "Starter Cottage Kitchens Upgraded to Full Height & Wider Length: Kept smallest-cottage kitchens at full human scale with longer wall-hugging layouts while preserving clean doorway clearance and zero window or furniture clipping"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1965-wave-14-full-game-forensic-bug-fixes",
-      "version": "v1.9.65",
-      "timestampUtc": "2026-11-25T11:36:17Z",
-      "summary": "Published TrueHelm v1.9.65 Live Release (1-Click In-Launcher Update): Wave 14 Full-Game Forensic Bug-Fix & Polish Pass resolving ~50 issues across everyday life simulation, cooking, fishing, neighbors, mortgages/rentals, smartphone layouts, shore HUD, OpenXR VR, regional airport jets, ocean fairways, VIP yacht charters, multiplayer co-op sync, and cloud persistence.",
+      "id": "milestone-v1966-playtest-visual-and-live-car-screens",
+      "version": "v1.9.66",
+      "timestampUtc": "2026-11-25T13:20:09Z",
+      "summary": "Published TrueHelm v1.9.66 Live Release (1-Click In-Launcher Update): Added live working GPS navigation and digital gauge screens across all Ubers and all 8 player cars, rebuilt all 8 car exteriors with true hollow cabins and carved wheel arches, moved airport drop-off canopy pillars off the roadway onto the sidewalk, and upgraded starter-cottage kitchens to full height and wider length.",
+      "added": [
+        "Live Working In-Car & Uber GPS Navigation Screens: Center infotainment tablets across all called Ubers and all 8 drivable cars now render real-time heading-up island road maps, traffic light aspects, active green Uber route polylines, destination pins, Land Job waypoints, and live ETA/status telemetry",
+        "Live Digital Driver Gauge Cluster Across All 8 Cars & Ubers: Dashboard instrument displays now update live with speed (KM/H and MPH), animated RPM bars, automatic gear selection (P/R/D1-D6), heading, clock, headlights, brake indicator, and boat-trailer tow mode status"
+      ],
+      "changed": [
+        "Rebuilt All 8 Car Exteriors with True Hollow Cabins & Carved Wheel Arches: Eliminated the solid mid-height interior slab visible through car windows, recessed circular wheel wells with dark inner liners cleanly around every tire, aligned seats and driver-side steering wheels, and tuned automotive glass transparency",
+        "Airport Drop-Off Canopy Pillars Moved onto Concrete Sidewalk: Relocated all regional airport canopy support columns completely off the asphalt pickup roadway onto the sidewalk clear of entrance doors and bollards",
+        "Starter Cottage Kitchens Upgraded to Full Height & Wider Length: Kept smallest-cottage kitchens at full human scale with longer wall-hugging layouts while preserving clean doorway clearance and zero window or furniture clipping"
+      ],
+      "removed": []
+    },
+    {
       "added": [
         "Compact Starter-Cottage Bedroom Dressers & Exact Wardrobe Targeting: Tier 0 starter cottages now spawn properly scaled interactive bedroom dressers alongside sharper interior wardrobe detection",
         "Wrapped Multi-Line Smartphone Chat Bubbles & Scrollable Conversations: Messages conversations now wrap long texts cleanly inside clipped scrollable panels with automatic bottom anchoring",
@@ -30,7 +40,10 @@
         "Ocean, Fairways, Yachts & Airports: Rerouted Emerald Carrier clear of Coral Gateway Atoll, kept all 6 Fairway AI Ships active in multiplayer, restored passing AI ship horn audio, smoothed regional jet climb/banking/turnarounds, fixed predictive tide/UKC island matching and shallow shoal reporting, and hardened VIP Yacht Charters, trailer boat launches, and floating-dock emergency fuel rescue",
         "Multiplayer Co-Op & Cloud Persistence: Eliminated periodic world-clock/wave jumps and spawn slingshots, hardened co-op host failover and hybrid direct-UDP/cloud-relay syncing, guarded remote avatar clothing bounds, and made owned-home price maps, fresh fish value, and concurrent real-estate refunds resilient across cloud saves"
       ],
-      "removed": []
+      "id": "milestone-v1965-wave-14-full-game-forensic-bug-fixes",
+      "summary": "Published TrueHelm v1.9.65 Live Release (1-Click In-Launcher Update): Wave 14 Full-Game Forensic Bug-Fix & Polish Pass resolving ~50 issues across everyday life simulation, cooking, fishing, neighbors, mortgages/rentals, smartphone layouts, shore HUD, OpenXR VR, regional airport jets, ocean fairways, VIP yacht charters, multiplayer co-op sync, and cloud persistence.",
+      "timestampUtc": "2026-11-25T11:36:17Z",
+      "version": "v1.9.65"
     },
     {
       "added": [
@@ -1344,7 +1357,7 @@
   "latestReleaseTag": "v1.9.54",
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-25T11:36:17Z",
+  "updatedUtc": "2026-11-25T13:20:09Z",
   "versionLogs": [
     {
       "added": [
