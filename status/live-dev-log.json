@@ -1,25 +1,46 @@
 {
-  "activeVersion": "v1.9.62",
+  "activeVersion": "v1.9.63",
   "added": [
-    "Cloud Boot Placeholder Protection & Full Cargo/Mooring Persistence: Blocked unverified launcher boot placeholders from pushing over completed cloud careers (including synchronous flushes, login, and quick-switch), and persisted cargo delivery type, reefer cooling/spoilage state, and exact East/West floating dock mooring sides across sessions",
-    "OpenXR VR Swimming Boarding, Smooth Gaze & Chair Safety: Eliminated 2x VR head rotation during ocean swimming, bound VR interact buttons to climb dock ladders and board boats from water, synced live HMD gaze for shore walking and held food, and prevented same-frame VR Captain's Chair grab races",
-    "Sample-Clock Airline Cabin Chimes & Executive Wellness Bonus: Upgraded airliner two-tone cabin chimes to monotonic sample-clock timing with 4 ms attack ramps, synchronized WinMM VHF speaker muting on saved profile loads, and activated the Executive Wellness Suite extra sleep mood bonus and gentler overnight hunger drain",
-    "720p Main Menu Auto-Fit & Cleaner Co-Op/Emergency UI: Auto-fitted and ellipsized the Main Menu top status bar cleanly at 720p, elevated 3rd-person Emergency Fuel Rescue and Recovery Tug buttons above the bottom telemetry strip, and resolved Shift+C cargo shortcut conflicts across HUD prompts"
+    "VIP Superyacht & Offshore Resort Charters (New Smartphone Charters App): Accept passenger charter contracts across all 46 scenic and resort archipelago islands using your owned offshore boats or luxury superyachts, complete with visible 3D VIP guests aboard, glowing gold resort dock beacons, live charter HUD progress, and Bank/Email payouts",
+    "Port Broker Maritime Synergy: Completing Harborview Commerce Office shifts now awards Port Broker Priority voyages (stacking up to 6), granting +15% commercial cargo freight margin and -20% port bunker fuel and hull repair costs",
+    "Predictive Tide / Under-Keel Clearance (UKC) & Route Weather Risk Badges: Added live low-tide countdowns, approach UKC warnings, and color-coded route weather risk tiers (CALM, MOD SWELL, ROUGH SEAS, STORM RISK) on the Bridge Navigation Display, 2D Tide HUD, Cargo Dispatch, and Bridge Cargo Monitor",
+    "Living Shipping Fairways & Active Regional Runway Traffic: Added 6 deepwater AI merchant vessels with COLREGs night/fog navigation lights, passing horn blasts, and VHF Channel 16 advisories, plus 3 active regional jets flying full takeoff, climb, coastal circuit, approach, and landing cycles across island runways",
+    "Diegetic OpenXR VR Wrist Smartphone & Character Creator Gear: Added a live 3D wrist-mounted smartphone for VR players (raise left wrist or press Left X, tap directly with right fingertip) with Character Creator skin tone sync on VR hands, plus 5 sculpted Hair Styles and 4 Marine Gear Accessories (SOLAS Lifejacket, Captain Binoculars, Officer Epaulettes, VHF Harness)",
+    "Split Multiplayer Sync Channels + Livery & Appearance Replication: Split live multiplayer updates into a lightweight high-frequency kinematics channel and an on-change metadata channel while replicating vessel hull paint liveries and customized character appearances across remote ships, co-op crewmates, and shore avatars"
   ],
-  "buildPhase": "Release v1.9.62 Live — Wave 11 Deep Forensic Bug Hunt & Stability Pass (76 Fixes): Cloud Save Safety, 64-Bit Ocean/Weather & Co-Op, OpenXR VR Swimming/Shore, Aviation, Life-Sim & HUD/Monitor Polish",
-  "buildStatus": "Release v1.9.62 Live — Wave 11 Deep Forensic Bug Hunt & Stability Pass (76 Fixes): Cloud Save Safety, 64-Bit Ocean/Weather & Co-Op, OpenXR VR Swimming/Shore, Aviation, Life-Sim & HUD/Monitor Polish",
+  "buildPhase": "Release v1.9.63 Live — Wave 12 Major Gameplay Expansion & Core Refactor: VIP Yacht Charters, Port Broker Synergy, UKC/Weather Warnings, Living Fairway Ships & Runway Jets, VR Wrist Phone, Crew Gear & Split Sync",
+  "buildStatus": "Release v1.9.63 Live — Wave 12 Major Gameplay Expansion & Core Refactor: VIP Yacht Charters, Port Broker Synergy, UKC/Weather Warnings, Living Fairway Ships & Runway Jets, VR Wrist Phone, Crew Gear & Split Sync",
   "changed": [
-    "Ocean, Weather, Port Terminals & 64-Bit Precision: Added word-boundary offshore rig cargo matching alongside refrigerated/chilled container detection, blended coral reef depths smoothly with ambient bathymetry, unified localized weather/chop/whitecaps/rain lighting and per-remote-ship sea states without double-counting, upgraded outer-ocean bathymetry, crane rails, docking guides, Yokohama floating buoys, quay wake slap, and swimming water queries to 64-bit precision with 50 m recentering for bubbles and exhaust smoke, kept remote co-op crewmates visible when captains go ashore, suppressed duplicate co-op passenger wakes, guarded remote-driven cranes and dry-bulk shiploaders, and cleaned up post-bake terrain instancing",
-    "Commercial Aviation, Multiplayer & Character Creator: Fixed airliner camera cycle deadlock, omitted misaligned parked flaps/spoilers, straightened pushback geometry, gave red PAPI lamps dedicated steady materials, initialized live night glow and cleaned up landing lights/timers on every flight exit; standardized default multiplayer world clocks to the 2026 epoch, tore down network drivers in Offline mode, normalized STUN IPv4/ports with periodic refreshes, improved subnet LAN discovery, canceled superseded cloud requests, and validated all 27 character meshes and 4 animations with visibility-gated preview ticking",
-    "Ship Systems, Co-Op Safety & Life-Sim: Prevented false low-tide grounding during moored cargo loading, flushed payouts and dock refuels on save-code imports and island fast-teleports, locked autopilot and bow/lateral thrusters during active fuel transfers and cargo loading, paused Urgent Express timers during ocean swims, smartphone use, modals, and co-op passenger rides, initialized startup menu anchor chains at actual seabed depth with live storm severity, counted filled cryogenic gas domes accurately, unified foreign co-op passenger checks, teammate sequence resets, failover mooring/anchor resets, same-hull crew counts, and pool table broadcasts; added full en-route Uber refunds on abandonment or ocean swims, indoor Commerce Shift validation, NPC conversation mood cooldowns, closed-gate car probes, and clean marina boat parking",
-    "3D Monitors, HUD & Smartphone: Fixed Monitor 5 Flo-Flo underway button and standby frame spacing when Recovery Tug controls are visible, hid non-functional Board Ship buttons for Company Owners on same-company rows in both the Multiplayer menu and Monitor 7, filtered disconnected peers out of Monitor 7 Tab 2 and the Multiplayer modal, and cleared prior-account smartphone numbers and clamped house slot indices cleanly on profile loads"
+    "Unified Food Inventory & Single-Item Drinks: Unified carried bag, home refrigerator, and kitchen cabinet stock with one-click Store All transfers and made Fresh Milk & Orange Juice individually purchasable for $8 while moving the Family Groceries Pack to an optional bundle",
+    "Indoor Home-Upgrade Furniture Placement: Moved owned 3D home-upgrade props strictly inside residence interiors rather than outside on exterior porches",
+    "Unified 2D Modals & 3D Bridge Monitors: Synchronized bridge audio toggles, dealership access checks, emergency tug/fuel rescue button visibility, horn/right-click modal guards, developer menu toggle parity, and co-op failover handling across both 2D and 3D interfaces",
+    "Modular Core Architecture: Refactored core vessel, ocean, audio, VR, co-op, rescue, and multiplayer sync subsystems into cleaner modular components with reduced package footprint"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1962-wave-11-forensic-bug-hunt-76-fixes",
-      "version": "v1.9.62",
-      "timestampUtc": "2026-11-25T00:40:25Z",
-      "summary": "Published TrueHelm v1.9.62 Live Release (1-Click In-Launcher Update): Wave 11 Full-Codebase Deep Forensic Bug Hunt (76 Verified Fixes) across Cloud Account Safety, 64-Bit Ocean/Weather/Terminals, Airports & Character Creator, Multiplayer/STUN/NAT, Life-Sim/Vehicles/Housing, Ship Co-Op/Audio/OpenXR VR, and HUD/3D Monitors/Smartphone.",
+      "id": "milestone-v1963-wave-12-full-expansion-and-refactor",
+      "version": "v1.9.63",
+      "timestampUtc": "2026-11-25T02:25:22Z",
+      "summary": "Published TrueHelm v1.9.63 Live Release (1-Click In-Launcher Update): Wave 12 Major Expansion & Architecture Refactor adding VIP Superyacht Charters, Port Broker Synergy, Predictive Tide/UKC & Route Weather Risk Badges, Living Fairway Ships & Active Runway Jets, Diegetic OpenXR VR Wrist Smartphone, Character Creator Hair Styles & Marine Gear, Split Multiplayer Sync with Livery/Appearance Replication, Unified Food Inventory & Indoor Home Upgrades.",
+      "added": [
+        "VIP Superyacht & Offshore Resort Charters (New Smartphone Charters App): Accept passenger charter contracts across all 46 scenic and resort archipelago islands using your owned offshore boats or luxury superyachts, complete with visible 3D VIP guests aboard, glowing gold resort dock beacons, live charter HUD progress, and Bank/Email payouts",
+        "Port Broker Maritime Synergy: Completing Harborview Commerce Office shifts now awards Port Broker Priority voyages (stacking up to 6), granting +15% commercial cargo freight margin and -20% port bunker fuel and hull repair costs",
+        "Predictive Tide / Under-Keel Clearance (UKC) & Route Weather Risk Badges: Added live low-tide countdowns, approach UKC warnings, and color-coded route weather risk tiers (CALM, MOD SWELL, ROUGH SEAS, STORM RISK) on the Bridge Navigation Display, 2D Tide HUD, Cargo Dispatch, and Bridge Cargo Monitor",
+        "Living Shipping Fairways & Active Regional Runway Traffic: Added 6 deepwater AI merchant vessels with COLREGs night/fog navigation lights, passing horn blasts, and VHF Channel 16 advisories, plus 3 active regional jets flying full takeoff, climb, coastal circuit, approach, and landing cycles across island runways",
+        "Diegetic OpenXR VR Wrist Smartphone & Character Creator Gear: Added a live 3D wrist-mounted smartphone for VR players (raise left wrist or press Left X, tap directly with right fingertip) with Character Creator skin tone sync on VR hands, plus 5 sculpted Hair Styles and 4 Marine Gear Accessories (SOLAS Lifejacket, Captain Binoculars, Officer Epaulettes, VHF Harness)",
+        "Split Multiplayer Sync Channels + Livery & Appearance Replication: Split live multiplayer updates into a lightweight high-frequency kinematics channel and an on-change metadata channel while replicating vessel hull paint liveries and customized character appearances across remote ships, co-op crewmates, and shore avatars"
+      ],
+      "changed": [
+        "Unified Food Inventory & Single-Item Drinks: Unified carried bag, home refrigerator, and kitchen cabinet stock with one-click Store All transfers and made Fresh Milk & Orange Juice individually purchasable for $8 while moving the Family Groceries Pack to an optional bundle",
+        "Indoor Home-Upgrade Furniture Placement: Moved owned 3D home-upgrade props strictly inside residence interiors rather than outside on exterior porches",
+        "Unified 2D Modals & 3D Bridge Monitors: Synchronized bridge audio toggles, dealership access checks, emergency tug/fuel rescue button visibility, horn/right-click modal guards, developer menu toggle parity, and co-op failover handling across both 2D and 3D interfaces",
+        "Modular Core Architecture: Refactored core vessel, ocean, audio, VR, co-op, rescue, and multiplayer sync subsystems into cleaner modular components with reduced package footprint"
+      ],
+      "removed": [
+        "Pruned retired legacy scaffolding including duplicate internal header files, flat legacy wake strips, legacy 4-line mooring cylinders, retired 3D polygon storm-cloud buffers, retired startup wireframe/scan-curtain/wave-grid holograms, and retired onboard articulated heavy-lift ship crane placeholders (preserving active semi-submersible and LNG cranes)"
+      ]
+    },
+    {
       "added": [
         "Cloud Boot Placeholder Protection & Full Cargo/Mooring Persistence: Blocked unverified launcher boot placeholders from pushing over completed cloud careers (including synchronous flushes, login, and quick-switch), and persisted cargo delivery type, reefer cooling/spoilage state, and exact East/West floating dock mooring sides across sessions",
         "OpenXR VR Swimming Boarding, Smooth Gaze & Chair Safety: Eliminated 2x VR head rotation during ocean swimming, bound VR interact buttons to climb dock ladders and board boats from water, synced live HMD gaze for shore walking and held food, and prevented same-frame VR Captain's Chair grab races",
@@ -32,9 +53,13 @@
         "Ship Systems, Co-Op Safety & Life-Sim: Prevented false low-tide grounding during moored cargo loading, flushed payouts and dock refuels on save-code imports and island fast-teleports, locked autopilot and bow/lateral thrusters during active fuel transfers and cargo loading, paused Urgent Express timers during ocean swims, smartphone use, modals, and co-op passenger rides, initialized startup menu anchor chains at actual seabed depth with live storm severity, counted filled cryogenic gas domes accurately, unified foreign co-op passenger checks, teammate sequence resets, failover mooring/anchor resets, same-hull crew counts, and pool table broadcasts; added full en-route Uber refunds on abandonment or ocean swims, indoor Commerce Shift validation, NPC conversation mood cooldowns, closed-gate car probes, and clean marina boat parking",
         "3D Monitors, HUD & Smartphone: Fixed Monitor 5 Flo-Flo underway button and standby frame spacing when Recovery Tug controls are visible, hid non-functional Board Ship buttons for Company Owners on same-company rows in both the Multiplayer menu and Monitor 7, filtered disconnected peers out of Monitor 7 Tab 2 and the Multiplayer modal, and cleared prior-account smartphone numbers and clamped house slot indices cleanly on profile loads"
       ],
+      "id": "milestone-v1962-wave-11-forensic-bug-hunt-76-fixes",
       "removed": [
         "Eliminated unverified boot-placeholder cloud overwrites, 2x VR swimming head spin, Shift+C camera flip collisions, overlapping 3P emergency dispatch buttons and Monitor 5 Flo-Flo underway controls, dead Company Owner Board Ship buttons on same-company rows, synthetic 440 Hz VHF buzz for real mic-less players, disconnected peer tombstones in Monitor 7 Tab 2 and the Multiplayer modal, misaligned parked airliner flaps/spoilers, and false moored low-tide grounding during cargo loading"
-      ]
+      ],
+      "summary": "Published TrueHelm v1.9.62 Live Release (1-Click In-Launcher Update): Wave 11 Full-Codebase Deep Forensic Bug Hunt (76 Verified Fixes) across Cloud Account Safety, 64-Bit Ocean/Weather/Terminals, Airports & Character Creator, Multiplayer/STUN/NAT, Life-Sim/Vehicles/Housing, Ship Co-Op/Audio/OpenXR VR, and HUD/3D Monitors/Smartphone.",
+      "timestampUtc": "2026-11-25T00:40:25Z",
+      "version": "v1.9.62"
     },
     {
       "added": [
@@ -1287,11 +1312,11 @@
   ],
   "latestReleaseTag": "v1.9.54",
   "removed": [
-    "Eliminated unverified boot-placeholder cloud overwrites, 2x VR swimming head spin, Shift+C camera flip collisions, overlapping 3P emergency dispatch buttons and Monitor 5 Flo-Flo underway controls, dead Company Owner Board Ship buttons on same-company rows, synthetic 440 Hz VHF buzz for real mic-less players, disconnected peer tombstones in Monitor 7 Tab 2 and the Multiplayer modal, misaligned parked airliner flaps/spoilers, and false moored low-tide grounding during cargo loading"
+    "Pruned retired legacy scaffolding including duplicate internal header files, flat legacy wake strips, legacy 4-line mooring cylinders, retired 3D polygon storm-cloud buffers, retired startup wireframe/scan-curtain/wave-grid holograms, and retired onboard articulated heavy-lift ship crane placeholders (preserving active semi-submersible and LNG cranes)"
   ],
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-25T00:40:25Z",
+  "updatedUtc": "2026-11-25T02:25:22Z",
   "versionLogs": [
     {
       "added": [
