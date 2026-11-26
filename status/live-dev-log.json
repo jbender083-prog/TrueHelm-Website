@@ -1,22 +1,32 @@
 {
-  "activeVersion": "v1.9.66",
+  "activeVersion": "v1.9.67",
   "added": [
-    "Live Working In-Car & Uber GPS Navigation Screens: Center infotainment tablets across all called Ubers and all 8 drivable cars now render real-time heading-up island road maps, traffic light aspects, active green Uber route polylines, destination pins, Land Job waypoints, and live ETA/status telemetry",
-    "Live Digital Driver Gauge Cluster Across All 8 Cars & Ubers: Dashboard instrument displays now update live with speed (KM/H and MPH), animated RPM bars, automatic gear selection (P/R/D1-D6), heading, clock, headlights, brake indicator, and boat-trailer tow mode status"
+    "Walk-In Diamond Harbor Casino & Neon Reef Nightclub: Play Blackjack, Roulette & Slots, dance floor, VIP lounge, bowling & arcade, and race Coastal Street GP & Offshore Boat Sprint via the new VIP & Fun smartphone app or in-venue interaction",
+    "Passive Business Empire, Credit Score (300-850) & Lawful Responder Shifts: Buy 4 recurring income businesses and work Police Patrol or Paramedic Rescue shifts with zero story-mission gates",
+    "Optional Peaceful Self-Defense & Emergent 1-5 Star Harbor Patrol: Starts holstered and 100% peaceful; optional stun taser/sidearm ashore, Police Interceptor cruisers & Coast Guard boats, and instant citation payoff"
   ],
-  "buildPhase": "Release v1.9.66 Live — Playtest Visual & Live Vehicle Cockpit Update: Live Uber & Car GPS/Gauge Screens, Rebuilt Hollow Car Exteriors, Sidewalk Airport Pillars & Full-Height Starter Kitchens",
-  "buildStatus": "Release v1.9.66 Live — Playtest Visual & Live Vehicle Cockpit Update: Live Uber & Car GPS/Gauge Screens, Rebuilt Hollow Car Exteriors, Sidewalk Airport Pillars & Full-Height Starter Kitchens",
+  "buildPhase": "Release v1.9.67 Live — Photoreal UE 5.8 Graphics Overhaul & Open-World Life-Sim Sandbox: Lumen/VSM/TSR, Nanite Foliage, Walk-In Casino & Nightclub, Races, Passive Businesses & Optional Patrols",
+  "buildStatus": "Release v1.9.67 Live — Photoreal UE 5.8 Graphics Overhaul & Open-World Life-Sim Sandbox: Lumen/VSM/TSR, Nanite Foliage, Walk-In Casino & Nightclub, Races, Passive Businesses & Optional Patrols",
   "changed": [
-    "Rebuilt All 8 Car Exteriors with True Hollow Cabins & Carved Wheel Arches: Eliminated the solid mid-height interior slab visible through car windows, recessed circular wheel wells with dark inner liners cleanly around every tire, aligned seats and driver-side steering wheels, and tuned automotive glass transparency",
-    "Airport Drop-Off Canopy Pillars Moved onto Concrete Sidewalk: Relocated all regional airport canopy support columns completely off the asphalt pickup roadway onto the sidewalk clear of entrance doors and bollards",
-    "Starter Cottage Kitchens Upgraded to Full Height & Wider Length: Kept smallest-cottage kitchens at full human scale with longer wall-hugging layouts while preserving clean doorway clearance and zero window or furniture clipping"
+    "Next-Gen UE 5.8 Photoreal Rendering Pipeline: Enabled Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, ACES filmic tonemapping, fixed 74-island terrain UVs, subsurface character skin, wet rain-reflective asphalt, and Nanite trees, shrubs & boulders"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1966-playtest-visual-and-live-car-screens",
-      "version": "v1.9.66",
-      "timestampUtc": "2026-11-25T13:20:09Z",
-      "summary": "Published TrueHelm v1.9.66 Live Release (1-Click In-Launcher Update): Added live working GPS navigation and digital gauge screens across all Ubers and all 8 player cars, rebuilt all 8 car exteriors with true hollow cabins and carved wheel arches, moved airport drop-off canopy pillars off the roadway onto the sidewalk, and upgraded starter-cottage kitchens to full height and wider length.",
+      "id": "milestone-v1967-photoreal-and-openworld-life-sandbox",
+      "version": "v1.9.67",
+      "timestampUtc": "2026-11-26T03:01:20Z",
+      "summary": "Published TrueHelm v1.9.67 Live Release: Upgraded rendering to Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, subsurface skin, wet-road reflections, fixed island UVs, and Nanite foliage; added walk-in Diamond Harbor Casino, Neon Reef Nightclub & Arcade, Coastal Street GP & Boat Sprint races, 4 passive income businesses, Credit Score, Police/Paramedic careers, and 100%-peaceful-by-default self-defense & Wanted system.",
+      "added": [
+        "Walk-In Diamond Harbor Casino & Neon Reef Nightclub: Play Blackjack, Roulette & Slots, dance floor, VIP lounge, bowling & arcade, and race Coastal Street GP & Offshore Boat Sprint via the new VIP & Fun smartphone app or in-venue interaction",
+        "Passive Business Empire, Credit Score (300-850) & Lawful Responder Shifts: Buy 4 recurring income businesses and work Police Patrol or Paramedic Rescue shifts with zero story-mission gates",
+        "Optional Peaceful Self-Defense & Emergent 1-5 Star Harbor Patrol: Starts holstered and 100% peaceful; optional stun taser/sidearm ashore, Police Interceptor cruisers & Coast Guard boats, and instant citation payoff"
+      ],
+      "changed": [
+        "Next-Gen UE 5.8 Photoreal Rendering Pipeline: Enabled Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, ACES filmic tonemapping, fixed 74-island terrain UVs, subsurface character skin, wet rain-reflective asphalt, and Nanite trees, shrubs & boulders"
+      ],
+      "removed": []
+    },
+    {
       "added": [
         "Live Working In-Car & Uber GPS Navigation Screens: Center infotainment tablets across all called Ubers and all 8 drivable cars now render real-time heading-up island road maps, traffic light aspects, active green Uber route polylines, destination pins, Land Job waypoints, and live ETA/status telemetry",
         "Live Digital Driver Gauge Cluster Across All 8 Cars & Ubers: Dashboard instrument displays now update live with speed (KM/H and MPH), animated RPM bars, automatic gear selection (P/R/D1-D6), heading, clock, headlights, brake indicator, and boat-trailer tow mode status"
@@ -26,7 +36,10 @@
         "Airport Drop-Off Canopy Pillars Moved onto Concrete Sidewalk: Relocated all regional airport canopy support columns completely off the asphalt pickup roadway onto the sidewalk clear of entrance doors and bollards",
         "Starter Cottage Kitchens Upgraded to Full Height & Wider Length: Kept smallest-cottage kitchens at full human scale with longer wall-hugging layouts while preserving clean doorway clearance and zero window or furniture clipping"
       ],
-      "removed": []
+      "id": "milestone-v1966-playtest-visual-and-live-car-screens",
+      "summary": "Published TrueHelm v1.9.66 Live Release (1-Click In-Launcher Update): Added live working GPS navigation and digital gauge screens across all Ubers and all 8 player cars, rebuilt all 8 car exteriors with true hollow cabins and carved wheel arches, moved airport drop-off canopy pillars off the roadway onto the sidewalk, and upgraded starter-cottage kitchens to full height and wider length.",
+      "timestampUtc": "2026-11-25T13:20:09Z",
+      "version": "v1.9.66"
     },
     {
       "added": [
@@ -1357,7 +1370,7 @@
   "latestReleaseTag": "v1.9.54",
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-25T13:20:09Z",
+  "updatedUtc": "2026-11-26T03:01:20Z",
   "versionLogs": [
     {
       "added": [
