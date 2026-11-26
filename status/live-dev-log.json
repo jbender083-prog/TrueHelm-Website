@@ -1,21 +1,32 @@
 {
-  "activeVersion": "v1.9.67",
+  "activeVersion": "v1.9.68",
   "added": [
-    "Walk-In Diamond Harbor Casino & Neon Reef Nightclub: Play Blackjack, Roulette & Slots, dance floor, VIP lounge, bowling & arcade, and race Coastal Street GP & Offshore Boat Sprint via the new VIP & Fun smartphone app or in-venue interaction",
-    "Passive Business Empire, Credit Score (300-850) & Lawful Responder Shifts: Buy 4 recurring income businesses and work Police Patrol or Paramedic Rescue shifts with zero story-mission gates",
-    "Optional Peaceful Self-Defense & Emergent 1-5 Star Harbor Patrol: Starts holstered and 100% peaceful; optional stun taser/sidearm ashore, Police Interceptor cruisers & Coast Guard boats, and instant citation payoff"
+    "Botanical Palm-Lined Boulevards & Laser-Scanned Island Foliage: Added feather-leaflet Royal & Coconut Palms, scanned tropical trees, Jacarandas, pines, shrubs, ferns, coastal cliffs, street benches, planters & hydrants across all 74 islands",
+    "Luxury Art Deco Casino & Nightclub Interiors: Added stepped neon facades, palm-flanked brick plazas, Calacatta marble & dark terrazzo floors, 3D crystal chandeliers, backlit VIP cocktail bars, velvet lounge booths & a 25-tile glowing dance floor"
   ],
-  "buildPhase": "Release v1.9.67 Live — Photoreal UE 5.8 Graphics Overhaul & Open-World Life-Sim Sandbox: Lumen/VSM/TSR, Nanite Foliage, Walk-In Casino & Nightclub, Races, Passive Businesses & Optional Patrols",
-  "buildStatus": "Release v1.9.67 Live — Photoreal UE 5.8 Graphics Overhaul & Open-World Life-Sim Sandbox: Lumen/VSM/TSR, Nanite Foliage, Walk-In Casino & Nightclub, Races, Passive Businesses & Optional Patrols",
+  "buildPhase": "Release v1.9.68 Live — Photoreal Coastal Open-World Overhaul: 2K Photogrammetry PBR World, Botanical Palm Boulevards, Sculpted Clear-Coat Cars & Art Deco Venues",
+  "buildStatus": "Release v1.9.68 Live — Photoreal Coastal Open-World Overhaul: 2K Photogrammetry PBR World, Botanical Palm Boulevards, Sculpted Clear-Coat Cars & Art Deco Venues",
   "changed": [
-    "Next-Gen UE 5.8 Photoreal Rendering Pipeline: Enabled Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, ACES filmic tonemapping, fixed 74-island terrain UVs, subsurface character skin, wet rain-reflective asphalt, and Nanite trees, shrubs & boulders"
+    "2K Photogrammetry PBR World & Volumetric Atmosphere: Upgraded terrain, wet asphalt, concrete sidewalks, and all 17 house shell finishes to 2K photogrammetry textures, removed artificial grass tinting, doubled mountain mesh resolution, and enabled Volumetric Fog & dynamic sky recapture",
+    "Sculpted Aerodynamic Vehicles & Clear-Coat Paints: Re-sculpted all 8 vehicles with flush-glazed greenhouses, panoramic roofs, muscular fender haunches, and 7 dual-layer Clear-Coat metallic-flake paints"
   ],
   "historyLog": [
     {
-      "id": "milestone-v1967-photoreal-and-openworld-life-sandbox",
-      "version": "v1.9.67",
-      "timestampUtc": "2026-11-26T03:01:20Z",
-      "summary": "Published TrueHelm v1.9.67 Live Release: Upgraded rendering to Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, subsurface skin, wet-road reflections, fixed island UVs, and Nanite foliage; added walk-in Diamond Harbor Casino, Neon Reef Nightclub & Arcade, Coastal Street GP & Boat Sprint races, 4 passive income businesses, Credit Score, Police/Paramedic careers, and 100%-peaceful-by-default self-defense & Wanted system.",
+      "id": "milestone-v1968-photoreal-coastal-openworld-overhaul",
+      "version": "v1.9.68",
+      "timestampUtc": "2026-11-26T17:09:52Z",
+      "summary": "Published TrueHelm v1.9.68 Live Release: Delivered a comprehensive photoreal visual overhaul with 2K photogrammetry PBR terrain, road, and architectural materials, natural coastal grass & high-resolution cliffs, Volumetric Fog, botanical Royal & Coconut Palms, laser-scanned trees & palm-lined boulevards, all 8 sculpted aerodynamic vehicles with Clear-Coat metallic-flake paints, and luxury Art Deco Casino & Nightclub interiors.",
+      "added": [
+        "Botanical Palm-Lined Boulevards & Laser-Scanned Island Foliage: Added feather-leaflet Royal & Coconut Palms, scanned tropical trees, Jacarandas, pines, shrubs, ferns, coastal cliffs, street benches, planters & hydrants across all 74 islands",
+        "Luxury Art Deco Casino & Nightclub Interiors: Added stepped neon facades, palm-flanked brick plazas, Calacatta marble & dark terrazzo floors, 3D crystal chandeliers, backlit VIP cocktail bars, velvet lounge booths & a 25-tile glowing dance floor"
+      ],
+      "changed": [
+        "2K Photogrammetry PBR World & Volumetric Atmosphere: Upgraded terrain, wet asphalt, concrete sidewalks, and all 17 house shell finishes to 2K photogrammetry textures, removed artificial grass tinting, doubled mountain mesh resolution, and enabled Volumetric Fog & dynamic sky recapture",
+        "Sculpted Aerodynamic Vehicles & Clear-Coat Paints: Re-sculpted all 8 vehicles with flush-glazed greenhouses, panoramic roofs, muscular fender haunches, and 7 dual-layer Clear-Coat metallic-flake paints"
+      ],
+      "removed": []
+    },
+    {
       "added": [
         "Walk-In Diamond Harbor Casino & Neon Reef Nightclub: Play Blackjack, Roulette & Slots, dance floor, VIP lounge, bowling & arcade, and race Coastal Street GP & Offshore Boat Sprint via the new VIP & Fun smartphone app or in-venue interaction",
         "Passive Business Empire, Credit Score (300-850) & Lawful Responder Shifts: Buy 4 recurring income businesses and work Police Patrol or Paramedic Rescue shifts with zero story-mission gates",
@@ -24,7 +35,10 @@
       "changed": [
         "Next-Gen UE 5.8 Photoreal Rendering Pipeline: Enabled Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, ACES filmic tonemapping, fixed 74-island terrain UVs, subsurface character skin, wet rain-reflective asphalt, and Nanite trees, shrubs & boulders"
       ],
-      "removed": []
+      "id": "milestone-v1967-photoreal-and-openworld-life-sandbox",
+      "summary": "Published TrueHelm v1.9.67 Live Release: Upgraded rendering to Lumen GI, Lumen Reflections, Virtual Shadow Maps, TSR, subsurface skin, wet-road reflections, fixed island UVs, and Nanite foliage; added walk-in Diamond Harbor Casino, Neon Reef Nightclub & Arcade, Coastal Street GP & Boat Sprint races, 4 passive income businesses, Credit Score, Police/Paramedic careers, and 100%-peaceful-by-default self-defense & Wanted system.",
+      "timestampUtc": "2026-11-26T03:01:20Z",
+      "version": "v1.9.67"
     },
     {
       "added": [
@@ -1370,7 +1384,7 @@
   "latestReleaseTag": "v1.9.54",
   "syncMode": "on-launcher-release",
   "updatedAtUtc": "2026-11-23T14:01:27Z",
-  "updatedUtc": "2026-11-26T03:01:20Z",
+  "updatedUtc": "2026-11-26T17:09:52Z",
   "versionLogs": [
     {
       "added": [
